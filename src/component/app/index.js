@@ -8,6 +8,7 @@ import {BrowserRouter, Route, Link} from 'react-router-dom'
 import Home from '../home'
 import About from '../about'
 import Header from '../header'
+import Contact from '../contact'
 import Projects from '../projects'
 
 class App extends React.Component{
@@ -35,6 +36,8 @@ class App extends React.Component{
                 component={Projects} />
               <Route exact path='/about'
                 component={About} />
+              <Route exact path='/contact'
+                component={Contact} />
 
           </div>
         </BrowserRouter>

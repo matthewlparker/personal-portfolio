@@ -6,10 +6,22 @@ class Projects extends React.Component{
       <div className = 'projects'>
         <h3> My projects go here. </h3>
 
-        <div className="project">
-          <h4> Guardians of the Goats </h4>
-          <img src='../../assets/goat-shadow.png' alt='goat-icon' className='gog-icon' />
-        </div>
+        <a href='https://cadburylion.github.io/' target='_blank'>
+          <div className='project' >
+            <img src={require('../../assets/goat-shadow.png')} alt='goat-icon' className='gog-icon' />
+            <h5 className='title'> Guardians of the Goats </h5>
+
+          </div>
+        </a>
+
+        <a href='https://seattle-reads.herokuapp.com/' target='_blank'>
+          <div className='project' >
+            <img src={require('../../assets/seattle-reads.png')} alt='graph of library checkouts' className='sr-icon' />
+            <h5 className='title'> Seattle Reads </h5>
+
+          </div>
+        </a>
+
       </div>
     )
   }
