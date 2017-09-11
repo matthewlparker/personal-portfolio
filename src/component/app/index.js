@@ -7,6 +7,7 @@ import {BrowserRouter, Route, Link} from 'react-router-dom'
 
 import Home from '../home'
 import About from '../about'
+import Header from '../header'
 import Projects from '../projects'
 
 class App extends React.Component{
@@ -22,14 +23,11 @@ class App extends React.Component{
       <div className = "header-div">
         <BrowserRouter>
           <div>
-            <h1> Matthew Parker </h1>
 
             <div className="header-nav">
-              <ul>
-                <li><Link to='/home'> Home </Link></li>
-                <li><Link to='/projects'> Projects </Link></li>
-                <li><Link to='/about'> About </Link></li>
-              </ul>
+              <Header />
+            </div>
+
 
               <Route exact path='/home'
                 component={Home} />
@@ -38,11 +36,9 @@ class App extends React.Component{
               <Route exact path='/about'
                 component={About} />
 
-            </div>
           </div>
         </BrowserRouter>
       </div>
-
       </main>
     )
   }
