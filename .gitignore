@@ -1,0 +1,10 @@
+node_modules
+.env
+.test.env
+#coverage folder
+coverage
+/coverage
+.nyc_output
+/.nyc_output
+build
+/build
