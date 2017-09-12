@@ -2,6 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {BrowserRouter, Route, Link} from 'react-router-dom'
 
+import './styles.scss'
+
 import Home from '../home'
 import * as route from '../../action/route.js'
 

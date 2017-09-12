@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.projects {
+  height: 100%;
+  width: 100%;
+  border: 1px solid red;
+}
+
+.project {
+  display: inline-block;
+  border: 1px solid blue;
+  width: calc(100%/3);
+}
+
+.project img {
+  width: 10px;
+}

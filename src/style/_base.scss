@@ -1,0 +1,142 @@
+@import "vars";
+
+// content
+html, body { position: relative; }
+head, script, link  { display: none; }
+p { display: inline-block; }
+span,em,strong { display: inline; }
+em { font-style: italic; }
+strong { font-weight: bold; }
+
+header {
+  background-color: $color-primary;
+}
+
+footer {
+  width: 100%;
+  background: $color-black;
+  height: 40%;
+}
+main-nav {
+  float:left;
+  background-color: $color-primary;
+}
+
+a {
+  color: $color-white;
+
+  &:hover {
+    // background: $color-secondary;
+    color: $color-secondary;
+    transition: all 0.2s ease;
+  }
+}
+
+body {
+  background: $color-white;
+  font-size: 16px;
+  width: 100%;
+}
+
+h1 {
+  font-weight: 300;
+  font-style: normal;
+  line-height: 66px;
+  font-size: 4em;
+  color: $color-white;
+  padding-bottom: 3%;
+}
+
+h2 {
+  font-size: 2em;
+  color: $color-primary;
+  padding-bottom: 3%;
+}
+
+h4, h5, li, p {
+  color: $color-darkgrey;
+  padding-bottom: 2%;
+}
+
+.dropdown {
+  margin-bottom: 1%;
+  width: 30%;
+  color: $color-darkgrey;
+  border: solid $color-lightgrey;
+}
+
+form, .meal-form  {
+  background-color: $color-white;
+  padding: 2% 10% 10% 10%;
+}
+
+textarea, input {
+  padding: $pad;
+  border: 1px solid $color-lightgrey;
+  margin-bottom: $pad;
+  resize: none;
+  overflow: hidden;
+
+  &:focus {
+    border: 1px solid $color-darkgrey;
+  }
+
+  &::placeholder {
+    color: $color-grey;
+  }
+}
+
+.number-box {
+  width: 30%;
+  input[type=number]::-webkit-inner-spin-button {
+    transition: all 0.3s ease;
+      opacity: 1
+  }
+}
+
+.radio-button {
+  text-decoration: none;
+  float: left;
+}
+
+button,input[type="submit"] {
+  background: $color-primary;
+  color: $color-white;
+  padding: $pad;
+  width: 30%;
+  border: none;
+  border-radius: 3px;
+
+  &:hover {
+    background: $color-secondary;
+    color: $color-lightgrey;
+    transition: all 0.5s ease;
+  }
+}
+
+meals {
+  background-color: $color-white;
+}
+
+input[type=file]::-webkit-file-upload-button {
+    border: none;
+    background: $color-primary;
+    color: $color-white;
+
+    &:hover {
+      background: $color-secondary;
+      color: $color-lightgrey;
+    }
+}
+
+.logo {
+    width: 15em;
+    padding: 5%;
+}
+
+// lists
+ul,ol,li { margin-left: $pad * 2; }
+li { display: list-item; }
+ol li { list-style: decimal; }
+
+.hide { display: none; }
