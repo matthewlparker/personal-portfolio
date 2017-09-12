@@ -29,6 +29,7 @@
     "express": "^4.15.4",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
+    "formmailer": "^0.3.0",
     "html-webpack-plugin": "^2.30.1",
     "jest": "^21.0.2",
     "morgan": "^1.8.2",

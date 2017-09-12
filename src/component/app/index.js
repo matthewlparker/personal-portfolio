@@ -8,6 +8,7 @@ import {BrowserRouter, Route, Link} from 'react-router-dom'
 import Home from '../home'
 import About from '../about'
 import Header from '../header'
+import Footer from '../footer'
 import Contact from '../contact'
 import Projects from '../projects'
 
@@ -25,7 +26,7 @@ class App extends React.Component{
         <BrowserRouter>
           <div>
 
-            <div className="header-nav">
+            <div className="header">
               <Header />
             </div>
 
@@ -39,6 +40,9 @@ class App extends React.Component{
               <Route exact path='/contact'
                 component={Contact} />
 
+            <div className='footer'>
+              <Footer />
+            </div>
           </div>
         </BrowserRouter>
       </div>
