@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+import './styles.scss'
 
 import * as util from '../../lib/util.js'
 
@@ -22,7 +23,6 @@ class App extends React.Component{
   render(){
     return(
       <main>
-      <div className = "header-div">
         <BrowserRouter>
           <div>
 
@@ -45,7 +45,6 @@ class App extends React.Component{
             </div>
           </div>
         </BrowserRouter>
-      </div>
       </main>
     )
   }
