@@ -12,7 +12,15 @@ class Projects extends React.Component{
               <img src={require('../../assets/gourmet-swap.png')} alt='gourmet swap icon' className='gs-icon' />
               <h3 className='title'> Gourmet Swap </h3>
             </a>
-            <h4> Description </h4>
+            <h4>
+                <a className='github-icon' href='https://github.com/amandakoster/GourmetSwap-frontend' target='_#'>
+                  <i className="fa fa-github" aria-hidden="true"></i>
+                </a>
+                <a className='github-icon' href='https://github.com/0smium/GourmetSwap-backend' target='_#'>
+                  <i className="fa fa-github" aria-hidden="true"></i>
+                </a>
+                  HTML5, SCSS, MongoDB, JavaScript, React, 401 Project
+            </h4>
           </li>
 
           <li className='seattle-reads'>
@@ -20,7 +28,12 @@ class Projects extends React.Component{
               <img src={require('../../assets/seattle-reads.png')} alt='graph of library checkouts' className='sr-icon' />
               <h3 className='title'> Seattle Reads </h3>
             </a>
-            <h4> Description </h4>
+            <h4>
+                <a className='github-icon' href='https://github.com/Cadburylion/Seattle-Reads' target='_#'>
+                  <i className="fa fa-github" aria-hidden="true"></i>
+                </a>
+                  HTML, CSS, JavaScript, jQuery, MVC, 301 Project
+            </h4>
           </li>
 
           <li className='guardians'>
@@ -28,8 +41,14 @@ class Projects extends React.Component{
               <img src={require('../../assets/goat-shadow.png')} alt='goat-icon' className='gog-icon' />
               <h3 className='title'> Guardians of the Goats </h3>
             </a>
-            <h4> Description </h4>
+            <h4>
+                <a className='github-icon' href='https://github.com/izzybaer/guardians-of-the-goats' target='_#'>
+                  <i className="fa fa-github" aria-hidden="true"></i>
+                </a>
+                  HTML, CSS, JavaScript, Responsive, 201 Project
+            </h4>
           </li>
+
         </ul>
       </section>
     )

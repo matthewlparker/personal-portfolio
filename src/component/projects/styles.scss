@@ -60,6 +60,11 @@
   transform: translateY(100%);
 }
 
+.featured-work h4 a {
+  min-height: auto;
+  display: inline-block;
+}
+
 .featured-work li:hover > a h3{
   transform: scale(.9, .9);
 }
@@ -79,4 +84,17 @@
 .guardians, .guardians h3 {
   color: white;
   background: $color-darkgrey;
+}
+
+
+.featured-work .fa {
+  color: $color-white;
+  font-size: 1em;
+  text-align: right;
+  padding-right: $pad;
+}
+
+.featured-work .fa:hover {
+  color: $color-primary;
+  transition: all 0.2s ease;
 }
