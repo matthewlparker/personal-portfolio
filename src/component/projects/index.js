@@ -4,6 +4,15 @@ import React from 'react'
 class Projects extends React.Component{
   render() {
     return(
+      <main className='main'>
+      <div className='intro'>
+        <header className='group'>
+          <h1>React & Full-Stack Developer</h1>
+          <ul className='intro-list'>
+            <li> Producing high quality responsive websites and exceptional user experiences</li>
+          </ul>
+        </header>
+      </div>
       <section className='featured-work'>
 
         <ul className='projects'>
@@ -51,6 +60,7 @@ class Projects extends React.Component{
 
         </ul>
       </section>
+      </main>
     )
   }
 }

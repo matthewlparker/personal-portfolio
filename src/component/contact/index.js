@@ -20,24 +20,6 @@ class Contact extends React.Component{
     this.setState({[name]: value})
   }
 
-  // handleSubmit(e){
-  //   e.preventDefault()
-  //   console.log(this.setState())
-  //   this.setState({
-  //     name: this.state.name,
-  //     email: this.state.email,
-  //     password: this.state.password,
-  //   })
-  // }
-
-  // <form method='post' action='http://myformmailer.localhost:3000/submit'>
-    // <label for='msg'>Message:</label>
-    // <textarea id='msg' name='User Message'></textarea>
-  //   <button type='submit'
-  //   className='contact-form-submit-button'> send </button>
-  // </form>
-
-
 
   render(){
     return(
