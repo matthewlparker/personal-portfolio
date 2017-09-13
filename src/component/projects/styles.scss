@@ -33,11 +33,20 @@
   // max-width: 960px;
 }
 
-.intro .group .portfolio-button {
+.intro .group .portfolio-button, {
   margin-top: .5em;
   padding: 1em;
   padding-bottom: .5em;
-  transition-duratin: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.portfolio-button {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.portfolio-button:hover > .fa-angle-down {
+  color: $color-secondary;
 }
 
 .featured-work {
@@ -141,4 +150,11 @@
 .featured-work .fa:hover {
   color: $color-primary;
   transition: all 0.2s ease;
+}
+
+.fa-angle-down {
+  display: block;
+  font-size: 1em;
+  color: $color-white;
+  transition-duration: 0.3s;
 }

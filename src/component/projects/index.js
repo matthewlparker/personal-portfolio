@@ -8,15 +8,10 @@ class Projects extends React.Component{
   render() {
 
     let navToPortfolio = () => {
-      console.log('hi')
-      // let scrollToElement = document.getElementById('portfolio')
-      // e.preventDefault()
-      // TweenLite.to(window, 2, {scrollTo:'#portfolio'})
       scroller.scrollTo('portfolio', {
         duration: 500,
         delay: 0,
         smooth: true,
-        // containerId: 'portfolio',
         offset: 0,
       })
     }
@@ -32,6 +27,7 @@ class Projects extends React.Component{
             </ul>
             <a className='portfolio-button' href='#' onClick={navToPortfolio} title='View portfolio items'>
               View Portfolio
+              <i className="fa fa-angle-down" aria-hidden="true"></i>
             </a>
           </header>
         </div>
