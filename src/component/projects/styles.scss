@@ -33,8 +33,20 @@
   // max-width: 960px;
 }
 
+.intro .group .portfolio-button {
+  margin-top: .5em;
+  padding: 1em;
+  padding-bottom: .5em;
+  transition-duratin: 0.3s;
+}
+
 .featured-work {
   display: block;
+}
+
+.featured-work h2 {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
 }
 
 .featured-work ul {
