@@ -1,54 +1,82 @@
-.projects {
-  height: 100%;
-  width: 100%;
-  border: 1px solid red;
+@import "vars";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.projects a {
+.featured-work {
+  display: block;
+}
+
+.featured-work ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.featured-work li {
+  margin: 0;
+  padding: 0;
   display: inline-block;
-  border: 1px solid blue;
   width: calc(100%/3);
   height: 270px;
   overflow: hidden;
+  position: relative;
+  word-break: break-word;
 }
 
-.projects a:hover > .project h5 {
-  transform: scale(.8, .8);
+.featured-work li a {
+  display: block;
+  position: relative;
+  min-height: 270px;
+  text-align: center;
 }
 
-.projects a:hover > .project h4 {
-  transform: translateY(-30px)
-}
-
-.project h5 {
+.featured-work li a h3 {
   line-height: 270px;
   text-align: center;
-  transition: transform .2s;
+  transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
 }
 
-.project h4 {
-  // display: none;
+.featured-work li h4 {
+  color: white;
   position: absolute;
-  // float: left;
-  // width: 100px;
-  border: 1px solid green;
-  top: 270px;
-  -webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1em;
+  line-height: 1.4;
+  background: rgba(0, 0, 0, 0.75);
+  transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  transform: translateY(100%);
 }
 
-.project {
-  position: relative;
-  // float: right;
-  -webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-  margin-bottom: -10px;
+.featured-work li:hover > a h3{
+  transform: scale(.9, .9);
 }
 
-.project img {
+.featured-work li:hover > h4{
+  transform: translateY(0%);
+}
+
+.projects img {
   display: none;
+}
+
+.seattle-reads {
+  background: #F6F6F6;
+}
+
+.guardians, .guardians h3 {
+  color: white;
+  background: $color-darkgrey;
 }
