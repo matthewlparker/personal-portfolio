@@ -10,12 +10,19 @@
   border: 1px solid red;
 }
 
-.project {
+.projects a {
   display: inline-block;
   border: 1px solid blue;
   width: calc(100%/3);
+  height: 270px;
 }
 
+.project h5 {
+  line-height: 270px;
+  text-align: center;
+}
+
+
 .project img {
-  width: 10px;
+  display: none;
 }

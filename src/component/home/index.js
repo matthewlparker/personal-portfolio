@@ -1,10 +1,14 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
+import './styles.scss'
+
 export default class Home extends React.Component{
   render(){
     return(
-      <h1> SDG </h1>
+      <div className='header-title'>
+        <h1> SDG </h1>
+      </div>
     )
   }
 }

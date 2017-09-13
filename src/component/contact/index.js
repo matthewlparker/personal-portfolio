@@ -31,8 +31,8 @@ class Contact extends React.Component{
   // }
 
   // <form method='post' action='http://myformmailer.localhost:3000/submit'>
-  //   <label for='msg'>Message:</label>
-  //   <textarea id='msg' name='User Message'></textarea>
+    // <label for='msg'>Message:</label>
+    // <textarea id='msg' name='User Message'></textarea>
   //   <button type='submit'
   //   className='contact-form-submit-button'> send </button>
   // </form>
@@ -43,14 +43,48 @@ class Contact extends React.Component{
     return(
       <div>
 
+      <form method='post' action='https://formspree.io/matthewleonparker@outlook.com'>
 
-      <a id="foxyform_embed_link_896108" href="http://www.foxyform.com/"></a>
-      {(function(d, t){
-        var g = d.createElement(t),
-          s = d.getElementsByTagName(t)[0]
-        g.src = 'http://www.foxyform.com/js.php?id=896108&sec_hash=257884cac84&width=350px'
-        s.parentNode.insertBefore(g, s)
-      }(document, 'script'))}
+        <label htmlFor='name'>
+          Your name
+        </label>
+        <input
+          type='text'
+          id='name'
+          name='name'
+          placeholder='eg. matthew parker'
+        />
+
+        <label htmlFor='email'>
+          Email address
+        </label>
+        <input
+          type='text'
+          id='email'
+          name='email'
+          placeholder='eg. hello@matthewparker.com'
+        />
+
+        <label htmlFor='msg'>
+          Message:
+        </label>
+        <textarea
+          id='msg'
+          name='User Message'>
+        </textarea>
+
+        <input
+          type="hidden"
+          name="_next"
+          value="http://localhost:8080/projects"
+        />
+
+        <button type='submit'>
+          Send
+        </button>
+      </form>
+
+
       </div>
     )
   }
