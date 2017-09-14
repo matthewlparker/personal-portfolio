@@ -76,12 +76,14 @@
   -o-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   -webkit-transition: all .3s ease-in-out;
+  text-transform: uppercase;
 }
 
-.nav-field ul li a {
+.nav-field ul li Link {
   color: $color-white;
 }
 
-.nav-field ul li a:hover {
+.nav-field ul li Link:hover {
   color: $color-secondary;
+
 }

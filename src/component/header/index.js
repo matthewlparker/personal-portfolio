@@ -13,19 +13,20 @@ export default class Header extends React.Component{
     return(
       <div className='header-field'>
 
-        <a className='logo-field' href='#'>
-          <div className='running-lion'></div>
-          <div className='logo-name'>
-            <h1> Matthew Parker </h1>
-            <h2> React & Full-Stack Developer </h2>
-          </div>
-        </a>
+
+          <Link to='/projects' className='logo-field'>
+            <div className='running-lion'></div>
+            <div className='logo-name'>
+              <h1> Matthew Parker </h1>
+              <h2> React & Full-Stack Developer </h2>
+            </div>
+          </Link>
+
 
         <nav className='nav-field'>
           <ul>
-            <li><Link to='/home'> Home </Link></li>
-            <li><Link to='/projects'> Projects </Link></li>
             <li><Link to='/about'> About </Link></li>
+            <li><Link to='/portfolio'> Portfolio </Link></li>
             <li><Link to='/contact'> Contact Me </Link></li>
           </ul>
         </nav>

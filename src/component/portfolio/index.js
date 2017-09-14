@@ -3,7 +3,7 @@ import React from 'react'
 import Scroll from 'react-scroll'
 import {scroller} from 'react-scroll'
 
-class Projects extends React.Component{
+class Portfolio extends React.Component{
 
   render() {
 
@@ -19,7 +19,7 @@ class Projects extends React.Component{
     return(
       <main className='main'>
 
-        <div className='intro'>
+        <div className='intro front'>
           <header className='group'>
             <h1>React & Full-Stack Developer</h1>
             <ul className='intro-list'>
@@ -78,7 +78,7 @@ class Projects extends React.Component{
               </h4>
             </li>
 
-            
+
 
           </ul>
         </section>
@@ -87,4 +87,4 @@ class Projects extends React.Component{
   }
 }
 
-export default Projects
+export default Portfolio

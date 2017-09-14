@@ -11,7 +11,7 @@ import About from '../about'
 import Header from '../header'
 import Footer from '../footer'
 import Contact from '../contact'
-import Projects from '../projects'
+import Portfolio from '../portfolio'
 
 class App extends React.Component{
   constructor(props){
@@ -26,19 +26,13 @@ class App extends React.Component{
         <BrowserRouter>
           <div>
 
-            <div className="header">
+            <div className="app-header">
               <Header />
             </div>
 
-
-              <Route exact path='/home'
-                component={Home} />
-              <Route exact path='/projects'
-                component={Projects} />
-              <Route exact path='/about'
-                component={About} />
-              <Route exact path='/contact'
-                component={Contact} />
+              <Route exact path='/about' component={About} />
+              <Route exact path='/projects' component={Portfolio} />
+              <Route exact path='/contact'component={Contact} />
 
             <div className='footer'>
               <Footer />
