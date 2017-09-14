@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDom from 'react-dom'
+import {connect} from 'react-redux'
 import './styles.scss'
 
 import * as util from '../../lib/util.js'
@@ -17,11 +17,12 @@ class App extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      route: '',
+      route: this.props.route || '/',
     }
   }
 
   render(){
+    console.log('App state:', this.props.route)
     return(
       <main>
         <BrowserRouter>
@@ -30,6 +31,7 @@ class App extends React.Component{
             <div className="app-header">
               <Header />
             </div>
+
 
               <Route exact path='/about' component={About} />
               <Route exact path='/' component={Portfolio} />
@@ -45,4 +47,11 @@ class App extends React.Component{
   }
 }
 
-export default App
+let mapStateToProps = (state) => ({
+  route: state.route,
+})
+
+let mapDispatchToProps = (dispatch) => ({
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

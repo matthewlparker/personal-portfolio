@@ -11,24 +11,14 @@ import Home from '../home'
 class Header extends React.Component{
   constructor(props){
     super(props)
-
-    this.handleRoute = this.handleRoute.bind(this)
   }
 
-  handleRoute(e){
-    // e.preventDefault()
-    // let {name} = e.target
-    // this.props.routeToSwitch(name)
-  }
-
-    // <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
   render() {
-
+    console.log('Header props: ', this.props.route)
     return(
 
       <div className='header-field'>
-
 
         <Link to='/portfolio' className='logo-field'>
           <div className='running-lion'></div>
@@ -41,9 +31,19 @@ class Header extends React.Component{
 
         <nav className='nav-field'>
           <ul>
-            <li><Link to='/about'> About </Link></li>
-            <li><Link to='/'> Portfolio </Link></li>
-            <li><Link to='/contact'> Contact Me </Link></li>
+
+            <li>
+              <Link to='/about' className='about' onClick={this.props.routeToAbout}> About </Link>
+            </li>
+
+            <li>
+              <Link to='/' className='portfolio' onClick={this.props.routeToPortfolio}> Portfolio </Link>
+            </li>
+
+            <li>
+              <Link to='/contact' className='contact' onClick={this.props.routeToContact}> Contact Me </Link>
+            </li>
+
           </ul>
         </nav>
 
@@ -57,6 +57,9 @@ let mapStateToProps = (state) => ({
 })
 
 let mapDispatchToProps = (dispatch) => ({
+  routeToAbout: () => dispatch(route.switchRoute('/about')),
+  routeToPortfolio: () => dispatch(route.switchRoute('/')),
+  routeToContact: () => dispatch(route.switchRoute('/contact')),
   routeToSwitch: (desiredRoute) => dispatch(route.switchRoute(desiredRoute)),
 })
 
