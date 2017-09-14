@@ -1,0 +1,159 @@
+@import "vars";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.intro {
+  padding: 40px 20px 30px 20px;
+  background: $color-primary;
+}
+
+.group {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 135px 10px 155px 10px;
+  text-align: center;
+}
+
+.group li {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2em;
+  color: $color-white;
+}
+
+.group h1 {
+  font-size: 2.5em;
+  // max-width: 960px;
+}
+
+.portfolio-button {
+  width: 170px;
+  margin: 0 auto;
+  margin-top: 1em;
+  padding: 1em;
+  padding-bottom: .5em;
+  transition-duration: 0.3s;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+
+.portfolio-button:hover > .fa-angle-down {
+  color: $color-secondary;
+}
+
+.featured-work {
+  display: block;
+}
+
+.featured-work h2 {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.featured-work ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.featured-work li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: calc(100%/3);
+  height: 270px;
+  overflow: hidden;
+  position: relative;
+  word-break: break-word;
+}
+
+.featured-work li a {
+  display: block;
+  position: relative;
+  min-height: 270px;
+  text-align: center;
+}
+
+.featured-work li a h3 {
+  line-height: 270px;
+  text-align: center;
+  transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+}
+
+.featured-work li h4 {
+  color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1em;
+  line-height: 1.4;
+  background: rgba(0, 0, 0, 0.75);
+  transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  transform: translateY(100%);
+}
+
+.featured-work h4 a {
+  min-height: auto;
+  display: inline-block;
+}
+
+.featured-work li:hover > a h3{
+  transform: scale(.9, .9);
+}
+
+.featured-work li:hover > h4{
+  transform: translateY(0%);
+}
+
+.projects img {
+  display: none;
+}
+
+.seattle-reads {
+  // background: #F6F6F6;
+  background: $color-black;
+}
+
+.seattle-reads h3{
+  color: white;
+}
+
+.guardians, .guardians h3 {
+  color: white;
+  background: $color-grey;
+}
+
+
+.featured-work .fa {
+  color: $color-white;
+  font-size: 1em;
+  text-align: right;
+  padding-right: $pad;
+}
+
+.featured-work .fa:hover {
+  color: $color-primary;
+  transition: all 0.2s ease;
+}
+
+.fa-angle-down {
+  display: block;
+  font-size: 1em;
+  color: $color-white;
+  transition-duration: 0.3s;
+}

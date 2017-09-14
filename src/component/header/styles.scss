@@ -1,0 +1,89 @@
+@import "vars";
+
+.header-field{
+  background-color: $color-primary;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px 20px 0px 20px;
+
+}
+
+.logo-field {
+  display: inline-block;
+  zoom: 1;
+  vertical-align: middle;
+}
+
+.logo-field h1 {
+  display: block;
+  font-weight: 900;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 22.14px;
+}
+.logo-field h2 {
+  display: block;
+  color: $color-white;
+  font-size: 1em;
+}
+
+.logo-name {
+  display: inline-block;
+  line-height: 1.4;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.running-lion{
+  display: inline-block;
+  vertical-align: bottom;
+  width: 50px;
+  height: 50px;
+  background: white;
+
+  -webkit-mask: url(../../assets/running-lion.svg) no-repeat 50% 50%;
+  mask: url(../../assets/running-lion.svg) no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+}
+
+.logo-field:hover > .running-lion{
+  background: $color-secondary;
+  transition-duratin: .3sec;
+  background-size: cover;
+}
+
+.nav-field {
+  display: block;
+  position: relative;
+  top: 7px;
+  float: right;
+  height: 100%;
+}
+
+.nav-field ul li {
+  width: auto;
+  max-width: 100%;
+  display: inline-block;
+  zoom: 1;
+  vertical-align: middle;
+  transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  text-transform: uppercase;
+}
+
+.nav-field ul li Link {
+  color: $color-white;
+}
+
+.nav-field ul li Link:hover {
+  color: $color-secondary;
+
+}

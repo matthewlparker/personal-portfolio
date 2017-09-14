@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import Header from './component/header'
+import App from './component/app'
 import {Provider} from 'react-redux'
 import storeCreate from './lib/store-create'
+import './style/main.scss'
 
 let AppContainer = () => (
   <Provider store = {storeCreate()}>
-    <Header />
+    <App />
   </Provider>
 )
 
