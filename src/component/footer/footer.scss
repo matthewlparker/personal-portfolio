@@ -1,7 +1,12 @@
 @import "vars";
 
 .footer {
-  text-align: center;
+  padding-top: 6em;
+  background: $color-darkgrey;
+  position: relative;
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 2em 20px 20px 20px;
 }
 
 .footer a {
@@ -10,11 +15,80 @@
   margin: .3em;
 }
 
-.fa {
-  font-size: 1.5em;
+.footer a:hover {
+  color: $color-primary;
+  transition: all 0.2s ease;
 }
 
-.fa:hover {
+.footer p{
+  color: white;
+  font-size: .875em;
+}
+
+.links a {
+ font-weight: 700;
+}
+
+.bio-field {
+  width: 30%;
+  display: inline-block;
+}
+
+.bio-info {
+  margin-bottom: 1em;
+  font-size: 1em;
+}
+
+.social-links {
+  display: inline-block;
+  zoom: 1;
+  margin-bottom: 2em;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 30%;
+  vertical-align: top;
+}
+
+.social-links li {
+  margin-bottom: 1em;
+}
+
+.social-links a {
+  display: inline-block;
+}
+
+.social-links p {
+  display: inline-block;
+  width: 80%;
+  vertical-align: top;
+}
+
+.site-links {
+  width: 30%;
+  display: inline-block;
+  zoom: 1;
+  vertical-align: top;
+}
+
+.site-links a {
+  margin-left: 0;
+  margin-bottom: .5em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.site-links p {
+  font-size: .875em;
+  margin-bottom: 1em;
+  display: block;
+}
+
+.footer .fa {
+  font-size: 1.5em;
+  color: $color-white;
+}
+
+.footer .fa:hover {
   color: $color-primary;
   transition: all 0.2s ease;
 }
