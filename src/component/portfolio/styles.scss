@@ -9,13 +9,17 @@
 .intro {
   padding: 40px 20px 30px 20px;
   background: $color-primary;
+  height: calc(90vh - 90px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .group {
   width: 100%;
   max-width: 1150px;
   margin: 0 auto;
-  padding: 135px 10px 155px 10px;
+  padding: 40px 10px;
   text-align: center;
 }
 
