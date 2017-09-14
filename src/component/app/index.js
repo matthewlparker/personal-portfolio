@@ -17,9 +17,15 @@ class App extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      route: '',
+      route: '/about',
+      hello: '',
     }
   }
+
+  componentWillMount(){
+    console.log(this.state)
+  }
+
   render(){
     return(
       <main>
@@ -29,8 +35,10 @@ class App extends React.Component{
             <div className="app-header">
               <Header />
             </div>
+              {util.renderIf(this.state.route === '/about',
+                <About
+              />)}
 
-              <Route exact path='/about' component={About} />
               <Route exact path='/portfolio' component={Portfolio} />
               <Route exact path='/contact'component={Contact} />
 
