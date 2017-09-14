@@ -54,6 +54,7 @@
 
 .featured-work {
   display: block;
+  background: $color-darkgrey;
 }
 
 .featured-work h2 {
@@ -128,8 +129,11 @@
   display: none;
 }
 
+.gourmet-swap {
+  background: $color-white;
+}
+
 .seattle-reads {
-  // background: #F6F6F6;
   background: $color-black;
 }
 

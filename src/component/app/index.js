@@ -34,7 +34,7 @@ class App extends React.Component{
               <Route exact path='/portfolio' component={Portfolio} />
               <Route exact path='/contact'component={Contact} />
 
-            <div className='footer'>
+            <div className='app-footer'>
               <Footer />
             </div>
           </div>

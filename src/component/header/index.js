@@ -14,7 +14,7 @@ export default class Header extends React.Component{
       <div className='header-field'>
 
 
-          <Link to='/projects' className='logo-field'>
+          <Link to='/portfolio' className='logo-field'>
             <div className='running-lion'></div>
             <div className='logo-name'>
               <h1> Matthew Parker </h1>
