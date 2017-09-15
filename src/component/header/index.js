@@ -32,7 +32,7 @@ class Header extends React.Component{
 
       <div className='header-field'>
 
-        <Link to='/' className='logo-field'>
+        <Link to='/' className='logo-field' onClick={this.props.routeToPortfolio}>
           <div className='running-lion'></div>
           <div className='logo-name'>
             <h1> Matthew Parker </h1>
