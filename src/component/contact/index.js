@@ -57,7 +57,7 @@ class Contact extends React.Component{
         <input
           type="hidden"
           name="_next"
-          value="http://localhost:8080/projects"
+          value="https://matthew-parker-portfolio.herokuapp.com/"
         />
 
         <button type='submit'>
