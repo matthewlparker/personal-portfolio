@@ -36,12 +36,12 @@ class Contact extends React.Component{
 
         <div className='contact-content'>
 
-          <form method='post' action='cadburylion@gmail.com'>
+          <form method='post' action='https://formspree.io/cadburylion@gmail.com'>
 
             <p className='contact-about-you'>
               About You
             </p>
-            <label htmlFor='name'>
+            <label className='contact-info-label' htmlFor='name'>
               Your name
             </label>
             <input
@@ -51,7 +51,7 @@ class Contact extends React.Component{
               placeholder='eg. matthew parker'
             />
 
-            <label htmlFor='email'>
+            <label className='contact-info-label' htmlFor='email'>
               Email address
             </label>
             <input
