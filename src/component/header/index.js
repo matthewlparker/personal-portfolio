@@ -1,26 +1,38 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {BrowserRouter, Link} from 'react-router-dom'
+import * as util from '../../lib/util.js'
 import * as route from '../../action/route.js'
+import {BrowserRouter, Link} from 'react-router-dom'
 
 import './styles.scss'
 
 import Home from '../home'
 
 
+
+
 class Header extends React.Component{
   constructor(props){
     super(props)
+    this.state = {
+      route: this.props.route || '/' ,
+    }
   }
 
+  componentWillMount(){
+    this.setState({route: document.location.href.split(8080)[1]})
+  }
 
   render() {
-    console.log('Header props: ', this.props.route)
+    console.log('Header rendered with these props: ', this.props.route)
+
+    let pathname = document.location.href.split(8080)[1]
+    console.log('pathname', pathname)
     return(
 
       <div className='header-field'>
 
-        <Link to='/portfolio' className='logo-field'>
+        <Link to='/' className='logo-field'>
           <div className='running-lion'></div>
           <div className='logo-name'>
             <h1> Matthew Parker </h1>
@@ -30,21 +42,38 @@ class Header extends React.Component{
 
 
         <nav className='nav-field'>
+
           <ul>
 
             <li>
-              <Link to='/about' className='about' onClick={this.props.routeToAbout}> About </Link>
+              {util.renderIf(document.location.href.split(8080)[1] === '/about',
+                <Link to='/about' className='about current' onClick={this.props.routeToAbout}> About </Link>
+              )}
+              {util.renderIf(document.location.href.split(8080)[1] !== '/about',
+                <Link to='/about' className='about' onClick={this.props.routeToAbout}> About </Link>
+              )}
             </li>
 
             <li>
-              <Link to='/' className='portfolio' onClick={this.props.routeToPortfolio}> Portfolio </Link>
+              {util.renderIf(document.location.href.split(8080)[1] === '/',
+                <Link to='/' className='portfolio current' onClick={this.props.routePortfolio}> Portfolio </Link>
+              )}
+              {util.renderIf(document.location.href.split(8080)[1] !== '/',
+                <Link to='/' className='portfolio' onClick={this.props.routeToPortfolio}> Portfolio </Link>
+              )}
             </li>
 
             <li>
-              <Link to='/contact' className='contact' onClick={this.props.routeToContact}> Contact Me </Link>
+              {util.renderIf(document.location.href.split(8080)[1] === '/contact',
+                <Link to='/contact' className='contact current' onClick={this.props.routeToContact}> Contact </Link>
+              )}
+              {util.renderIf(document.location.href.split(8080)[1] !== '/contact',
+                <Link to='/contact' className='contact' onClick={this.props.routeToContact}> Contact </Link>
+              )}
             </li>
 
           </ul>
+
         </nav>
 
       </div>

@@ -1,8 +1,16 @@
 import './footer.scss'
 import React from 'react'
+import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import * as route from '../../action/route.js'
 
-export default class Footer extends React.Component{
+class Footer extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      route: this.props.route || '/',
+    }
+  }
   render(){
     return(
       <div className='footer'>
@@ -76,15 +84,15 @@ export default class Footer extends React.Component{
         <nav className='site-links'>
           <ul>
             <li>
-              <Link to='/about'>About</Link>
+              <Link to='/about' onClick={this.props.routeToAbout}>About</Link>
               <p> {'Learn about Matthew\'s skills and workflow'} </p>
             </li>
             <li>
-              <Link to='/portfolio'>Portfolio</Link>
+              <Link to='/' onClick={this.props.routeToPortfolio}>Portfolio</Link>
               <p> {'View Matthew\'s web development work'} </p>
             </li>
             <li>
-              <Link to='/contact'>Contact</Link>
+              <Link to='/contact' onClick={this.props.routeToContact}>Contact</Link>
               <p> Send a general message </p>
             </li>
           </ul>
@@ -95,3 +103,16 @@ export default class Footer extends React.Component{
     )
   }
 }
+
+let mapStateToProps = (state) => ({
+  route: state.route,
+})
+
+let mapDispatchToProps = (dispatch) => ({
+  routeToAbout: () => dispatch(route.switchRoute('/about')),
+  routeToPortfolio: () => dispatch(route.switchRoute('/')),
+  routeToContact: () => dispatch(route.switchRoute('/contact')),
+  routeToSwitch: (desiredRoute) => dispatch(route.switchRoute(desiredRoute)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Footer)
