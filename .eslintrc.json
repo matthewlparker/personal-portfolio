@@ -25,6 +25,7 @@
   },
   "globals": {
     "__API_URL__": true,
+    "__EMAIL__": true,
     "__TITLE__": false,
     "__DEBUG__": false,
     "__GOOGLE_CLIENT_ID__": true

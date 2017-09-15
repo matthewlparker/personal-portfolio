@@ -3,6 +3,8 @@ import React from 'react'
 import contactAction from '../../action/contact'
 import {connect} from 'react-redux'
 
+import './styles.scss'
+
 class Contact extends React.Component{
   constructor(props){
     super(props)
@@ -23,48 +25,63 @@ class Contact extends React.Component{
 
   render(){
     return(
-      <div>
-      <form method='post' action='https://formspree.io/matthewleonparker@outlook.com'>
+      <main className='contact-main'>
 
-        <label htmlFor='name'>
-          Your name
-        </label>
-        <input
-          type='text'
-          id='name'
-          name='name'
-          placeholder='eg. matthew parker'
-        />
+        <div className='contact-intro'>
+          <div className='contact-intro-group'>
+            <h1>Contact Matthew</h1>
+            <h2>Send a general message</h2>
+          </div>
+        </div>
 
-        <label htmlFor='email'>
-          Email address
-        </label>
-        <input
-          type='text'
-          id='email'
-          name='email'
-          placeholder='eg. hello@matthewparker.com'
-        />
+        <div className='contact-content'>
 
-        <label htmlFor='msg'>
-          Message:
-        </label>
-        <textarea
-          id='msg'
-          name='User Message'>
-        </textarea>
+          <form method='post' action='cadburylion@gmail.com'>
 
-        <input
-          type="hidden"
-          name="_next"
-          value="https://matthew-parker-portfolio.herokuapp.com/"
-        />
+            <p className='contact-about-you'>
+              About You
+            </p>
+            <label htmlFor='name'>
+              Your name
+            </label>
+            <input
+              type='text'
+              id='name'
+              name='name'
+              placeholder='eg. matthew parker'
+            />
 
-        <button type='submit'>
-          Send
-        </button>
-      </form>
-      </div>
+            <label htmlFor='email'>
+              Email address
+            </label>
+            <input
+              type='text'
+              id='email'
+              name='email'
+              placeholder='eg. email@example.com'
+            />
+
+            <label className='contact-message-header' htmlFor='msg'>
+              Message
+            </label>
+            <textarea
+              id='msg'
+              name='User Message'>
+            </textarea>
+
+            <input
+              type="hidden"
+              name="_next"
+              value="https://matthew-parker-portfolio.herokuapp.com/"
+            />
+
+            <button type='submit'>
+              Send
+            </button>
+          </form>
+
+        </div>
+      </main>
     )
   }
 }

@@ -22,6 +22,7 @@ class App extends React.Component{
   }
 
   render(){
+    console.log('env email:', __EMAIL__)
     console.log('App state:', this.props.route)
     return(
       <main>
