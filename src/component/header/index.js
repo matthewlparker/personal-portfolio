@@ -46,28 +46,28 @@ class Header extends React.Component{
           <ul>
 
             <li>
-              {util.renderIf(document.location.href.split(8080)[1] === '/about',
+              {util.renderIf(document.location.href.split('com')[1] === '/about',
                 <Link to='/about' className='about current' onClick={this.props.routeToAbout}> About </Link>
               )}
-              {util.renderIf(document.location.href.split(8080)[1] !== '/about',
+              {util.renderIf(document.location.href.split('com')[1] !== '/about',
                 <Link to='/about' className='about' onClick={this.props.routeToAbout}> About </Link>
               )}
             </li>
 
             <li>
-              {util.renderIf(document.location.href.split(8080)[1] === '/',
+              {util.renderIf(document.location.href.split('com')[1] === '/',
                 <Link to='/' className='portfolio current' onClick={this.props.routePortfolio}> Portfolio </Link>
               )}
-              {util.renderIf(document.location.href.split(8080)[1] !== '/',
+              {util.renderIf(document.location.href.split('com')[1] !== '/',
                 <Link to='/' className='portfolio' onClick={this.props.routeToPortfolio}> Portfolio </Link>
               )}
             </li>
 
             <li>
-              {util.renderIf(document.location.href.split(8080)[1] === '/contact',
+              {util.renderIf(document.location.href.split('com')[1] === '/contact',
                 <Link to='/contact' className='contact current' onClick={this.props.routeToContact}> Contact </Link>
               )}
-              {util.renderIf(document.location.href.split(8080)[1] !== '/contact',
+              {util.renderIf(document.location.href.split('com')[1] !== '/contact',
                 <Link to='/contact' className='contact' onClick={this.props.routeToContact}> Contact </Link>
               )}
             </li>
