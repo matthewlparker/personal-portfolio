@@ -24,7 +24,7 @@ class Contact extends React.Component{
   render(){
     return(
       <div>
-      <form method='post' action=''>
+      <form method='post' action='https://formspree.io/matthewleonparker@outlook.com'>
 
         <label htmlFor='name'>
           Your name
