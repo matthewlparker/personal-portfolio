@@ -1,0 +1,113 @@
+@import "vars";
+
+.about-intro {
+  position: relative;
+  color: white;
+  background: $color-primary;
+  padding: 80px 80px 30px 80px;
+  text-align: center;
+}
+
+.about-intro h1 {
+  font-size: 2.6em;
+  font-weight: 900;
+  line-height: 1.4;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.about-intro h2 {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: $color-white;
+}
+
+.about-content {
+  margin-top: 4em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  padding-bottom: 5em;
+  max-width: 720px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.about-content h2 {
+  color: $color-black;
+  font-size: 2em;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-top: 1.5em;
+}
+
+.about-content h3 {
+  font-size: 1.4em;
+  font-weight: 900;
+  margin-top: 1.5em;
+}
+
+.about-content a {
+  display: inline-block;
+  color: $color-secondary;
+}
+
+.about-content a:hover {
+  color: $color-primary;
+}
+
+.about-content p {
+  margin-top: 1.5em;
+}
+
+.about-list-title {
+  margin-top: .5em;
+}
+
+.about-content ul, li {
+  list-style: disc;
+
+}
+
+.about-content ul li li {
+  list-style: circle;
+}
+
+.about-avatar {
+  display: inline-block;
+  width: 140px;
+  height: 140px;
+  float: left;
+  border: 4px solid $color-black;
+  margin-right: 2em;
+}
+
+.about-avatar img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.about-first-paragraph {
+  vertical-align: baseline;
+  display: block;
+}
+
+.about-language-logos {
+  display: block;
+  max-width: 480px;
+  margin-top: 2rem;
+}
+
+.about-language-logo {
+  font-size: 13px;
+  display: inline-block;
+  max-width: 74px;
+  width: 20%;
+  margin-right: 6%;
+  text-align: center;
+}
+
+.about-language-logo img {
+  margin-bottom: .75em;
+}

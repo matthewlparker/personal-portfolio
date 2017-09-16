@@ -72,9 +72,9 @@ form, .meal-form  {
 
 textarea, input {
   padding: $pad;
-  border: 1px solid $color-lightgrey;
+  border: 1px solid $color-grey;
   margin-bottom: $pad;
-  resize: none;
+  // resize: none;
   overflow: hidden;
 
   &:focus {
@@ -83,6 +83,7 @@ textarea, input {
 
   &::placeholder {
     color: $color-grey;
+    font-size: .8em;
   }
 }
 
