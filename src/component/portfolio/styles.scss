@@ -1,11 +1,5 @@
 @import "vars";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .intro {
   padding: 40px 20px 30px 20px;
   background: $color-primary;
@@ -28,6 +22,7 @@
   padding: 0;
   font-size: 1.2em;
   color: $color-white;
+  list-style: none;
 }
 
 .group h1 {
