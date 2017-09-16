@@ -18,8 +18,8 @@ class Footer extends React.Component{
     let routeToAboutAndScroll = () => {
       this.props.routeToAbout()
       scroller.scrollTo('header-top', {
-        duration: 700,
-        delay: 200,
+        duration: 0,
+        delay: 0,
         smooth: true,
         offset:0,
       })
@@ -28,8 +28,8 @@ class Footer extends React.Component{
     let routeToPortfolioAndScroll = () => {
       this.props.routeToPortfolio()
       scroller.scrollTo('header-top', {
-        duration: 500,
-        delay: 200,
+        duration: 0,
+        delay: 0,
         smooth: true,
         offset:0,
       })
@@ -38,8 +38,8 @@ class Footer extends React.Component{
     let routeToContactAndScroll = () => {
       this.props.routeToContact()
       scroller.scrollTo('header-top', {
-        duration: 600,
-        delay: 200,
+        duration: 0,
+        delay: 0,
         smooth: true,
         offset:0,
       })
