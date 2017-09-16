@@ -2,6 +2,7 @@ import './footer.scss'
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import {scroller} from 'react-scroll'
 import * as route from '../../action/route.js'
 
 class Footer extends React.Component{
@@ -11,7 +12,39 @@ class Footer extends React.Component{
       route: this.props.route || '/',
     }
   }
+
   render(){
+
+    let routeToAboutAndScroll = () => {
+      this.props.routeToAbout()
+      scroller.scrollTo('header-top', {
+        duration: 700,
+        delay: 200,
+        smooth: true,
+        offset:0,
+      })
+    }
+
+    let routeToPortfolioAndScroll = () => {
+      this.props.routeToPortfolio()
+      scroller.scrollTo('header-top', {
+        duration: 500,
+        delay: 200,
+        smooth: true,
+        offset:0,
+      })
+    }
+
+    let routeToContactAndScroll = () => {
+      this.props.routeToContact()
+      scroller.scrollTo('header-top', {
+        duration: 600,
+        delay: 200,
+        smooth: true,
+        offset:0,
+      })
+    }
+
     return(
       <div className='footer'>
         <div className='links'>
@@ -87,15 +120,15 @@ class Footer extends React.Component{
         <nav className='site-links'>
           <ul>
             <li>
-              <Link to='/about' onClick={this.props.routeToAbout}>About</Link>
+              <Link to='/about' onClick={routeToAboutAndScroll}>About</Link>
               <p> {'Learn about Matthew\'s skills and workflow'} </p>
             </li>
             <li>
-              <Link to='/' onClick={this.props.routeToPortfolio}>Portfolio</Link>
+              <Link to='/' onClick={routeToPortfolioAndScroll}>Portfolio</Link>
               <p> {'View Matthew\'s web development work'} </p>
             </li>
             <li>
-              <Link to='/contact' onClick={this.props.routeToContact}>Contact</Link>
+              <Link to='/contact' onClick={routeToContactAndScroll}>Contact</Link>
               <p> Send a general message </p>
             </li>
           </ul>
