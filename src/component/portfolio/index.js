@@ -33,7 +33,7 @@ class Portfolio extends React.Component{
         </div>
 
         <section className='featured-work'>
-          <h2 id='portfolio'>Portfolio</h2>
+          <h2 id='portfolio'></h2>
 
           <ul className='projects'>
             <li className='gourmet-swap'>
