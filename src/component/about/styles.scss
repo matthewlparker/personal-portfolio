@@ -43,7 +43,9 @@
 }
 
 .about-content h3 {
-  
+  font-size: 1.4em;
+  font-weight: 900;
+  margin-top: 1.5em;
 }
 
 .about-content a {
@@ -89,4 +91,23 @@
 .about-first-paragraph {
   vertical-align: baseline;
   display: block;
+}
+
+.about-language-logos {
+  display: block;
+  max-width: 480px;
+  margin-top: 2rem;
+}
+
+.about-language-logo {
+  font-size: 13px;
+  display: inline-block;
+  max-width: 74px;
+  width: 20%;
+  margin-right: 6%;
+  text-align: center;
+}
+
+.about-language-logo img {
+  margin-bottom: .75em;
 }
