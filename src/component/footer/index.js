@@ -78,7 +78,7 @@ class Footer extends React.Component{
               <i className="fa fa-envelope-o" aria-hidden="true"></i>
             </a>
             <p>
-              Send {'Matthew'} an<a href='https://github.com/cadburylion' target='_#'>Email</a>
+              Send {'Matthew'} an<a href='mailto:cadburylion@gmail.com' target='_#'>Email</a>
             </p>
           </li>
 
