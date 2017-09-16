@@ -76,9 +76,7 @@ class Portfolio extends React.Component{
                     HTML, CSS, JavaScript, Responsive, 201 Project
               </h4>
             </li>
-
-
-
+            
           </ul>
         </section>
       </main>
