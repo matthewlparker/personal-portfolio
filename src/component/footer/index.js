@@ -21,6 +21,9 @@ class Footer extends React.Component{
 
             </div>
             <div className='bio'>
+              <div className='bio-avatar'>
+                <img src={require('../../assets/matt-profile.png')} />
+              </div>
               <p className='bio-info'>
                 React & Full-Stack Developer, and graduate of<a href="http://www.codefellows.org/" title="Code Fellows" target="_blank">{'Code Fellows\''}</a>advanced JavaScript program. Matthew combines his education in developing modern websites and writing clean code with a deep drive for excellence to produce high-quality applications and exceptional user experiences.
               </p>
