@@ -1,6 +1,5 @@
 import './styles.scss'
 import React from 'react'
-import Scroll from 'react-scroll'
 import {scroller} from 'react-scroll'
 
 class Portfolio extends React.Component{
