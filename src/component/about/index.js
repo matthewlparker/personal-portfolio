@@ -17,7 +17,7 @@ export default class About extends React.Component{
 
           </div>
           <p className='about-first-paragraph'>
-          I am a React & Full-Stack Developer, graduate of <a href='https://www.code-fellows.org'>{'Code Fellows\''}</a> advanced JavaScript program, and creative writer. When I decided to pursue a career in web development, I quit my job of 5 and a half years in Olympia, and moved to Seattle to dedicate myself to learning these new skills. Now with clean code, modern design, and industry standard tools, I build responsive Full-Stack applications.
+          I am a React & Full-Stack Developer, graduate of <a href='https://www.code-fellows.org'>{'Code Fellows\''}</a> advanced JavaScript program, and creative writer. When I decided to pursue a career in web development, I quit my job of 5 and a half years in Olympia and moved to Seattle to dedicate myself to learning these new skills. Now with clean code, modern design, and industry standard tools, I build responsive Full-Stack applications.
           </p>
 
           <p>For clients and employers I am a developer who can provide:</p>
