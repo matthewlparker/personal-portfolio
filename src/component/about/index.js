@@ -63,29 +63,29 @@ export default class About extends React.Component{
 
           <div className='about-language-logos'>
             <div className='about-language-logo'>
-              <img src={require('../../assets/html5-original.svg')} />
+              <img src={require('../../assets/html5-original.svg')} alt='html 5 logo'/>
               <strong> HTML5 </strong>
             </div>
 
             <div className='about-language-logo'>
-              <img src={require('../../assets/css3-original.svg')} />
+              <img src={require('../../assets/css3-original.svg')} alt='css 3 logo' />
               <strong> CSS3 </strong>
             </div>
 
             <div className='about-language-logo'>
-              <img src={require('../../assets/javascript-original.svg')} />
+              <img src={require('../../assets/javascript-original.svg')} alt='javascript logo' />
               <strong> JavaScript </strong>
             </div>
           </div>
 
           <div className='about-front-end-logos'>
             <div className='about-language-logo'>
-              <img src={require('../../assets/react-original.svg')} />
+              <img src={require('../../assets/react-original.svg')} alt='react logo' />
               <strong> React </strong>
             </div>
 
             <div className='about-language-logo'>
-              <img src={require('../../assets/jquery-original.svg')} />
+              <img src={require('../../assets/jquery-original.svg')} alt='jquery logo' />
               <strong> jQuery </strong>
             </div>
           </div>
@@ -94,12 +94,12 @@ export default class About extends React.Component{
 
           <div className='about-language-logos'>
             <div className='about-language-logo'>
-              <img src={require('../../assets/nodejs-original.svg')} />
+              <img src={require('../../assets/nodejs-original.svg')} alt='node logo' />
               <strong> Node </strong>
             </div>
 
             <div className='about-language-logo'>
-              <img src={require('../../assets/mongodb-original.svg')} />
+              <img src={require('../../assets/mongodb-original.svg')} alt='mongo db logo'/>
               <strong> MongoDB </strong>
             </div>
           </div>

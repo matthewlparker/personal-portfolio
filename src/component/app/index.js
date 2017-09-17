@@ -16,9 +16,6 @@ import Portfolio from '../portfolio'
 class App extends React.Component{
   constructor(props){
     super(props)
-    this.state = {
-      route: this.props.route || '/',
-    }
   }
 
   render(){
@@ -32,14 +29,14 @@ class App extends React.Component{
               <Header />
             </div>
 
-
-              <Route exact path='/about' component={About} />
-              <Route exact path='/' component={Portfolio} />
-              <Route exact path='/contact'component={Contact} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/' component={Portfolio} />
+            <Route exact path='/contact'component={Contact} />
 
             <div className='app-footer'>
               <Footer />
             </div>
+
           </div>
         </BrowserRouter>
       </main>
