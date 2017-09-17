@@ -17,7 +17,7 @@ export default class About extends React.Component{
 
           </div>
           <p className='about-first-paragraph'>
-          I am a React & Full-Stack Developer, graduate of <a href='https://www.code-fellows.org'>{'Code Fellows\''}</a> advanced JavaScript program, and creative writer. When I decided to pursue a career in web development, I quit my job of 5 and a half years in Olympia and moved to Seattle to dedicate myself to learning these new skills. Now with clean code, modern design, and industry standard tools, I build responsive Full-Stack applications.
+          I am a React & Full-Stack Developer, graduate of <a href='https://www.codefellows.org' target='_#'>{'Code Fellows\''}</a> advanced JavaScript program, and creative writer. When I decided to pursue a career in web development, I quit my job of 5 and a half years in Olympia and moved to Seattle to dedicate myself to learning these new skills. Now with clean code, modern design, and industry standard tools, I build responsive Full-Stack applications.
           </p>
 
           <p>For clients and employers I am a developer who can provide:</p>
@@ -53,7 +53,7 @@ export default class About extends React.Component{
 
           <h2>Skills</h2>
           <p>
-            Through my education at <a href='https://www.codefellows.org'>Code Fellows</a> and continual personal study, I have garnered a set of skills that equips me to tackle the problems faced by our increasingly data-driven and technologically-interconnected lives.
+            Through my education at <a href='https://www.codefellows.org' target='_#'>Code Fellows</a> and continual personal study, I have garnered a set of skills that equips me to tackle the problems faced by our increasingly data-driven and technologically-interconnected lives.
           </p>
           <p>
             I now specialize in React and full-stack JavaScript development, but my curiosity and drive for excellence constantly pushes me to learn more.
