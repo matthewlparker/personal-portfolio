@@ -20,11 +20,12 @@ class Header extends React.Component{
   }
 
   componentWillMount(){
-    this.setState({route: document.location.href.split('com')[1]})
+    this.setState({route: document.location.href.split('8080')[1]})
+
   }
 
   render() {
-    let pathname = document.location.href.split('com')[1]
+    let pathname = document.location.href.split('8080')[1]
     return(
 
       <div className='header-field'>
