@@ -13,7 +13,7 @@ class Contact extends React.Component{
       email: '',
       message: '',
     }
-    
+
     this.handleChange = this.handleChange.bind(this)
   }
 
@@ -72,7 +72,7 @@ class Contact extends React.Component{
             <input
               type="hidden"
               name="_next"
-              value="https://matthew-parker-portfolio.herokuapp.com/"
+              value="www.matthewparker.io"
             />
 
             <button type='submit'>
