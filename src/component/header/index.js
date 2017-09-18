@@ -14,7 +14,7 @@ class Header extends React.Component{
   }
 
   componentWillMount(){
-    let pathname = document.location.href.split('com')[1]
+    let pathname = document.location.href.split('io')[1]
 
     if(pathname === '/about'){
       this.props.routeToAbout()
