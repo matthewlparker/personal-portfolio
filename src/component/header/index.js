@@ -12,10 +12,6 @@ import Home from '../home'
 class Header extends React.Component{
   constructor(props){
     super(props)
-    this.state = {
-      hamburger: this.props.hamburger,
-    }
-
     this.handleClick = this.handleClick.bind(this)
   }
 
@@ -35,10 +31,7 @@ class Header extends React.Component{
     this.props.hamburgerSwitch(this.props.hamburger)
   }
 
-
   render() {
-    console.log('this.props.hamburger', this.props.hamburger)
-    console.log('this.state.hamburger', this.state.hamburger)
 
     let aboutClass = this.props.route === '/about' ? 'about current' : 'about'
     let portfolioClass = this.props.route === '/' ? 'portfolio current' : 'portfolio'
@@ -46,7 +39,7 @@ class Header extends React.Component{
 
     return(
 
-      <div className='header-field'>
+      <div className={`header-field ${this.props.hamburger ? 'open' : ''}`}>
       <h2 id='header-top'></h2>
 
         <Link to='/' className='logo-field' onClick={this.props.routeToPortfolio}>
@@ -57,24 +50,27 @@ class Header extends React.Component{
           </div>
         </Link>
 
-        <nav className='nav-field'>
-          <ul className={this.props.hamburger ? 'nav-open' : ''}>
+        <div className={`hamNav ${this.props.hamburger ? 'open' : ''}`} onClick={this.handleClick}>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <nav className={`nav-field ${this.props.hamburger ? 'open' : ''}`}>
+
+          <ul className={`nav-ul ${this.props.hamburger ? 'open' : ''}`}>
             <li>
-              <Link to='/about' className={aboutClass} onClick={this.props.routeToAbout}> About </Link>
+              <Link to='/about' className={aboutClass} onClick={this.props.routeToAbout}> ABOUT </Link>
             </li>
             <li>
-              <Link to='/' className={portfolioClass} onClick={this.props.routeToPortfolio}> Portfolio </Link>
+              <Link to='/' className={portfolioClass} onClick={this.props.routeToPortfolio}> PORTFOLIO </Link>
             </li>
             <li>
-              <Link to='/contact' className={contactClass} onClick={this.props.routeToContact}> Contact </Link>
+              <Link to='/contact' className={contactClass} onClick={this.props.routeToContact}> CONTACT </Link>
             </li>
           </ul>
-            <div className={this.props.hamburger ? 'ham open' : 'ham'} onClick={() => this.handleClick('ham')}>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+
         </nav>
       </div>
     )
