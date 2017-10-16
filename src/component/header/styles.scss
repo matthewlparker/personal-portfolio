@@ -7,10 +7,6 @@
   padding: 20px 20px 0px 20px;
 }
 
-.header-field.header-open {
-  height: 150px;
-}
-
 .running-lion{
   display: inline-block;
   vertical-align: bottom;
@@ -68,20 +64,16 @@
 
 .nav-field.open {
   display: block;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  border: 1px solid red;
+  margin: 15px -20px 0 -20px;
+  clear: both;
 
   ul {
-    display: block;
-    width: 100%;
+    margin: 0;
     li {
-      width: auto;
-      max-width: 100%;
       display: block;
       text-align: center;
       background: $color-darkgrey;
+      margin: 0;
       zoom: 1;
       vertical-align: middle;
       transition: all .3s ease-in-out;
@@ -92,25 +84,19 @@
       font-size: .85em;
       font-weight: 900;
 
-      Link {
+      a {
         color: $color-white;
+        padding: 15px;
+        border-bottom: 1px solid #333;
       }
 
-      Link:hover {
-        color: $color-secondary;
+      a:nth-child(1) {
+        padding-top: 15px;
       }
-    }
-  }
 
-  .nav-ul.open {
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    border: 1px solid red;
-    li {
-      display: block;
-      margin: 0;
+      a.current, a:hover {
+        color: $color-primary;
+      }
     }
   }
 }
@@ -121,7 +107,6 @@
   display: inline-block;
   width: 30px;
   height: 25px;
-  // margin-top: 11.5px;
   top: 13px;
   position: relative;
   float: right;
@@ -197,19 +182,63 @@
   }
 
   .nav-field, .nav-field.open {
-    width: auto;
-    float: right;
     display: inline-block;
     position: relative;
-    // top: 20px;
+    float: right;
+    width: auto;
+    margin: 0;
     .nav-ul, .nav-ul.open {
       display: inline-block;
       li {
         display: inline-block;
         font-size: 12px;
-        padding: 15px 8px;
+        background: none;
         margin: 0;
+        padding: 15px 8px;
+        a {
+          padding: 0;
+          border: none;
+        }
       }
     }
   }
 }
+
+// .nav-field.open {
+//   display: block;
+//   margin: 15px -20px 0 -20px;
+//   clear: both;
+//
+//   ul {
+//     margin: 0;
+//     li {
+//       display: block;
+//       text-align: center;
+//       background: $color-darkgrey;
+//       margin: 0;
+//       zoom: 1;
+//       vertical-align: middle;
+//       transition: all .3s ease-in-out;
+//       -o-transition: all .3s ease-in-out;
+//       -moz-transition: all .3s ease-in-out;
+//       -webkit-transition: all .3s ease-in-out;
+//       text-transform: uppercase;
+//       font-size: .85em;
+//       font-weight: 900;
+//
+//       a {
+//         color: $color-white;
+//         padding: 15px;
+//         border-bottom: 1px solid #333;
+//       }
+//
+//       a:nth-child(1) {
+//         padding-top: 15px;
+//       }
+//
+//       a.current, a:hover {
+//         color: $color-primary;
+//       }
+//     }
+//   }
+// }

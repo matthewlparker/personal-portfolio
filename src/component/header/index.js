@@ -40,7 +40,7 @@ class Header extends React.Component{
     return(
 
       <div className={`header-field ${this.props.hamburger ? 'open' : ''}`}>
-      <h2 id='header-top'></h2>
+        <h2 id='header-top'></h2>
 
         <Link to='/' className='logo-field' onClick={this.props.routeToPortfolio}>
           <div className='running-lion'></div>
