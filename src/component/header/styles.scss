@@ -17,10 +17,10 @@
   mask: url(../../assets/running-lion.svg) no-repeat 50% 50%;
   -webkit-mask-size: cover;
   mask-size: cover;
-  transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
   -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .logo-field {
@@ -57,27 +57,13 @@
   background-size: cover;
 }
 
-li {
-  transition: .25s ease-in;
-}
-
 .nav-field {
   display: none;
-  // ul {
-  //   li:nth-child(1), li:nth-child(3) {
-  //     position: relative;
-  //     left: -100%;
-  //   }
-  //   li:nth-child(2) {
-  //     position: relative;
-  //     left: 150%;
-  //   }
-  // }
 }
-
 
 .nav-field.open {
   display: block;
+  position: relative;
   margin: 15px -20px 0 -20px;
   clear: both;
 
@@ -90,51 +76,44 @@ li {
       margin: 0;
       zoom: 1;
       vertical-align: middle;
-      transition: all .3s ease-in-out;
-      -o-transition: all .3s ease-in-out;
-      -moz-transition: all .3s ease-in-out;
-      -webkit-transition: all .3s ease-in-out;
       text-transform: uppercase;
       font-size: .85em;
       font-weight: 900;
-
+      opacity: 1;
       a {
         color: $color-white;
         padding: 15px;
         border-bottom: 1px solid #333;
       }
 
-      a:nth-child(1) {
-        padding-top: 15px;
-      }
-
       a.current, a:hover {
         color: $color-secondary;
       }
     }
-    // li:nth-child(1), li:nth-child(2), li:nth-child(3) {
-    //   left: 0;
-    // }
   }
 }
 
 /* hamburger icon styles */
 
+.hamNav::before {
+  clear: both;
+}
+
 .hamNav {
   display: inline-block;
+  position: relative;
+  top: 13px;
   width: 30px;
   height: 25px;
-  top: 13px;
-  position: relative;
   float: right;
   cursor: pointer;
 
   span {
     display: block;
     position: absolute;
+    left: 0;
     width: 100%;
     height: 4px;
-    left: 0;
     transition: .25s ease-in-out;
     opacity: 1;
     background: $color-white;
@@ -154,6 +133,10 @@ li {
   top: 18px;
 }
 
+.hamNav.open span {
+  background: $color-secondary;
+}
+
 .hamNav.open span:nth-child(1), .hamNav.open span:nth-child(4) {
   top: 9px;
   left: 50%;
@@ -167,10 +150,6 @@ li {
 
 .hamNav.open span:nth-child(3) {
   transform: rotate(-135deg);
-}
-
-.hamNav.open span {
-  background: $color-secondary;
 }
 
 .current {
@@ -220,42 +199,3 @@ li {
     }
   }
 }
-
-// .nav-field.open {
-//   display: block;
-//   margin: 15px -20px 0 -20px;
-//   clear: both;
-//
-//   ul {
-//     margin: 0;
-//     li {
-//       display: block;
-//       text-align: center;
-//       background: $color-darkgrey;
-//       margin: 0;
-//       zoom: 1;
-//       vertical-align: middle;
-//       transition: all .3s ease-in-out;
-//       -o-transition: all .3s ease-in-out;
-//       -moz-transition: all .3s ease-in-out;
-//       -webkit-transition: all .3s ease-in-out;
-//       text-transform: uppercase;
-//       font-size: .85em;
-//       font-weight: 900;
-//
-//       a {
-//         color: $color-white;
-//         padding: 15px;
-//         border-bottom: 1px solid #333;
-//       }
-//
-//       a:nth-child(1) {
-//         padding-top: 15px;
-//       }
-//
-//       a.current, a:hover {
-//         color: $color-primary;
-//       }
-//     }
-//   }
-// }
