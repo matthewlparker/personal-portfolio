@@ -5,7 +5,22 @@
   max-width: 1080px;
   margin: 0 auto;
   padding: 20px 20px 0px 20px;
+}
 
+.running-lion{
+  display: inline-block;
+  vertical-align: bottom;
+  width: 45px;
+  height: 45px;
+  background: white;
+  -webkit-mask: url(../../assets/running-lion.svg) no-repeat 50% 50%;
+  mask: url(../../assets/running-lion.svg) no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
 }
 
 .logo-field {
@@ -22,10 +37,11 @@
   letter-spacing: 1px;
   line-height: 22.14px;
 }
+
 .logo-field h2 {
   display: block;
   color: $color-white;
-  font-size: 1em;
+  font-size: .875em;
 }
 
 .logo-name {
@@ -33,22 +49,6 @@
   line-height: 1.4;
   margin-left: 8px;
   vertical-align: middle;
-}
-
-.running-lion{
-  display: inline-block;
-  vertical-align: bottom;
-  width: 50px;
-  height: 50px;
-  background: white;
-  -webkit-mask: url(../../assets/running-lion.svg) no-repeat 50% 50%;
-  mask: url(../../assets/running-lion.svg) no-repeat 50% 50%;
-  -webkit-mask-size: cover;
-  mask-size: cover;
-  transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  -webkit-transition: all .3s ease-in-out;
 }
 
 .logo-field:hover > .running-lion{
@@ -63,29 +63,97 @@
   top: 7px;
   float: right;
   height: 100%;
+
+  ul {
+    display: none;
+    li {
+      width: auto;
+      max-width: 100%;
+      display: inline-block;
+      zoom: 1;
+      vertical-align: middle;
+      transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      -webkit-transition: all .3s ease-in-out;
+      text-transform: uppercase;
+      font-size: .85em;
+      font-weight: 900;
+
+      Link {
+        color: $color-white;
+      }
+
+      Link:hover {
+        color: $color-secondary;
+      }
+    }
+  }
+
+  ul.nav-open {
+    display: inline-block;
+  }
+
+  .ham {
+    display: inline-block;
+    width: 30px;
+    height: 20.5px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+
+    span {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      left: 0;
+      transition: .25s ease-in-out;
+      opacity: 1;
+      background: $color-white;
+      border-radius: 9px;
+    }
+  }
 }
 
-.nav-field ul li {
-  width: auto;
-  max-width: 100%;
-  display: inline-block;
-  zoom: 1;
-  vertical-align: middle;
-  transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  -webkit-transition: all .3s ease-in-out;
-  text-transform: uppercase;
-  font-size: .85em;
-  font-weight: 900;
+/* hamburger icon styles */
+
+.ham span:nth-child(1) {
+  top: 0;
 }
 
-.nav-field ul li Link {
-  color: $color-white;
+.ham span:nth-child(2) {
+  top: 9px;
 }
 
-.nav-field ul li Link:hover {
-  color: $color-secondary;
+.ham span:nth-child(3) {
+  top: 9px;
+}
+
+.ham span:nth-child(4) {
+  top: 18px;
+}
+
+.ham.open span:nth-child(1) {
+  top: 9px;
+  left: 50%;
+  width: 0;
+  opacity: 0;
+}
+
+.ham.open span:nth-child(2) {
+  transform: rotate(135deg);
+}
+
+.ham.open span:nth-child(3) {
+  transform: rotate(-135deg);
+}
+
+.ham.open span:nth-child(4) {
+  top: 9px;
+  left: 50%;
+  width: 0;
+  opacity: 0;
 }
 
 .current {
@@ -95,4 +163,26 @@
 .header-top {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+@media only screen and (min-width: 981px){
+
+  .running-lion{
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo-field h2 {
+    font-size: 1em;
+  }
+
+  .nav-field {
+    ul {
+      display: inline-block;
+    }
+    .ham {
+      display: none;
+    }
+  }
 }

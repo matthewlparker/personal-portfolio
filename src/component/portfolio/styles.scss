@@ -1,10 +1,15 @@
 @import "vars";
 
+* {
+  background: $color-primary;
+}
+
 .intro {
   padding: 40px 20px 30px 20px;
   background: $color-primary;
   height: calc(90vh - 90px);
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
