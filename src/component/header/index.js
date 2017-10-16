@@ -13,6 +13,7 @@ class Header extends React.Component{
   constructor(props){
     super(props)
     this.handleClick = this.handleClick.bind(this)
+    this.handleRoute = this.handleRoute.bind(this)
   }
 
   componentWillMount(){
@@ -28,10 +29,18 @@ class Header extends React.Component{
   }
 
   handleClick(){
-    this.props.hamburgerSwitch(this.props.hamburger)
+    this.props.hamburgerSwitch()
   }
 
-  render() {
+  handleRoute(e){
+    e === 'about' ? this.props.routeToAbout()
+    : e === 'portfolio' ? this.props.routeToPortfolio()
+    : e === 'contact' ? this.props.routeToContact()
+    : null
+    this.props.hamburger ? this.handleClick() : null
+  }
+
+  render(){
 
     let aboutClass = this.props.route === '/about' ? 'about current' : 'about'
     let portfolioClass = this.props.route === '/' ? 'portfolio current' : 'portfolio'
@@ -42,7 +51,7 @@ class Header extends React.Component{
       <div className={`header-field ${this.props.hamburger ? 'open' : ''}`}>
         <h2 id='header-top'></h2>
 
-        <Link to='/' className='logo-field' onClick={this.props.routeToPortfolio}>
+        <Link to='/' className='logo-field' onClick={() => this.handleRoute('portfolio')}>
           <div className='running-lion'></div>
           <div className='logo-name'>
             <h1> Matthew Parker </h1>
@@ -61,13 +70,13 @@ class Header extends React.Component{
 
           <ul className={`nav-ul ${this.props.hamburger ? 'open' : ''}`}>
             <li>
-              <Link to='/about' className={aboutClass} onClick={this.props.routeToAbout}> ABOUT </Link>
+              <Link to='/about' className={aboutClass} onClick={() => this.handleRoute('about')}> ABOUT </Link>
             </li>
             <li>
-              <Link to='/' className={portfolioClass} onClick={this.props.routeToPortfolio}> PORTFOLIO </Link>
+              <Link to='/' className={portfolioClass} onClick={() => this.handleRoute('portfolio')}> PORTFOLIO </Link>
             </li>
             <li>
-              <Link to='/contact' className={contactClass} onClick={this.props.routeToContact}> CONTACT </Link>
+              <Link to='/contact' className={contactClass} onClick={() => this.handleRoute('contact')}> CONTACT </Link>
             </li>
           </ul>
 
