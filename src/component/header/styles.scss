@@ -53,12 +53,26 @@
 
 .logo-field:hover > .running-lion{
   background: $color-secondary;
-  transition-duratin: .3sec;
+  transition-duration: .3sec;
   background-size: cover;
+}
+
+li {
+  transition: .25s ease-in;
 }
 
 .nav-field {
   display: none;
+  // ul {
+  //   li:nth-child(1), li:nth-child(3) {
+  //     position: relative;
+  //     left: -100%;
+  //   }
+  //   li:nth-child(2) {
+  //     position: relative;
+  //     left: 150%;
+  //   }
+  // }
 }
 
 
@@ -98,6 +112,9 @@
         color: $color-primary;
       }
     }
+    // li:nth-child(1), li:nth-child(2), li:nth-child(3) {
+    //   left: 0;
+    // }
   }
 }
 
