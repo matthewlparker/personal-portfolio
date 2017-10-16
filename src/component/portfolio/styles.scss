@@ -1,10 +1,15 @@
 @import "vars";
 
+* {
+  background: $color-primary;
+}
+
 .intro {
   padding: 40px 20px 30px 20px;
   background: $color-primary;
   height: calc(90vh - 90px);
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -15,19 +20,16 @@
   margin: 0 auto;
   padding: 40px 10px;
   text-align: center;
-}
-
-.group li {
-  margin: 0;
-  padding: 0;
-  font-size: 1.2em;
-  color: $color-white;
-  list-style: none;
-}
-
-.group h1 {
-  font-size: 2.5em;
-  // max-width: 960px;
+  h1 {
+    font-size: 2.5em;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    color: $color-white;
+    list-style: none;
+  }
 }
 
 .portfolio-button {
@@ -50,66 +52,59 @@
 .featured-work {
   display: block;
   background: $color-darkgrey;
-}
-
-.featured-work h2 {
-  position: absolute !important;
-  clip: rect(1px, 1px, 1px, 1px);
-}
-
-.featured-work ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-.featured-work li {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-  width: calc(100%/3);
-  height: 270px;
-  overflow: hidden;
-  position: relative;
-  word-break: break-word;
-}
-
-.featured-work li a {
-  display: block;
-  position: relative;
-  min-height: 270px;
-  text-align: center;
-}
-
-.featured-work li a h3 {
-  line-height: 270px;
-  text-align: center;
-  transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  -webkit-transition: all .3s ease-in-out;
-}
-
-.featured-work li h4 {
-  color: white;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 1em;
-  line-height: 1.4;
-  background: rgba(0, 0, 0, 0.75);
-  transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  -webkit-transition: all .3s ease-in-out;
-  transform: translateY(100%);
-}
-
-.featured-work h4 a {
-  min-height: auto;
-  display: inline-block;
+  h2 {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: calc(100%/3);
+    height: 270px;
+    overflow: hidden;
+    position: relative;
+    word-break: break-word;
+    h4 {
+      color: $color-white;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1em;
+      line-height: 1.4;
+      background: rgba(0, 0, 0, 0.75);
+      transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      -webkit-transition: all .3s ease-in-out;
+      transform: translateY(100%);
+      a{
+        min-height: auto;
+        display: inline-block;
+      }
+    }
+    a {
+      display: block;
+      position: relative;
+      min-height: 270px;
+      text-align: center;
+      h3 {
+        line-height: 270px;
+        text-align: center;
+        transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -webkit-transition: all .3s ease-in-out;
+      }
+    }
+  }
 }
 
 .featured-work li:hover > a h3{
@@ -135,14 +130,13 @@
 
 .seattle-reads {
   background: $color-black;
-}
-
-.seattle-reads h3{
-  color: white;
+  h3 {
+    color: $color-white;
+  }
 }
 
 .guardians, .guardians h3 {
-  color: white;
+  color: $color-white;
   background: $color-grey;
 }
 
@@ -164,4 +158,13 @@
   font-size: 1em;
   color: $color-white;
   transition-duration: 0.3s;
+}
+
+@media only screen and (max-width: 580px){
+  .projects {
+    li {
+      display: block;
+      width: 100%;
+    }
+  }
 }
