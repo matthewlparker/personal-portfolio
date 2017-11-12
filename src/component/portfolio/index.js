@@ -1,6 +1,7 @@
 import './styles.scss'
 import React from 'react'
 import {scroller} from 'react-scroll'
+import ViewCover from '../view-cover/index.js'
 
 class Portfolio extends React.Component{
 
@@ -17,6 +18,8 @@ class Portfolio extends React.Component{
 
     return(
       <main className='main'>
+
+      <ViewCover />
 
         <div className='intro front'>
           <header className='group'>

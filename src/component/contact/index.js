@@ -25,7 +25,7 @@ class Contact extends React.Component{
 
   render(){
     return(
-      <main className='contact-main'>
+      <main className='contact-container'>
 
         <div className='contact-intro'>
           <div className='contact-intro-group'>

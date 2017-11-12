@@ -12,6 +12,7 @@ import Header from '../header'
 import Footer from '../footer'
 import Contact from '../contact'
 import Portfolio from '../portfolio'
+import ViewCover from '../view-cover'
 
 class App extends React.Component{
   constructor(props){
@@ -29,14 +30,7 @@ class App extends React.Component{
               <Header />
             </div>
 
-            <Route exact path='/about' component={About} />
-            <Route exact path='/' component={Portfolio} />
-            <Route exact path='/contact'component={Contact} />
-
-            <div className='app-footer'>
-              <Footer />
-            </div>
-
+            <Home />
           </div>
         </BrowserRouter>
       </main>
