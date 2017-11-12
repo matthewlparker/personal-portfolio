@@ -2,7 +2,7 @@ Arguments:
   /home/cadburylion/.nvm/versions/node/v8.7.0/bin/node /usr/share/yarn/bin/yarn.js install
 
 PATH: 
-  /home/cadburylion/bin:/home/cadburylion/.local/bin:/home/cadburylion/.nvm/versions/node/v8.7.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files (x86)/Razer Chroma SDK/bin:/mnt/c/Program Files/Razer Chroma SDK/bin:/mnt/c/ProgramData/Oracle/Java/javapath:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Program Files/Microsoft SQL Server/130/Tools/Binn:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/Matthew/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Matthew/AppData/Local/atom/bin:/mnt/c/Users/Matthew/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Users/Matthew/AppData/Local/atom/bin:/snap/bin
+  /home/cadburylion/bin:/home/cadburylion/.local/bin:/home/cadburylion/.nvm/versions/node/v8.7.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files (x86)/Razer Chroma SDK/bin:/mnt/c/Program Files/Razer Chroma SDK/bin:/mnt/c/ProgramData/Oracle/Java/javapath:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Program Files/Microsoft SQL Server/130/Tools/Binn:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Yarn/bin:/mnt/c/Users/Matthew/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Matthew/AppData/Local/atom/bin:/mnt/c/Users/Matthew/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Users/Matthew/AppData/Local/atom/bin:/snap/bin
 
 Yarn version: 
   1.3.2
@@ -39,6 +39,7 @@ npm manifest:
       "clean-webpack-plugin": "^0.1.16",
       "css-loader": "^0.28.7",
       "dotenv": "^4.0.0",
+      "enhanced-resolve": "^3.4.1",
       "enzyme": "^2.9.1",
       "eslint": "^4.6.1",
       "eslint-plugin-react": "^7.3.0",
@@ -67,7 +68,9 @@ npm manifest:
       "uglifyjs-webpack-plugin": "^0.4.6",
       "url-loader": "^0.5.9",
       "webpack": "^3.5.6",
-      "webpack-dev-server": "^2.7.1"
+      "webpack-dev-server": "^2.7.1",
+  
+      "websocket-extensions": "^0.1.3"
     }
   }
 
@@ -6833,4 +6836,4 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: EINVAL: invalid argument, lstat '/mnt/c/Users/Matthew/Projects/personal-portfolio/node_modules/webpack/node_modules/has-flag'
+  Error: EINVAL: invalid argument, lstat '/mnt/c/Users/Matthew/Projects/personal-portfolio/node_modules/archy/index.js'
