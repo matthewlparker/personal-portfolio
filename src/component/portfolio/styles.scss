@@ -107,6 +107,12 @@
   }
 }
 
+.seattle-reads {
+  .title {
+    font-size: 2em !important; 
+  }
+}
+
 .featured-work li:hover > a h3{
   transform: scale(.9, .9);
 }
@@ -129,9 +135,10 @@
 }
 
 .seattle-reads {
-  background: $color-black;
+  background: #337AB7;
   h3 {
     color: $color-white;
+    font-family: $font-lobster;
   }
 }
 
