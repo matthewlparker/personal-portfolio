@@ -47,20 +47,20 @@ class Portfolio extends React.Component{
                   <a className='github-icon' href='https://github.com/0smium/GourmetSwap-backend' target='_#'>
                     <i className="fa fa-github" aria-hidden="true"></i>
                   </a>
-                    HTML5, SCSS, MongoDB, JavaScript, React, 401 Project
+                    HTML5, Sass, MongoDB, JavaScript, React, 401 Project
               </h4>
             </li>
 
             <li className='seattle-reads'>
-              <a href='https://seattle-reads.herokuapp.com/' target='_blank'>
+              <a href='https://seattle-library-checkouts.herokuapp.com/' target='_blank'>
                 <img src={require('../../assets/seattle-reads.png')} alt='graph of library checkouts' className='sr-icon' />
                 <h3 className='title'> Seattle Reads </h3>
               </a>
               <h4>
-                  <a className='github-icon' href='https://github.com/Cadburylion/Seattle-Reads' target='_#'>
+                  <a className='github-icon' href='https://github.com/Cadburylion/seattle-library-checkouts' target='_#'>
                     <i className="fa fa-github" aria-hidden="true"></i>
                   </a>
-                    HTML, CSS, JavaScript, jQuery, MVC, 301 Project
+                    React, JavaScript, HTML5, CSS3, Sass
               </h4>
             </li>
 
@@ -73,10 +73,10 @@ class Portfolio extends React.Component{
                   <a className='github-icon' href='https://github.com/izzybaer/guardians-of-the-goats' target='_#'>
                     <i className="fa fa-github" aria-hidden="true"></i>
                   </a>
-                    HTML, CSS, JavaScript, Responsive, 201 Project
+                    HTML5, CSS3, JavaScript, 201 Project
               </h4>
             </li>
-            
+
           </ul>
         </section>
       </main>
