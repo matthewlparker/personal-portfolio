@@ -13,6 +13,7 @@ import Footer from '../footer'
 import Contact from '../contact'
 import Portfolio from '../portfolio'
 import ViewCover from '../view-cover'
+import Content from '../content'
 
 class App extends React.Component{
   constructor(props){
@@ -25,12 +26,12 @@ class App extends React.Component{
       <main>
         <BrowserRouter>
           <div>
-
-            <div className="app-header">
-              <Header />
+            <div className='home-container'>
+              <Home />
             </div>
-
-            <Home />
+            <div className='content-container'>
+              <Content />
+            </div>
           </div>
         </BrowserRouter>
       </main>

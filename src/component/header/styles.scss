@@ -1,18 +1,42 @@
 @import "vars";
 
-.header-field{
+.header-main {
+  display: grid;
+  grid-template-columns: auto 1fr 35px;
+  grid-template-rows: 1fr 35px;
+  grid-column-gap: 10px;
+  grid-template-areas:
+    "title title nav"
+    "logo subtitle nav";
+  font-family: $font-primary;
   background-color: $color-primary;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 20px 20px 0px 20px;
+  padding: 5px;
 }
 
-.running-lion{
+.header-title {
+  font-size: 1.9em;
+  letter-spacing: -1px;
+  color: $color-white;
+  grid-area: title;
+  align-self: start;
+  text-shadow: .5px .5px .5px $color-black;
+}
+
+.header-subtitle {
+  font-size: 1em;
+  color: $color-white;
+  grid-area: subtitle;
+  align-self: center;
+}
+
+.logo-icon{
+  grid-area: logo;
   display: inline-block;
   vertical-align: bottom;
-  width: 45px;
-  height: 45px;
-  background: white;
+  width: 35px;
+  height: 35px;
+  background: $color-white;
+
   -webkit-mask: url(../../assets/running-lion.svg) no-repeat 50% 50%;
   mask: url(../../assets/running-lion.svg) no-repeat 50% 50%;
   -webkit-mask-size: cover;
@@ -23,179 +47,6 @@
   transition: all .3s ease-in-out;
 }
 
-.logo-field {
-  display: inline-block;
-  zoom: 1;
-  vertical-align: middle;
-}
-
-.logo-field h1 {
-  display: block;
-  font-weight: 900;
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  line-height: 22.14px;
-}
-
-.logo-field h2 {
-  display: block;
-  color: $color-white;
-  font-size: .875em;
-}
-
-.logo-name {
-  display: inline-block;
-  line-height: 1.4;
-  margin-left: 8px;
-  vertical-align: middle;
-}
-
-.logo-field:hover > .running-lion{
+.logo-icon:hover {
   background: $color-secondary;
-  transition-duration: .3sec;
-  background-size: cover;
-}
-
-.nav-field {
-  display: none;
-}
-
-.nav-field.open {
-  display: block;
-  position: relative;
-  margin: 15px -20px 0 -20px;
-  clear: both;
-
-  ul {
-    margin: 0;
-    li {
-      display: block;
-      text-align: center;
-      background: $color-darkgrey;
-      margin: 0;
-      zoom: 1;
-      vertical-align: middle;
-      text-transform: uppercase;
-      font-size: .85em;
-      font-weight: 900;
-      opacity: 1;
-      a {
-        color: $color-white;
-        padding: 15px;
-        border-bottom: 1px solid #333;
-      }
-
-      a.current, a:hover {
-        color: $color-secondary;
-      }
-    }
-  }
-}
-
-/* hamburger icon styles */
-
-.hamNav::before {
-  clear: both;
-}
-
-.hamNav {
-  display: inline-block;
-  position: relative;
-  top: 13px;
-  width: 30px;
-  height: 25px;
-  float: right;
-  cursor: pointer;
-
-  span {
-    display: block;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    transition: .25s ease-in-out;
-    opacity: 1;
-    background: $color-white;
-    border-radius: 9px;
-  }
-}
-
-.hamNav span:nth-child(1) {
-  top: 0;
-}
-
-.hamNav span:nth-child(2), .hamNav span:nth-child(3) {
-  top: 9px;
-}
-
-.hamNav span:nth-child(4) {
-  top: 18px;
-}
-
-.hamNav.open span {
-  background: $color-secondary;
-}
-
-.hamNav.open span:nth-child(1), .hamNav.open span:nth-child(4) {
-  top: 9px;
-  left: 50%;
-  width: 0;
-  opacity: 0;
-}
-
-.hamNav.open span:nth-child(2) {
-  transform: rotate(135deg);
-}
-
-.hamNav.open span:nth-child(3) {
-  transform: rotate(-135deg);
-}
-
-.current {
-  color: $color-secondary;
-}
-
-.header-top {
-  position: absolute !important;
-  clip: rect(1px, 1px, 1px, 1px);
-}
-
-
-@media only screen and (min-width: 760px){
-
-  .logo-field h2 {
-    font-size: 1em;
-  }
-
-  .running-lion{
-    width: 50px;
-    height: 50px;
-  }
-
-  .hamNav {
-    display: none;
-  }
-
-  .nav-field, .nav-field.open {
-    display: inline-block;
-    position: relative;
-    float: right;
-    width: auto;
-    margin: 0;
-    .nav-ul, .nav-ul.open {
-      display: inline-block;
-      li {
-        display: inline-block;
-        font-size: 12px;
-        background: none;
-        margin: 0;
-        padding: 15px 8px;
-        a {
-          padding: 0;
-          border: none;
-        }
-      }
-    }
-  }
 }

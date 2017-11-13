@@ -21,18 +21,7 @@ class Portfolio extends React.Component{
 
       <ViewCover />
 
-        <div className='intro front'>
-          <header className='group'>
-            <h1>React & Full-Stack Developer</h1>
-            <ul className='intro-list'>
-              <li> Producing high quality responsive websites and exceptional user experiences</li>
-            </ul>
-            <a className='portfolio-button' href='#' onClick={navToPortfolio} title='View portfolio items'>
-              View Portfolio
-              <i className="fa fa-angle-down" aria-hidden="true"></i>
-            </a>
-          </header>
-        </div>
+        
 
         <section className='featured-work'>
           <h2 id='portfolio'></h2>
