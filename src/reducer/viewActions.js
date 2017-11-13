@@ -1,7 +1,6 @@
 export default (state=false, {type, payload}) => {
   switch(type){
-  case 'COVER_OPEN': return true
+  case 'COVER_TOGGLE': return !state
   default: return state
-  case 'COVER_CLOSE': return false
   }
 }

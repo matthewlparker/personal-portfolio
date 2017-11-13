@@ -1,4 +1,4 @@
 export const cover = (state) => ({
-  type: 'COVER_OPEN',
+  type: 'COVER_TOGGLE',
   payload: state,
 })

@@ -23,18 +23,16 @@ class App extends React.Component{
   render(){
 
     return(
-      <main>
-        <BrowserRouter>
-          <div>
+      <BrowserRouter>
+        <main className='app-container'>
             <div className='home-container'>
               <Home />
             </div>
             <div className='content-container'>
               <Content />
             </div>
-          </div>
-        </BrowserRouter>
-      </main>
+          </main>
+      </BrowserRouter>
     )
   }
 }

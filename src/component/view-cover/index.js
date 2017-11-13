@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import * as viewActions from '../../action/viewActions.js'
+import FontAwesome from 'react-fontawesome'
 import './style.scss'
 
 class ViewCover extends React.Component{
@@ -13,14 +14,16 @@ class ViewCover extends React.Component{
   }
 
   handleCover(){
-    this.props.handleCover('COVER_OPEN')
+    this.props.handleCover('COVER_TOGGLE')
   }
 
   render(){
     return (
-      <div className={`view-cover-container ${this.props.coverOpen ? 'open' : ''}`} onClick={this.handleCover}>
+      <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-open' : ''}`} onClick={this.handleCover}>
         <div className='view-cover-content'>
-          <p>View Cover</p>
+          <div className={`toggle-icon ${this.props.coverOpen ? 'toggle-icon-open' : ''}`}>
+            <FontAwesome name='arrow-right' />
+          </div>
         </div>
       </div>
     )
@@ -32,7 +35,7 @@ let mapStateToProps = (state) => ({
 })
 
 let mapDispatchToProps = (dispatch) => ({
-  handleCover: (coverState) => dispatch(viewActions.cover(coverState)),
+  handleCover: (toggle) => dispatch(viewActions.cover(toggle)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ViewCover)

@@ -8,10 +8,18 @@ import './styles.scss'
 class Home extends React.Component{
   render(){
     return(
-      <div className='home-container'>
+      <div className='home-main'>
         <Header />
         <h1> Home </h1>
-        <p> View my: {this.props.route === '/' ? 'portfolio' : ''}</p>
+        <p>
+          View my: {this.props.route === '/' || !this.props.route
+          ? 'portfolio'
+          : this.props.route === '/about'
+          ? 'about'
+          : this.props.route === '/contact'
+          ? 'contact'
+          : ''}
+        </p>
       </div>
     )
   }
