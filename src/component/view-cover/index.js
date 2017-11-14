@@ -32,12 +32,12 @@ class ViewCover extends React.Component{
           <p className='view-cover-p3'>Beautiful</p>
           <p className='view-cover-p4'>things</p>
 
-        </div>
-
         <video className='background-video' loop muted autoPlay alt='video loop of stars'>
           <source src='https://d1235ca2z646oc.cloudfront.net/videos/processed/255/MadeInLadakh-HD_2.mp4.mp4' type='video/mp4' />
           Your browser does not support the video tag.
         </video>
+
+        </div>
 
       </div>
     )

@@ -1,24 +1,13 @@
 @import "vars";
 
 .view-cover-main {
-  // display: flex;
-  display: grid;
-  grid-template-columns: 30px 1fr 30px;
-  grid-template-rows: 1fr;
-  grid-template-areas:
-    "arrow content blank";
   position: fixed;
+  left: 0;
   bottom: 0;
-  width: 100vw;
-  height: calc(100% - 150px);
+  width: 100%;
+  height: calc(100vh - 150px);
   cursor: pointer;
-  // background: radial-gradient(circle at top, transparent 50px, $color-primary 50.5px);
   background: $color-black;
-  // background: url('../../assets/images/milky-way.jpg') no-repeat center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   border-top: 2px solid $color-darkgrey;
 
   -webkit-transition-property: bottom, left, opacity;
@@ -31,56 +20,121 @@
   transition-timing-function: ease-in-out;
 }
 
+.view-cover-content {
+  width: 100%;
+  height: calc(100vh - 150px);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 1fr auto 1fr 1fr;
+  grid-template-areas:
+    "view-cover-p1 view-cover-p1 n1 n1"
+    "view-cover-p2 view-cover-p2 n2 n2"
+    "view-cover-p3 view-cover-p3 view-cover-p3 view-cover-p3"
+    "n4 view-cover-p4 view-cover-p4 view-cover-p4";
+
+  p {
+    color: $color-white;
+    font-family: $font-raleway;
+  }
+  .view-cover-p1 {
+    grid-area: view-cover-p1;
+    justify-self: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    padding-top: 80px;
+  }
+  .view-cover-p2 {
+    grid-area: view-cover-p2;
+    justify-self: center;
+    font-size: 1.5em;
+    padding-bottom: 80px;
+  }
+  .view-cover-p3 {
+    grid-area: view-cover-p3;
+    justify-self: center;
+    font-size: 5em;
+    font-weight: 700;
+    font-family: $font-dancing;
+
+  }
+  .view-cover-p4 {
+    grid-area: view-cover-p4;
+    justify-self: center;
+    font-size: 2em;
+  }
+}
+
 .view-cover-open {
   bottom: calc(-100% + 180px);
 }
 
 
 .toggle-icon {
-  color: $color-white;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 30px;
+
   transition-delay: .5s;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
-  align-self: center;
-  justify-content: center;
+
   .fa {
+    max-width: 16px !important;
+    justify-self: center;
     color: $color-white;
     transition-delay: .5s;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
     transform: rotate(-270deg);
-    margin-top: 5px;
-    margin-left: 5px;
   }
 }
 
 .toggle-icon-open {
+  background-color: $color-black;
   .fa {
     transform: rotate(-90deg);
   }
 }
 
 .background-video {
-  display: none;
+  // grid-area
+  object-fit: cover;
+  grid-row-start: 1;
+  grid-row-end: 5;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 
-@media only screen and (min-width: 760px){
+@media only screen and (min-width: 1024px){
   .view-cover-main {
+    display: grid;
+    grid-template-columns: 30px 1fr 30px;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "arrow content blank";
+    justify-self: center;
     top: 0;
     left: 400px;
-    width: calc(100% - 400px);
+    width: 100%;
     height: 100%;
-    justify-self: center;
+
     background-color: $color-black;
     border-top: none;
     overflow: hidden;
-    // background: radial-gradient(circle at left, transparent 60px, green 60.5px);
+
   }
 
   .view-cover-content {
+    max-width: calc(100vw - 400px);
+    min-width: calc(100vw - 400px);
+    max-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 1fr auto 1fr 1fr;
     grid-template-areas:
       "view-cover-p1 view-cover-p1 n1 n1"
@@ -95,20 +149,20 @@
     .view-cover-p1 {
       grid-area: view-cover-p1;
       justify-self: center;
-      font-size: 7em;
+      font-size: 2.5em;
       font-weight: 700;
       padding-top: 80px;
     }
     .view-cover-p2 {
       grid-area: view-cover-p2;
       justify-self: center;
-      font-size: 2.5em;
+      font-size: 1.5em;
       padding-bottom: 80px;
     }
     .view-cover-p3 {
       grid-area: view-cover-p3;
       justify-self: center;
-      font-size: 11em;
+      font-size: 5em;
       font-weight: 700;
       font-family: $font-dancing;
 
@@ -116,11 +170,9 @@
     .view-cover-p4 {
       grid-area: view-cover-p4;
       justify-self: center;
-      font-size: 4em;
+      font-size: 2em;
     }
   }
-
-
 
   .view-cover-open {
     top: 0;
@@ -128,20 +180,16 @@
   }
 
   .toggle-icon {
-    display: flex;
-    justify-self: left;
-    align-items: center;
-    height: 100vh;
-    width: 30px;
+    grid-template-columns: 30px;
+    grid-template-rows: 100%;
     background-color: rgba(0,0,0,0.0);
     .fa {
-      margin-top: 0;
+      align-self: center;
       transform: rotate(0);
     }
   }
 
   .toggle-icon-open {
-    background-color: $color-black;
     .fa {
       transform: rotate(-180deg);
     }
@@ -153,9 +201,8 @@
     top: 50%; left: 50%;
     width: auto; height: auto;
     min-width: 100%; min-height: 100%;
+
     transform: translate(-50%,-50%);
     z-index: -1;
   }
-
-
 }
