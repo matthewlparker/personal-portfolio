@@ -1,9 +1,44 @@
 @import "vars";
 
-.app-header {
-  background: $color-primary;
+.app-container {
+  height: 100vh;
+  width: 100%;
 }
 
-.app-footer{
-  background: $color-darkgrey;
+.home-container {
+  width: 100%; height: 150px;
+  border-bottom: 2px solid $color-darkgrey;
+}
+
+.content-container {
+  position: fixed;
+  width: 100%; height: calc(100% - 150px);
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+// medium screens
+@media only screen and (min-width: 760px){
+
+  .app-container::-webkit-scrollbar {
+    display: block;
+  }
+
+  .home-container {
+    width: 400px; height: 100%;
+    border-bottom: none;
+    border-right: 2px solid $color-darkgrey;
+  }
+
+  .content-container {
+    top: 0; left: 400px;
+    width: 100%; height: 100%;
+  }
+
+  ::-webkit-scrollbar {
+      display: auto;
+  }
 }

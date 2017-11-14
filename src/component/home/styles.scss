@@ -1,5 +1,34 @@
 @import "vars";
 
-.header-title h1 {
-  color: $color-black;
+.home-main  {
+  display: grid;
+  grid-template-columns: 1fr 35px 35px;
+  grid-template-rows: auto 1fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "title icon1 icon2"
+    "subtitle icon3 icon4";
+  width: 100%; height: 100%;
+}
+
+.header {
+  grid-area: header;
+}
+
+.home-title {
+  grid-area: title;
+  font-size: 1.3em;
+  align-self: flex-end;
+}
+
+.home-subtitle {
+  grid-area: subtitle;
+  align-self: flex-start;
+}
+
+@media only screen and (min-width: 600px) {
+
+  .home-main{
+    background: $color-black;
+  }
 }

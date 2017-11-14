@@ -4,6 +4,10 @@
   background: $color-primary;
 }
 
+.main {
+  width: 100%;
+}
+
 .intro {
   padding: 40px 20px 30px 20px;
   background: $color-primary;
@@ -109,7 +113,7 @@
 
 .seattle-reads {
   .title {
-    font-size: 2em !important; 
+    font-size: 2em !important;
   }
 }
 

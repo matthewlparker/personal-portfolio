@@ -47,40 +47,12 @@ class Header extends React.Component{
     let contactClass = this.props.route === '/contact' ? 'contact current' : 'contact'
 
     return(
+      <div className='header-main'>
 
-      <div className={`header-field ${this.props.hamburger ? 'open' : ''}`}>
-        <h2 id='header-top'></h2>
+        <div className='logo-icon'></div>
+        <div className='header-title'>Matthew Parker</div>
+        <div className='header-subtitle'>React & Full Stack Developer</div>
 
-        <Link to='/' className='logo-field' onClick={() => this.handleRoute('portfolio')}>
-          <div className='running-lion'></div>
-          <div className='logo-name'>
-            <h1> Matthew Parker </h1>
-            <h2> React & Full-Stack Developer </h2>
-          </div>
-        </Link>
-
-        <div className={`hamNav ${this.props.hamburger ? 'open' : ''}`} onClick={this.handleClick}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <nav className={`nav-field ${this.props.hamburger ? 'open' : ''}`}>
-
-          <ul className={`nav-ul ${this.props.hamburger ? 'open' : ''}`}>
-            <li>
-              <Link to='/about' className={aboutClass} onClick={() => this.handleRoute('about')}> ABOUT </Link>
-            </li>
-            <li>
-              <Link to='/' className={portfolioClass} onClick={() => this.handleRoute('portfolio')}> PORTFOLIO </Link>
-            </li>
-            <li>
-              <Link to='/contact' className={contactClass} onClick={() => this.handleRoute('contact')}> CONTACT </Link>
-            </li>
-          </ul>
-
-        </nav>
       </div>
     )
   }
