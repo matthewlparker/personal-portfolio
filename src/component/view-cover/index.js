@@ -28,8 +28,8 @@ class ViewCover extends React.Component{
             <FontAwesome name='arrow-right' />
           </div>
 
-          <p className='view-cover-p1'>I believe</p>
-          <p className='view-cover-p2'>in building</p>
+          <p className='view-cover-p1'>I <span>believe</span></p>
+          <p className='view-cover-p2'>in <span>building</span></p>
           <p className='view-cover-p3'>Beautiful</p>
           <p className='view-cover-p4'>things</p>
 

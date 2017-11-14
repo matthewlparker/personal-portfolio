@@ -1,5 +1,15 @@
 @import "vars";
 
+@-webkit-keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
 .view-cover-main {
   position: fixed;
   left: 0;
@@ -36,6 +46,7 @@
   p {
     color: $color-white;
     font-family: $font-raleway;
+    opacity: 0;
   }
   .view-cover-p1 {
     grid-area: view-cover-p1;
@@ -43,12 +54,39 @@
     align-self: center;
     font-size: 2.5em;
     font-weight: 700;
+
+    animation: fade-in forwards;
+    animation-delay: .25s;
+    animation-duration: 2s;
+    span {
+      color: $color-white;
+      font-family: $font-raleway;
+      opacity: 0;
+
+      animation: fade-in forwards;
+      animation-delay: .5s;
+      animation-duration: 2s;
+    }
   }
   .view-cover-p2 {
     grid-area: view-cover-p2;
     justify-self: center;
     font-size: 1.5em;
     padding-bottom: 80px;
+
+    animation: fade-in forwards;
+    animation-delay: 1.5s;
+    animation-duration: 2s;
+
+    span {
+      color: $color-white;
+      font-family: $font-raleway;
+      opacity: 0;
+
+      animation: fade-in forwards;
+      animation-delay: 1.5s;
+      animation-duration: 2s;
+    }
   }
   .view-cover-p3 {
     grid-area: view-cover-p3;
@@ -57,11 +95,18 @@
     font-weight: 700;
     font-family: $font-dancing;
 
+    animation: fade-in forwards;
+    animation-delay: 3.25s;
+    animation-duration: 2s;
   }
   .view-cover-p4 {
     grid-area: view-cover-p4;
     justify-self: center;
     font-size: 2em;
+
+    animation: fade-in forwards;
+    animation-delay: 3.5s;
+    animation-duration: 2s;
   }
 }
 
@@ -77,6 +122,7 @@
   transition-delay: .5s;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
+
   .fa {
     align-self: center;
     justify-self: center;
