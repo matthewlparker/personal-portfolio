@@ -22,20 +22,21 @@ class ViewCover extends React.Component{
     return (
       <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-open' : ''}`} onClick={this.handleCover}>
 
-        <div className={`toggle-icon ${this.props.coverOpen ? 'toggle-icon-open' : ''}`}>
-          <FontAwesome name='arrow-right' />
-        </div>
 
         <div className='view-cover-content'>
+          <div className={`toggle-icon ${this.props.coverOpen ? 'toggle-icon-open' : ''}`}>
+            <FontAwesome name='arrow-right' />
+          </div>
+
           <p className='view-cover-p1'>I believe</p>
           <p className='view-cover-p2'>in building</p>
           <p className='view-cover-p3'>Beautiful</p>
           <p className='view-cover-p4'>things</p>
 
-        <video className='background-video' loop muted autoPlay alt='video loop of stars'>
-          <source src='https://d1235ca2z646oc.cloudfront.net/videos/processed/255/MadeInLadakh-HD_2.mp4.mp4' type='video/mp4' />
-          Your browser does not support the video tag.
-        </video>
+          <video className='background-video' loop muted autoPlay alt='video loop of stars'>
+            <source src='https://d1235ca2z646oc.cloudfront.net/videos/processed/255/MadeInLadakh-HD_2.mp4.mp4' type='video/mp4' />
+            Your browser does not support the video tag.
+          </video>
 
         </div>
 
