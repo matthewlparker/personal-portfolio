@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import * as viewActions from '../../action/viewActions.js'
+import * as coverToggle from '../../action/viewActions.js'
 import FontAwesome from 'react-fontawesome'
 import WeatherContainer from '../weather/container.js'
 import './style.scss'
@@ -8,9 +8,6 @@ import './style.scss'
 class ViewCover extends React.Component{
   constructor(props){
     super(props)
-    this.state = {
-      coverOpen: false,
-    }
     this.handleCover = this.handleCover.bind(this)
   }
 
@@ -46,11 +43,11 @@ class ViewCover extends React.Component{
 }
 
 let mapStateToProps = (state) => ({
-  coverOpen: state.viewActions,
+  coverOpen: state.coverToggle,
 })
 
 let mapDispatchToProps = (dispatch) => ({
-  handleCover: (toggle) => dispatch(viewActions.cover(toggle)),
+  handleCover: (toggle) => dispatch(coverToggle.cover(toggle)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ViewCover)
