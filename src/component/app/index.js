@@ -12,6 +12,8 @@ import Header from '../header'
 import Footer from '../footer'
 import Contact from '../contact'
 import Portfolio from '../portfolio'
+import ViewCover from '../view-cover'
+import Content from '../content'
 
 class App extends React.Component{
   constructor(props){
@@ -21,25 +23,16 @@ class App extends React.Component{
   render(){
 
     return(
-      <main>
-        <BrowserRouter>
-          <div>
-
-            <div className="app-header">
-              <Header />
+      <BrowserRouter>
+        <main className='app-container'>
+            <div className='home-container'>
+              <Home />
             </div>
-
-            <Route exact path='/about' component={About} />
-            <Route exact path='/' component={Portfolio} />
-            <Route exact path='/contact'component={Contact} />
-
-            <div className='app-footer'>
-              <Footer />
+            <div className='content-container'>
+              <Content />
             </div>
-
-          </div>
-        </BrowserRouter>
-      </main>
+          </main>
+      </BrowserRouter>
     )
   }
 }
