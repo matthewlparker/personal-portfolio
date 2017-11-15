@@ -101,17 +101,8 @@
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 30px;
-  // background-color: $color-black;
-  // opacity: 0;
+
   transition: background-color 1s ease-in-out .5s;
-
-
-
-
-  // transition: opacity 1s ease-in-out .4.75s;
-  // transition-delay: .5s;
-  // transition-duration: 1s;
-  // transition-timing-function: ease-in-out;
 
   .fa {
     align-self: center;
@@ -150,6 +141,9 @@
 
 .view-cover-toggle-icon-open-light {
   background-color: $color-white;
+
+
+
   .fa {
     transform: rotate(-90deg);
     color: $color-black;
@@ -233,7 +227,7 @@
     }
   }
 
-  .view-cover-open {
+  .view-cover-main-open {
     top: 0;
     left: calc(100% - 30px);
   }
@@ -248,8 +242,15 @@
     }
   }
 
-  .view-cover-toggle-icon-open {
+  .view-cover-toggle-icon-open-dark {
       background-color: $color-black;
+    .fa {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .view-cover-toggle-icon-open-light {
+    background-color: $color-white;
     .fa {
       transform: rotate(-180deg);
     }
