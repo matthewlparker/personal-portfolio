@@ -55,6 +55,12 @@
     }
   }
 
+  .home-portfolio-icon:hover {
+    .fa {
+      font-size: 1.75em;
+    }
+  }
+
   .home-about-icon {
     grid-area: 4 / 3 / 5 / 5;
     justify-self: center;
@@ -62,6 +68,12 @@
     .fa {
       color: $color-white;
       font-size: 1.5em;
+    }
+  }
+
+  .home-about-icon:hover {
+    .fa {
+      font-size: 1.75em;
     }
   }
 
@@ -74,7 +86,14 @@
       font-size: 1.5em;
     }
   }
+
+  .home-contact-icon:hover {
+    .fa {
+      font-size: 1.75em;
+    }
+  }
 }
+
 
 .home-main-light {
   background-color: $color-primary;

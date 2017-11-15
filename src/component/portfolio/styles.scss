@@ -55,6 +55,7 @@
 
 .featured-work {
   display: block;
+  padding-bottom: 30px;
   background: $color-darkgrey;
   h2 {
     position: absolute !important;
@@ -70,8 +71,8 @@
     margin: 0;
     padding: 0;
     display: inline-block;
-    width: calc(100%/3);
-    height: 270px;
+    width: 100%;
+    min-height: calc(100vh / 3);
     overflow: hidden;
     position: relative;
     word-break: break-word;
@@ -171,7 +172,7 @@
   transition-duration: 0.3s;
 }
 
-@media only screen and (max-width: 580px){
+@media only screen and (max-width: 1024px){
   .projects {
     li {
       display: block;
