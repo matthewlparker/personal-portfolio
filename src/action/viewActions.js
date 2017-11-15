@@ -3,7 +3,7 @@ export const cover = (toggle) => ({
   payload: toggle,
 })
 
-export const light = (toggle) => ({
-  type: 'BRIGHT_TOGGLE',
+export const theme = (toggle) => ({
+  type: 'THEME_TOGGLE',
   payload: toggle,
 })

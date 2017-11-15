@@ -1,35 +1,72 @@
 @import "vars";
 
+@-webkit-keyframes fade-out {
+  0% {opacity: 1;}
+  100% {opacity: 0; visibility: hidden;}
+}
+
+@keyframes fade-out {
+  0% {opacity: 1;}
+  100% {opacity: 0; visibility: hidden;}
+}
+
 .home-main  {
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr 35px 35px;
-  grid-template-rows: auto 1fr 1fr;
-  grid-template-areas:
-    "header header header"
-    "title icon1 icon2"
-    "subtitle icon3 icon4";
+  grid-template-columns: 10px repeat(4, 1fr) 10px;
+  grid-template-rows: 10px 20px 1fr 1fr;
   width: 100%; height: 100%;
+
+  background: $color-black;
 }
 
-.header {
-  grid-area: header;
+.home-main-light{
+  position: relative;
+  display: grid;
+  grid-template-columns: 10px repeat(4, 1fr) 10px;
+  grid-template-rows: 10px 20px 1fr 1fr;
+  width: 100%; height: 100%;
+
+  background: $color-white;
 }
 
-.home-title {
-  grid-area: title;
-  font-size: 1.3em;
-  align-self: flex-end;
+.home-cover {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 100%; height: 100%;
+  background-color: $color-black;
+  opacity: 1;
+  visibility: visible;
+
+  animation: fade-out forwards;
+  animation-delay: 4.75s;
+  animation-duration: 1s;
+
+
 }
 
-.home-subtitle {
-  grid-area: subtitle;
-  align-self: flex-start;
+.light {
+  grid-area: 2 / 5 / 3 / 6;
+  justify-self: right;
+  cursor: pointer;
+  .fa {
+    color: white;
+  }
 }
+
+.dark {
+  grid-area: 2 / 5 / 3 / 6;
+  justify-self: center;
+  cursor: pointer;
+  .fa {
+    color: white;
+  }
+}
+
 
 @media only screen and (min-width: 1024px) {
 
   .home-main{
     height: 100vh;
-    background: $color-black;
   }
 }

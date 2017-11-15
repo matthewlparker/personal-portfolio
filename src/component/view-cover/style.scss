@@ -17,7 +17,6 @@
   width: 100%;
   height: calc(100vh - 150px);
   cursor: pointer;
-  // border-top: 2px solid $color-darkgrey;
 
   -webkit-transition-property: bottom, left, opacity;
   -webkit-transition-duration: .65s, .65s, 0s;
@@ -101,9 +100,13 @@
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 30px;
+  opacity: 0;
   transition-delay: .5s;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
+  animation: fade-in forwards;
+  animation-delay: 4.75s;
+  animation-duration: 1s;
 
   .fa {
     align-self: center;
