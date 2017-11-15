@@ -11,7 +11,7 @@ class Home extends React.Component{
   render(){
     console.log('lightTheme: ', this.props.lightTheme)
     return(
-      <div className={`home-main${this.props.lightTheme ? '-light' : ''}`}>
+      <div className={`home-main ${this.props.lightTheme ? 'home-main-light' : ''}`}>
 
         <div className='home-cover'></div>
 

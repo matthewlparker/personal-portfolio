@@ -10,6 +10,7 @@
   100% {opacity: 1;}
 }
 
+
 .view-cover-main {
   position: fixed;
   left: 0;
@@ -26,6 +27,10 @@
   transition-duration: .65s, .65s, 0s;
   transition-delay: 0s, 0s, 1s;
   transition-timing-function: ease-in-out;
+}
+
+.view-cover-main-open {
+  bottom: calc(-100% + 180px);
 }
 
 .view-cover-content {
@@ -91,40 +96,67 @@
   }
 }
 
-.view-cover-open {
-  bottom: calc(-100% + 180px);
-}
-
-.toggle-icon {
+.view-cover-toggle-icon {
   grid-area: 1 / 1 / 2 / span 10;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 30px;
-  opacity: 0;
-  transition-delay: .5s;
-  transition-duration: 1s;
-  transition-timing-function: ease-in-out;
-  animation: fade-in forwards;
-  animation-delay: 4.75s;
-  animation-duration: 1s;
+  // background-color: $color-black;
+  // opacity: 0;
+  transition: background-color 1s ease-in-out .5s;
+
+
+
+
+  // transition: opacity 1s ease-in-out .4.75s;
+  // transition-delay: .5s;
+  // transition-duration: 1s;
+  // transition-timing-function: ease-in-out;
 
   .fa {
     align-self: center;
     justify-self: center;
     color: $color-white;
-    transition-delay: .5s;
-    transition-duration: 1s;
-    transition-timing-function: ease-in-out;
     transform: rotate(-270deg);
+    transition: transform 1s ease-in-out .5s, color 1s ease-in-out .5s;
+    opacity: 0;
+
+    animation: fade-in forwards;
+    animation-duration: 1s;
+    animation-delay: 4.75s;
+    animation-timing-function: ease-in-out;
+
+
+    // transform: rotate(-270deg);
+    // transition: transform 1s ease-in-out .5s;
+    //
+    // animation: fade-in forwards;
+    // animation-delay: 4.75s;
+    // animation-duration: 1s;
+
+    // transition-delay: .5s;
+    // transition-duration: 1s;
+    // transition-timing-function: ease-in-out;
   }
 }
 
-.toggle-icon-open {
+.view-cover-toggle-icon-open-dark {
   background-color: $color-black;
   .fa {
     transform: rotate(-90deg);
+    // transition: transform 1s ease-in-out .5s;
   }
 }
+
+.view-cover-toggle-icon-open-light {
+  background-color: $color-white;
+  .fa {
+    transform: rotate(-90deg);
+    color: $color-black;
+  }
+}
+
+
 
 .background-video {
   object-fit: cover;
@@ -206,7 +238,7 @@
     left: calc(100% - 30px);
   }
 
-  .toggle-icon {
+  .view-cover-toggle-icon {
     grid-area: 1 / 1 / 5 / 2;
     grid-template-columns: 30px;
     grid-template-rows: 100%;
@@ -216,7 +248,7 @@
     }
   }
 
-  .toggle-icon-open {
+  .view-cover-toggle-icon-open {
       background-color: $color-black;
     .fa {
       transform: rotate(-180deg);

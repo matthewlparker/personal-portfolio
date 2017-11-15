@@ -16,12 +16,18 @@ class ViewCover extends React.Component{
   }
 
   render(){
+    let arrowIconClass = (this.props.coverOpen && this.props.lightTheme) ? 'view-cover-toggle-icon-open-light'
+    : (this.props.coverOpen && !this.props.lightTheme) ? 'view-cover-toggle-icon-open-dark'
+    : (!this.props.coverOpen && this.props.lightTheme) ? 'view-cover-toggle-icon-closed-light'
+    : (!this.props.coverOpen && !this.props.lightTheme) ? 'view-cover-toggle-icon-closed-dark'
+    : ''
     return (
-      <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-open' : ''}`} onClick={this.handleCover}>
+      <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-main-open' : ''}`} onClick={this.handleCover}>
 
 
         <div className='view-cover-content'>
-          <div className={`toggle-icon ${this.props.coverOpen ? 'toggle-icon-open' : ''}`}>
+
+          <div className={`view-cover-toggle-icon ${arrowIconClass}`}>
             <FontAwesome name='arrow-right' />
           </div>
 
@@ -44,6 +50,7 @@ class ViewCover extends React.Component{
 
 let mapStateToProps = (state) => ({
   coverOpen: state.coverToggle,
+  lightTheme: state.lightTheme
 })
 
 let mapDispatchToProps = (dispatch) => ({
