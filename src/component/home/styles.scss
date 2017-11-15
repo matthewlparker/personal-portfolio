@@ -31,7 +31,7 @@
   display: -ms-grid;
   display: grid;
   grid-template-columns: 10px repeat(4, 1fr) 10px;
-  grid-template-rows: 10px 20px 1fr 1fr 10px;
+  grid-template-rows: 10px 20px 1fr 1fr 1fr 10px;
   width: 100%; height: 100%;
   overflow: hidden;
 
@@ -42,12 +42,25 @@
   .home-intro-text {
     font-size: 1.75em;
     color: $color-white;
-    grid-area: 2 / 2 / 3 / 5;
-    font-family: $font-raleway;
+    grid-area: 2 / 2 / 4 / 6;
+    // font-family: $font-raleway;
+  }
+
+  .home-welcome-text {
+    font-size: 1.5em;
+    color: $color-white;
+    grid-area: 4 / 1 / 5 / 6;
+    justify-self: center;
+    opacity: 0;
+
+    animation: fade-in forwards;
+    animation-delay: 6s;
+    animation-duration: .75s;
+    animation-timing-function: ease-in-out;
   }
 
   .home-portfolio-icon {
-    grid-area: 4 / 2 / 5 / 4;
+    grid-area: 5 / 2 / 6 / 4;
     justify-self: center;
     align-self: flex-end;
     .fa {
@@ -63,7 +76,7 @@
   }
 
   .home-about-icon {
-    grid-area: 4 / 3 / 5 / 5;
+    grid-area: 5 / 3 / 6 / 5;
     justify-self: center;
     align-self: flex-end;
     .fa {
@@ -79,7 +92,7 @@
   }
 
   .home-contact-icon {
-    grid-area: 4 / 4 / 5 / 6;
+    grid-area: 5 / 4 / 6 / 6;
     justify-self: center;
     align-self: flex-end;
     .fa {
@@ -93,11 +106,21 @@
       font-size: 1.75em;
     }
   }
+
+  .text-light {
+    color: $color-primary;
+  }
+
+  .icon-light {
+    .fa {
+      color: $color-primary;
+    }
+  }
 }
 
 
 .home-main-light {
-  background-color: $color-primary;
+  background-color: $color-white;
 }
 
 
@@ -133,10 +156,36 @@
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .home-main {
+    .home-intro-text {
+      font-size: 2.5em;
+    }
+    .home-welcome-text {
+      font-size: 2em;
+    }
+  }
+}
+
 
 @media only screen and (min-width: 1024px) {
 
-  .home-main{
+  .home-main {
+    // grid-area:
+    // grid-template-columns: 10px repeat(4, 1fr) 10px;
+    // grid-template-rows: 10px 20px 1fr 1fr 1fr 10px;
     height: 100vh;
+
+    .home-intro-text {
+      grid-area: 3 / 2 / 4 / 6;
+      font-size: 4.5em;
+    }
+
+    .home-welcome-text {
+      grid-area: 4 / 3 / 5 / 6;
+      font-size: 3em;
+      text-align: left;
+    }
   }
+
 }
