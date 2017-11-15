@@ -37,6 +37,7 @@
   width: 100%;
   height: calc(100vh - 150px);
   overflow: hidden;
+  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: 30px 1fr auto 1fr 1fr;
@@ -44,6 +45,7 @@
     color: $color-white;
     font-family: $font-raleway;
 
+    -webkit-animation: fade-in forwards;
     animation: fade-in forwards;
     opacity: 0;
   }
@@ -53,6 +55,7 @@
     align-self: center;
     font-size: 2.5em;
     font-weight: 700;
+
 
     animation-delay: .25s;
     animation-duration: 2s;
@@ -98,20 +101,31 @@
 
 .view-cover-toggle-icon {
   grid-area: 1 / 1 / 2 / span 10;
+  display: -ms-grid;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 30px;
 
+  -webkit-transition: background-color 1s ease-in-out .5s;
+  -moz-transition: background-color 1s ease-in-out .5s;
+  -o-transition: background-color 1s ease-in-out .5s;
   transition: background-color 1s ease-in-out .5s;
 
   .fa {
     align-self: center;
     justify-self: center;
     color: $color-white;
+    -webkit-transform: rotate(-270deg);
+    -ms-transform: rotate(-270deg);
     transform: rotate(-270deg);
+
+    -webkit-transition: transform 1s ease-in-out .5s, color 1s ease-in-out .5s;
+    -moz-transition: transform 1s ease-in-out .5s, color 1s ease-in-out .5s;
+    -o-transition: transform 1s ease-in-out .5s, color 1s ease-in-out .5s;
     transition: transform 1s ease-in-out .5s, color 1s ease-in-out .5s;
     opacity: 0;
 
+    -webkit-animation: fade-in forwards;
     animation: fade-in forwards;
     animation-duration: 1s;
     animation-delay: 4.75s;
@@ -123,6 +137,8 @@
 .view-cover-toggle-icon-open-dark {
   background-color: $color-black;
   .fa {
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
   }
 }
@@ -130,6 +146,8 @@
 .view-cover-toggle-icon-open-light {
   background-color: $color-white;
   .fa {
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
     color: $color-black;
   }
@@ -137,11 +155,13 @@
 
 
 .background-video {
+  // display: none;
+  -o-object-fit: cover;
   object-fit: cover;
   grid-area: 1 / 1 / 6 / span 10;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -100;
 }
 
 @media only screen and (min-width: 768px) {
@@ -173,6 +193,7 @@
     min-width: calc(100vw - 400px);
     max-height: 100vh;
     min-height: 100vh;
+    display: -ms-grid;
     display: grid;
     grid-template-columns: 30px repeat(10, 1fr);
     grid-template-rows: 1fr auto 1fr 1fr;
@@ -222,6 +243,8 @@
     grid-template-rows: 100%;
     .fa {
       align-self: center;
+      -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
       transform: rotate(0);
     }
   }
@@ -229,6 +252,8 @@
   .view-cover-toggle-icon-open-dark {
       background-color: $color-black;
     .fa {
+      -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
       transform: rotate(-180deg);
     }
   }
@@ -236,13 +261,15 @@
   .view-cover-toggle-icon-open-light {
     background-color: $color-white;
     .fa {
+      -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
       transform: rotate(-180deg);
     }
   }
 
   .background-video {
     grid-row-end: 5;
-    grid-column-end: 11;
+    grid-column-end: 12;
   }
 }
 

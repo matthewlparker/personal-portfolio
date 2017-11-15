@@ -28,6 +28,7 @@
 
 .home-main  {
   position: relative;
+  display: -ms-grid;
   display: grid;
   grid-template-columns: 10px repeat(4, 1fr) 10px;
   grid-template-rows: 10px 20px 1fr 1fr 10px;
