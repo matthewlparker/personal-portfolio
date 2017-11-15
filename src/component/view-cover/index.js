@@ -16,6 +16,7 @@ class ViewCover extends React.Component{
   }
 
   render(){
+    console.log('view-cover-render')
     let arrowIconClass = (this.props.coverOpen && this.props.lightTheme) ? 'view-cover-toggle-icon-open-light'
     : (this.props.coverOpen && !this.props.lightTheme) ? 'view-cover-toggle-icon-open-dark'
     : (!this.props.coverOpen && this.props.lightTheme) ? 'view-cover-toggle-icon-closed-light'
@@ -36,10 +37,20 @@ class ViewCover extends React.Component{
           <p className='view-cover-p3'>Beautiful</p>
           <p className='view-cover-p4'>things</p>
 
-          <video className='background-video' loop muted autoPlay alt='video loop of stars'>
-            <source src='https://d1235ca2z646oc.cloudfront.net/videos/processed/255/MadeInLadakh-HD_2.mp4.mp4' type='video/mp4' />
-            Your browser does not support the video tag.
-          </video>
+          {!this.props.lightTheme ?
+            <video className='background-video' loop muted autoPlay alt='video loop of stars'>
+              <source src='https://d1235ca2z646oc.cloudfront.net/videos/processed/255/MadeInLadakh-HD_2.mp4.mp4' type='video/mp4' />
+              Your browser does not support the video tag.
+            </video>
+            : undefined
+          }
+          {this.props.lightTheme ?
+            <video className='background-video' loop muted autoPlay alt='video loop of stars'>
+              <source src='https://www.videvo.net/videvo_files/converted/2014_06/preview/Blue_Sky_and_Clouds_Timelapse_0892__Videvo.mov75480.webm' type='video/mp4' />
+              Your browser does not support the video tag.
+            </video>
+            : undefined
+          }
 
         </div>
 

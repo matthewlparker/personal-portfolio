@@ -117,17 +117,6 @@
     animation-delay: 4.75s;
     animation-timing-function: ease-in-out;
 
-
-    // transform: rotate(-270deg);
-    // transition: transform 1s ease-in-out .5s;
-    //
-    // animation: fade-in forwards;
-    // animation-delay: 4.75s;
-    // animation-duration: 1s;
-
-    // transition-delay: .5s;
-    // transition-duration: 1s;
-    // transition-timing-function: ease-in-out;
   }
 }
 
@@ -135,21 +124,16 @@
   background-color: $color-black;
   .fa {
     transform: rotate(-90deg);
-    // transition: transform 1s ease-in-out .5s;
   }
 }
 
 .view-cover-toggle-icon-open-light {
   background-color: $color-white;
-
-
-
   .fa {
     transform: rotate(-90deg);
     color: $color-black;
   }
 }
-
 
 
 .background-video {

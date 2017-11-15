@@ -7,19 +7,11 @@ import FontAwesome from 'react-fontawesome'
 class ThemeIcon extends React.Component {
   constructor(props){
     super(props)
-    this.themeToggle = this.themeToggle.bind(this)
   }
-
-   themeToggle(theme){
-     theme === 'light'
-      ? this.props.brightTheme()
-      : this.props.darkTheme()
-   }
 
   render(){
     return(
-      <div className={this.props.className}
-        onClick={() => this.themeToggle(this.props.theme)}>
+      <div className={this.props.className} onClick={this.props.toggleTheme}>
         <FontAwesome name={this.props.name} />
       </div>
     )
@@ -29,8 +21,7 @@ class ThemeIcon extends React.Component {
 let mapStateToProps = (state) => ({})
 
 let mapDispatchToProps = (dispatch) => ({
-  brightTheme: () => dispatch(themeToggle.theme(true)),
-  darkTheme: () => dispatch(themeToggle.theme(false))
+  toggleTheme: () => dispatch(themeToggle.theme())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ThemeIcon)
