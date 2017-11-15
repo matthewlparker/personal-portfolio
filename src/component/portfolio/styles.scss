@@ -12,6 +12,9 @@
   padding: 40px 20px 30px 20px;
   background: $color-primary;
   height: calc(90vh - 90px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   width: 100%;
   justify-content: center;

@@ -26,7 +26,7 @@ class ViewCover extends React.Component{
       <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-main-open' : ''}`} onClick={this.handleCover}>
 
 
-        <div className='view-cover-content'>
+        <div className='view-cover-content' >
 
           <div className={`view-cover-toggle-icon ${arrowIconClass}`}>
             <FontAwesome name='arrow-right' />
@@ -39,7 +39,7 @@ class ViewCover extends React.Component{
 
           {!this.props.lightTheme ?
             <video className='background-video' loop muted autoPlay alt='video loop of stars'>
-              <source src='https://d1235ca2z646oc.cloudfront.net/videos/processed/255/MadeInLadakh-HD_2.mp4.mp4' type='video/mp4' />
+              <source src='https://d1235ca2z646oc.cloudfront.net/videos/processed/255/MadeInLadakh-HD_2.mp4.mp4' type='video/mp4' onClick={this.handleCover} />
               Your browser does not support the video tag.
             </video>
             : undefined
