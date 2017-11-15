@@ -27,12 +27,7 @@ class Contact extends React.Component{
     return(
       <main className='contact-container'>
 
-        <div className='contact-intro'>
-          <div className='contact-intro-group'>
-            <h1>Contact Matthew</h1>
-            <h2>Send a general message</h2>
-          </div>
-        </div>
+        
 
         <div className='contact-content'>
 

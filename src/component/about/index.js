@@ -6,10 +6,7 @@ export default class About extends React.Component{
     return(
       <main className='about-container'>
 
-        <div className='about-intro'>
-          <h1> About Matthew </h1>
-          <h2> Building high-quality applications and exceptional user experiences </h2>
-        </div>
+        
 
         <div className='about-content'>
           <div className='about-avatar'>

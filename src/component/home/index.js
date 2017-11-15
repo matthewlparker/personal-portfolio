@@ -4,29 +4,41 @@ import Header from '../header/index.js'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import FontAwesome from 'react-fontawesome'
+import * as coverToggle from '../../action/viewActions.js'
 import ThemeIcon from '../theme-icon/index.js'
 import * as route from '../../action/route.js'
 
 import './styles.scss'
 
 class Home extends React.Component{
+  constructor(props){
+    super(props)
+    this.handleCover = this.handleCover.bind(this)
+  }
+
+  handleCover(toggle){
+    this.props.handleCover('COVER_TOGGLE')
+  }
+
   render(){
     return(
       <div className={`home-main ${this.props.lightTheme ? 'home-main-light' : ''}`}>
 
         <div className='home-cover'></div>
 
-        <div className='home-intro-text'>{`Hi, I'm Matthew`}</div>
+        <div className={`home-intro-text ${this.props.lightTheme ? 'text-light' : ''}`}>{`Hi, I'm Matthew`}</div>
 
-        <Link to='/' onClick={this.props.routeToPortfolio} className='home-portfolio-icon'>
+        <div className={`home-welcome-text ${this.props.lightTheme ? 'text-light' : ''}`}>{`Welcome to my work`}</div>
+
+        <Link to='/' onClick={this.props.routeToPortfolio} className={`home-portfolio-icon ${this.props.lightTheme ? 'icon-light' : ''}`}>
           <FontAwesome name='file-code-o' />
         </Link>
 
-        <Link to='/about' onClick={this.props.routeToAbout} className='home-about-icon'>
+        <Link to='/about' onClick={this.props.routeToAbout} className={`home-about-icon ${this.props.lightTheme ? 'icon-light' : ''}`}>
           <FontAwesome name='user-circle-o' />
         </Link>
 
-        <Link to='/contact' onClick={this.props.routeToContact} className='home-contact-icon'>
+        <Link to='/contact' onClick={this.props.routeToContact} className={`home-contact-icon ${this.props.lightTheme ? 'icon-light' : ''}`}>
           <FontAwesome name='envelope-o' />
         </Link>
 
@@ -46,6 +58,7 @@ let mapStateToProps = (state) => ({
 })
 
 let mapDispatchToProps = (dispatch) => ({
+  handleCover: (toggle) => dispatch(coverToggle.cover(toggle)),
   routeToAbout: () => dispatch(route.switchRoute('/about')),
   routeToPortfolio: () => dispatch(route.switchRoute('/')),
   routeToContact: () => dispatch(route.switchRoute('/contact')),
