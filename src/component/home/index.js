@@ -15,6 +15,8 @@ class Home extends React.Component{
 
         <div className='home-cover'></div>
 
+        <div className='home-intro-text'>{`Hi, I'm Matthew`}</div>
+
         <ThemeIcon
           className={`theme-toggle-icon ${this.props.lightTheme ? 'theme-toggle-icon-light' : ''}`}
           name={this.props.lightTheme ? 'sun-o' : 'moon-o'}
