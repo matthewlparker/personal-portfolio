@@ -12,6 +12,8 @@
 
 
 .view-cover-main {
+  // background-image: url('../../assets/images/blue-star-sky.jpg');
+  // background-image: url('https://images.unsplash.com/photo-1490682143684-14369e18dce8?auto=format&fit=crop&w=1950&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
   position: fixed;
   left: 0;
   bottom: 0;
@@ -20,15 +22,24 @@
   // height: calc(100vh - 150px);
   cursor: pointer;
 
-
+  background-color: $color-black;
   -webkit-transition-property: bottom, left, opacity;
   -webkit-transition-duration: .65s, .65s, 0s;
-  -webkit-transition-delay: 0s, 0s, 1s;
+  -webkit-transition-delay: 0s, 0s, 1s, 0s;
   -webkit-transition-timing-function: ease-in-out;
   transition-property: bottom, left, opacity;
   transition-duration: .65s, .65s, 0s;
   transition-delay: 0s, 0s, 1s;
   transition-timing-function: ease-in-out;
+
+}
+
+.bg-image {
+  background-image: url('https://images.unsplash.com/photo-1417577097439-425fb7dec05e?auto=format&fit=crop&w=2089&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .view-cover-main-open {
@@ -43,6 +54,8 @@
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: 30px 1fr auto 1fr 1fr;
+
+
   p, p > span {
     color: $color-white;
     // font-family: $font-raleway;
@@ -157,24 +170,15 @@
 
 
 .background-video {
-  // display: none;
   -o-object-fit: cover;
+  -webkit-object-fit: cover;
   object-fit: cover;
-  grid-area: 1 / 1 / 6 / span 10 ;
+  grid-area: 1 / 1 / 6 / span 10;
   width: 100%;
   height: 100%;
-  z-index: -100;
+  z-index: -1;
 }
 
-
-
-// .background-image {
-//   background: url('http://wallpapercave.net/images/star-wallpaper/star-wallpaper-14.jpg') no-repeat center center fixed;
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-// }
 
 @media only screen and (min-width: 768px) {
   .view-cover-content {
@@ -195,7 +199,7 @@
     width: 100%;
     height: 100%;
 
-    background-color: $color-black;
+    // background-color: $color-black;
     border-top: none;
     overflow: hidden;
   }
