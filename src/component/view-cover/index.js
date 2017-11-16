@@ -21,7 +21,6 @@ class ViewCover extends React.Component{
 
   componentWillMount(){
     let video = this.detectBrowser()
-
     video === 'chrome' || video === 'firefox' ? this.setState({playVideo: true}) : undefined
   }
 

@@ -20,6 +20,12 @@
   100% {transform: rotate(-360deg);}
 }
 
+@-webkit-keyframes teeter {
+  0% {transform: rotate(20deg);}
+  50% {transform: rotate(-10deg);}
+  100% {transform: rotate(20deg);}
+}
+
 @keyframes teeter {
   0% {transform: rotate(20deg);}
   50% {transform: rotate(-10deg);}
@@ -36,30 +42,51 @@
   overflow: hidden;
 
   transition: background-color 1s ease-in-out;
-
+  color: $color-white;
   background-color: $color-black;
 
   .home-intro-text {
-    font-size: 1.75em;
     color: $color-white;
+    font-size: 1.75em;
     grid-area: 2 / 2 / 4 / 6;
-    // font-family: $font-raleway;
+    // font-family: $font-signature;
   }
+
 
   .home-welcome-text {
     font-size: 1.5em;
-    color: $color-white;
     grid-area: 4 / 1 / 5 / 6;
     justify-self: center;
     opacity: 0;
-
+    color: $color-white;
     animation: fade-in forwards;
     animation-delay: 6s;
     animation-duration: .75s;
     animation-timing-function: ease-in-out;
   }
 
-  .home-portfolio-icon {
+  .signature {
+
+  }
+
+  .theme-toggle-icon {
+    grid-area: 2 / 5 / 3 / 6;
+    justify-self: right;
+    cursor: pointer;
+    .fa {
+      color: white;
+      animation: teeter 5s ease-in-out forwards infinite;
+    }
+  }
+
+  .theme-toggle-icon-light {
+    .fa {
+      color: orange;
+      animation: spin-left 10s linear infinite;
+    }
+  }
+
+  .portfolio-icon {
     grid-area: 5 / 2 / 6 / 4;
     justify-self: center;
     align-self: flex-end;
@@ -69,13 +96,13 @@
     }
   }
 
-  .home-portfolio-icon:hover {
+  .portfolio-icon:hover {
     .fa {
       font-size: 1.75em;
     }
   }
 
-  .home-about-icon {
+  .about-icon {
     grid-area: 5 / 3 / 6 / 5;
     justify-self: center;
     align-self: flex-end;
@@ -85,13 +112,13 @@
     }
   }
 
-  .home-about-icon:hover {
+  .about-icon:hover {
     .fa {
       font-size: 1.75em;
     }
   }
 
-  .home-contact-icon {
+  .contact-icon {
     grid-area: 5 / 4 / 6 / 6;
     justify-self: center;
     align-self: flex-end;
@@ -124,7 +151,7 @@
 }
 
 
-
+/* black cover to animate reveal of home elements */
 .home-cover {
   position: absolute;
   top: 0; right: 0; bottom: 0;
@@ -139,22 +166,7 @@
   animation-duration: 1s;
 }
 
-.theme-toggle-icon {
-  grid-area: 2 / 5 / 3 / 6;
-  justify-self: right;
-  cursor: pointer;
-  .fa {
-    color: white;
-    animation: teeter 5s ease-in-out forwards infinite;
-  }
-}
 
-.theme-toggle-icon-light {
-  .fa {
-    color: orange;
-    animation: spin-left 10s linear infinite;
-  }
-}
 
 @media only screen and (min-width: 768px) {
   .home-main {
@@ -186,6 +198,18 @@
       font-size: 3em;
       text-align: left;
     }
-  }
 
+    .signature {
+      grid-area: 5 / 1 / 6 / 6;
+      align-self: flex-end;
+      font-size: 4em;
+      // font-family: $font-signature;
+      color: $color-white;
+      span {
+        font-size: 1em !important;
+        // font-family: $font-signature;
+        color: $color-white;
+      }
+    }
+  }
 }

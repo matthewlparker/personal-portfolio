@@ -30,15 +30,19 @@ class Home extends React.Component{
 
         <div className={`home-welcome-text ${this.props.lightTheme ? 'text-light' : ''}`}>{`Welcome to my work`}</div>
 
-        <Link to='/' onClick={this.props.routeToPortfolio} className={`home-portfolio-icon ${this.props.lightTheme ? 'icon-light' : ''}`}>
+        <div className={`signature ${this.props.lightTheme ? 'text-light' : ''}`}>
+          <span>M</span>atthew <span>P</span>arker
+        </div>
+
+        <Link to='/' onClick={this.props.routeToPortfolio} className={`portfolio-icon ${this.props.lightTheme ? 'icon-light' : ''}`}>
           <FontAwesome name='file-code-o' />
         </Link>
 
-        <Link to='/about' onClick={this.props.routeToAbout} className={`home-about-icon ${this.props.lightTheme ? 'icon-light' : ''}`}>
+        <Link to='/about' onClick={this.props.routeToAbout} className={`about-icon ${this.props.lightTheme ? 'icon-light' : ''}`}>
           <FontAwesome name='user-circle-o' />
         </Link>
 
-        <Link to='/contact' onClick={this.props.routeToContact} className={`home-contact-icon ${this.props.lightTheme ? 'icon-light' : ''}`}>
+        <Link to='/contact' onClick={this.props.routeToContact} className={`contact-icon ${this.props.lightTheme ? 'icon-light' : ''}`}>
           <FontAwesome name='envelope-o' />
         </Link>
 
