@@ -65,17 +65,11 @@
     animation-timing-function: ease-in-out;
   }
 
-  .signature {
-    font-family: $font-signature;
+  .home-name {
+    font-family: $font-raleway;
     grid-area: 3 / 2 / 4 / 6;
     justify-self: center;
     color: $color-white;
-    // opacity: 0;
-
-    // animation: fade-in forwards;
-    // animation-delay: 6s;
-    // animation-duration: .75s;
-    // animation-timing-function: ease-in-out;
   }
 
   .theme-toggle-icon {
@@ -192,9 +186,8 @@
 @media only screen and (min-width: 1024px) {
 
   .home-main {
-    // grid-area:
-    // grid-template-columns: 10px repeat(4, 1fr) 10px;
-    // grid-template-rows: 10px 20px 1fr 1fr 1fr 10px;
+    grid-template-columns: 10px 1fr 1fr repeat(3, 35px);
+    grid-template-rows: 10px 20px 1fr 1fr 1fr 10px;
     height: 100vh;
 
     .home-intro-text {
@@ -220,5 +213,24 @@
         color: $color-white;
       }
     }
+
+    .portfolio-icon {
+      grid-area: 1 / 6 / 6 / 7;
+      justify-self: center;
+      align-self: center;
+    }
+
+    .about-icon {
+      grid-area: 1 / 5 / 6 / 6;
+      justify-self: center;
+      align-self: center;
+    }
+
+    .contact-icon {
+      grid-area: 1 / 4 / 6 / 5;
+      justify-self: center;
+      align-self: center;
+    }
+
   }
 }

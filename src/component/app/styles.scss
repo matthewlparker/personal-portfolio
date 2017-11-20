@@ -42,7 +42,11 @@
   }
 
   .content-container {
-    width: 100%; height: 100%;
+    width: calc(100% - 400px); height: 100%;
+  }
+
+  .app-cover {
+    position: fixed;
   }
 
   ::-webkit-scrollbar {

@@ -34,7 +34,7 @@ class Home extends React.Component{
 
 
 
-        <div className={`signature ${this.props.lightTheme ? 'text-light' : ''}`}>
+        <div className={`home-name ${this.props.lightTheme ? 'text-light' : ''}`}>
           Matthew Parker
         </div>
 
