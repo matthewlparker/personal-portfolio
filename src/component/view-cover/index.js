@@ -44,7 +44,7 @@ class ViewCover extends React.Component{
     : ''
 
     return (
-      <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-main-open' : ''} ${!this.state.playVideo ? 'bg-image' : ''}`} onClick={this.handleCover}>
+      <div className={`view-cover-main bg-image ${this.props.coverOpen ? 'view-cover-main-open' : ''} ${!this.state.playVideo ? 'bg-image' : ''}`} onClick={this.handleCover}>
 
 
         <div className='view-cover-content' >
@@ -58,15 +58,16 @@ class ViewCover extends React.Component{
           <p className='view-cover-p3'>Beautiful</p>
           <p className='view-cover-p4'>things</p>
 
-          {!this.props.lightTheme && this.state.playVideo ?
+          {!this.props.lightTheme && false ?
             <video className='background-video' loop muted autoPlay alt='video loop of stars'>
-              <source src='https://d1235ca2z646oc.cloudfront.net/videos/processed/255/MadeInLadakh-HD_2.mp4.mp4' type='video/mp4' />
+              <source src='https://static.videezy.com/system/resources/previews/000/000/116/original/Stars.mp4'
+              type='video/mp4' />
               Your browser does not support the video tag.
             </video>
           : undefined
           }
 
-          {this.props.lightTheme && this.state.playVideo ?
+          {this.props.lightTheme && false ?
             <video className='background-video' loop muted autoPlay alt='video loop of clouds'>
              <source src='https://www.videvo.net/videvo_files/converted/2014_06/preview/Blue_Sky_and_Clouds_Timelapse_0892__Videvo.mov75480.webm' type='video/mp4' />
              Your browser does not support the video tag.
