@@ -13,17 +13,18 @@ import Portfolio from '../portfolio/index.js'
 class ViewCover extends React.Component{
   constructor(props){
     super(props)
+    this.state={
+      background: '',
+    }
     this.handleCover = this.handleCover.bind(this)
     this.detectBrowser = this.detectBrowser.bind(this)
-  }
-
-  handleCover(){
-    this.props.handleCover('COVER_TOGGLE')
+    this.randomBackground = this.randomBackground.bind(this)
   }
 
   componentWillMount(){
-    let video = this.detectBrowser()
-    video === 'chrome' || video === 'firefox' ? this.setState({playVideo: true}) : undefined
+    this.randomBackground()
+    // let video = this.detectBrowser()
+    // video === 'chrome' || video === 'firefox' ? this.setState({playVideo: true}) : undefined
   }
 
   detectBrowser(){
@@ -35,7 +36,24 @@ class ViewCover extends React.Component{
     return browser
   }
 
+  handleCover(){
+    this.props.handleCover('COVER_TOGGLE')
+  }
 
+  randomBackground(){
+    let backgrounds = [
+      'https://i.imgur.com/HjStYze.gif',
+      'https://i.imgur.com/4KJPU8C.gif',
+      'https://i.imgur.com/L2Hc5MB.gif',
+      'https://i.imgur.com/XTCAUql.gif',
+      'https://i.imgur.com/HSWaPpj.gif',
+      'https://i.imgur.com/LmSj8fW.gif',
+      'https://i.imgur.com/vvTO3np.gif',
+    ]
+    this.setState({
+      background: backgrounds[Math.floor(Math.random() * (backgrounds.length - 1))]
+    })
+  }
 
   render(){
 
@@ -46,7 +64,7 @@ class ViewCover extends React.Component{
     : ''
 
     let mainBackground = {
-      backgroundImage: 'url(' + 'https://i.imgur.com/HjStYze.gif' + ')',
+      backgroundImage: 'url(' + `${this.state.background}` + ')',
     }
 
     return (
@@ -85,12 +103,17 @@ class ViewCover extends React.Component{
           : undefined
           }
 
-          <div className='dashboard'></div>
+          <div className='portfolio-container'>
+            <Route exact path='/' component={Portfolio} />
+          </div>
 
-          
-          <Route exact path='/' component={Portfolio} />
-          <Route exact path='/about' component={About} />
-          <Route exact path='/contact' component={Contact} />
+          <div className='about-container'>
+            <Route exact path='/about' component={About} />
+          </div>
+
+          <div className='contact-container'>
+            <Route exact path='/contact' component={Contact} />
+          </div>
 
 
         </div>

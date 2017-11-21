@@ -25,7 +25,7 @@ class Contact extends React.Component{
 
   render(){
     return(
-      <main className='contact-container'>
+      <div className='contact-main'>
 
         <div className='contact-content'>
 
@@ -74,7 +74,7 @@ class Contact extends React.Component{
           </form>
 
         </div>
-      </main>
+      </div>
     )
   }
 }

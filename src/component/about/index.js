@@ -4,9 +4,9 @@ import './styles.scss'
 export default class About extends React.Component{
   render() {
     return(
-      <main className='about-container'>
+      <div className='about-container1'>
 
-        
+
 
         <div className='about-content'>
           <div className='about-avatar'>
@@ -101,7 +101,7 @@ export default class About extends React.Component{
             </div>
           </div>
         </div>
-      </main>
+      </div>
     )
   }
 }

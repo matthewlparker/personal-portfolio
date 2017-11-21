@@ -245,28 +245,38 @@
     grid-template-rows: 30px auto auto auto 1fr 1fr 30px;
     grid-gap: 10px;
 
-    .name {
+    .name, .developer, .status {
       font-family: 'Munro', normal;
       font-size: 1.5em;
-      grid-area: 2 / 2 / 3 / span 4;
       justify-self: left;
       color: $color-white;
+      padding-left: 5px; padding-right: 5px;
+      background-color: hsla(0, 0, 0, .6);
+    }
+
+    .name {
+      grid-area: 2 / 2 / 3 / span 4;
     }
 
     .developer {
-      font-family: 'Munro', normal;
-      font-size: 1.5em;
       grid-area: 3 / 2 / 4 / span 4;
-      justify-self: left;
-      color: $color-white;
     }
 
     .status {
-      font-family: 'Munro', normal;
-      font-size: 1.5em;
       grid-area: 4 / 2 / 5 / span 4;
-      justify-self: left;
-      color: $color-white;
+    }
+
+    .portfolio-container {
+      grid-area: 1 / 6 / span 7 / span 6;
+      // background: hsla(0, 0, 0, .9);
+    }
+    .about-container {
+      grid-area: 1 / 6 / span 7 / span 6;
+      // background: hsla(0, 0, 0, .9);
+    }
+    .contact-container {
+      grid-area: 1 / 6 / span 7 / span 6;
+      // background: hsla(0, 0, 0, .9);
     }
 
     .view-cover-p1 {

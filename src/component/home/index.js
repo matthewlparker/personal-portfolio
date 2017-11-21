@@ -28,12 +28,12 @@ class Home extends React.Component{
     return(
       <div className={`home-main ${this.props.lightTheme ? 'home-main-light' : ''}`}>
 
-        <Link to='/' onClick={this.props.routeToPortfolio} className={`to-about ${this.props.lightTheme ? 'icon-light' : ''}`}>
-          About
+        <Link to='/' onClick={this.props.routeToPortfolio} className={`to-portfolio ${this.props.lightTheme ? 'icon-light' : ''}`}>
+          Portfolio
         </Link>
 
-        <Link to='/about' onClick={this.props.routeToAbout} className={`to-portfolio ${this.props.lightTheme ? 'icon-light' : ''}`}>
-          Portfolio
+        <Link to='/about' onClick={this.props.routeToAbout} className={`to-about ${this.props.lightTheme ? 'icon-light' : ''}`}>
+          About
         </Link>
 
         <Link to='/contact' onClick={this.props.routeToContact} className={`to-contact ${this.props.lightTheme ? 'icon-light' : ''}`}>
