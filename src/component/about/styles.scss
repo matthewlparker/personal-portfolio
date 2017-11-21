@@ -1,8 +1,10 @@
 @import "vars";
 
-.about-container {
-  width: 100%;
+.about-container1 {
+  background: hsla(0,0,0,.9);
+  overflow: scroll;
 }
+
 
 .about-intro {
   position: relative;

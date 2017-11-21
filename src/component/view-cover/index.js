@@ -3,25 +3,28 @@ import {connect} from 'react-redux'
 import * as coverToggle from '../../action/viewActions.js'
 import FontAwesome from 'react-fontawesome'
 import WeatherContainer from '../weather/container.js'
+import {Route} from 'react-router-dom'
 import './style.scss'
+
+import About from '../about/index.js'
+import Contact from '../contact/index.js'
+import Portfolio from '../portfolio/index.js'
 
 class ViewCover extends React.Component{
   constructor(props){
     super(props)
     this.state={
-      playVideo: false,
+      background: '',
     }
     this.handleCover = this.handleCover.bind(this)
     this.detectBrowser = this.detectBrowser.bind(this)
-  }
-
-  handleCover(){
-    this.props.handleCover('COVER_TOGGLE')
+    this.randomBackground = this.randomBackground.bind(this)
   }
 
   componentWillMount(){
-    let video = this.detectBrowser()
-    video === 'chrome' || video === 'firefox' ? this.setState({playVideo: true}) : undefined
+    this.randomBackground()
+    // let video = this.detectBrowser()
+    // video === 'chrome' || video === 'firefox' ? this.setState({playVideo: true}) : undefined
   }
 
   detectBrowser(){
@@ -33,7 +36,24 @@ class ViewCover extends React.Component{
     return browser
   }
 
+  handleCover(){
+    this.props.handleCover('COVER_TOGGLE')
+  }
 
+  randomBackground(){
+    let backgrounds = [
+      'https://i.imgur.com/HjStYze.gif',
+      'https://i.imgur.com/4KJPU8C.gif',
+      'https://i.imgur.com/L2Hc5MB.gif',
+      'https://i.imgur.com/XTCAUql.gif',
+      'https://i.imgur.com/HSWaPpj.gif',
+      'https://i.imgur.com/LmSj8fW.gif',
+      'https://i.imgur.com/vvTO3np.gif',
+    ]
+    this.setState({
+      background: backgrounds[Math.floor(Math.random() * (backgrounds.length - 1))]
+    })
+  }
 
   render(){
 
@@ -43,13 +63,29 @@ class ViewCover extends React.Component{
     : (!this.props.coverOpen && !this.props.lightTheme) ? 'view-cover-toggle-icon-closed-dark'
     : ''
 
+    let mainBackground = {
+      backgroundImage: 'url(' + `${this.state.background}` + ')',
+    }
+
     return (
-      <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-main-open' : ''} ${!this.state.playVideo ? 'bg-image' : ''}`} onClick={this.handleCover}>
+      <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-main-open' : ''}`} style={mainBackground}>
 
 
         <div className='view-cover-content' >
 
-          <div className={`view-cover-toggle-icon ${arrowIconClass}`}>
+        <div className={`name ${this.props.lightTheme ? 'text-light' : ''}`}>
+          Name: Matthew Parker
+        </div>
+
+        <div className={`developer`}>
+          Developer: React & Full-Stack JavaScript
+        </div>
+
+        <div className={`status`}>
+          Status: Available for hire
+        </div>
+
+          <div className={`view-cover-toggle-icon ${arrowIconClass}`} onClick={this.handleCover}>
             <FontAwesome name='arrow-right' />
           </div>
 
@@ -58,21 +94,27 @@ class ViewCover extends React.Component{
           <p className='view-cover-p3'>Beautiful</p>
           <p className='view-cover-p4'>things</p>
 
-          {!this.props.lightTheme && this.state.playVideo ?
+          {!this.props.lightTheme && false ?
             <video className='background-video' loop muted autoPlay alt='video loop of stars'>
-              <source src='https://d1235ca2z646oc.cloudfront.net/videos/processed/255/MadeInLadakh-HD_2.mp4.mp4' type='video/mp4' />
+              <source src='https://static.videezy.com/system/resources/previews/000/000/116/original/Stars.mp4'
+              type='video/mp4' />
               Your browser does not support the video tag.
             </video>
           : undefined
           }
 
-          {this.props.lightTheme && this.state.playVideo ?
-            <video className='background-video' loop muted autoPlay alt='video loop of clouds'>
-             <source src='https://www.videvo.net/videvo_files/converted/2014_06/preview/Blue_Sky_and_Clouds_Timelapse_0892__Videvo.mov75480.webm' type='video/mp4' />
-             Your browser does not support the video tag.
-           </video>
-          : undefined
-          }
+          <div className='portfolio-container'>
+            <Route exact path='/' component={Portfolio} />
+          </div>
+
+          <div className='about-container'>
+            <Route exact path='/about' component={About} />
+          </div>
+
+          <div className='contact-container'>
+            <Route exact path='/contact' component={Contact} />
+          </div>
+
 
         </div>
 
@@ -83,7 +125,8 @@ class ViewCover extends React.Component{
 
 let mapStateToProps = (state) => ({
   coverOpen: state.coverToggle,
-  lightTheme: state.lightTheme
+  lightTheme: state.lightTheme,
+  route: state.route,
 })
 
 let mapDispatchToProps = (dispatch) => ({

@@ -15,9 +15,6 @@ export default class Content extends React.Component {
   render(){
     return(
       <div className='content-main'>
-        <Route exact path='/' component={Portfolio} />
-        <Route exact path='/about' component={About} />
-        <Route exact path='/contact' component={Contact} />
         <ViewCover />
       </div>
     )

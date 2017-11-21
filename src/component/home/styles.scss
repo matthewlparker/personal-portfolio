@@ -1,5 +1,10 @@
 @import "vars";
 
+@font-face {
+  font-family: 'Munro';
+  src: local('Munro'), url(../../style/font/Munro.ttf) format('truetype');
+}
+
 @-webkit-keyframes fade-out {
   0% {opacity: 1;}
   100% {opacity: 0; visibility: hidden;}
@@ -36,41 +41,19 @@
   position: relative;
   display: -ms-grid;
   display: grid;
-  grid-template-columns: 10px repeat(4, 1fr) 10px;
-  grid-template-rows: 10px 20px 1fr 1fr 1fr 10px;
+  grid-template-columns: 5px repeat(2, 1fr) 5px;
+  grid-template-rows: 5px 1fr 1fr 1fr 1fr 5px;
   width: 100%; height: 100%;
   overflow: hidden;
 
-  transition: background-color 1s ease-in-out;
+  font-family: 'Munro', normal;
   color: $color-white;
   background-color: $color-black;
 
-  .home-intro-text {
-    color: $color-white;
-    font-size: 1.75em;
-    grid-area: 2 / 2 / 4 / 6;
-    // font-family: $font-signature;
-  }
-
-
-  .home-welcome-text {
-    font-size: 1.5em;
-    grid-area: 4 / 1 / 5 / 6;
-    justify-self: center;
-    opacity: 0;
-    color: $color-white;
-    animation: fade-in forwards;
-    animation-delay: 6s;
-    animation-duration: .75s;
-    animation-timing-function: ease-in-out;
-  }
-
-  .signature {
-
-  }
 
   .theme-toggle-icon {
-    grid-area: 2 / 5 / 3 / 6;
+    display: none;
+    grid-area: 2 / 3 / 3 / 4;
     justify-self: right;
     cursor: pointer;
     .fa {
@@ -85,97 +68,13 @@
       animation: spin-left 10s linear infinite;
     }
   }
-
-  .portfolio-icon {
-    grid-area: 5 / 2 / 6 / 4;
-    justify-self: center;
-    align-self: flex-end;
-    .fa {
-      color: $color-white;
-      font-size: 1.5em;
-    }
-  }
-
-  .portfolio-icon:hover {
-    .fa {
-      font-size: 1.75em;
-    }
-  }
-
-  .about-icon {
-    grid-area: 5 / 3 / 6 / 5;
-    justify-self: center;
-    align-self: flex-end;
-    .fa {
-      color: $color-white;
-      font-size: 1.5em;
-    }
-  }
-
-  .about-icon:hover {
-    .fa {
-      font-size: 1.75em;
-    }
-  }
-
-  .contact-icon {
-    grid-area: 5 / 4 / 6 / 6;
-    justify-self: center;
-    align-self: flex-end;
-    .fa {
-      color: $color-white;
-      font-size: 1.5em;
-    }
-  }
-
-  .home-contact-icon:hover {
-    .fa {
-      font-size: 1.75em;
-    }
-  }
-
-  .text-light {
-    color: $color-primary;
-  }
-
-  .icon-light {
-    .fa {
-      color: $color-primary;
-    }
-  }
 }
-
-
-.home-main-light {
-  background-color: $color-white;
-}
-
-
-/* black cover to animate reveal of home elements */
-.home-cover {
-  position: absolute;
-  top: 0; right: 0; bottom: 0;
-  width: 100%; height: 100%;
-  background-color: $color-black;
-  opacity: 1;
-  visibility: visible;
-  z-index: 10;
-
-  animation: fade-out forwards;
-  animation-delay: 4.75s;
-  animation-duration: 1s;
-}
-
 
 
 @media only screen and (min-width: 768px) {
   .home-main {
-    .home-intro-text {
-      font-size: 2.5em;
-    }
-    .home-welcome-text {
-      font-size: 2em;
-    }
+    grid-template-columns: 10px repeat(3, 1fr) 10px;
+    grid-template-rows: 10px 1r 1fr 1fr 1fr 10px;
   }
 }
 
@@ -183,33 +82,46 @@
 @media only screen and (min-width: 1024px) {
 
   .home-main {
-    // grid-area:
-    // grid-template-columns: 10px repeat(4, 1fr) 10px;
-    // grid-template-rows: 10px 20px 1fr 1fr 1fr 10px;
-    height: 100vh;
+    grid-template-rows: 30px repeat(3, 1fr) 30px;
+    grid-template-columns: 30px repeat(3, auto) repeat(3, 1fr) 30px;
+    grid-gap: 20px;
+    width: 100%;
 
-    .home-intro-text {
-      grid-area: 3 / 2 / 4 / 6;
-      font-size: 4.5em;
-    }
-
-    .home-welcome-text {
-      grid-area: 4 / 3 / 5 / 6;
+    .to-about {
+      grid-area: 3 / 2 / 4 / span 1;
       font-size: 3em;
-      text-align: left;
+      color: $color-white;
+      font-family: 'Munro', normal;
+    }
+    .to-portfolio {
+      grid-area: 3 / 3 / 4 / span 1;
+      font-size: 3em;
+      color: $color-white;
+      font-family: 'Munro', normal;
+    }
+    .to-contact {
+      grid-area: 3 / 4 / 4 / span 1;
+      font-size: 3em;
+      color: $color-white;
+      font-family: 'Munro', normal;
     }
 
-    .signature {
-      grid-area: 5 / 1 / 6 / 6;
-      align-self: flex-end;
-      font-size: 4em;
-      // font-family: $font-signature;
-      color: $color-white;
-      span {
-        font-size: 1em !important;
-        // font-family: $font-signature;
-        color: $color-white;
-      }
+    .to-about:hover {
+      color: hsla(100,100,50%,1);
     }
+    .to-portfolio:hover {
+      color: hsla(100,100,50%,1);
+    }
+    .to-contact:hover {
+      color: hsla(100,100,50%,1);
+    }
+
+
+
+
+
+
+
+
   }
 }

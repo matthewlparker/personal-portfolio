@@ -21,29 +21,23 @@ class Home extends React.Component{
   }
 
   render(){
+
+      // <div className={`home-intro-text ${this.props.lightTheme ? 'text-light' : ''}`}>{`Hi, I'm Matthew`}</div>
+
+    // <div className={`home-welcome-text ${this.props.lightTheme ? 'text-light' : ''}`}>{`Welcome to my work`}</div>
     return(
       <div className={`home-main ${this.props.lightTheme ? 'home-main-light' : ''}`}>
 
-        <div className='home-cover'></div>
-
-        <div className={`home-intro-text ${this.props.lightTheme ? 'text-light' : ''}`}>{`Hi, I'm Matthew`}</div>
-
-        <div className={`home-welcome-text ${this.props.lightTheme ? 'text-light' : ''}`}>{`Welcome to my work`}</div>
-
-        <div className={`signature ${this.props.lightTheme ? 'text-light' : ''}`}>
-          <span>M</span>atthew <span>P</span>arker
-        </div>
-
-        <Link to='/' onClick={this.props.routeToPortfolio} className={`portfolio-icon ${this.props.lightTheme ? 'icon-light' : ''}`}>
-          <FontAwesome name='file-code-o' />
+        <Link to='/' onClick={this.props.routeToPortfolio} className={`to-portfolio ${this.props.lightTheme ? 'icon-light' : ''}`}>
+          Portfolio
         </Link>
 
-        <Link to='/about' onClick={this.props.routeToAbout} className={`about-icon ${this.props.lightTheme ? 'icon-light' : ''}`}>
-          <FontAwesome name='user-circle-o' />
+        <Link to='/about' onClick={this.props.routeToAbout} className={`to-about ${this.props.lightTheme ? 'icon-light' : ''}`}>
+          About
         </Link>
 
-        <Link to='/contact' onClick={this.props.routeToContact} className={`contact-icon ${this.props.lightTheme ? 'icon-light' : ''}`}>
-          <FontAwesome name='envelope-o' />
+        <Link to='/contact' onClick={this.props.routeToContact} className={`to-contact ${this.props.lightTheme ? 'icon-light' : ''}`}>
+          Contact
         </Link>
 
 
