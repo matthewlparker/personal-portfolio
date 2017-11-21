@@ -49,12 +49,12 @@ class ViewCover extends React.Component{
     : ''
 
     return (
-      <div className={`view-cover-main bg-image ${this.props.coverOpen ? 'view-cover-main-open' : ''} ${!this.state.playVideo ? 'bg-image' : ''}`} onClick={this.handleCover}>
+      <div className={`view-cover-main bg-image ${this.props.coverOpen ? 'view-cover-main-open' : ''} ${!this.state.playVideo ? 'bg-image' : ''}`} >
 
 
         <div className='view-cover-content' >
 
-          <div className={`view-cover-toggle-icon ${arrowIconClass}`}>
+          <div className={`view-cover-toggle-icon ${arrowIconClass}`} onClick={this.handleCover}>
             <FontAwesome name='arrow-right' />
           </div>
 
@@ -71,6 +71,8 @@ class ViewCover extends React.Component{
             </video>
           : undefined
           }
+
+          <div className='dashboard'></div>
 
           <Route exact path='/' component={Portfolio} />
           <Route exact path='/about' component={About} />
