@@ -1,13 +1,23 @@
 @import "vars";
 
 .contact-container {
-  width: 100%;
+  position: absolute;
+  top: 0; left: 10%;
+  width: 80%; height: 100%;
+  background: hsla(0,0,100,.95);
+  overflow-y: auto;
+}
+
+.contact-content {
+  form {
+    background: none;
+  }
 }
 
 .contact-intro {
   position: relative;
   color: white;
-  background: $color-primary;
+  // background: $color-primary;
   padding: 80px 80px 30px 80px;
   text-align: center;
 }

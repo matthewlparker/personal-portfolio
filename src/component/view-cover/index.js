@@ -3,7 +3,12 @@ import {connect} from 'react-redux'
 import * as coverToggle from '../../action/viewActions.js'
 import FontAwesome from 'react-fontawesome'
 import WeatherContainer from '../weather/container.js'
+import {Route} from 'react-router-dom'
 import './style.scss'
+
+import About from '../about/index.js'
+import Contact from '../contact/index.js'
+import Portfolio from '../portfolio/index.js'
 
 class ViewCover extends React.Component{
   constructor(props){
@@ -67,13 +72,10 @@ class ViewCover extends React.Component{
           : undefined
           }
 
-          {this.props.lightTheme && false ?
-            <video className='background-video' loop muted autoPlay alt='video loop of clouds'>
-             <source src='https://www.videvo.net/videvo_files/converted/2014_06/preview/Blue_Sky_and_Clouds_Timelapse_0892__Videvo.mov75480.webm' type='video/mp4' />
-             Your browser does not support the video tag.
-           </video>
-          : undefined
-          }
+          <Route exact path='/' component={Portfolio} />
+          <Route exact path='/about' component={About} />
+          <Route exact path='/contact' component={Contact} />
+
 
         </div>
 

@@ -27,8 +27,6 @@ class Contact extends React.Component{
     return(
       <main className='contact-container'>
 
-        
-
         <div className='contact-content'>
 
           <form method='post' action='https://formspree.io/cadburylion@gmail.com'>

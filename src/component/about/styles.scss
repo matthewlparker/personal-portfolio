@@ -1,8 +1,16 @@
 @import "vars";
 
 .about-container {
-  width: 100%;
+  // position: absolute;
+  // left: 10%;
+  // top: 5%;
+  // width: calc(80%);
+  // height: calc(90%);
+  // background: hsla(0,0,0,.9);
+  // overflow: auto;
+  background: hsla(0,0,0,.9);
 }
+
 
 .about-intro {
   position: relative;
