@@ -13,9 +13,6 @@ import Portfolio from '../portfolio/index.js'
 class ViewCover extends React.Component{
   constructor(props){
     super(props)
-    this.state={
-      playVideo: false,
-    }
     this.handleCover = this.handleCover.bind(this)
     this.detectBrowser = this.detectBrowser.bind(this)
   }
@@ -48,11 +45,27 @@ class ViewCover extends React.Component{
     : (!this.props.coverOpen && !this.props.lightTheme) ? 'view-cover-toggle-icon-closed-dark'
     : ''
 
+    let mainBackground = {
+      backgroundImage: 'url(' + 'https://i.imgur.com/HjStYze.gif' + ')',
+    }
+
     return (
-      <div className={`view-cover-main bg-image ${this.props.coverOpen ? 'view-cover-main-open' : ''} ${!this.state.playVideo ? 'bg-image' : ''}`} >
+      <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-main-open' : ''}`} style={mainBackground}>
 
 
         <div className='view-cover-content' >
+
+        <div className={`name ${this.props.lightTheme ? 'text-light' : ''}`}>
+          Name: Matthew Parker
+        </div>
+
+        <div className={`developer`}>
+          Developer: React & Full-Stack JavaScript
+        </div>
+
+        <div className={`status`}>
+          Status: Available for hire
+        </div>
 
           <div className={`view-cover-toggle-icon ${arrowIconClass}`} onClick={this.handleCover}>
             <FontAwesome name='arrow-right' />
@@ -74,6 +87,7 @@ class ViewCover extends React.Component{
 
           <div className='dashboard'></div>
 
+          
           <Route exact path='/' component={Portfolio} />
           <Route exact path='/about' component={About} />
           <Route exact path='/contact' component={Contact} />
@@ -88,7 +102,8 @@ class ViewCover extends React.Component{
 
 let mapStateToProps = (state) => ({
   coverOpen: state.coverToggle,
-  lightTheme: state.lightTheme
+  lightTheme: state.lightTheme,
+  route: state.route,
 })
 
 let mapDispatchToProps = (dispatch) => ({

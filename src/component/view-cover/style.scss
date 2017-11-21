@@ -36,6 +36,13 @@
   cursor: default;
   background-color: $color-black;
 
+  // background-image: url('https://i.imgur.com/HjStYze.gif');
+  // background-image: url('https://i.imgur.com/4KJPU8C.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: absolute;
+  background-position: center;
+
   -webkit-transition-property: bottom, left, opacity, width, height;
   -webkit-transition-duration: .65s, .65s, 0s, .65s, .65s;
   -webkit-transition-delay: 0s, 0s, 1s, 0s, 0s;
@@ -67,10 +74,11 @@
   display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: 30px 1fr auto 1fr 1fr;
+  grid-template-rows: 30px auto auto auto 1fr 1fr 1fr;
 
 
   p {
+    display: none;
     color: $color-white;
     // font-family: $font-raleway;
 
@@ -78,6 +86,8 @@
     animation: fade-in-out forwards;
     opacity: 0;
   }
+
+
   .view-cover-p1 {
     grid-area: 2 / 2 / 3 / span 10;
     justify-self: left;
@@ -231,9 +241,33 @@
     width: 100%;
     display: -ms-grid;
     display: grid;
-    grid-template-columns:repeat(10, 1fr);
-    grid-template-rows: 1fr auto 1fr 1fr 30px;
+    grid-template-columns: 30px repeat(10, 1fr) 30px;
+    grid-template-rows: 30px auto auto auto 1fr 1fr 30px;
+    grid-gap: 10px;
 
+    .name {
+      font-family: 'Munro', normal;
+      font-size: 1.5em;
+      grid-area: 2 / 2 / 3 / span 4;
+      justify-self: left;
+      color: $color-white;
+    }
+
+    .developer {
+      font-family: 'Munro', normal;
+      font-size: 1.5em;
+      grid-area: 3 / 2 / 4 / span 4;
+      justify-self: left;
+      color: $color-white;
+    }
+
+    .status {
+      font-family: 'Munro', normal;
+      font-size: 1.5em;
+      grid-area: 4 / 2 / 5 / span 4;
+      justify-self: left;
+      color: $color-white;
+    }
 
     .view-cover-p1 {
       grid-area: 1 / 3 / 3 / span 8;
@@ -273,26 +307,16 @@
     width: 100%;
   }
 
-  // .dashboard {
-  //   position: fixed;
-  //   left: 10%; top: 0;
-  //   width: 20%; height: 100%;
-  //   background: hsla(0, 0, 100, .9);
-  //   opacity: 0;
-  //   animation: fade-in forwards;
-  //   animation-delay: 6s;
-  //   animation-duration: 1s;
-  //   animation-timing-function: linear;
-  // }
 
   .view-cover-toggle-icon {
-    grid-area: 5 / 1 / 6 / 12;
+    grid-area: 7 / 1 / 8 / span 12;
     grid-template-columns: 30px;
     grid-template-rows: 100%;
     justify-content: center;
     width: 100%;
     transition: 0s;
     cursor: pointer;
+    z-index: 10;
     .fa {
       -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);

@@ -28,26 +28,16 @@ class Home extends React.Component{
     return(
       <div className={`home-main ${this.props.lightTheme ? 'home-main-light' : ''}`}>
 
-        <div className='home-cover'></div>
-
-
-
-
-
-        <div className={`home-name ${this.props.lightTheme ? 'text-light' : ''}`}>
-          Matthew Parker
-        </div>
-
-        <Link to='/' onClick={this.props.routeToPortfolio} className={`portfolio-icon ${this.props.lightTheme ? 'icon-light' : ''}`}>
-          <FontAwesome name='file-code-o' />
+        <Link to='/' onClick={this.props.routeToPortfolio} className={`to-about ${this.props.lightTheme ? 'icon-light' : ''}`}>
+          About
         </Link>
 
-        <Link to='/about' onClick={this.props.routeToAbout} className={`about-icon ${this.props.lightTheme ? 'icon-light' : ''}`}>
-          <FontAwesome name='user-circle-o' />
+        <Link to='/about' onClick={this.props.routeToAbout} className={`to-portfolio ${this.props.lightTheme ? 'icon-light' : ''}`}>
+          Portfolio
         </Link>
 
-        <Link to='/contact' onClick={this.props.routeToContact} className={`contact-icon ${this.props.lightTheme ? 'icon-light' : ''}`}>
-          <FontAwesome name='envelope-o' />
+        <Link to='/contact' onClick={this.props.routeToContact} className={`to-contact ${this.props.lightTheme ? 'icon-light' : ''}`}>
+          Contact
         </Link>
 
 
