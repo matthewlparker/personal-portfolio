@@ -46,7 +46,6 @@ class ViewCover extends React.Component{
       'https://i.imgur.com/4KJPU8C.gif',
       'https://i.imgur.com/L2Hc5MB.gif',
       'https://i.imgur.com/XTCAUql.gif',
-      'https://i.imgur.com/HSWaPpj.gif',
       'https://i.imgur.com/LmSj8fW.gif',
       'https://i.imgur.com/vvTO3np.gif',
     ]
