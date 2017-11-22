@@ -16,6 +16,15 @@ class Home extends React.Component{
     this.handleCover = this.handleCover.bind(this)
   }
 
+  componentWillMount() {
+    // let pathname = document.location.href.split('8080')[1]
+    //
+    // pathname === '/about' ? this.props.routeToAbout()
+    // : pathname === '/contact' ? this.props.routeToContact()
+    // : pathname === '/portfolio' ? this.props.routeToPortfolio()
+    // : undefined
+  }
+
   handleCover(toggle){
     this.props.handleCover('COVER_TOGGLE')
   }
@@ -37,6 +46,29 @@ class Home extends React.Component{
           Contact
         </Link>
 
+        <div className='skill-icon javascript'>
+          <img src={require('../../assets/javascript-original.svg')} alt='javascript logo' />
+        </div>
+
+        <div className='skill-icon react'>
+          <img src={require('../../assets/react-original.svg')} alt='react logo' />
+        </div>
+
+        <div className='skill-icon html'>
+          <img src={require('../../assets/html5-original.svg')} alt='html 5 logo'/>
+        </div>
+
+        <div className='skill-icon css'>
+          <img src={require('../../assets/css3-original.svg')} alt='css 3 logo' />
+        </div>
+
+        <div className='skill-icon node'>
+          <img src={require('../../assets/nodejs-original.svg')} alt='node logo' />
+        </div>
+
+        <div className='skill-icon mongodb'>
+          <img src={require('../../assets/mongodb-original.svg')} alt='mongo db logo'/>
+        </div>
 
         <ThemeIcon
           className={`theme-toggle-icon ${this.props.lightTheme ? 'theme-toggle-icon-light' : ''}`}
@@ -55,7 +87,7 @@ let mapStateToProps = (state) => ({
 let mapDispatchToProps = (dispatch) => ({
   handleCover: (toggle) => dispatch(coverToggle.cover(toggle)),
   routeToAbout: () => dispatch(route.switchRoute('/about')),
-  routeToPortfolio: () => dispatch(route.switchRoute('/')),
+  routeToPortfolio: () => dispatch(route.switchRoute('/portfolio')),
   routeToContact: () => dispatch(route.switchRoute('/contact')),
 })
 
