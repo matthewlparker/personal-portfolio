@@ -26,7 +26,7 @@ class App extends React.Component{
       <BrowserRouter>
         <main className='app-container'>
           <div className='content-container'>
-            <Content />
+            <ViewCover />
           </div>
           <div className='home-container'>
             <Home />

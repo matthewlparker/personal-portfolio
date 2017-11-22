@@ -1,9 +1,6 @@
 @import "vars";
 
 .contact-main {
-  // position: absolute;
-  // top: 0; left: 40%;
-  // width: 50%; height: 100%;
   width: 100%; height: 100%;
   background: hsla(0,0,0,.6);
   overflow-y: auto;
@@ -12,6 +9,9 @@
 .contact-content {
   form {
     background: none;
+    p {
+      color: hsla(0,0,100%,1);
+    }
     label {
       color: hsla(0,0,100%,1);
     }

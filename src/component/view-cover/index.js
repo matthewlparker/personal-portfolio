@@ -68,6 +68,7 @@ class ViewCover extends React.Component{
     }
 
     return (
+
       <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-main-open' : ''}`} style={mainBackground}>
 
 
@@ -89,22 +90,8 @@ class ViewCover extends React.Component{
             <FontAwesome name='arrow-right' />
           </div>
 
-          <p className='view-cover-p1'>I <span>believe</span></p>
-          <p className='view-cover-p2'>in <span>building</span></p>
-          <p className='view-cover-p3'>Beautiful</p>
-          <p className='view-cover-p4'>things</p>
-
-          {!this.props.lightTheme && false ?
-            <video className='background-video' loop muted autoPlay alt='video loop of stars'>
-              <source src='https://static.videezy.com/system/resources/previews/000/000/116/original/Stars.mp4'
-              type='video/mp4' />
-              Your browser does not support the video tag.
-            </video>
-          : undefined
-          }
-
           <div className='portfolio-container'>
-            <Route exact path='/' component={Portfolio} />
+            <Route exact path='/portfolio' component={Portfolio} />
           </div>
 
           <div className='about-container'>

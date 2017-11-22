@@ -22,9 +22,6 @@ class Home extends React.Component{
 
   render(){
 
-      // <div className={`home-intro-text ${this.props.lightTheme ? 'text-light' : ''}`}>{`Hi, I'm Matthew`}</div>
-
-    // <div className={`home-welcome-text ${this.props.lightTheme ? 'text-light' : ''}`}>{`Welcome to my work`}</div>
     return(
       <div className={`home-main ${this.props.lightTheme ? 'home-main-light' : ''}`}>
 
