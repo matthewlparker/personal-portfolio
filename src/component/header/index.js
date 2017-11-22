@@ -19,13 +19,17 @@ class Header extends React.Component{
   componentWillMount(){
     let pathname = document.location.href.split('io')[1]
 
-    if(pathname === '/about'){
-      this.props.routeToAbout()
-    } else if(pathname === '/contact'){
-      this.props.routeToContact()
-    } else if(pathname){
-      this.props.routeToPortfolio()
-    }
+    pathname === '/about' ? this.props.routeToAbout()
+    : pathname === '/contact' ? this.props.routeToContact()
+    : pathname === '/portfolio' ? thihs.props.routeToContact()
+    : undefined
+    // if(pathname === '/about'){
+    //   this.props.routeToAbout()
+    // } else if(pathname === '/contact'){
+    //   this.props.routeToContact()
+    // } else if(pathname){
+    //   this.props.routeToPortfolio()
+    // }
   }
 
   handleClick(){
@@ -43,7 +47,7 @@ class Header extends React.Component{
   render(){
 
     let aboutClass = this.props.route === '/about' ? 'about current' : 'about'
-    let portfolioClass = this.props.route === '/' ? 'portfolio current' : 'portfolio'
+    let portfolioClass = this.props.route === '/portfolio' ? 'portfolio current' : 'portfolio'
     let contactClass = this.props.route === '/contact' ? 'contact current' : 'contact'
 
     return(
@@ -66,7 +70,7 @@ let mapStateToProps = (state) => ({
 let mapDispatchToProps = (dispatch) => ({
   switchRoute: (dynamicRoute) => dispatch(route.switchRoute(dynamicRoute)),
   routeToAbout: () => dispatch(route.switchRoute('/about')),
-  routeToPortfolio: () => dispatch(route.switchRoute('/')),
+  routeToPortfolio: () => dispatch(route.switchRoute('/portfolio')),
   routeToContact: () => dispatch(route.switchRoute('/contact')),
   routeToSwitch: (desiredRoute) => dispatch(route.switchRoute(desiredRoute)),
   hamburgerSwitch: (ham) => dispatch(hamburgerToggle.hamburger(ham)),

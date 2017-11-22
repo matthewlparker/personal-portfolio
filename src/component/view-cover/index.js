@@ -68,6 +68,7 @@ class ViewCover extends React.Component{
     }
 
     return (
+
       <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-main-open' : ''}`} style={mainBackground}>
 
 
@@ -90,7 +91,7 @@ class ViewCover extends React.Component{
           </div>
 
           <div className='portfolio-container'>
-            <Route exact path='/' component={Portfolio} />
+            <Route exact path='/portfolio' component={Portfolio} />
           </div>
 
           <div className='about-container'>

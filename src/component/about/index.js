@@ -45,16 +45,10 @@ export default class About extends React.Component{
           </ul>
 
           <p>
-            I put 100% into every project of which {'I\'m'} a part, and view each as an opportunity to grow in knowledge and ability. I love to serve and delight through web development, and so take great joy in producing applications of the highest quality with exceptional user experiences.
+
           </p>
 
           <h2>Skills</h2>
-          <p>
-            Through my education at <a href='https://www.codefellows.org' target='_#'>Code Fellows</a> and continual personal study, I have garnered a set of skills that equips me to tackle the problems faced by our increasingly data-driven and technologically-interconnected lives.
-          </p>
-          <p>
-            I now specialize in React and full-stack JavaScript development, but my curiosity and drive for excellence constantly pushes me to learn more.
-          </p>
 
           <h3>Front-end Developer</h3>
 
