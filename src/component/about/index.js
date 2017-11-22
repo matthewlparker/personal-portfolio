@@ -4,7 +4,7 @@ import './styles.scss'
 export default class About extends React.Component{
   render() {
     return(
-      <div className='about-container1'>
+      <div className='about-main'>
 
 
 

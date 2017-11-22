@@ -34,10 +34,8 @@
   width: 100%;
   height: calc(100% - 50px);
   cursor: default;
-  background-color: $color-black;
 
-  // background-image: url('https://i.imgur.com/HjStYze.gif');
-  // background-image: url('https://i.imgur.com/4KJPU8C.gif');
+  background-color: hsla(0,0,0,1);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: absolute;
@@ -54,15 +52,6 @@
 
 }
 
-.bg-image {
-  background-image: url('https://i.imgur.com/HjStYze.gif');
-  // background-image: url('https://i.imgur.com/4KJPU8C.gif');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: absolute;
-  background-position: center;
-}
-
 .view-cover-main-open {
   bottom: calc(-100% + 80px);
 }
@@ -75,67 +64,6 @@
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: 30px auto auto auto 1fr 1fr 1fr;
-
-
-  p {
-    display: none;
-    color: $color-white;
-    // font-family: $font-raleway;
-
-    -webkit-animation: fade-in-out forwards;
-    animation: fade-in-out forwards;
-    opacity: 0;
-  }
-
-
-  .view-cover-p1 {
-    grid-area: 2 / 2 / 3 / span 10;
-    justify-self: left;
-    align-self: center;
-    font-size: 2.5em;
-    font-weight: 700;
-
-
-    animation-delay: .25s;
-    animation-duration: 2s;
-    span {
-      animation-delay: .5s;
-      animation-duration: 2s;
-    }
-  }
-  .view-cover-p2 {
-    grid-area: 3 / 3 / 4 / span 8;
-    justify-self: left;
-    align-self: center;
-    font-size: 1.5em;
-
-    animation-delay: 1.5s;
-    animation-duration: 2s;
-    span {
-      animation-delay: 1.5s;
-      animation-duration: 2s;
-    }
-  }
-  .view-cover-p3 {
-    grid-area: 4 / 1 / 5 / span 10;
-    justify-self: center;
-    align-self: center;
-    font-size: 5em;
-    font-weight: 700;
-    font-family: $font-dancing;
-
-    animation-delay: 3.25s;
-    animation-duration: 2s;
-  }
-  .view-cover-p4 {
-    grid-area: 5 / 5 / 6 / span 4;
-    justify-self: left;
-    font-size: 2em;
-    font-family: $font-dancing;
-
-    animation-delay: 3.75s;
-    animation-duration: 2s;
-  }
 }
 
 .view-cover-toggle-icon {
@@ -144,6 +72,7 @@
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 30px;
+  background: hsla(0, 0, 0, .6);
 
   -webkit-transition: background-color 1s ease-in-out .5s;
   -moz-transition: background-color 1s ease-in-out .5s;
@@ -162,14 +91,6 @@
     -moz-transition: transform 1s ease-in-out .5s, color 1s ease-in-out .5s;
     -o-transition: transform 1s ease-in-out .5s, color 1s ease-in-out .5s;
     transition: transform 1s ease-in-out .5s, color 1s ease-in-out .5s;
-    opacity: 0;
-
-    -webkit-animation: fade-in forwards;
-    animation: fade-in forwards;
-    animation-duration: 1s;
-    animation-delay: 4.75s;
-    animation-timing-function: ease-in-out;
-
   }
 }
 
@@ -228,12 +149,6 @@
     border-top: none;
     overflow: hidden;
 
-    // animation: slide-right forwards;
-    // animation-delay: 6s;
-    // animation-duration: 1s;
-    animation-timing-function: linear;
-
-    // transition: 1s !important;
   }
 
   .view-cover-content {
@@ -242,10 +157,11 @@
     display: -ms-grid;
     display: grid;
     grid-template-columns: 30px repeat(10, 1fr) 30px;
-    grid-template-rows: 30px auto auto auto 1fr 1fr 30px;
-    grid-gap: 10px;
+    grid-template-rows: 30px 40px 40px 40px 1fr 1fr 30px;
+    // grid-gap: 10px;
 
     .name, .developer, .status {
+      height: 25px;
       font-family: 'Munro', normal;
       font-size: 1.5em;
       justify-self: left;
@@ -267,45 +183,18 @@
     }
 
     .portfolio-container {
-      grid-area: 1 / 6 / span 7 / span 6;
+      grid-area: 2 / 6 / span 5 / span 6;
       // background: hsla(0, 0, 0, .9);
     }
     .about-container {
-      grid-area: 1 / 6 / span 7 / span 6;
+      grid-area: 2 / 6 / span 5 / span 6;
       // background: hsla(0, 0, 0, .9);
+      overflow-y: auto;
+      background-color: hsla(0, 0, 0, .6);
     }
     .contact-container {
-      grid-area: 1 / 6 / span 7 / span 6;
+      grid-area: 2 / 6 / span 5 / span 6;
       // background: hsla(0, 0, 0, .9);
-    }
-
-    .view-cover-p1 {
-      grid-area: 1 / 3 / 3 / span 8;
-      justify-self: left;
-      align-self: center;
-      font-size: 4em;
-      font-weight: 700;
-    }
-    .view-cover-p2 {
-      grid-area: 2 / 4 / 3 / span 7;
-      justify-self: left;
-      align-self: center;
-      font-size: 1.5em;
-    }
-    .view-cover-p3 {
-      grid-area: 3 / 2 / 4 / span 9;
-      justify-self: center;
-      align-self: center;
-      font-size: 7em;
-      font-weight: 700;
-      font-family: $font-dancing;
-
-    }
-    .view-cover-p4 {
-      grid-area: 4 / 6 / 5 / span 5;
-      justify-self: left;
-      font-size: 2em;
-      font-family: $font-dancing;
     }
   }
 
@@ -335,7 +224,7 @@
   }
 
   .view-cover-toggle-icon:hover {
-    background: hsla(0, 0, 0, .5);
+    background: hsla(0, 0, 0, .9);
     transition: 0s;
   }
 
@@ -356,11 +245,6 @@
       transform: rotate(-180deg);
       color: $color-primary;
     }
-  }
-
-  .background-video {
-    grid-row-end: 5;
-    grid-column-end: 12;
   }
 }
 
