@@ -25,7 +25,7 @@ class Home extends React.Component{
     return(
       <div className={`home-main ${this.props.lightTheme ? 'home-main-light' : ''}`}>
 
-        <Link to='/' onClick={this.props.routeToPortfolio} className={`to-portfolio ${this.props.lightTheme ? 'icon-light' : ''}`}>
+        <Link to='/portfolio' onClick={this.props.routeToPortfolio} className={`to-portfolio ${this.props.lightTheme ? 'icon-light' : ''}`}>
           Portfolio
         </Link>
 

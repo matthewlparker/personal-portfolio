@@ -21,7 +21,7 @@ class Header extends React.Component{
 
     pathname === '/about' ? this.props.routeToAbout()
     : pathname === '/contact' ? this.props.routeToContact()
-    : pathname === '/portfolio' ? thihs.props.routeToContact()
+    : pathname === '/portfolio' ? this.props.routeToPortfolio()
     : undefined
     // if(pathname === '/about'){
     //   this.props.routeToAbout()
