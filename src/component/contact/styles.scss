@@ -10,12 +10,10 @@
   form {
     background: none;
     p {
-      color: hsla(0,0,100%,1);
-    }
-    label {
-      color: hsla(0,0,100%,1);
+      color: $color-white;
     }
     input[type='text'], textarea, {
+      color: $color-black;
       background-color: hsla(0,0,100%,1);
     }
   }
