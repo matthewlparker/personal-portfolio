@@ -167,7 +167,9 @@
       grid-area: 2 / 2 / 3 / span 4;
     }
     .name:hover {
-      color: hsla(275, 100, 60%, 1);
+      span {
+        color: hsla(275, 100, 60%, 1);
+      }
     }
 
     .developer {

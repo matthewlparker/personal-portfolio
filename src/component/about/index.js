@@ -21,7 +21,7 @@ export default class About extends React.Component{
           <ul>
             <li className='about-list-title'>Responsive Websites</li>
             <li className='about-list-title'>
-              Front-end Development
+              Front-End Development
               <ul>
                 <li>HTML</li>
                 <li>CSS</li>
@@ -35,7 +35,7 @@ export default class About extends React.Component{
               </ul>
             </li>
             <li className='about-list-title'>
-              Back-end development
+              Back-End Development
               <ul>
                 <li>Node</li>
                 <li>MongoDB</li>
