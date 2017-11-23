@@ -44,13 +44,17 @@ class ViewCover extends React.Component{
     let backgrounds = [
       'https://i.imgur.com/HjStYze.gif',
       'https://i.imgur.com/4KJPU8C.gif',
-      'https://i.imgur.com/L2Hc5MB.gif',
+      // 'https://i.imgur.com/L2Hc5MB.gif',
       'https://i.imgur.com/XTCAUql.gif',
-      'https://i.imgur.com/LmSj8fW.gif',
+      // 'https://i.imgur.com/LmSj8fW.gif',
       'https://i.imgur.com/vvTO3np.gif',
+      'https://i.imgur.com/589GAGa.gif',
+      // '../../assets/backgrounds/pixel-ship.gif',
+
+
     ]
     this.setState({
-      background: backgrounds[Math.floor(Math.random() * (backgrounds.length - 1))]
+      background: backgrounds[Math.floor(Math.random() * (backgrounds.length))]
     })
   }
 
