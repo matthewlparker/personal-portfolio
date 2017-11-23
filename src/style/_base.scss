@@ -101,16 +101,16 @@ textarea, input {
 }
 
 button,input[type="submit"] {
-  background: $color-primary;
-  color: $color-white;
+  background: $color-white;
+  color: $color-black;
   padding: $pad;
   width: 30%;
   border: none;
   border-radius: 3px;
 
   &:hover {
-    background: $color-secondary;
-    color: $color-lightgrey;
+    background: $color-primary;
+    color: $color-white;
     transition: all 0.5s ease;
   }
 }

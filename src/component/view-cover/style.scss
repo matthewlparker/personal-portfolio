@@ -1,5 +1,10 @@
 @import "vars";
 
+@font-face {
+  font-family: 'Munro';
+  src: local('Munro'), url(../../style/font/Munro.ttf) format('truetype');
+}
+
 @-webkit-keyframes fade-in {
   0% {opacity: 0;}
   100% {opacity: 1;}
@@ -162,7 +167,9 @@
       grid-area: 2 / 2 / 3 / span 4;
     }
     .name:hover {
-      color: hsla(275, 100, 60%, 1);
+      span {
+        color: hsla(275, 100, 60%, 1);
+      }
     }
 
     .developer {

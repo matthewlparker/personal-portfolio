@@ -10,12 +10,10 @@
   form {
     background: none;
     p {
-      color: hsla(0,0,100%,1);
-    }
-    label {
-      color: hsla(0,0,100%,1);
+      color: $color-white;
     }
     input[type='text'], textarea, {
+      color: $color-black;
       background-color: hsla(0,0,100%,1);
     }
   }
@@ -44,12 +42,13 @@
 }
 
 .contact-content {
-  margin-top: 4em;
+  // margin-top: 3em;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.25em;
+  padding-top: 2rem;
   padding-right: 1.25em;
-  padding-bottom: 5em;
+  padding-bottom: 2rem;
+  padding-left: 1.25em;
   max-width: 720px;
 }
 
