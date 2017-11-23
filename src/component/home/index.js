@@ -13,6 +13,11 @@ import './styles.scss'
 class Home extends React.Component{
   constructor(props){
     super(props)
+    this.state={
+      hover: '',
+    }
+    this.onEnter = this.onEnter.bind(this)
+    this.onLeave = this.onLeave.bind(this)
     this.handleCover = this.handleCover.bind(this)
   }
 
@@ -29,44 +34,61 @@ class Home extends React.Component{
     this.props.handleCover('COVER_TOGGLE')
   }
 
-  render(){
+  onEnter(skill) {
+    this.setState({
+      hover: skill
+    })
+  }
 
+  onLeave(){
+    this.setState({
+      hover: ''
+    })
+  }
+
+  render(){
     return(
       <div className={`home-main ${this.props.lightTheme ? 'home-main-light' : ''}`}>
 
-        <Link to='/portfolio' onClick={this.props.routeToPortfolio} className={`to-portfolio ${this.props.lightTheme ? 'icon-light' : ''}`}>
+        <Link to={this.props.route !== '/portfolio' ? '/portfolio' : '/'} onClick={this.props.route !== '/portfolio' ? this.props.routeToPortfolio : this.props.routeToLanding} className={`to-portfolio ${this.props.lightTheme ? 'icon-light' : ''}`}>
           Portfolio
         </Link>
 
-        <Link to='/about' onClick={this.props.routeToAbout} className={`to-about ${this.props.lightTheme ? 'icon-light' : ''}`}>
+        <Link to={this.props.route !== '/about' ? '/about' : '/'} onClick={this.props.route !== '/about' ? this.props.routeToAbout : this.props.routeToLanding} className={`to-about ${this.props.lightTheme ? 'icon-light' : ''}`}>
           About
         </Link>
 
-        <Link to='/contact' onClick={this.props.routeToContact} className={`to-contact ${this.props.lightTheme ? 'icon-light' : ''}`}>
+        <Link to={this.props.route !== '/contact' ? '/contact' : '/'} onClick={this.props.route !== '/contact' ? this.props.routeToContact : this.props.routeToLanding} className={`to-contact ${this.props.lightTheme ? 'icon-light' : ''}`}>
           Contact
         </Link>
 
-        <div className='skill-icon javascript'>
+        <div className='hovered-skill'>{this.state.hover}</div>
+
+        <div className='skill-icon javascript' onMouseEnter={()=>this.onEnter('JavaScript')} onMouseLeave={this.onLeave}>
           <img src={require('../../assets/javascript-original.svg')} alt='javascript logo' />
         </div>
 
-        <div className='skill-icon react'>
+        <div className='skill-icon react' onMouseEnter={()=>this.onEnter('React')} onMouseLeave={this.onLeave}>
           <img src={require('../../assets/react-original.svg')} alt='react logo' />
         </div>
 
-        <div className='skill-icon html'>
+        <div className='skill-icon html' onMouseEnter={()=>this.onEnter('HTML5')} onMouseLeave={this.onLeave}>
           <img src={require('../../assets/html5-original.svg')} alt='html 5 logo'/>
         </div>
 
-        <div className='skill-icon css'>
+        <div className='skill-icon css' onMouseEnter={()=>this.onEnter('CSS3')} onMouseLeave={this.onLeave}>
           <img src={require('../../assets/css3-original.svg')} alt='css 3 logo' />
         </div>
 
-        <div className='skill-icon node'>
+        <div className='skill-icon sass' onMouseEnter={()=>this.onEnter('Sass')} onMouseLeave={this.onLeave}>
+          <img src={require('../../assets/sass-original.svg')} alt='sass logo' />
+        </div>
+
+        <div className='skill-icon node' onMouseEnter={()=>this.onEnter('Node')} onMouseLeave={this.onLeave}>
           <img src={require('../../assets/nodejs-original.svg')} alt='node logo' />
         </div>
 
-        <div className='skill-icon mongodb'>
+        <div className='skill-icon mongodb' onMouseEnter={()=>this.onEnter('MongoDB')} onMouseLeave={this.onLeave}>
           <img src={require('../../assets/mongodb-original.svg')} alt='mongo db logo'/>
         </div>
 
@@ -82,6 +104,7 @@ class Home extends React.Component{
 
 let mapStateToProps = (state) => ({
   lightTheme: state.lightTheme,
+  route: state.route,
 })
 
 let mapDispatchToProps = (dispatch) => ({
@@ -89,6 +112,7 @@ let mapDispatchToProps = (dispatch) => ({
   routeToAbout: () => dispatch(route.switchRoute('/about')),
   routeToPortfolio: () => dispatch(route.switchRoute('/portfolio')),
   routeToContact: () => dispatch(route.switchRoute('/contact')),
+  routeToLanding: () => dispatch(route.switchRoute('/')),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

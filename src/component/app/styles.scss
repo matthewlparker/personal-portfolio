@@ -25,23 +25,21 @@
     display: none;
 }
 
-// medium screens
-@media only screen and (min-width: 1024px){
+/* MEDIUM SCREENS */
+@media only screen and (min-width: 768px){
 
   .app-container {
     flex-direction: column;
   }
 
   .home-container {
-    width: 100%; height: calc(100% * .3);
-    // min-width: 400px;
+    width: 100%; height: calc(100% * .35);
     overflow: hidden;
-    // overflow-y: auto;
     border-bottom: none;
   }
 
   .content-container {
-    width: 100%; height: calc(100%*.7);
+    width: 100%; height: calc(100% * .65);
     z-index: 1;
   }
 

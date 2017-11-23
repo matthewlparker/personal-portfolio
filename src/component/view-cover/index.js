@@ -73,9 +73,9 @@ class ViewCover extends React.Component{
 
         <div className='view-cover-content' >
 
-        <div className={`name ${this.props.lightTheme ? 'text-light' : ''}`}>
-          Name: Matthew Parker
-        </div>
+
+          <a className={'name'} href='https://docs.google.com/document/d/1bLo8ln0GXKTPMceAKzwvaifaj8mm2Y2_cXog9_Ssu60/export?format=pdf'>Name: Matthew Parker</a>
+
 
         <div className={`developer`}>
           Developer: React & Full-Stack JavaScript
