@@ -73,14 +73,6 @@
 
 
 @media only screen and (min-width: 768px) {
-  .home-main {
-    grid-template-columns: 10px repeat(3, 1fr) 10px;
-    grid-template-rows: 10px 1r 1fr 1fr 1fr 10px;
-  }
-}
-
-
-@media only screen and (min-width: 1024px) {
 
   .home-main {
     grid-template-rows: 30px repeat(2, 1fr) 30px;
@@ -123,6 +115,14 @@
       color: hsla(100,100,50%,1);
     }
 
+    .hovered-skill {
+      grid-area: 1 / 1 / span 1 / span 10;
+      justify-self: center;
+      align-self: center;
+      font-size: 1.5em;
+      font-family: 'Munro', normal;
+    }
+
     .skill-icon {
       width: 50px; height: 50px;
       justify-self: center;
@@ -141,13 +141,15 @@
     .css {
       grid-area: 2 / 9 / span 1 / span 1;
     }
-    .node {
+    .sass {
       grid-area: 3 / 6 / span 1 / span 1;
     }
-    .mongodb {
+    .node {
       grid-area: 3 / 7 / span 1 / span 1;
     }
-
+    .mongodb {
+      grid-area: 3 / 8 / span 1 / span 1;
+    }
 
     .about-language-logo {
       font-size: 13px;
@@ -157,11 +159,5 @@
       margin-right: 2em;
       text-align: center;
     }
-
-
-
-
-
-
   }
 }
