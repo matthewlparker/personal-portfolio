@@ -28,7 +28,7 @@ a {
   &:hover {
     // background: $color-secondary;
     color: $color-secondary;
-    transition: all 0.2s ease;
+    // transition: all 0.2s ease;
   }
 }
 
@@ -65,9 +65,9 @@ h4, h5, li, p {
   border: solid $color-lightgrey;
 }
 
-form, .meal-form  {
+form, {
   background-color: $color-white;
-  padding: 2% 10% 10% 10%;
+  padding: 2% 10% 10% 2%;
 }
 
 textarea, input {
@@ -111,7 +111,7 @@ button,input[type="submit"] {
   &:hover {
     background: $color-primary;
     color: $color-white;
-    transition: all 0.5s ease;
+    // transition: all 0.5s ease;
   }
 }
 

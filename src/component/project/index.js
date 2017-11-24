@@ -1,18 +1,29 @@
 import React from 'react'
+import './style.scss'
 
 const Project = (props) => {
   return (
-    <li className={props.title}>
-      <a href={props.projectURL} target='_blank'>
-        <h3 className='title'> Seattle Reads </h3>
-      </a>
-      <h4>
-          <a className='github-icon' href={props.projectGitHubURL} target='_#'>
-            <i className="fa fa-github" aria-hidden="true"></i>
-          </a>
-            React, JavaScript, HTML5, CSS3, Sass
-      </h4>
-    </li>
+    <div className={'project-main'}>
+
+      <div className={'project-description'}>
+        {props.description}
+      </div>
+
+      <div className={'project-portrait'}>
+        <a className={'project-picture'} href='https://seattle-library-checkouts.herokuapp.com/' target='_#'>
+          <div className={'project-logo-name'}>
+            {props.logoName}
+          </div>
+        </a>
+
+        <div className={'project-banner'}>
+          <div className={'project-name'}>
+            {props.title}
+          </div>
+        </div>
+      </div>
+
+    </div>
   )
 }
 

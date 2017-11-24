@@ -19,27 +19,34 @@ class ViewCover extends React.Component{
     }
     this.enterSite = this.enterSite.bind(this)
     this.handleCover = this.handleCover.bind(this)
-    this.detectBrowser = this.detectBrowser.bind(this)
+    // this.detectBrowser = this.detectBrowser.bind(this)
+    this.handleKeyPress = this.handleKeyPress.bind(this)
     this.randomBackground = this.randomBackground.bind(this)
   }
 
   componentWillMount(){
     this.randomBackground()
+    document.addEventListener('keypress', this.handleKeyPress)
+
     // let video = this.detectBrowser()
     // video === 'chrome' || video === 'firefox' ? this.setState({playVideo: true}) : undefined
   }
 
-  detectBrowser(){
-    let browser
-    let browserMatch = navigator.userAgent.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i)
-    navigator.userAgent.match(/Edge/i) || navigator.userAgent.match(/Trident.*rv[ :]*11\./i) ? browser = 'msie'
-    : browser = browserMatch[1].toLowerCase()
-
-    return browser
-  }
+  // detectBrowser(){
+  //   let browser
+  //   let browserMatch = navigator.userAgent.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i)
+  //   navigator.userAgent.match(/Edge/i) || navigator.userAgent.match(/Trident.*rv[ :]*11\./i) ? browser = 'msie'
+  //   : browser = browserMatch[1].toLowerCase()
+  //
+  //   return browser
+  // }
 
   handleCover(){
     this.props.handleCover('COVER_TOGGLE')
+  }
+
+  handleKeyPress(e){
+    !this.state.entered && e.charCode === 13 ? this.enterSite() : undefined
   }
 
   enterSite(){
@@ -59,9 +66,8 @@ class ViewCover extends React.Component{
       'https://i.imgur.com/vvTO3np.gif',
       'https://i.imgur.com/589GAGa.gif',
       // '../../assets/backgrounds/pixel-ship.gif',
-
-
     ]
+
     this.setState({
       background: backgrounds[Math.floor(Math.random() * (backgrounds.length))]
     })
@@ -81,9 +87,9 @@ class ViewCover extends React.Component{
 
     return (
 
-      <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-main-open' : ''}`} style={mainBackground}>
+      <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-main-open' : ''}`} style={mainBackground} onKeyUp={console.log('key')}>
 
-      {!this.state.entered ? <div className='enter' onClick={this.enterSite}>ENTER</div>
+      {!this.state.entered ? <div className='enter' onClick={this.enterSite} >C:\> Enter<span>_</span></div>
 
         : <div className='view-cover-content'>
 
@@ -103,15 +109,11 @@ class ViewCover extends React.Component{
             <FontAwesome name='arrow-right' />
           </div>
 
-          <div className='portfolio-container'>
-            <Route exact path='/portfolio' component={Portfolio} />
-          </div>
+          <div className='pixelart-to-css'></div>
 
-          <div className='about-container'>
+          <div className='page-container'>
             <Route exact path='/about' component={About} />
-          </div>
-
-          <div className='contact-container'>
+            <Route exact path='/portfolio' component={Portfolio} />
             <Route exact path='/contact' component={Contact} />
           </div>
 
