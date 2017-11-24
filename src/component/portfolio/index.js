@@ -20,7 +20,27 @@ class Portfolio extends React.Component{
     return(
       <div className='portfolio-container'>
         <div className='project-sr'>
-          <Project />
+          <Project
+            logoName={'SR'}
+            title={'Seattle Reads'}
+            description={'A web app that makes it easy to see what items are being checked out of the Seattle public library system, and find popular new reads.'}
+          />
+        </div>
+
+        <div className='project-gs'>
+          <Project
+            logoName={'GS'}
+            title={'Gourmet Swap'}
+            description={'A full-stack application built during my 401 class at Code Fellows as a prototype for a gourmet meal sharing startup.'}
+          />
+        </div>
+
+        <div className='project-gog'>
+          <Project
+            logoName={'GoG'}
+            title={'Guardians'}
+            description={'My first project at Code Fellows, Guardians of the Goats is a front-end mockup that allows users to gain access to information about caring for goats, to advertise a goat that is need of help, and to make yourself available to offer that help.'}
+          />
         </div>
       </div>
     )

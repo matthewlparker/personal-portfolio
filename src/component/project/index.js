@@ -6,21 +6,19 @@ const Project = (props) => {
     <div className={'project-main'}>
 
       <div className={'project-description'}>
-        Seattle Reads is a web app that makes it easy to see what items are being checked out of the Seattle public library system and find popular new reads.
+        {props.description}
       </div>
 
       <div className={'project-portrait'}>
-        <div className={'project-picture'}>
-        <a href='https://seattle-library-checkouts.herokuapp.com/' target='_#'>
+        <a className={'project-picture'} href='https://seattle-library-checkouts.herokuapp.com/' target='_#'>
           <div className={'project-logo-name'}>
-            SR
+            {props.logoName}
           </div>
-          </a>
-        </div>
+        </a>
 
         <div className={'project-banner'}>
           <div className={'project-name'}>
-            Seattle Reads
+            {props.title}
           </div>
         </div>
       </div>
