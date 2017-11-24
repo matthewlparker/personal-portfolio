@@ -14,8 +14,10 @@ class ViewCover extends React.Component{
   constructor(props){
     super(props)
     this.state={
+      entered: false,
       background: '',
     }
+    this.enterSite = this.enterSite.bind(this)
     this.handleCover = this.handleCover.bind(this)
     this.detectBrowser = this.detectBrowser.bind(this)
     this.randomBackground = this.randomBackground.bind(this)
@@ -38,6 +40,13 @@ class ViewCover extends React.Component{
 
   handleCover(){
     this.props.handleCover('COVER_TOGGLE')
+  }
+
+  enterSite(){
+    this.setState({
+      entered: true
+    })
+    this.handleCover()
   }
 
   randomBackground(){
@@ -74,20 +83,21 @@ class ViewCover extends React.Component{
 
       <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-main-open' : ''}`} style={mainBackground}>
 
+      {!this.state.entered ? <div className='enter' onClick={this.enterSite}>ENTER</div>
 
-        <div className='view-cover-content' >
+        : <div className='view-cover-content'>
 
+          <a className={'name'} href='https://docs.google.com/document/d/1bLo8ln0GXKTPMceAKzwvaifaj8mm2Y2_cXog9_Ssu60/export?format=pdf'>
+            Name: <span>Matthew Parker</span>
+          </a>
 
-          <a className={'name'} href='https://docs.google.com/document/d/1bLo8ln0GXKTPMceAKzwvaifaj8mm2Y2_cXog9_Ssu60/export?format=pdf'>Name: <span>Matthew Parker</span></a>
+          <div className={`developer`}>
+            Developer: React & Full-Stack JavaScript
+          </div>
 
-
-        <div className={`developer`}>
-          Developer: React & Full-Stack JavaScript
-        </div>
-
-        <div className={`status`}>
-          Status: Available for hire
-        </div>
+          <div className={`status`}>
+            Status: Available for hire
+          </div>
 
           <div className={`view-cover-toggle-icon ${arrowIconClass}`} onClick={this.handleCover}>
             <FontAwesome name='arrow-right' />
@@ -107,6 +117,7 @@ class ViewCover extends React.Component{
 
 
         </div>
+      }
 
       </div>
     )
