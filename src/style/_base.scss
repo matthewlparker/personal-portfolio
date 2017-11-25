@@ -44,18 +44,15 @@ h1 {
   line-height: 66px;
   font-size: 2em;
   color: $color-black;
-  // padding-bottom: 3%;
 }
 
 h2 {
   font-size: 2em;
   color: $color-primary;
-  // padding-bottom: 3%;
 }
 
 h4, h5, li, p {
   color: $color-darkgrey;
-  // padding-bottom: 2%;
 }
 
 .dropdown {
@@ -74,7 +71,6 @@ textarea, input {
   padding: $pad;
   border: 1px solid $color-grey;
   margin-bottom: $pad;
-  // resize: none;
   overflow: hidden;
 
   &:focus {
@@ -111,13 +107,9 @@ button,input[type="submit"] {
   &:hover {
     background: $color-primary;
     color: $color-white;
-    // transition: all 0.5s ease;
   }
 }
 
-meals {
-  background-color: $color-white;
-}
 
 input[type=file]::-webkit-file-upload-button {
     border: none;
@@ -141,3 +133,13 @@ li { display: list-item; }
 ol li { list-style: decimal; }
 
 .hide { display: none; }
+
+// custom
+
+.box {
+  border-top: 5px ridge $color-white;
+  border-right: 5px groove $color-white;
+  border-bottom: 5px groove $color-white;
+  border-left: 5px ridge $color-white;
+  background-color: hsla(215, 88, 36, .6);
+}

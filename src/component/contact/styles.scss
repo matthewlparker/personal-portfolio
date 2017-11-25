@@ -11,10 +11,20 @@
     background: none;
     p {
       color: $color-white;
+      text-shadow: 1px 1px 1px $color-black;
+    }
+    label {
+      text-shadow: 1px 1px 1px $color-black;
     }
     input[type='text'], textarea, {
-      color: $color-black;
-      background-color: hsla(0,0,100%,1);
+      background-color: hsla(215, 88, 36, .6);
+      border-top: 5px ridge $color-white;
+      border-right: 5px groove $color-white;
+      border-bottom: 5px groove $color-white;
+      border-left: 5px ridge $color-white;
+    }
+    ::placeholder {
+      color: hsla(0, 0, 100, .8);
     }
   }
 }
@@ -22,27 +32,11 @@
 .contact-intro {
   position: relative;
   color: white;
-  // background: $color-primary;
   padding: 80px 80px 30px 80px;
   text-align: center;
 }
 
-.contact-intro h1 {
-  font-size: 2.6em;
-  font-weight: 900;
-  line-height: 1.4;
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-.contact-intro h2 {
-  font-size: 1.2em;
-  font-weight: 500;
-  color: white;
-}
-
 .contact-content {
-  // margin-top: 3em;
   margin-left: auto;
   margin-right: auto;
   padding-top: 2rem;
@@ -66,12 +60,13 @@
 
 .contact-content input, .contact-content textarea {
   width: 100%;
-  box-shadow: 6px 6px 0 $color-black;
+  // box-shadow: 6px 6px 0 $color-black;
 }
 
 .contact-content button {
   width: 20%;
   border-radius: 1px;
+  box-shadow: 0 5px 0 hsla(0, 0, 60, 1);
 }
 
 .contact-message-header {

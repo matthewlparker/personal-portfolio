@@ -174,7 +174,6 @@
       // border-left: 3px ridge $color-white;
 
       background-color: hsla(0, 0, 0, .6);
-      // background: hsla(215, 88, 36, .6);
     }
 
     .name {
@@ -189,20 +188,12 @@
     .developer {
       grid-area: 3 / 2 / 4 / span 4;
     }
-
     .status {
       grid-area: 4 / 2 / 5 / span 4;
     }
-
     .page-container {
       grid-area: 1 / 6 / span 6 / span 6;
     }
-    // .about-container {
-    //   grid-area: 1 / 6 / span 6 / span 6;
-    // }
-    // .contact-container {
-    //   grid-area: 1 / 6 / span 6 / span 6;
-    // }
   }
 
   .view-cover-main-open {
