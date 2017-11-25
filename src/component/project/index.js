@@ -2,6 +2,9 @@ import React from 'react'
 import './style.scss'
 
 const Project = (props) => {
+  let projectColor = {
+    backgroundColor: props.projectColor
+  }
   return (
     <div className={'project-main'}>
 
@@ -10,7 +13,7 @@ const Project = (props) => {
       </div>
 
       <div className={'project-portrait'}>
-        <a className={'project-picture'} href='https://seattle-library-checkouts.herokuapp.com/' target='_#'>
+        <a className={'project-picture'} href={props.url} target='_#' style={projectColor}>
           <div className={'project-logo-name'}>
             {props.logoName}
           </div>
