@@ -6,13 +6,21 @@ export default class About extends React.Component{
     super(props)
     this.state={
       choice: null,
+      considering: null,
     }
+    this.handleHover = this.handleHover.bind(this)
     this.handleChoice = this.handleChoice.bind(this)
   }
 
   handleChoice(choice){
     this.setState({
       choice: choice
+    })
+  }
+
+  handleHover(choice){
+    this.setState({
+      considering: choice
     })
   }
 
@@ -23,10 +31,53 @@ export default class About extends React.Component{
       <div className='about-main'>
 
         <div className='user-dialogue box'>
-          <div className='choice-1' onClick={()=>this.handleChoice(1)}>Tell me a bit about yourself.</div>
-          <div className='choice-2' onClick={()=>this.handleChoice(2)}>Why do you like to code?</div>
-          <div className='choice-3' onClick={()=>this.handleChoice(3)}>What languages do you code in?</div>
-          <div className='choice-4' onClick={()=>this.handleChoice(4)}>Where do you see yourself in five years?</div>
+          <div className='choice-1'
+            onClick={()=>this.handleChoice(1)}
+            onMouseEnter={()=>this.handleHover(1)}
+            onMouseLeave={()=>this.handleHover(0)}
+          >
+            Tell me a bit about yourself.
+              {this.state.considering === 1 ?
+                <span> {'<'} </span>
+                :undefined
+              }
+          </div>
+
+          <div className='choice-2'
+            onClick={()=>this.handleChoice(2)}
+            onMouseEnter={()=>this.handleHover(2)}
+            onMouseLeave={()=>this.handleHover(0)}
+          >
+            Why do you like to code?
+              {this.state.considering === 2 ?
+                <span> {'<'} </span>
+                : undefined
+              }
+            </div>
+
+            <div className='choice-3'
+              onClick={()=>this.handleChoice(3)}
+              onMouseEnter={()=>this.handleHover(3)}
+              onMouseLeave={()=>this.handleHover(0)}
+            >
+            What languages do you code in?
+              {this.state.considering === 3 ?
+                <span> {'<'} </span>
+                : undefined
+              }
+          </div>
+
+          <div className='choice-4'
+            onClick={()=>this.handleChoice(4)}
+            onMouseEnter={()=>this.handleHover(4)}
+            onMouseLeave={()=>this.handleHover(0)}
+          >
+            Where do you see yourself in five years?
+              {this.state.considering === 4 ?
+                <span> {'<'} </span>
+                : undefined
+              }
+          </div>
         </div>
 
         <div className='matt-dialogue box'>
