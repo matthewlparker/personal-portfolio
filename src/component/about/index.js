@@ -34,13 +34,13 @@ export default class About extends React.Component{
           <div className='answer'>
             {this.state.choice === 1 ?
               <div>
-              I am a lion
+              My name is Matthew Parker. I am a lion.
               </div>
               : undefined
             }
             {this.state.choice === 2 ?
               <div>
-              I love to create
+              I love to create.
               </div>
               : undefined
             }
