@@ -70,7 +70,6 @@
 }
 
 .view-cover-content {
-  // display: none;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -96,7 +95,6 @@
   .fa {
     align-self: center;
     justify-self: center;
-    color: $color-white;
     -webkit-transform: rotate(-270deg);
     -ms-transform: rotate(-270deg);
     transform: rotate(-270deg);
@@ -108,24 +106,6 @@
   }
 }
 
-.view-cover-toggle-icon-open-dark {
-  // background-color: $color-black;
-  .fa {
-    -webkit-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-  }
-}
-
-.view-cover-toggle-icon-open-light {
-  // background-color: $color-white;
-  .fa {
-    -webkit-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    color: $color-black;
-  }
-}
 
 
 // .background-video {
@@ -162,33 +142,39 @@
     font-size: 4em;
     padding: 10px;
     text-shadow: 1px 5px 5px black;
-    // background-color: hsla(0, 0, 0, .6);
+
     span {
       animation: blink 1s linear infinite;
     }
   }
   .enter:hover {
-    // color: $color-primary;
+
   }
 
   .view-cover-content {
-    // display: none;
     height: 100%;
     width: 100%;
     display: -ms-grid;
     display: grid;
     grid-template-columns: 30px repeat(10, 1fr) 30px;
-    grid-template-rows: 30px 40px 40px 40px 1fr 1fr 30px;
-    // grid-gap: 10px;
+    grid-template-rows: 30px 45px 45px 45px 1fr 1fr 30px;
 
     .name, .developer, .status {
-      height: 25px;
+      height: 30px;
       font-family: 'Munro', normal;
       font-size: 1.5em;
+      line-height: 1.5em;
       justify-self: left;
       color: $color-white;
       padding-left: 5px; padding-right: 5px;
+
+      // border-top: 3px ridge $color-white;
+      // border-right: 3px groove $color-white;
+      // border-bottom: 3px groove $color-white;
+      // border-left: 3px ridge $color-white;
+
       background-color: hsla(0, 0, 0, .6);
+      // background: hsla(215, 88, 36, .6);
     }
 
     .name {
