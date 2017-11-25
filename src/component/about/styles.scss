@@ -3,26 +3,49 @@
 .about-main {
   display: grid;
   grid-template-rows: 30px 150px 30px 150px 30px;
-  grid-template-columns: 30px 30px 30px 1fr 30px 30px 30px;
+  grid-template-columns: 30px 150px 1fr 150px 30px;
   width: 100%;
   height: 100%;
   overflow-y: auto;
 
   background-color: hsla(0, 0, 0, .6);
   // background-color: hsla(215, 88, 36, .6);
-  border-top: 5px ridge $color-white;
-  border-right: 5px groove $color-white;
-  border-bottom: 5px groove $color-white;
-  border-left: 5px ridge $color-white;
+  // border-top: 5px ridge $color-white;
+  // border-right: 5px groove $color-white;
+  // border-bottom: 5px groove $color-white;
+  // border-left: 5px ridge $color-white;
 
   .user-dialogue {
-    grid-area: 2 / 2 / span 1 / span 3;
+    grid-area: 2 / 3 / span 1 / span 2;
+    display: grid;
+    grid-template-rows: 1fr auto auto auto auto 1fr;
+    grid-template-columns: 5px 1fr 5px;
+    grid-row-gap: 5px;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 2px $color-black;
 
+    .choice-1 {
+      grid-area: 2 / 2 / span 1 / span 1;
+    }
+
+    .choice-2 {
+      grid-area: 3 / 2 / span 1 / span 1;
+    }
+
+    .choice-3 {
+      grid-area: 4 / 2 / span 1 / span 1;
+    }
+
+    .choice-4 {
+      grid-area: 5 / 2 / span 1 / span 1;
+    }
 
   }
 
   .matt-dialogue {
-    grid-area: 4 / 3 / span 1 / span 3;
-
+    grid-area: 4 / 2 / span 1 / span 2;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 2px $color-black;
+    padding: 5px;
   }
 }
