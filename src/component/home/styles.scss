@@ -45,8 +45,10 @@
   color: $color-white;
   background-color: $color-black;
 
-  cursor: crosshair;
-
+  // border-top: 5px ridge $color-white;
+  // border-right: 5px groove $color-white;
+  // border-bottom: 5px groove $color-white;
+  // border-left: 5px ridge $color-white;
 
   .theme-toggle-icon {
     display: none;
