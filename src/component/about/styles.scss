@@ -2,10 +2,11 @@
 
 .about-main {
   display: grid;
-  grid-template-rows: 30px 150px 30px 150px 30px;
-  grid-template-columns: 30px 150px 1fr 150px 30px;
+  grid-template-rows: 30px 30px 170px 30px 30px 170px 30px;
+  grid-template-columns: 30px 200px 1fr 200px 30px;
   width: 100%;
   height: 100%;
+  // align-items: flex-end;
   overflow-y: auto;
 
   background-color: hsla(0, 0, 0, .6);
@@ -16,7 +17,7 @@
   // border-left: 5px ridge $color-white;
 
   .user-dialogue {
-    grid-area: 2 / 3 / span 1 / span 2;
+    grid-area: 3 / 3 / span 1 / span 2;
     display: grid;
     grid-template-rows: 1fr auto auto auto auto 1fr;
     grid-template-columns: 5px 1fr 5px;
@@ -44,10 +45,18 @@
   }
 
   .matt-dialogue {
-    grid-area: 4 / 2 / span 1 / span 2;
+    grid-area: 6 / 2 / span 1 / span 2;
+    // height: 80%;
     font-size: 1.5em;
     text-shadow: 2px 2px 2px $color-black;
     overflow-y: auto;
     padding: 5px;
+  }
+  .matt-portrait {
+    grid-area: 5 / 4 / span 2 / span 1;
+    background-image: url('../../assets/images/matthew-portrait.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: hsla(0,0,0,.6);
   }
 }

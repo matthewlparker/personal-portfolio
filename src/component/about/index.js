@@ -111,6 +111,8 @@ export default class About extends React.Component{
           </div>
         </div>
 
+        <div className='matt-portrait box'></div>
+
       </div>
     )
   }
