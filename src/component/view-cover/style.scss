@@ -156,8 +156,8 @@
     width: 100%;
     display: -ms-grid;
     display: grid;
-    grid-template-columns: 30px repeat(10, 1fr) 30px;
     grid-template-rows: 30px 45px 45px 45px 1fr 1fr 30px;
+    grid-template-columns: 30px repeat(10, 1fr) 30px;
 
     .name, .developer, .status {
       height: 30px;
@@ -192,7 +192,7 @@
       grid-area: 4 / 2 / 5 / span 4;
     }
     .page-container {
-      grid-area: 1 / 6 / span 6 / span 6;
+      grid-area: 2 / 2 / span 5 / span 10;
     }
   }
 
