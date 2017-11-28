@@ -107,7 +107,7 @@ export default class About extends React.Component{
             hover={this.handleHover}
             considering={this.state.considering}
             optionNumber={3}
-            text={'Where do you see yourself in five years?'}
+            text={'In what languages do you program?'}
           />
 
           <UserDialogue
@@ -126,25 +126,25 @@ export default class About extends React.Component{
           <div className='answer'>
             {this.state.choice === 1 ?
               <div>
-              My name is Matthew Parker.
+              {`My name's Matthew Parker. I'm a recent graduate of Code Fellows in Seattle, a full-stack JavaScript developer, and a Christian. I'm a quiet extrovert, and aspire to be both a master programmer and best-selling auhor of fiction.`}
               </div>
               : undefined
             }
             {this.state.choice === 2 ?
               <div>
-              I love to create.
+              {`I love to create. Traditionally I've done so through writing, and now as well through programming. There's nothing to me quite like imagining a thing, and then creating it with words. And with programming I can make things that genuinely increase the quality of peoples' lives. This amazes, humbles, and drives me toward excellence.`}
               </div>
               : undefined
             }
             {this.state.choice === 3 ?
               <div>
-              I specialize in JavaScript with a focus on the front-end with React, but I am a full-stack developer and I love to learn new languages!
+              {`I specialize in JavaScript with a focus on the front-end with React, and have an array of skills such as HTML5, CSS3, Sass, Redux, Node, MongoDB, AWS, and others. I love learning new languages, and have a personal goal of delving next into Python.`}
               </div>
               : undefined
             }
             {this.state.choice === 4 ?
               <div>
-              I hope in five years to be working at a senior level in programming.
+              {`I hope by then to be wiser, more charitable, a senior-level programmer with a great company, and a published author. Also, hopefully also having built my own tiny house.`}
               </div>
               : undefined
             }

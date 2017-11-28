@@ -1,6 +1,6 @@
 import React from 'react'
 
-const userDialogue = (props) => {
+const UserDialogue = (props) => {
   return(
     <div className={props.componentClass}
       onClick={()=>props.choice(props.optionNumber)}
@@ -15,4 +15,4 @@ const userDialogue = (props) => {
   )
 }
 
-export default userDialogue
+export default UserDialogue
