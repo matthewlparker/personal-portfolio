@@ -8,9 +8,9 @@ const UserDialogue = (props) => {
       onMouseLeave={()=>props.hover(0)}
     >
       {props.text}
-        {props.considering === props.optionNumber ? <span> {'<'} </span>
-          : undefined
-        }
+      {props.considering === props.optionNumber ? <span> {'<'} </span>
+        : undefined
+      }
     </div>
   )
 }

@@ -126,13 +126,13 @@ export default class About extends React.Component{
           <div className='answer'>
             {this.state.choice === 1 ?
               <div>
-              {`My name's Matthew Parker. I'm a recent graduate of Code Fellows in Seattle, a full-stack JavaScript developer, and a Christian. I'm a quiet extrovert, and aspire to be both a master programmer and best-selling auhor of fiction.`}
+              {`My name's Matthew Parker. I'm a recent graduate of Code Fellows in Seattle, a full-stack JavaScript developer, and a Christian. I'm a quiet extrovert, and aspire to be both a master programmer and best-selling author of fiction.`}
               </div>
               : undefined
             }
             {this.state.choice === 2 ?
               <div>
-              {`I love to create. Traditionally I've done so through writing, and now as well through programming. There's nothing to me quite like imagining a thing, and then creating it with words. And with programming I can make things that genuinely increase the quality of peoples' lives. This amazes, humbles, and drives me toward excellence.`}
+              {`I love to create. Traditionally I've done so through writing, and now as well through programming. There's nothing to me quite like imagining a thing, and then creating it with words. And with programming I can make things that genuinely increase the quality and capability of peoples' lives. This amazes and humbles me, and drives me toward excellence.`}
               </div>
               : undefined
             }
@@ -144,7 +144,7 @@ export default class About extends React.Component{
             }
             {this.state.choice === 4 ?
               <div>
-              {`I hope by then to be wiser, more charitable, a senior-level programmer with a great company, and a published author. Also, hopefully also having built my own tiny house.`}
+              {`I hope by then to be wiser, more charitable, a senior-level programmer with a great company, and a published author.`}
               </div>
               : undefined
             }
