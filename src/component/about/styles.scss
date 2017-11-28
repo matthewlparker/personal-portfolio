@@ -9,7 +9,7 @@
   // align-items: flex-end;
   overflow-y: auto;
 
-  background-color: hsla(0, 0, 0, .6);
+  background-color: hsla(0, 0, 0, 0);
   // background-color: hsla(215, 88, 36, .6);
   // border-top: 5px ridge $color-white;
   // border-right: 5px groove $color-white;
@@ -57,6 +57,6 @@
     background-image: url('../../assets/images/matthew-portrait.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: hsla(0,0,0,.6);
+    background-color: hsla(0,0,0,0);
   }
 }

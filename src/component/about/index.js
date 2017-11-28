@@ -1,4 +1,5 @@
 import React from 'react'
+import UserDialogue from '../user-dialogue/index.js'
 import './styles.scss'
 
 export default class About extends React.Component{
@@ -7,15 +8,26 @@ export default class About extends React.Component{
     this.state={
       choice: null,
       considering: null,
+      answerText: '',
+      stringIndex: 0,
     }
+    this.delayedText = this.delayedText.bind(this)
     this.handleHover = this.handleHover.bind(this)
     this.handleChoice = this.handleChoice.bind(this)
   }
 
   handleChoice(choice){
     this.setState({
-      choice: choice
+      choice: choice,
     })
+
+    // let answer = choice === 1 ? 'Hello world'
+    //   : choice === 2 ? 'Oh my'
+    //   : choice === 3 ? 'Aw yeah'
+    //   : choice === 4 ? 'I like turtles'
+    //   : ''
+    //
+    //   this.delayedText('Hello World')
   }
 
   handleHover(choice){
@@ -24,60 +36,89 @@ export default class About extends React.Component{
     })
   }
 
+  delayedText(text){
+    if(this.state.stringIndex === (text.length - 1)){
+      this.setState({
+        stringIndex: 0
+      })
+    }
+    // let loopThroughSplittedText = (text) => {
+
+    // Create our counter; delayedOutput will use this to
+    // track how far along in our string we are currently at
+    // let locationInString = 0
+
+    // function delayedOutput() {
+
+    // Output the next letter in our string
+    // console.log(splittedText[locationInString]);
+    this.setState({
+      answerText: text[this.state.stringIndex]
+    })
+
+    // Increment our counter so that on the next call we are on the next letter
+    this.setState(prevState => {
+      stringIndex: prevState.stringIndex++
+    })
+
+    // Only perform setTimeout if we still have text left to output
+    if (this.state.stringIndex < text.length) {
+
+      // Functions can reference themselves using their own name
+      setTimeout(this.delayedText, 20)
+    }
+
+
+  // Call our function once to get things started
+  this.delayedText()
+  // }
+
+    // loopThroughSplittedText(splittedText)
+  }
+
 
   render() {
-    console.log('about state: ', this.state)
     return(
       <div className='about-main'>
 
         <div className='user-dialogue box'>
-          <div className='choice-1'
-            onClick={()=>this.handleChoice(1)}
-            onMouseEnter={()=>this.handleHover(1)}
-            onMouseLeave={()=>this.handleHover(0)}
-          >
-            Tell me a bit about yourself.
-              {this.state.considering === 1 ?
-                <span> {'<'} </span>
-                :undefined
-              }
-          </div>
 
-          <div className='choice-2'
-            onClick={()=>this.handleChoice(2)}
-            onMouseEnter={()=>this.handleHover(2)}
-            onMouseLeave={()=>this.handleHover(0)}
-          >
-            Why do you like to code?
-              {this.state.considering === 2 ?
-                <span> {'<'} </span>
-                : undefined
-              }
-            </div>
+          <UserDialogue
+            componentClass={'choice-1'}
+            choice={this.handleChoice}
+            hover={this.handleHover}
+            considering={this.state.considering}
+            optionNumber={1}
+            text={'Tell me a bit about yourself.'}
+          />
 
-            <div className='choice-3'
-              onClick={()=>this.handleChoice(3)}
-              onMouseEnter={()=>this.handleHover(3)}
-              onMouseLeave={()=>this.handleHover(0)}
-            >
-            What languages do you code in?
-              {this.state.considering === 3 ?
-                <span> {'<'} </span>
-                : undefined
-              }
-          </div>
+          <UserDialogue
+            componentClass={'choice-2'}
+            choice={this.handleChoice}
+            hover={this.handleHover}
+            considering={this.state.considering}
+            optionNumber={2}
+            text={'What do you like about programming?'}
+          />
 
-          <div className='choice-4'
-            onClick={()=>this.handleChoice(4)}
-            onMouseEnter={()=>this.handleHover(4)}
-            onMouseLeave={()=>this.handleHover(0)}
-          >
-            Where do you see yourself in five years?
-              {this.state.considering === 4 ?
-                <span> {'<'} </span>
-                : undefined
-              }
-          </div>
+          <UserDialogue
+            componentClass={'choice-3'}
+            choice={this.handleChoice}
+            hover={this.handleHover}
+            considering={this.state.considering}
+            optionNumber={3}
+            text={'In what languages do you program?'}
+          />
+
+          <UserDialogue
+            componentClass={'choice-4'}
+            choice={this.handleChoice}
+            hover={this.handleHover}
+            considering={this.state.considering}
+            optionNumber={4}
+            text={'Where do you see yourself in five years?'}
+          />
+
         </div>
 
         <div className='matt-dialogue box'>
@@ -85,25 +126,25 @@ export default class About extends React.Component{
           <div className='answer'>
             {this.state.choice === 1 ?
               <div>
-              My name is Matthew Parker. I am a lion.
+              {`My name's Matthew Parker. I'm a recent graduate of Code Fellows in Seattle, a full-stack JavaScript developer, and a Christian. I'm a quiet extrovert, and aspire to be both a master programmer and best-selling author of fiction.`}
               </div>
               : undefined
             }
             {this.state.choice === 2 ?
               <div>
-              I love to create.
+              {`I love to create. Traditionally I've done so through writing, and now as well through programming. There's nothing to me quite like imagining a thing, and then creating it with words. And with programming I can make things that genuinely increase the quality and capability of peoples' lives. This amazes and humbles me, and drives me toward excellence.`}
               </div>
               : undefined
             }
             {this.state.choice === 3 ?
               <div>
-              I specialize in JavaScript with a focus on the front-end with React, but I am a full-stack developer and I love to learn new languages!
+              {`I specialize in JavaScript with a focus on the front-end with React, and have an array of skills such as HTML5, CSS3, Sass, Redux, Node, MongoDB, AWS, and others. I love learning new languages, and have a personal goal of delving next into Python.`}
               </div>
               : undefined
             }
             {this.state.choice === 4 ?
               <div>
-              I hope in five years to be working at a senior level in programming.
+              {`I hope by then to be wiser, more charitable, a senior-level programmer with a great company, and a published author.`}
               </div>
               : undefined
             }
@@ -117,95 +158,3 @@ export default class About extends React.Component{
     )
   }
 }
-
-// <div className='about-content'>
-//   <div className='about-avatar'>
-//     <img src={require('../../assets/matt-profile.png')} />
-//
-//   </div>
-//   <p className='about-first-paragraph'>
-//   I am a React & Full-Stack Developer, graduate of <a href='https://www.codefellows.org' target='_#'>{'Code Fellows\''}</a> advanced JavaScript program, and creative writer. When I decided to pursue a career in web development, I quit my job of 5 and a half years in Olympia and moved to Seattle to dedicate myself to learning these new skills. Now with clean code, modern design, and industry standard tools, I build responsive Full-Stack applications.
-//   </p>
-//
-//   <p>For clients and employers I am a developer who can provide:</p>
-//   <ul>
-//     <li className='about-list-title'>Responsive Websites</li>
-//     <li className='about-list-title'>
-//       Front-End Development
-//       <ul>
-//         <li>HTML</li>
-//         <li>CSS</li>
-//         <li>
-//           JavaScript
-//           <ul>
-//             <li>jQuery</li>
-//             <li>React</li>
-//           </ul>
-//         </li>
-//       </ul>
-//     </li>
-//     <li className='about-list-title'>
-//       Back-End Development
-//       <ul>
-//         <li>Node</li>
-//         <li>MongoDB</li>
-//         <li>RESTful architecture</li>
-//       </ul>
-//     </li>
-//   </ul>
-//
-//   <p>
-//
-//   </p>
-//
-//   <h2>Skills</h2>
-//
-//   <h3>Front-end Developer</h3>
-//
-//   <div className='about-language-logos'>
-//     <div className='about-language-logo'>
-//       <img src={require('../../assets/javascript-original.svg')} alt='javascript logo' />
-//       <strong> JavaScript </strong>
-//     </div>
-//
-//     <div className='about-language-logo'>
-//       <img src={require('../../assets/react-original.svg')} alt='react logo' />
-//       <strong> React </strong>
-//     </div>
-//
-//     <div className='about-language-logo'>
-//       <img src={require('../../assets/html5-original.svg')} alt='html 5 logo'/>
-//       <strong> HTML5 </strong>
-//     </div>
-//
-//
-//
-//   </div>
-//
-//   <div className='about-front-end-logos'>
-//
-//   <div className='about-language-logo'>
-//     <img src={require('../../assets/css3-original.svg')} alt='css 3 logo' />
-//     <strong> CSS3 </strong>
-//   </div>
-//
-//     <div className='about-language-logo'>
-//       <img src={require('../../assets/sass-original.svg')} alt='sass logo' />
-//       <strong> Sass </strong>
-//     </div>
-//   </div>
-//
-//   <h3>Back-end Developer</h3>
-//
-//   <div className='about-language-logos'>
-//     <div className='about-language-logo'>
-//       <img src={require('../../assets/nodejs-original.svg')} alt='node logo' />
-//       <strong> Node </strong>
-//     </div>
-//
-//     <div className='about-language-logo'>
-//       <img src={require('../../assets/mongodb-original.svg')} alt='mongo db logo'/>
-//       <strong> MongoDB </strong>
-//     </div>
-//   </div>
-// </div>
