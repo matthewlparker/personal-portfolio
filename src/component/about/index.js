@@ -107,7 +107,7 @@ export default class About extends React.Component{
             hover={this.handleHover}
             considering={this.state.considering}
             optionNumber={3}
-            text={'In what languages do you program?'}
+            text={'What languages do you program in?'}
           />
 
           <UserDialogue
@@ -138,7 +138,7 @@ export default class About extends React.Component{
             }
             {this.state.choice === 3 ?
               <div>
-              {`I specialize in JavaScript with a focus on the front-end with React, and have an array of skills such as HTML5, CSS3, Sass, Redux, Node, MongoDB, AWS, and others. I love learning new languages, and have a personal goal of delving next into Python.`}
+              {`I specialize in JavaScript with a focus on the front-end with React, and have an array of skills such as HTML5, CSS3, Sass, Redux, Node, MongoDB, AWS, and others. I love learning new languages, and am looking at getting into Python.`}
               </div>
               : undefined
             }
