@@ -20,7 +20,6 @@ export default class About extends React.Component{
     this.setState({
       choice: choice,
     })
-
     // let answer = choice === 1 ? 'Hello world'
     //   : choice === 2 ? 'Oh my'
     //   : choice === 3 ? 'Aw yeah'
@@ -81,7 +80,11 @@ export default class About extends React.Component{
     return(
       <div className='about-main'>
 
+
+
         <div className='user-dialogue box'>
+
+          <div className='portrait-block'></div>
 
           <UserDialogue
             componentClass={'choice-1'}
@@ -120,19 +123,20 @@ export default class About extends React.Component{
           />
 
         </div>
+        <div className='user-portrait'></div>
 
         <div className='matt-dialogue box'>
 
           <div className='answer'>
             {this.state.choice === 1 ?
               <div>
-              {`My name's Matthew Parker. I'm a recent graduate of Code Fellows in Seattle, a full-stack JavaScript developer, and a Christian. I'm a quiet extrovert, and aspire to be both a master programmer and best-selling author of fiction.`}
+              {`My name's Matthew Parker. I'm a recent graduate of Code Fellows in Seattle, a full-stack JavaScript developer, and a Christian. Reading, adventures, and animals are a few of my favorite things. I aspire to be both a master programmer and best-selling author.`}
               </div>
               : undefined
             }
             {this.state.choice === 2 ?
               <div>
-              {`I love to create. Traditionally I've done so through writing, and now as well through programming. There's nothing to me quite like imagining a thing, and then creating it with words. And with programming I can make things that genuinely increase the quality and capability of peoples' lives. This amazes and humbles me, and drives me toward excellence.`}
+              {`I love to create. Through both writing fiction and programming. There's nothing to me quite like imagining a thing, and then creating it with words. And with programming I can make things that genuinely increase the quality and capability of peoples' lives. This amazes and humbles me, and drives me toward excellence.`}
               </div>
               : undefined
             }
@@ -148,11 +152,11 @@ export default class About extends React.Component{
               </div>
               : undefined
             }
-
           </div>
+          <div className='portrait-block'></div>
         </div>
+        <div className='matt-portrait'></div>
 
-        <div className='matt-portrait box'></div>
 
       </div>
     )

@@ -46,7 +46,12 @@ class ViewCover extends React.Component{
   }
 
   handleKeyPress(e){
-    !this.state.entered && e.charCode === 13 ? this.enterSite() : undefined
+    console.log('handleKeyPress event: ', e)
+    // !this.state.entered && e.charCode === 13 || !this.state.entered && e.keyCode === 13 ? this.enterSite() : undefined
+    !this.state.entered && e.key === 'Enter' ? this.enterSite() : undefined
+
+    this.state.entered && e.key === 'i' || this.state.entered && e.key === 'Enter' ? this.handleCover() : undefined
+
   }
 
   enterSite(){
@@ -86,23 +91,24 @@ class ViewCover extends React.Component{
     }
 
     return (
-
       <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-main-open' : ''}`} style={mainBackground} onKeyUp={console.log('key')}>
 
       {!this.state.entered ? <div className='enter' onClick={this.enterSite} >C:\> Enter<span>_</span></div>
 
         : <div className='view-cover-content'>
 
-          <a className={'name'} href='https://docs.google.com/document/d/1bLo8ln0GXKTPMceAKzwvaifaj8mm2Y2_cXog9_Ssu60/export?format=pdf'>
-            Name: <span>Matthew Parker</span>
-          </a>
+          <div className='basic-info'>
+            <a className={'name'} href='https://docs.google.com/document/d/1bLo8ln0GXKTPMceAKzwvaifaj8mm2Y2_cXog9_Ssu60/export?format=pdf'>
+              Name: <span>Matthew Parker</span>
+            </a>
 
-          <div className={`developer`}>
-            Developer: React & Full-Stack JavaScript
-          </div>
+            <div className={`developer`}>
+              Developer: React & Full-Stack JavaScript
+            </div>
 
-          <div className={`status`}>
-            Status: Available for hire
+            <div className={`status`}>
+              Status: Available for hire
+            </div>
           </div>
 
           <div className={`view-cover-toggle-icon ${arrowIconClass}`} onClick={this.handleCover}>
