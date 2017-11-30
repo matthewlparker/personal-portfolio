@@ -50,8 +50,7 @@ class ViewCover extends React.Component{
     // !this.state.entered && e.charCode === 13 || !this.state.entered && e.keyCode === 13 ? this.enterSite() : undefined
     !this.state.entered && e.key === 'Enter' ? this.enterSite() : undefined
 
-    this.state.entered && e.key === 'i' || this.state.entered && e.key === 'Enter' ? this.handleCover() : undefined
-
+    this.state.entered && e.key === 'i' ? this.handleCover() : undefined
   }
 
   enterSite(){
