@@ -5,6 +5,9 @@ import Project from '../project/index.js'
 import ViewCover from '../view-cover/index.js'
 
 class Portfolio extends React.Component{
+  constructor(props){
+    super(props)
+  }
 
   render() {
 
