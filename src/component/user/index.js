@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import * as user from '../../action/user.js'
 import * as enterSite from '../../action/viewActions.js'
 import * as coverToggle from '../../action/viewActions.js'
 import './style.scss'
@@ -15,6 +16,7 @@ class User extends React.Component {
         man1: false,
         woman1: false,
       },
+      portraitURL: '',
     }
     this.saveName = this.saveName.bind(this)
     this.enterSite = this.enterSite.bind(this)
@@ -29,6 +31,7 @@ class User extends React.Component {
 
   componentWillMount(){
     document.addEventListener('keypress', this.handleKeyPress)
+    if(localStorage.iconName) {this.selectAvatar(localStorage.iconName)}
   }
 
   handleChange(e){
@@ -37,27 +40,58 @@ class User extends React.Component {
     })
   }
 
-  savePortrait(avatar, file){
-    if(avatar === 'man1'){this.setState({ selected: {man1:true }})}
-    if(avatar === 'woman1'){this.setState({ selected: {woman1: true}})}
-    localStorage.setItem('userPortrait', JSON.stringify(file))
+  savePortrait(){
+    // if(avatar === 'man1'){this.setState({ selected: {man1:true }})}
+    // if(avatar === 'woman1'){this.setState({ selected: {woman1: true}})}
+    // let file = this.state.selected.man1 ?
+    localStorage.setItem('userPortrait', JSON.stringify(this.state.portraitURL))
+    this.props.setUserPortrait(this.state.portraitURL)
   }
 
   saveName(){
-    let name = this.state.name ? this.state.name
-      : localStorage.userName ? localStorage.getItem('userName')
-      : 'visitor'
+    // let name = this.state.name ? this.state.name
+    //   : localStorage.userName ? localStorage.getItem('userName')
+    //   : 'visitor'
+    // let name = !this.state.name && localStorage.userName ? localStorage.getItem('userName')
+    //   : this.state.name ? this.state.name
+    //   :
+    //
+    if(this.state.name){
+      localStorage.setItem('userName', this.state.name)
+      this.props.setUserName(this.state.name)
+    } else {
+      this.props.setUserName(localStorage.userName)
+    }
 
-    localStorage.setItem('userName', name)
+    // if(!this.state.name){
+    //   localStorage.setItem('userName', this.state.name)
+    // }
   }
 
   selectAvatar(avatar){
-    if(avatar === 'man1') {this.savePortrait('man1', 'https://i.lensdump.com/i/9faKz.png')}
-    if(avatar === 'woman1') {this.savePortrait('woman1', 'https://i.lensdump.com/i/9fGt5.png')}
+    if(avatar === 'man1') {
+      this.setState({
+        selected: {
+          man1: true
+        },
+        portraitURL: 'https://i.lensdump.com/i/9faKz.png'
+      })}
+
+    if(avatar === 'woman1'){
+      this.setState({
+        selected: {
+          woman1: true
+        },
+        portraitURL: 'https://i.lensdump.com/i/9fGt5.png'
+      })}
+    // if(avatar === 'man1') {this.savePortrait('man1', 'https://i.lensdump.com/i/9faKz.png')}
+    // if(avatar === 'woman1') {this.savePortrait('woman1', 'https://i.lensdump.com/i/9fGt5.png')}
+    localStorage.setItem('iconName', avatar)
   }
 
   enterSite(){
     this.saveName()
+    this.savePortrait()
     this.props.enterSite()
     this.props.handleCover('COVER_TOGGLE')
   }
@@ -80,6 +114,12 @@ class User extends React.Component {
     localStorage.clear()
     this.setState({
       start: true,
+      delete: false,
+      selected: {
+        man1: false,
+        woman1: false,
+      },
+      portraitURL: '',
     })
   }
 
@@ -92,6 +132,7 @@ class User extends React.Component {
   }
 
   render(){
+    console.log('user state: ', this.state)
     let userName = localStorage.getItem('userName')
     return(
       <div className='user-main'>
@@ -114,8 +155,8 @@ class User extends React.Component {
           </input>
         </div>
 
-        <div className={`portrait man1 ${this.state.selected.man1 || JSON.parse(localStorage.getItem('userPortrait')) === 'https://i.lensdump.com/i/9faKz.png' ? 'selected' : ''}`} onClick={()=>this.selectAvatar('man1')}></div>
-        <div className={`portrait woman1 ${this.state.selected.woman1 || JSON.parse(localStorage.getItem('userPortrait')) === 'https://i.lensdump.com/i/9fGt5.png' ? 'selected' : ''}`} onClick={()=>this.selectAvatar('woman1')}></div>
+        <div className={`portrait man1 ${this.state.selected.man1  ? 'selected' : ''}`} onClick={()=>this.selectAvatar('man1')}></div>
+        <div className={`portrait woman1 ${this.state.selected.woman1  ? 'selected' : ''}`} onClick={()=>this.selectAvatar('woman1')}></div>
 
         <div className='enter' onClick={this.enterSite}>START<span className={this.state.start ? 'menu-select' : ''}></span></div>
 
@@ -135,6 +176,8 @@ let mapStateToProps = (state) => ({
 let mapDispatchToProps = (dispatch) => ({
   enterSite: () => dispatch(enterSite.entered()),
   handleCover: (toggle) => dispatch(coverToggle.cover(toggle)),
+  setUserName: (name) => dispatch(user.name(name)),
+  setUserPortrait: (portrait) => dispatch(user.portrait(portrait)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(User)

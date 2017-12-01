@@ -93,9 +93,8 @@ class About extends React.Component{
     // }
     console.log('this.props.background: ', this.props.background)
 
-    let userPic = {
-      backgroundImage: 'url(' + `${this.state.userPortrait}` + ')',
-    }
+    let name = this.props.name
+    let portrait = {backgroundImage: 'url(' + `${this.state.userPortrait}` + ')'}
 
     return(
       <div className='about-main'>
@@ -144,9 +143,9 @@ class About extends React.Component{
 
         </div>
 
-        <div className='user-name'>{localStorage.getItem('userName')}</div>
+        <div className='user-name'>{name}</div>
 
-        <div className='user-portrait' style={userPic}></div>
+        <div className='user-portrait' style={portrait}></div>
 
         <div className='matt-dialogue box'>
 
@@ -155,16 +154,16 @@ class About extends React.Component{
             {this.state.choice === 0 ?
               <Typist startDelay={1500} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
                 {this.props.background === 'https://i.imgur.com/589GAGa.gif'
-                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Welcome aboard me pirate ship! Er, I mean, to my site. Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${name}, it's a pleasure to meet you! Welcome aboard me pirate ship! Er, I mean, to my site. Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/XTCAUql.gif'
-                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Few better times to poke around my site than while on a walk through this lovely forest. Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${name}, it's a pleasure to meet you! Few better times to poke around my site than while on a walk through this lovely forest. Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/4KJPU8C.gif'
-                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Is there a finer way to see the sunset than on an ocean-side train? Well there's certainly not a finer way to see my site! Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${name}, it's a pleasure to meet you! Is there a finer way to see the sunset than on an ocean-side train? Well there's certainly not a finer way to see my site! Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/vvTO3np.gif'
-                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Look at these waterfalls! Oh, what a beautiful sight. And speaking of sites, have you seen mine? Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${name}, it's a pleasure to meet you! Look at these waterfalls! What a beautiful sight. And speaking of sites, have you seen mine? Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/HjStYze.gif'
-                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! All I ask is a tall ship and a star to steer her by. And that you have a good time visiting my site. Feel free to look around, and ask me any questions you might have.`
-                  : `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Welcome to my site. Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${name}, it's a pleasure to meet you! All I ask is a tall ship and a star to steer her by. And that you have a good time visiting my site. Feel free to look around, and ask me any questions you might have.`
+                  : `Hi ${name}, it's a pleasure to meet you! Welcome to my site. Feel free to look around, and ask me any questions you might have.`
                 }
               </Typist>
               : undefined
@@ -207,7 +206,9 @@ class About extends React.Component{
 }
 
 let mapStateToProps = (state) => ({
-  background: state.setBackground
+  name: state.userName,
+  portrait: state.userPortrait,
+  background: state.setBackground,
 })
 
 let mapDispatchToProps = (dispatch) => ({
