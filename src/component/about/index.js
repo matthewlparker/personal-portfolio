@@ -1,9 +1,10 @@
 import React from 'react'
 import Typist from 'react-typist'
+import {connect} from 'react-redux'
 import UserDialogue from '../user-dialogue/index.js'
 import './styles.scss'
 
-export default class About extends React.Component{
+class About extends React.Component{
   constructor(props){
     super(props)
     this.state={
@@ -90,6 +91,7 @@ export default class About extends React.Component{
     // let userPortrait = {
     //   backgroundImage: `url(${picture})`,
     // }
+    console.log('this.props.background: ', this.props.background)
 
     let userPic = {
       backgroundImage: 'url(' + `${this.state.userPortrait}` + ')',
@@ -152,7 +154,18 @@ export default class About extends React.Component{
 
             {this.state.choice === 0 ?
               <Typist startDelay={1500} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
-                {`Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Welcome to my site. Feel free to ask me any questions you might have.`}
+                {this.props.background === 'https://i.imgur.com/589GAGa.gif'
+                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Welcome aboard me pirate ship! Er, I mean, to my site. Feel free to look around, and ask me any questions you might have.`
+                  : this.props.background === 'https://i.imgur.com/XTCAUql.gif'
+                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Few better times to poke around my site than while on a walk through this lovely forest. Feel free to look around, and ask me any questions you might have.`
+                  : this.props.background === 'https://i.imgur.com/4KJPU8C.gif'
+                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Is there a finer way to see the sunset than on an ocean-side train? Well there's certainly not a finer way to see my site! Feel free to look around, and ask me any questions you might have.`
+                  : this.props.background === 'https://i.imgur.com/vvTO3np.gif'
+                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Look at these waterfalls! Oh, what an awesome sight. And speaking of sights, have you seen my site? Feel free to look around, and ask me any questions you might have.`
+                  : this.props.background === 'https://i.imgur.com/HjStYze.gif'
+                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! All I ask is a tall ship and a star to steer her by. And that you have a good time visiting my site. Feel free to look around, and ask me any questions you might have.`
+                  : `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Welcome to my site. Feel free to look around, and ask me any questions you might have.`
+                }
               </Typist>
               : undefined
             }
@@ -192,3 +205,13 @@ export default class About extends React.Component{
     )
   }
 }
+
+let mapStateToProps = (state) => ({
+  background: state.setBackground
+})
+
+let mapDispatchToProps = (dispatch) => ({
+
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(About)

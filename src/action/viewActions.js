@@ -12,3 +12,8 @@ export const entered = (entered) => ({
   type: 'ENTER_SITE',
   payload: entered,
 })
+
+export const background = (bg) => ({
+  type: 'SET_BACKGROUND',
+  payload: bg,
+})
