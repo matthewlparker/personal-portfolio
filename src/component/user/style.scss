@@ -2,7 +2,7 @@
 
 .user-main {
   display: grid;
-  grid-template-rows: 30px auto auto auto auto 30px;
+  grid-template-rows: 30px auto auto auto auto auto 30px;
   grid-template-columns: 30px auto auto 30px;
   align-items: center;
   justify-items: center;
@@ -53,17 +53,24 @@
 
   .enter {
     grid-area: 5 / 2 / span 1 / span 2;
-    font-size: 4em;
+    font-size: 3.5em;
     padding: 10px;
     text-shadow: 1px 1px 1px black;
+  }
 
-    span {
-      display: inline-block;
-      animation: blink 1s linear infinite;
-      width: 20px;
-      height: 40px;
-      background-color: $color-white;
-    }
+  .delete {
+    grid-area: 6 / 2 / span 1 / span 2;
+    font-size: 3.5em;
+    padding: 10px;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  .menu-select {
+    display: inline-block;
+    animation: blink 1s linear infinite;
+    width: 20px;
+    height: 40px;
+    background-color: $color-white;
   }
 
   .selected {
