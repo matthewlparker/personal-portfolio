@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import * as coverToggle from '../../action/viewActions.js'
+import * as setBackground from '../../action/viewActions.js'
 import FontAwesome from 'react-fontawesome'
 import WeatherContainer from '../weather/container.js'
 import {Route} from 'react-router-dom'
@@ -60,9 +61,12 @@ class ViewCover extends React.Component{
       // '../../assets/backgrounds/pixel-ship.gif',
     ]
 
+    let bg = backgrounds[Math.floor(Math.random() * (backgrounds.length))]
+
     this.setState({
-      background: backgrounds[Math.floor(Math.random() * (backgrounds.length))]
+      background: bg
     })
+    this.props.setBackground(bg)
   }
 
   render(){
@@ -99,7 +103,9 @@ class ViewCover extends React.Component{
           </div>
 
           <div className={`view-cover-toggle-icon ${arrowIconClass}`} onClick={this.props.handleCover}>
+            <div className='hint-text'>refresh for a new view</div>
             <FontAwesome name='arrow-right' />
+            <div className='i-text'>{`[ i ] to ${this.props.coverOpen ? 'close' : 'open'} dashboard`}</div>
           </div>
 
           <div className='pixelart-to-css'></div>
@@ -127,6 +133,7 @@ let mapStateToProps = (state) => ({
 
 let mapDispatchToProps = (dispatch) => ({
   handleCover: (toggle) => dispatch(coverToggle.cover(toggle)),
+  setBackground: (background) => dispatch(setBackground.background(background)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ViewCover)
