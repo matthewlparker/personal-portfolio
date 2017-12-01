@@ -17,6 +17,7 @@ class User extends React.Component {
         woman1: false,
       },
       portraitURL: '',
+      reminder: false,
     }
     this.saveName = this.saveName.bind(this)
     this.enterSite = this.enterSite.bind(this)
@@ -41,31 +42,21 @@ class User extends React.Component {
   }
 
   savePortrait(){
-    // if(avatar === 'man1'){this.setState({ selected: {man1:true }})}
-    // if(avatar === 'woman1'){this.setState({ selected: {woman1: true}})}
-    // let file = this.state.selected.man1 ?
-    localStorage.setItem('userPortrait', JSON.stringify(this.state.portraitURL))
-    this.props.setUserPortrait(this.state.portraitURL)
+    if(this.state.portraitURL){
+      localStorage.setItem('userPortrait', JSON.stringify(this.state.portraitURL))
+      this.props.setUserPortrait(this.state.portraitURL)
+    } else {
+      this.props.setUserPortrait()
+    }
   }
 
   saveName(){
-    // let name = this.state.name ? this.state.name
-    //   : localStorage.userName ? localStorage.getItem('userName')
-    //   : 'visitor'
-    // let name = !this.state.name && localStorage.userName ? localStorage.getItem('userName')
-    //   : this.state.name ? this.state.name
-    //   :
-    //
     if(this.state.name){
       localStorage.setItem('userName', this.state.name)
       this.props.setUserName(this.state.name)
     } else {
       this.props.setUserName(localStorage.userName)
     }
-
-    // if(!this.state.name){
-    //   localStorage.setItem('userName', this.state.name)
-    // }
   }
 
   selectAvatar(avatar){
@@ -84,12 +75,13 @@ class User extends React.Component {
         },
         portraitURL: 'https://i.lensdump.com/i/9fGt5.png'
       })}
-    // if(avatar === 'man1') {this.savePortrait('man1', 'https://i.lensdump.com/i/9faKz.png')}
-    // if(avatar === 'woman1') {this.savePortrait('woman1', 'https://i.lensdump.com/i/9fGt5.png')}
     localStorage.setItem('iconName', avatar)
   }
 
   enterSite(){
+
+    if(!this.state.portraitURL){this.setState({reminder: true}); return}
+
     this.saveName()
     this.savePortrait()
     this.props.enterSite()
@@ -129,6 +121,9 @@ class User extends React.Component {
 
     e.key === 'ArrowUp' ? this.selectStart() : undefined
     e.key === 'ArrowDown' && (localStorage.userPortrait || localStorage.userName) ? this.selectDelete() : undefined
+
+    e.key === 'ArrowRight' && this.state.portraitURL ? this.selectAvatar('man1') : undefined
+    e.key === 'ArrowLeft' && this.state.portraitURL ? this.selectAvatar('woman1') : undefined
   }
 
   render(){
@@ -138,9 +133,10 @@ class User extends React.Component {
       <div className='user-main'>
 
       <div className='user-welcome'>
-        {localStorage.userPortait || localStorage.userName ?
+        {localStorage.userPortrait && localStorage.userName ?
             `Welcome back, ${userName}`
-          : `Pick an avatar and name`
+          : !this.state.reminder ? `Pick an avatar and name`
+          : `Sorry, you need a face`
         }
         </div>
 
@@ -158,10 +154,10 @@ class User extends React.Component {
         <div className={`portrait man1 ${this.state.selected.man1  ? 'selected' : ''}`} onClick={()=>this.selectAvatar('man1')}></div>
         <div className={`portrait woman1 ${this.state.selected.woman1  ? 'selected' : ''}`} onClick={()=>this.selectAvatar('woman1')}></div>
 
-        <div className='enter' onClick={this.enterSite}>START<span className={this.state.start ? 'menu-select' : ''}></span></div>
+        <div className='enter' onClick={this.enterSite} onMouseEnter={this.selectStart}>START<span className={this.state.start ? 'menu-select' : ''}></span></div>
 
-        {localStorage.userPortait || localStorage.userName ?
-          <div className='delete' onClick={this.deleteUser}>DELETE<span className={this.state.delete ? 'menu-select' : ''}></span></div>
+        {localStorage.userPortrait || localStorage.userName ?
+          <div className='delete' onClick={this.deleteUser} onMouseEnter={this.selectDelete}>DELETE<span className={this.state.delete ? 'menu-select' : ''}></span></div>
           : undefined
         }
       </div>

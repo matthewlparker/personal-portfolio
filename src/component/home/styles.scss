@@ -86,7 +86,7 @@
       grid-column-gap: 10px;
     }
 
-    .to-about {
+    .nav {
       grid-area: 1 / 1 / span 1 / span 1;
       align-self: center;
       font-size: 4em;
@@ -95,23 +95,18 @@
       font-family: 'Munro', normal;
       cursor: crosshair;
     }
+    .selected {
+      color: $color-primary;
+    }
+
+    .to-about {
+      grid-area: 1 / 1 / span 1 / span 1;
+    }
     .to-portfolio {
       grid-area: 1 / 2 / span 1 / span 1;
-      align-self: center;
-      font-size: 4em;
-      font-size: 5vw;
-
-      font-family: 'Munro', normal;
-      cursor: crosshair;
     }
     .to-contact {
       grid-area: 1 / 3 / span 1 / span 1;
-      align-self: center;
-      font-size: 4em;
-      font-size: 5vw;
-
-      font-family: 'Munro', normal;
-      cursor: crosshair;
     }
 
     .to-about:hover, .to-portfolio:hover, .to-contact:hover {

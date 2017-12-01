@@ -15,19 +15,22 @@ class Home extends React.Component{
     super(props)
     this.state={
       hover: '',
+      route: '',
     }
     this.onEnter = this.onEnter.bind(this)
     this.onLeave = this.onLeave.bind(this)
     this.handleCover = this.handleCover.bind(this)
+    this.handleRoute = this.handleRoute.bind(this)
+    this.selectRoute = this.selectRoute.bind(this)
   }
 
   componentWillMount() {
-    // let pathname = document.location.href.split('8080')[1]
-    //
-    // pathname === '/about' ? this.props.routeToAbout()
-    // : pathname === '/contact' ? this.props.routeToContact()
-    // : pathname === '/portfolio' ? this.props.routeToPortfolio()
-    // : undefined
+    let pathname = document.location.href.split('8080')[1]
+
+    pathname === '/about' ? this.props.routeToAbout()
+    : pathname === '/contact' ? this.props.routeToContact()
+    : pathname === '/portfolio' ? this.props.routeToPortfolio()
+    : undefined
   }
 
   handleCover(toggle){
@@ -46,21 +49,31 @@ class Home extends React.Component{
     })
   }
 
+  handleRoute(route){
+
+  }
+
+  selectRoute(route){
+    if(route === '/about'){this.setState({route: '/about'})}
+    if(route === '/portfolio'){this.setState({route: '/portfolio'})}
+    if(route === '/contact'){this.setState({route: '/contact'})}
+  }
+
   render(){
     return(
       <div className={`home-main ${this.props.lightTheme ? 'home-main-light' : ''}`}>
 
         <div className={'dashboard-nav'}>
 
-          <Link to={this.props.route !== '/portfolio' ? '/portfolio' : '/'} onClick={this.props.route !== '/portfolio' ? this.props.routeToPortfolio : this.props.routeToLanding} className={`to-portfolio ${this.props.lightTheme ? 'icon-light' : ''}`}>
-            Portfolio
+          <Link to={this.props.route !== '/about' ? '/about' : '/'} onClick={this.props.route !== '/about' ? this.props.routeToAbout : this.props.routeToLanding} className={`to-about nav ${this.state.route === '/about' ? 'selected' : ''}`}>
+          About
           </Link>
 
-          <Link to={this.props.route !== '/about' ? '/about' : '/'} onClick={this.props.route !== '/about' ? this.props.routeToAbout : this.props.routeToLanding} className={`to-about ${this.props.lightTheme ? 'icon-light' : ''}`}>
-            About
+          <Link to={this.props.route !== '/portfolio' ? '/portfolio' : '/'} onClick={this.props.route !== '/portfolio' ? this.props.routeToPortfolio : this.props.routeToLanding} className={`to-portfolio nav ${this.state.route === '/portfolio' ? 'selected' : ''}`}>
+          Portfolio
           </Link>
 
-          <Link to={this.props.route !== '/contact' ? '/contact' : '/'} onClick={this.props.route !== '/contact' ? this.props.routeToContact : this.props.routeToLanding} className={`to-contact ${this.props.lightTheme ? 'icon-light' : ''}`}>
+          <Link to={this.props.route !== '/contact' ? '/contact' : '/'} onClick={this.props.route !== '/contact' ? this.props.routeToContact : this.props.routeToLanding} className={`to-contact nav ${this.state.route === '/contact' ? 'selected' : ''}`}>
             Contact
           </Link>
 

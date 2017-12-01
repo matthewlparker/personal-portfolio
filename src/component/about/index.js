@@ -14,7 +14,6 @@ class About extends React.Component{
       stringIndex: 0,
       userPortrait: '',
     }
-    this.delayedText = this.delayedText.bind(this)
     this.handleHover = this.handleHover.bind(this)
     this.handleChoice = this.handleChoice.bind(this)
   }
@@ -31,13 +30,6 @@ class About extends React.Component{
     this.setState({
       choice: choice,
     })
-    // let answer = choice === 1 ? 'Hello world'
-    //   : choice === 2 ? 'Oh my'
-    //   : choice === 3 ? 'Aw yeah'
-    //   : choice === 4 ? 'I like turtles'
-    //   : ''
-    //
-    //   this.delayedText('Hello World')
   }
 
   handleHover(choice){
@@ -46,60 +38,12 @@ class About extends React.Component{
     })
   }
 
-  delayedText(text){
-    if(this.state.stringIndex === (text.length - 1)){
-      this.setState({
-        stringIndex: 0
-      })
-    }
-    // let loopThroughSplittedText = (text) => {
-
-    // Create our counter; delayedOutput will use this to
-    // track how far along in our string we are currently at
-    // let locationInString = 0
-
-    // function delayedOutput() {
-
-    // Output the next letter in our string
-    // console.log(splittedText[locationInString]);
-    this.setState({
-      answerText: text[this.state.stringIndex]
-    })
-
-    // Increment our counter so that on the next call we are on the next letter
-    this.setState(prevState => {
-      stringIndex: prevState.stringIndex++
-    })
-
-    // Only perform setTimeout if we still have text left to output
-    if (this.state.stringIndex < text.length) {
-
-      // Functions can reference themselves using their own name
-      setTimeout(this.delayedText, 20)
-    }
-
-
-  // Call our function once to get things started
-  this.delayedText(text)
-
-
-    // loopThroughSplittedText(splittedText)
-  }
-
   render() {
-    // let picture = require(this.state.userPortrait)
-    // let userPortrait = {
-    //   backgroundImage: `url(${picture})`,
-    // }
-    console.log('this.props.background: ', this.props.background)
-
     let name = this.props.name
-    let portrait = {backgroundImage: 'url(' + `${this.state.userPortrait}` + ')'}
+    let portrait = {backgroundImage: 'url(' + `${this.props.portrait}` + ')'}
 
     return(
       <div className='about-main'>
-
-
 
         <div className='user-dialogue box'>
 
@@ -177,7 +121,7 @@ class About extends React.Component{
             }
             {this.state.choice === 2 ?
               <Typist startDelay={200} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
-              {`I love to create, through both writing and programming. There's nothing to me quite like imagining a thing, and then creating it with words. And with programming I can make things that genuinely impact the way people live. It's really amazing, and drives me to pursue excellence.`}
+              {`I love to create, through both writing and programming. There's nothing to me quite like imagining a thing, and then creating it with words. And with programming I can make things that genuinely impact the way people live. It's really amazing, and drives me to excellence.`}
               </Typist>
               : undefined
             }
@@ -211,8 +155,6 @@ let mapStateToProps = (state) => ({
   background: state.setBackground,
 })
 
-let mapDispatchToProps = (dispatch) => ({
-
-})
+let mapDispatchToProps = (dispatch) => ({})
 
 export default connect(mapStateToProps, mapDispatchToProps)(About)
