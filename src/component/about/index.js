@@ -161,7 +161,7 @@ class About extends React.Component{
                   : this.props.background === 'https://i.imgur.com/4KJPU8C.gif'
                   ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Is there a finer way to see the sunset than on an ocean-side train? Well there's certainly not a finer way to see my site! Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/vvTO3np.gif'
-                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Look at these waterfalls! Oh, what an awesome sight. And speaking of sights, have you seen my site? Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Look at these waterfalls! Oh, what a beautiful sight. And speaking of sites, have you seen mine? Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/HjStYze.gif'
                   ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! All I ask is a tall ship and a star to steer her by. And that you have a good time visiting my site. Feel free to look around, and ask me any questions you might have.`
                   : `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Welcome to my site. Feel free to look around, and ask me any questions you might have.`
