@@ -16,6 +16,11 @@
   // border-bottom: 5px groove $color-white;
   // border-left: 5px ridge $color-white;
 
+  border-top: 15px ridge #ccc;
+  border-right: 15px groove #ccc;
+  border-bottom: 15px groove #ccc;
+  border-left: 15px ridge #ccc; 
+
   .user-dialogue {
     grid-area: 2 / 2 / span 1 / span 2;
     display: grid;
