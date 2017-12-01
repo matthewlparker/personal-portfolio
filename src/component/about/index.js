@@ -14,7 +14,6 @@ class About extends React.Component{
       stringIndex: 0,
       userPortrait: '',
     }
-    this.delayedText = this.delayedText.bind(this)
     this.handleHover = this.handleHover.bind(this)
     this.handleChoice = this.handleChoice.bind(this)
   }
@@ -31,13 +30,6 @@ class About extends React.Component{
     this.setState({
       choice: choice,
     })
-    // let answer = choice === 1 ? 'Hello world'
-    //   : choice === 2 ? 'Oh my'
-    //   : choice === 3 ? 'Aw yeah'
-    //   : choice === 4 ? 'I like turtles'
-    //   : ''
-    //
-    //   this.delayedText('Hello World')
   }
 
   handleHover(choice){
@@ -46,61 +38,12 @@ class About extends React.Component{
     })
   }
 
-  delayedText(text){
-    if(this.state.stringIndex === (text.length - 1)){
-      this.setState({
-        stringIndex: 0
-      })
-    }
-    // let loopThroughSplittedText = (text) => {
-
-    // Create our counter; delayedOutput will use this to
-    // track how far along in our string we are currently at
-    // let locationInString = 0
-
-    // function delayedOutput() {
-
-    // Output the next letter in our string
-    // console.log(splittedText[locationInString]);
-    this.setState({
-      answerText: text[this.state.stringIndex]
-    })
-
-    // Increment our counter so that on the next call we are on the next letter
-    this.setState(prevState => {
-      stringIndex: prevState.stringIndex++
-    })
-
-    // Only perform setTimeout if we still have text left to output
-    if (this.state.stringIndex < text.length) {
-
-      // Functions can reference themselves using their own name
-      setTimeout(this.delayedText, 20)
-    }
-
-
-  // Call our function once to get things started
-  this.delayedText(text)
-
-
-    // loopThroughSplittedText(splittedText)
-  }
-
   render() {
-    // let picture = require(this.state.userPortrait)
-    // let userPortrait = {
-    //   backgroundImage: `url(${picture})`,
-    // }
-    console.log('this.props.background: ', this.props.background)
-
-    let userPic = {
-      backgroundImage: 'url(' + `${this.state.userPortrait}` + ')',
-    }
+    let name = this.props.name
+    let portrait = {backgroundImage: 'url(' + `${this.props.portrait}` + ')'}
 
     return(
       <div className='about-main'>
-
-
 
         <div className='user-dialogue box'>
 
@@ -144,9 +87,9 @@ class About extends React.Component{
 
         </div>
 
-        <div className='user-name'>{localStorage.getItem('userName')}</div>
+        <div className='user-name'>{name}</div>
 
-        <div className='user-portrait' style={userPic}></div>
+        <div className='user-portrait' style={portrait}></div>
 
         <div className='matt-dialogue box'>
 
@@ -155,16 +98,16 @@ class About extends React.Component{
             {this.state.choice === 0 ?
               <Typist startDelay={1500} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
                 {this.props.background === 'https://i.imgur.com/589GAGa.gif'
-                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Welcome aboard me pirate ship! Er, I mean, to my site. Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${name}, it's a pleasure to meet you! Welcome aboard me pirate ship! Er, I mean, to my site. Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/XTCAUql.gif'
-                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Few better times to poke around my site than while on a walk through this lovely forest. Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${name}, it's a pleasure to meet you! Few better times to poke around my site than while on a walk through this lovely forest. Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/4KJPU8C.gif'
-                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Is there a finer way to see the sunset than on an ocean-side train? Well there's certainly not a finer way to see my site! Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${name}, it's a pleasure to meet you! Is there a finer way to see the sunset than on an ocean-side train? Well there's certainly not a finer way to see my site! Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/vvTO3np.gif'
-                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Look at these waterfalls! Oh, what a beautiful sight. And speaking of sites, have you seen mine? Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${name}, it's a pleasure to meet you! Look at these waterfalls! What a beautiful sight. And speaking of sites, have you seen mine? Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/HjStYze.gif'
-                  ? `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! All I ask is a tall ship and a star to steer her by. And that you have a good time visiting my site. Feel free to look around, and ask me any questions you might have.`
-                  : `Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Welcome to my site. Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${name}, it's a pleasure to meet you! All I ask is a tall ship and a star to steer her by. And that you have a good time visiting my site. Feel free to look around, and ask me any questions you might have.`
+                  : `Hi ${name}, it's a pleasure to meet you! Welcome to my site. Feel free to look around, and ask me any questions you might have.`
                 }
               </Typist>
               : undefined
@@ -178,7 +121,7 @@ class About extends React.Component{
             }
             {this.state.choice === 2 ?
               <Typist startDelay={200} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
-              {`I love to create, through both writing and programming. There's nothing to me quite like imagining a thing, and then creating it with words. And with programming I can make things that genuinely impact the way people live. It's really amazing, and drives me to pursue excellence.`}
+              {`I love to create, through both writing and programming. There's nothing to me quite like imagining a thing, and then creating it with words. And with programming I can make things that genuinely impact the way people live. It's really amazing, and drives me to excellence.`}
               </Typist>
               : undefined
             }
@@ -207,11 +150,11 @@ class About extends React.Component{
 }
 
 let mapStateToProps = (state) => ({
-  background: state.setBackground
+  name: state.userName,
+  portrait: state.userPortrait,
+  background: state.setBackground,
 })
 
-let mapDispatchToProps = (dispatch) => ({
-
-})
+let mapDispatchToProps = (dispatch) => ({})
 
 export default connect(mapStateToProps, mapDispatchToProps)(About)
