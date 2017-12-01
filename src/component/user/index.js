@@ -9,13 +9,18 @@ class User extends React.Component {
     super(props)
     this.state={
       name: '',
+      start: true,
+      delete: false,
       selected: {
         man1: false,
         woman1: false,
-      }
+      },
     }
     this.saveName = this.saveName.bind(this)
     this.enterSite = this.enterSite.bind(this)
+    this.deleteUser = this.deleteUser.bind(this)
+    this.selectStart = this.selectStart.bind(this)
+    this.selectDelete = this.selectDelete.bind(this)
     this.selectAvatar = this.selectAvatar.bind(this)
     this.savePortrait = this.savePortrait.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -57,8 +62,33 @@ class User extends React.Component {
     this.props.handleCover('COVER_TOGGLE')
   }
 
+  selectStart(){
+    this.setState({
+      start: true,
+      delete: false,
+    })
+  }
+
+  selectDelete(){
+    this.setState({
+      start: false,
+      delete: true,
+    })
+  }
+
+  deleteUser(){
+    localStorage.clear()
+    this.setState({
+      start: true,
+    })
+  }
+
   handleKeyPress(e){
-    e.key === 'Enter' ? this.enterSite() : undefined
+    e.key === 'Enter' && this.state.start ? this.enterSite() : undefined
+    e.key === 'Enter' && this.state.delete ? this.deleteUser() : undefined
+
+    e.key === 'ArrowUp' ? this.selectStart() : undefined
+    e.key === 'ArrowDown' && (localStorage.userPortrait || localStorage.userName) ? this.selectDelete() : undefined
   }
 
   render(){
@@ -87,7 +117,12 @@ class User extends React.Component {
         <div className={`portrait man1 ${this.state.selected.man1 || JSON.parse(localStorage.getItem('userPortrait')) === 'https://i.lensdump.com/i/9faKz.png' ? 'selected' : ''}`} onClick={()=>this.selectAvatar('man1')}></div>
         <div className={`portrait woman1 ${this.state.selected.woman1 || JSON.parse(localStorage.getItem('userPortrait')) === 'https://i.lensdump.com/i/9fGt5.png' ? 'selected' : ''}`} onClick={()=>this.selectAvatar('woman1')}></div>
 
-        <div className='enter' onClick={this.enterSite} >START<span></span></div>
+        <div className='enter' onClick={this.enterSite}>START<span className={this.state.start ? 'menu-select' : ''}></span></div>
+
+        {localStorage.userPortait || localStorage.userName ?
+          <div className='delete' onClick={this.deleteUser}>DELETE<span className={this.state.delete ? 'menu-select' : ''}></span></div>
+          : undefined
+        }
       </div>
     )
   }

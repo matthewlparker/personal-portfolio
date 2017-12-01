@@ -165,7 +165,7 @@ export default class About extends React.Component{
             }
             {this.state.choice === 2 ?
               <Typist startDelay={200} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
-              {`I love to create, through both writing fiction and programming. There's nothing to me quite like imagining a thing, and then creating it with words. And with programming I can make things that genuinely impact the way people live. This amazes me, and drives me toward excellence.`}
+              {`I love to create, through both writing and programming. There's nothing to me quite like imagining a thing, and then creating it with words. And with programming I can make things that genuinely impact the way people live. It's really amazing, and drives me to pursue excellence.`}
               </Typist>
               : undefined
             }
