@@ -15,7 +15,6 @@ class ViewCover extends React.Component{
   constructor(props){
     super(props)
     this.state={
-      // entered: this.props.entered,
       background: '',
     }
 
@@ -46,18 +45,8 @@ class ViewCover extends React.Component{
 
   handleKeyPress(e){
     console.log('handleKeyPress event: ', e)
-    // !this.state.entered && e.charCode === 13 || !this.state.entered && e.keyCode === 13 ? this.enterSite() : undefined
-    // !this.state.entered && e.key === 'Enter' ? this.enterSite() : undefined
-
     this.props.entered && e.key === 'i' ? this.props.handleCover() : undefined
   }
-
-  // enterSite(){
-  //   // this.setState({
-  //   //   entered: true
-  //   // })
-  //   this.handleCover()
-  // }
 
   randomBackground(){
     let backgrounds = [
@@ -78,7 +67,6 @@ class ViewCover extends React.Component{
 
   render(){
 
-
     let arrowIconClass = (this.props.coverOpen && this.props.lightTheme) ? 'view-cover-toggle-icon-open-light'
     : (this.props.coverOpen && !this.props.lightTheme) ? 'view-cover-toggle-icon-open-dark'
     : (!this.props.coverOpen && this.props.lightTheme) ? 'view-cover-toggle-icon-closed-light'
@@ -92,13 +80,7 @@ class ViewCover extends React.Component{
     return (
       <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-main-open' : ''}`} style={mainBackground} onKeyUp={console.log('key')}>
 
-      {!this.props.entered
-        ?
-          <div className='user-select-screen'>
-            <div className='user-container'> <User /> </div>
-
-          </div>
-
+      {!this.props.entered ? <div className='user-container'> <User /> </div>
 
         : <div className='view-cover-content'>
 
@@ -116,7 +98,7 @@ class ViewCover extends React.Component{
             </div>
           </div>
 
-          <div className={`view-cover-toggle-icon ${arrowIconClass}`} onClick={this.handleCover}>
+          <div className={`view-cover-toggle-icon ${arrowIconClass}`} onClick={this.props.handleCover}>
             <FontAwesome name='arrow-right' />
           </div>
 

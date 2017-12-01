@@ -34,10 +34,14 @@
 }
 
 @-webkit-keyframes blink {
-      0% { opacity: 1; }
-     49% { opacity: 1; }
-     50% { opacity: 0; }
-    100% { opacity: 0; }
+    //   0% { opacity: 1; }
+    //  49% { opacity: 1; }
+    //  50% { opacity: 0; }
+    // 100% { opacity: 0; }
+    0% { background-color: hsla(0, 0, 100, 1); }
+   49% { background-color: hsla(0, 0, 100, 1); }
+   50% { background-color: hsla(0, 0, 100, 0); }
+  100% { background-color: hsla(0, 0, 100, 0); }
 }
 
 .view-cover-main {
@@ -124,8 +128,8 @@
 
   .view-cover-main {
     display: grid;
-    grid-template-rows: 1fr auto auto auto 1fr;
-    grid-template-columns: 1fr auto auto 1fr;
+    grid-template-rows:  1fr auto auto auto 1fr;
+    grid-template-columns: 30px 1fr minmax(auto, 1080px) 1fr 30px;
     justify-content: center;
     top: 0;
     left: 0;
@@ -143,23 +147,12 @@
     height: calc(100% * .65);
     width: 100%;
   }
-  .user-select-screen {
-    grid-area: 2 / 2 / span 1 / span 1;
-  }
-  .enter {
-    grid-area: 3 / 2 / span 1 / span 2;
-    align-self: center;
-    font-size: 4em;
-    padding: 10px;
-    text-shadow: 1px 5px 5px black;
-
-    span {
-      animation: blink 1s linear infinite;
-    }
+  .user-container {
+    grid-area: 2 / 3 / span 1 / span 1;
   }
 
   .view-cover-content {
-    grid-area: 1 / 1 / span 5 / span 4;
+    grid-area: 1 / 1 / span 5 / span 5;
     height: 100%;
     width: 100%;
     display: -ms-grid;
@@ -201,23 +194,6 @@
       }
     }
 
-    // .name {
-    //   grid-area: 1 / 1 / span 1 / span 5;
-    // }
-    // .name:hover {
-    //   span {
-    //     color: hsla(275, 100, 60%, 1);
-    //   }
-    // }
-
-    // .developer {
-    //   grid-area: 1 / 1 / span 1 / span 5;
-    //   text-align: center;
-    // }
-    // .status {
-    //   grid-area: 1 / 1 / span 1 / span 5;
-    //   text-align: right;
-    // }
     .page-container {
       grid-area: 3 / 3 / span 1 / span 1;
     }
@@ -253,7 +229,6 @@
   }
 
   .view-cover-toggle-icon-open-light {
-    // background-color: $color-white;
     .fa {
       -webkit-transform: rotate(-180deg);
       -ms-transform: rotate(-180deg);

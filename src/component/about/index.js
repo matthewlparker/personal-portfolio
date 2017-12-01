@@ -89,11 +89,11 @@ export default class About extends React.Component{
     // let userPortrait = {
     //   backgroundImage: `url(${picture})`,
     // }
-    console.log('about state: ', this.state)
+
     let userPic = {
       backgroundImage: 'url(' + `${this.state.userPortrait}` + ')',
     }
-    console.log('userPic: ', userPic)
+
     return(
       <div className='about-main'>
 
@@ -141,6 +141,8 @@ export default class About extends React.Component{
 
         </div>
 
+        <div className='user-name'>{localStorage.getItem('userName')}</div>
+
         <div className='user-portrait' style={userPic}></div>
 
         <div className='matt-dialogue box'>
@@ -160,7 +162,7 @@ export default class About extends React.Component{
             }
             {this.state.choice === 3 ?
               <div>
-              {`I specialize in JavaScript with a focus on the front-end with React, and have an array of skills such as HTML5, CSS3, Sass, Redux, Node, MongoDB, AWS, and others. I love learning new languages!.`}
+              {`I specialize in JavaScript with a focus on the front-end with React, and have an array of skills such as HTML5, CSS3, Sass, Redux, Node, MongoDB, AWS, and others. I love learning new languages!`}
               </div>
               : undefined
             }
@@ -174,6 +176,7 @@ export default class About extends React.Component{
           <div className='portrait-block'></div>
         </div>
         <div className='matt-portrait'></div>
+        <div className='matt-name'>Matthew</div>
 
 
       </div>

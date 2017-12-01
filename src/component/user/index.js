@@ -30,7 +30,6 @@ class User extends React.Component {
     this.setState({
       name: e.target.value
     })
-    // localStorage.setItem('userName', e.target.value)
   }
 
   savePortrait(avatar, file){
@@ -39,8 +38,12 @@ class User extends React.Component {
     localStorage.setItem('userPortrait', JSON.stringify(file))
   }
 
-  saveName(name){
-    localStorage.setItem('userName', this.state.name)
+  saveName(){
+    let name = this.state.name ? this.state.name
+      : localStorage.userName ? localStorage.getItem('userName')
+      : 'visitor'
+
+    localStorage.setItem('userName', name)
   }
 
   selectAvatar(avatar){
@@ -55,9 +58,7 @@ class User extends React.Component {
   }
 
   handleKeyPress(e){
-    console.log('handleKeyPress event: ', e)
     e.key === 'Enter' ? this.enterSite() : undefined
-    // this.state.entered && e.key === 'i' ? this.props.handleCover() : undefined
   }
 
   render(){
@@ -65,18 +66,19 @@ class User extends React.Component {
     return(
       <div className='user-main'>
 
+      <div className='user-welcome'>
         {localStorage.userPortait || localStorage.userName ?
-          <div className='user-welcome-back'>
-            {`Welcome back, ${userName}`}
-          </div>
-          : undefined
+            `welcome back, ${userName}`
+          : `pick an avatar and name`
         }
+        </div>
 
-        <div className='user-name-container'>
+        <div className='name-select'>
           <input
             type='text'
             maxLength='15'
-            placeholder={localStorage.userName ? localStorage.getItem('userName') : 'visitor'}
+            className='box'
+            placeholder={`name: ${localStorage.userName ? localStorage.getItem('userName') : 'visitor'}`}
             onChange={(e)=>this.handleChange(e)}
           >
           </input>
@@ -85,7 +87,7 @@ class User extends React.Component {
         <div className={`portrait man1 ${this.state.selected.man1 || JSON.parse(localStorage.getItem('userPortrait')) === 'https://i.lensdump.com/i/9faKz.png' ? 'selected' : ''}`} onClick={()=>this.selectAvatar('man1')}></div>
         <div className={`portrait woman1 ${this.state.selected.woman1 || JSON.parse(localStorage.getItem('userPortrait')) === 'https://i.lensdump.com/i/9fGt5.png' ? 'selected' : ''}`} onClick={()=>this.selectAvatar('woman1')}></div>
 
-        <div className='enter' onClick={this.enterSite} >C:\> Enter<span>_</span></div>
+        <div className='enter' onClick={this.enterSite} >Start<span></span></div>
       </div>
     )
   }
