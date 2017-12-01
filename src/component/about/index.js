@@ -102,7 +102,7 @@ class About extends React.Component{
                   : this.props.background === 'https://i.imgur.com/XTCAUql.gif'
                   ? `Hi ${name}, it's a pleasure to meet you! Few better times to poke around my site than while on a walk through this lovely forest. Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/4KJPU8C.gif'
-                  ? `Hi ${name}, it's a pleasure to meet you! Is there a finer way to see the sunset than on an ocean-side train? Well there's certainly not a finer way to see my site! Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${name}, it's a pleasure to meet you! To have a golden sunset at the end of a great oceanic horizon from the top of a gentle coastal train. What a perfect time to check out my site! Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/vvTO3np.gif'
                   ? `Hi ${name}, it's a pleasure to meet you! Look at these waterfalls! What a beautiful sight. And speaking of sites, have you seen mine? Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/HjStYze.gif'

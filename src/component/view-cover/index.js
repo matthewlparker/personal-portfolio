@@ -5,6 +5,7 @@ import * as setBackground from '../../action/viewActions.js'
 import FontAwesome from 'react-fontawesome'
 import WeatherContainer from '../weather/container.js'
 import {Route} from 'react-router-dom'
+import {withRouter} from 'react-router'
 import User from '../user/index.js'
 import './style.scss'
 
@@ -111,9 +112,11 @@ class ViewCover extends React.Component{
           <div className='pixelart-to-css'></div>
 
           <div className='page-container'>
+
             <Route exact path='/about' component={About} />
             <Route exact path='/portfolio' component={Portfolio} />
             <Route exact path='/contact' component={Contact} />
+
           </div>
 
 
@@ -136,4 +139,4 @@ let mapDispatchToProps = (dispatch) => ({
   setBackground: (background) => dispatch(setBackground.background(background)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ViewCover)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ViewCover))

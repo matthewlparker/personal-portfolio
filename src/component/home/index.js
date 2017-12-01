@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import Header from '../header/index.js'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import FontAwesome from 'react-fontawesome'
 import * as coverToggle from '../../action/viewActions.js'
 import ThemeIcon from '../theme-icon/index.js'
@@ -60,22 +60,28 @@ class Home extends React.Component{
   }
 
   render(){
+
+
     return(
       <div className={`home-main ${this.props.lightTheme ? 'home-main-light' : ''}`}>
 
         <div className={'dashboard-nav'}>
 
-          <Link to={this.props.route !== '/about' ? '/about' : '/'} onClick={this.props.route !== '/about' ? this.props.routeToAbout : this.props.routeToLanding} className={`to-about nav ${this.state.route === '/about' ? 'selected' : ''}`}>
-          About
-          </Link>
+          <NavLink exact to={'/about'} className={'to-about nav'}>
+            About
+          </NavLink>
 
-          <Link to={this.props.route !== '/portfolio' ? '/portfolio' : '/'} onClick={this.props.route !== '/portfolio' ? this.props.routeToPortfolio : this.props.routeToLanding} className={`to-portfolio nav ${this.state.route === '/portfolio' ? 'selected' : ''}`}>
-          Portfolio
-          </Link>
+          <NavLink exact to={'/portfolio'} activeClassName='selected' className='to-portfolio nav' >
+            Portfolio
+          </NavLink>
 
-          <Link to={this.props.route !== '/contact' ? '/contact' : '/'} onClick={this.props.route !== '/contact' ? this.props.routeToContact : this.props.routeToLanding} className={`to-contact nav ${this.state.route === '/contact' ? 'selected' : ''}`}>
+          <NavLink exact to={'/contact'}  className={'to-contact nav'}>
             Contact
-          </Link>
+          </NavLink>
+
+          <NavLink exact to={'/'} className={'to-landing nav'}>
+            Clear
+          </NavLink>
 
         </div>
 
