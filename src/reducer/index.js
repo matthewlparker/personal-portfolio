@@ -3,5 +3,6 @@ import {combineReducers} from 'redux'
 import hamburger from './hamburger.js'
 import coverToggle from './cover-toggle.js'
 import lightTheme from './light-theme.js'
+import enterSite from './enter-site.js'
 
-export default combineReducers({route, hamburger, lightTheme, coverToggle})
+export default combineReducers({route, hamburger, lightTheme, coverToggle, enterSite})

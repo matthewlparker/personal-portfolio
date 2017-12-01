@@ -1,0 +1,67 @@
+@import "vars";
+
+.user-main {
+  display: grid;
+  grid-template-rows: 30px auto auto auto auto 30px;
+  grid-template-columns: 30px auto auto 30px;
+  align-items: center;
+  justify-items: center;
+  grid-gap: 30px;
+  background-color: hsla(0,0,0,.6);
+
+  .user-welcome {
+    grid-area: 2 / 2 / span 1 / span 2;
+    font-size: 5em;
+    text-shadow: 1px 1px 1px $color-black;
+  }
+
+  .portrait {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: hsla(0,0,0,0);
+    width: 150px; height: 150px;
+  }
+
+  .name-select {
+    grid-area: 4 / 2 / span 1 / span 2;
+    input {
+      width: 400px; height: auto;
+      font-size: 2em;
+    }
+    input:focus {
+      border: 5px solid $color-white;
+    }
+    input::placeholder{
+      color: $color-white;
+    }
+  }
+
+
+  .man1 {
+    grid-area: 3 / 3 / span 1 / span 1;
+    background-image: url('../../assets/images/man-01.png');
+  }
+  .woman1 {
+    grid-area: 3 / 2 / span 1 / span 1;
+    background-image: url('../../assets/images/woman-01.png');
+  }
+
+  .enter {
+    grid-area: 5 / 2 / span 1 / span 2;
+    font-size: 4em;
+    padding: 10px;
+    text-shadow: 1px 1px 1px black;
+
+    span {
+      display: inline-block;
+      animation: blink 1s linear infinite;
+      width: 20px;
+      height: 40px;
+      background-color: $color-white;
+    }
+  }
+
+  .selected {
+    border: 5px solid $color-white;
+  }
+}
