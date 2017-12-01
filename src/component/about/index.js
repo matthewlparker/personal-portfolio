@@ -1,4 +1,5 @@
 import React from 'react'
+import Typist from 'react-typist'
 import UserDialogue from '../user-dialogue/index.js'
 import './styles.scss'
 
@@ -6,7 +7,7 @@ export default class About extends React.Component{
   constructor(props){
     super(props)
     this.state={
-      choice: null,
+      choice: 0,
       considering: null,
       answerText: '',
       stringIndex: 0,
@@ -78,8 +79,8 @@ export default class About extends React.Component{
 
 
   // Call our function once to get things started
-  this.delayedText()
-  // }
+  this.delayedText(text)
+
 
     // loopThroughSplittedText(splittedText)
   }
@@ -148,28 +149,36 @@ export default class About extends React.Component{
         <div className='matt-dialogue box'>
 
           <div className='answer'>
+
+            {this.state.choice === 0 ?
+              <Typist startDelay={1500} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
+                {`Hi ${localStorage.getItem('userName')}, it's a pleasure to meet you! Welcome to my site. Feel free to ask me any questions you might have.`}
+              </Typist>
+              : undefined
+            }
+
             {this.state.choice === 1 ?
-              <div>
+              <Typist startDelay={200} avgTypingDelay={25} stdTypingDelay={0} cursor={{show:false}}>
               {`My name's Matthew Parker. I'm a graduate of Code Fellows in Seattle, a full-stack JavaScript developer, and a Christian. Reading, adventures, and animals are a few of my favorite things. I aspire to be both a master programmer and best-selling author.`}
-              </div>
+              </Typist>
               : undefined
             }
             {this.state.choice === 2 ?
-              <div>
+              <Typist startDelay={200} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
               {`I love to create, through both writing fiction and programming. There's nothing to me quite like imagining a thing, and then creating it with words. And with programming I can make things that genuinely impact the way people live. This amazes me, and drives me toward excellence.`}
-              </div>
+              </Typist>
               : undefined
             }
             {this.state.choice === 3 ?
-              <div>
+              <Typist startDelay={200} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
               {`I specialize in JavaScript with a focus on the front-end with React, and have an array of skills such as HTML5, CSS3, Sass, Redux, Node, MongoDB, AWS, and others. I love learning new languages!`}
-              </div>
+              </Typist>
               : undefined
             }
             {this.state.choice === 4 ?
-              <div>
+              <Typist startDelay={200} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
               {`I hope by then to be wiser, more charitable, a senior-level programmer with a great company, and a published author.`}
-              </div>
+              </Typist>
               : undefined
             }
           </div>

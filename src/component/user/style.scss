@@ -9,6 +9,11 @@
   grid-gap: 30px;
   background-color: hsla(0,0,0,.6);
 
+  border-top: 15px ridge #ccc;
+  border-right: 15px groove #ccc;
+  border-bottom: 15px groove #ccc;
+  border-left: 15px ridge #ccc;
+
   .user-welcome {
     grid-area: 2 / 2 / span 1 / span 2;
     font-size: 5em;

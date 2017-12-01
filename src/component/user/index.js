@@ -68,8 +68,8 @@ class User extends React.Component {
 
       <div className='user-welcome'>
         {localStorage.userPortait || localStorage.userName ?
-            `welcome back, ${userName}`
-          : `pick an avatar and name`
+            `Welcome back, ${userName}`
+          : `Pick an avatar and name`
         }
         </div>
 
@@ -87,7 +87,7 @@ class User extends React.Component {
         <div className={`portrait man1 ${this.state.selected.man1 || JSON.parse(localStorage.getItem('userPortrait')) === 'https://i.lensdump.com/i/9faKz.png' ? 'selected' : ''}`} onClick={()=>this.selectAvatar('man1')}></div>
         <div className={`portrait woman1 ${this.state.selected.woman1 || JSON.parse(localStorage.getItem('userPortrait')) === 'https://i.lensdump.com/i/9fGt5.png' ? 'selected' : ''}`} onClick={()=>this.selectAvatar('woman1')}></div>
 
-        <div className='enter' onClick={this.enterSite} >Start<span></span></div>
+        <div className='enter' onClick={this.enterSite} >START<span></span></div>
       </div>
     )
   }
