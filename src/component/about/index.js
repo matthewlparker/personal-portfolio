@@ -10,10 +10,19 @@ export default class About extends React.Component{
       considering: null,
       answerText: '',
       stringIndex: 0,
+      userPortrait: '',
     }
     this.delayedText = this.delayedText.bind(this)
     this.handleHover = this.handleHover.bind(this)
     this.handleChoice = this.handleChoice.bind(this)
+  }
+
+  componentWillMount(){
+    if(!this.state.userPortrait && localStorage.userPortrait){
+      this.setState({
+        userPortrait: JSON.parse(localStorage.getItem('userPortrait')),
+      })
+    }
   }
 
   handleChoice(choice){
@@ -75,8 +84,16 @@ export default class About extends React.Component{
     // loopThroughSplittedText(splittedText)
   }
 
-
   render() {
+    // let picture = require(this.state.userPortrait)
+    // let userPortrait = {
+    //   backgroundImage: `url(${picture})`,
+    // }
+    console.log('about state: ', this.state)
+    let userPic = {
+      backgroundImage: 'url(' + `${this.state.userPortrait}` + ')',
+    }
+    console.log('userPic: ', userPic)
     return(
       <div className='about-main'>
 
@@ -123,26 +140,27 @@ export default class About extends React.Component{
           />
 
         </div>
-        <div className='user-portrait'></div>
+
+        <div className='user-portrait' style={userPic}></div>
 
         <div className='matt-dialogue box'>
 
           <div className='answer'>
             {this.state.choice === 1 ?
               <div>
-              {`My name's Matthew Parker. I'm a recent graduate of Code Fellows in Seattle, a full-stack JavaScript developer, and a Christian. Reading, adventures, and animals are a few of my favorite things. I aspire to be both a master programmer and best-selling author.`}
+              {`My name's Matthew Parker. I'm a graduate of Code Fellows in Seattle, a full-stack JavaScript developer, and a Christian. Reading, adventures, and animals are a few of my favorite things. I aspire to be both a master programmer and best-selling author.`}
               </div>
               : undefined
             }
             {this.state.choice === 2 ?
               <div>
-              {`I love to create. Through both writing fiction and programming. There's nothing to me quite like imagining a thing, and then creating it with words. And with programming I can make things that genuinely increase the quality and capability of peoples' lives. This amazes and humbles me, and drives me toward excellence.`}
+              {`I love to create, through both writing fiction and programming. There's nothing to me quite like imagining a thing, and then creating it with words. And with programming I can make things that genuinely impact the way people live. This amazes me, and drives me toward excellence.`}
               </div>
               : undefined
             }
             {this.state.choice === 3 ?
               <div>
-              {`I specialize in JavaScript with a focus on the front-end with React, and have an array of skills such as HTML5, CSS3, Sass, Redux, Node, MongoDB, AWS, and others. I love learning new languages, and am looking at getting into Python.`}
+              {`I specialize in JavaScript with a focus on the front-end with React, and have an array of skills such as HTML5, CSS3, Sass, Redux, Node, MongoDB, AWS, and others. I love learning new languages!.`}
               </div>
               : undefined
             }

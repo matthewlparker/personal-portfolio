@@ -1,0 +1,35 @@
+@import "vars";
+
+.user-main {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto;
+  grid-gap: 30px;
+
+  .user-welcome-back {
+    font-size: 5em;
+    text-shadow: 1px 1px 1px $color-black; 
+  }
+
+  .portrait {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: hsla(0,0,0,0);
+    width: 150px; height: 150px;
+  }
+
+  .selected {
+    border: 5px solid $color-white;
+  }
+  // .portrait:hover {
+  //   border: 5px solid $color-white;
+  // }
+  .man1 {
+    grid-area: 1 / 2 / span 1 / span 1;
+    background-image: url('../../assets/images/man-01.png');
+  }
+  .woman1 {
+    grid-area: 1 / 1 / span 1 / span 1;
+    background-image: url('../../assets/images/woman-01.png');
+  }
+}
