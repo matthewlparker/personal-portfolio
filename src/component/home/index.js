@@ -4,7 +4,6 @@ import Header from '../header/index.js'
 import {connect} from 'react-redux'
 import {NavLink} from 'react-router-dom'
 import FontAwesome from 'react-fontawesome'
-import * as coverToggle from '../../action/viewActions.js'
 import * as viewActions from '../../action/viewActions.js'
 import ThemeIcon from '../theme-icon/index.js'
 import * as route from '../../action/route.js'
@@ -18,6 +17,7 @@ class Home extends React.Component{
       hover: '',
       route: '',
     }
+    this.exit = this.exit.bind(this)
     this.reload = this.reload.bind(this)
     this.onEnter = this.onEnter.bind(this)
     this.onLeave = this.onLeave.bind(this)
@@ -62,6 +62,10 @@ class Home extends React.Component{
     if(route === '/contact'){this.setState({route: '/contact'})}
   }
 
+  exit(){
+    setTimeout(this.reload, 100)
+  }
+
   reload(){
     location.reload()
   }
@@ -77,7 +81,7 @@ class Home extends React.Component{
 
     let bg = backgrounds[Math.floor(Math.random() * (backgrounds.length))]
 
-    this.props.setBackground(bg)
+    this.props.changeBackground(bg)
   }
 
   render(){
@@ -108,7 +112,7 @@ class Home extends React.Component{
             Explore
           </NavLink>
 
-          <NavLink exact to={'/'} className={'to-start nav'} onClick={this.reload}>
+          <NavLink exact to={'/'} className={'to-start nav'} onClick={this.exit}>
             Exit
           </NavLink>
 
@@ -165,13 +169,10 @@ let mapStateToProps = (state) => ({
 })
 
 let mapDispatchToProps = (dispatch) => ({
-  handleCover: (toggle) => dispatch(coverToggle.cover(toggle)),
+  handleCover: (toggle) => dispatch(viewActions.cover(toggle)),
   changeBackground: (image) => dispatch(viewActions.background(image)),
-  setBackground: (background) => dispatch(viewActions.background(background)),
-  // routeToAbout: () => dispatch(route.switchRoute('/about')),
-  // routeToPortfolio: () => dispatch(route.switchRoute('/portfolio')),
-  // routeToContact: () => dispatch(route.switchRoute('/contact')),
-  // routeToLanding: () => dispatch(route.switchRoute('/')),
+  enterSite: (bool) => dispatch(viewActions.entered(bool)),
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)
