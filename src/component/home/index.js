@@ -24,6 +24,7 @@ class Home extends React.Component{
     this.handleCover = this.handleCover.bind(this)
     this.handleRoute = this.handleRoute.bind(this)
     this.selectRoute = this.selectRoute.bind(this)
+    this.changeBackground = this.changeBackground.bind(this)
   }
 
   componentWillMount() {
@@ -65,7 +66,7 @@ class Home extends React.Component{
     location.reload()
   }
 
-  changeBackground(images){
+  changeBackground(){
     let backgrounds = [
       'https://i.imgur.com/HjStYze.gif',
       'https://i.imgur.com/4KJPU8C.gif',
