@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import Header from '../header/index.js'
 import {connect} from 'react-redux'
+import {withRouter} from 'react-router'
 import {NavLink} from 'react-router-dom'
 import FontAwesome from 'react-fontawesome'
 import * as viewActions from '../../action/viewActions.js'
@@ -16,6 +17,7 @@ class Home extends React.Component{
     this.state={
       hover: '',
       route: '',
+
     }
     this.exit = this.exit.bind(this)
     this.reload = this.reload.bind(this)
@@ -27,14 +29,7 @@ class Home extends React.Component{
     this.changeBackground = this.changeBackground.bind(this)
   }
 
-  componentWillMount() {
-    // let pathname = document.location.href.split('8080')[1]
-    //
-    // pathname === '/about' ? this.props.routeToAbout()
-    // : pathname === '/contact' ? this.props.routeToContact()
-    // : pathname === '/portfolio' ? this.props.routeToPortfolio()
-    // : undefined
-  }
+
 
   handleCover(toggle){
     this.props.handleCover('COVER_TOGGLE')
@@ -85,34 +80,34 @@ class Home extends React.Component{
   }
 
   render(){
-
+    // let pathname = document.location.href.split('8080')[1]
 
     return(
       <div className={`home-main ${this.props.lightTheme ? 'home-main-light' : ''}`}>
 
         <div className={'dashboard-nav'}>
 
-          <NavLink exact to={'/about'} className={'to-about nav'}>
+          <NavLink exact to='/about' activeClassName='active' className={`to-about nav`}>
             About
           </NavLink>
 
-          <NavLink exact to={'/portfolio'} activeClassName='selected' className='to-portfolio nav' >
+          <NavLink exact to={'/portfolio'} activeClassName='active' className='to-portfolio nav' >
             Portfolio
           </NavLink>
 
-          <NavLink exact to={'/contact'}  className={'to-contact nav'}>
+          <NavLink exact to={'/contact'} activeClassName='active' className={'to-contact nav'}>
             Contact
           </NavLink>
 
-          <NavLink exact to={'/'} className={'to-landing nav'}>
+          <NavLink exact to={'/'} activeClassName='' className={'to-landing nav'}>
             Clear
           </NavLink>
 
-          <NavLink exact to={'/'} className={'explore nav'} onClick={this.changeBackground}>
+          <NavLink exact to={'/'} activeClassName='' className={'explore nav'} onClick={this.changeBackground}>
             Explore
           </NavLink>
 
-          <NavLink exact to={'/'} className={'to-start nav'} onClick={this.exit}>
+          <NavLink exact to={'/'} activeClassName='' className={'to-start nav'} onClick={this.exit}>
             Exit
           </NavLink>
 
@@ -175,4 +170,4 @@ let mapDispatchToProps = (dispatch) => ({
 
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Home))

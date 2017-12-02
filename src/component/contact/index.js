@@ -13,7 +13,6 @@ class Contact extends React.Component{
       name: '',
       email: '',
       message: '',
-      // focus: false,
     }
 
     this.focus = this.focus.bind(this)
@@ -27,22 +26,15 @@ class Contact extends React.Component{
   }
 
   focus(){
-    // this.setState({
-    //   focus: true
-    // })
     this.props.focus(true)
   }
 
   focusOut(){
-    // this.setState({
-    //   focus: false
-    // })
     this.props.focus(false)
   }
 
 
   render(){
-    console.log('contact state: ', this.state)
     return(
       <div className='contact-main'>
 
