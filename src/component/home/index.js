@@ -62,6 +62,10 @@ class Home extends React.Component{
   }
 
   reload(){
+    location.reload()
+  }
+
+  changeBackground(images){
     let backgrounds = [
       'https://i.imgur.com/HjStYze.gif',
       'https://i.imgur.com/4KJPU8C.gif',
@@ -72,20 +76,7 @@ class Home extends React.Component{
 
     let bg = backgrounds[Math.floor(Math.random() * (backgrounds.length))]
 
-    // let current = backgrounds.pop()
-    // backgrounds = backgrounds.unshift(current)
-
     this.props.setBackground(bg)
-
-  }
-
-  changeBackground(images){
-
-    // let current = images.pop()
-    // let backgrounds = images.unshift(current)
-    //
-    //
-    // this.props.setBackground(current)
   }
 
   render(){
@@ -112,9 +103,14 @@ class Home extends React.Component{
             Clear
           </NavLink>
 
-          <NavLink exact to={'/'} className={'explore nav'} onClick={this.reload}>
+          <NavLink exact to={'/'} className={'explore nav'} onClick={this.changeBackground}>
             Explore
           </NavLink>
+
+          <NavLink exact to={'/'} className={'to-start nav'} onClick={this.reload}>
+            Exit
+          </NavLink>
+
 
         </div>
 

@@ -90,7 +90,7 @@
         align-self: center;
         font-size: 4em;
         font-size: 5vw;
-
+        justify-self: center;
         font-family: 'Munro', normal;
         cursor: crosshair;
       }
@@ -109,11 +109,14 @@
       .to-contact {
         grid-area: 1 / 3 / span 1 / span 1;
       }
+      .explore {
+        grid-area: 2 / 2 / span 1/ span 1;
+      }
       .to-landing {
         grid-area: 2 / 1 / span 1 / span 1;
       }
-      .explore {
-        grid-area: 2 / 2 / span 1/ span 1;
+      .to-start {
+        grid-area: 2 / 3 / span 1 / span 1;
       }
     }
 
