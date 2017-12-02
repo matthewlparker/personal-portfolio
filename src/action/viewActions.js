@@ -13,6 +13,11 @@ export const entered = (entered) => ({
   payload: entered,
 })
 
+export const focus = (bool) => ({
+  type: 'FOCUS',
+  payload: bool,
+})
+
 export const background = (bg) => ({
   type: 'SET_BACKGROUND',
   payload: bg,

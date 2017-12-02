@@ -1,9 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import * as coverToggle from '../../action/viewActions.js'
-import * as setBackground from '../../action/viewActions.js'
+import * as viewActions from '../../action/viewActions.js'
 import FontAwesome from 'react-fontawesome'
-import WeatherContainer from '../weather/container.js'
 import {Route} from 'react-router-dom'
 import {withRouter} from 'react-router'
 import User from '../user/index.js'
@@ -31,7 +29,7 @@ class ViewCover extends React.Component{
   }
 
   handleKeyPress(e){
-    this.props.entered && e.key === 'i' ? this.props.handleCover() : undefined
+    this.props.entered && !this.props.focus && e.key === 'i' ? this.props.handleCover() : undefined
   }
 
   randomBackground(){
@@ -125,14 +123,15 @@ class ViewCover extends React.Component{
 
 let mapStateToProps = (state) => ({
   route: state.route,
+  focus: state.focus,
   entered: state.enterSite,
   coverOpen: state.coverToggle,
   background: state.setBackground,
 })
 
 let mapDispatchToProps = (dispatch) => ({
-  handleCover: (toggle) => dispatch(coverToggle.cover(toggle)),
-  setBackground: (background) => dispatch(setBackground.background(background)),
+  handleCover: (toggle) => dispatch(viewActions.cover(toggle)),
+  setBackground: (background) => dispatch(viewActions.background(background)),
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ViewCover))

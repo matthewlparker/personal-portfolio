@@ -1,6 +1,7 @@
 import React from 'react'
 
-import contactAction from '../../action/contact'
+// import contactAction from '../../action/contact'
+import * as viewActions from '../../action/viewActions.js'
 import {connect} from 'react-redux'
 
 import './styles.scss'
@@ -12,8 +13,11 @@ class Contact extends React.Component{
       name: '',
       email: '',
       message: '',
+      // focus: false,
     }
 
+    this.focus = this.focus.bind(this)
+    this.focusOut = this.focusOut.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
 
@@ -22,8 +26,23 @@ class Contact extends React.Component{
     this.setState({[name]: value})
   }
 
+  focus(){
+    // this.setState({
+    //   focus: true
+    // })
+    this.props.focus(true)
+  }
+
+  focusOut(){
+    // this.setState({
+    //   focus: false
+    // })
+    this.props.focus(false)
+  }
+
 
   render(){
+    console.log('contact state: ', this.state)
     return(
       <div className='contact-main'>
 
@@ -42,6 +61,9 @@ class Contact extends React.Component{
               id='name'
               name='name'
               placeholder='eg. matthew parker'
+              onFocus={this.focus}
+              onBlur={this.focusOut}
+
             />
 
             <label className='contact-info-label' htmlFor='email'>
@@ -52,6 +74,8 @@ class Contact extends React.Component{
               id='email'
               name='email'
               placeholder='eg. email@example.com'
+              onFocus={this.focus}
+              onBlur={this.focusOut}
             />
 
             <label className='contact-message-header' htmlFor='msg'>
@@ -59,7 +83,10 @@ class Contact extends React.Component{
             </label>
             <textarea
               id='msg'
-              name='User Message'>
+              name='User Message'
+              onFocus={this.focus}
+              onBlur={this.focusOut}
+            >
             </textarea>
 
             <input
@@ -82,7 +109,7 @@ class Contact extends React.Component{
 export const mapStateToProps = (state) => ({})
 
 export const mapDispatchToProps = (dispatch) => ({
-  contact: (message) => dispatch(contactAction(message)),
+  focus: (bool) => dispatch(viewActions.focus(bool)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contact)
