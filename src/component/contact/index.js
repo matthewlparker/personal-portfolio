@@ -1,6 +1,7 @@
 import React from 'react'
 
-import contactAction from '../../action/contact'
+// import contactAction from '../../action/contact'
+import * as viewActions from '../../action/viewActions.js'
 import {connect} from 'react-redux'
 
 import './styles.scss'
@@ -14,12 +15,22 @@ class Contact extends React.Component{
       message: '',
     }
 
+    this.focus = this.focus.bind(this)
+    this.focusOut = this.focusOut.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange(e){
     let{name, value} = e.target
     this.setState({[name]: value})
+  }
+
+  focus(){
+    this.props.focus(true)
+  }
+
+  focusOut(){
+    this.props.focus(false)
   }
 
 
@@ -42,6 +53,9 @@ class Contact extends React.Component{
               id='name'
               name='name'
               placeholder='eg. matthew parker'
+              onFocus={this.focus}
+              onBlur={this.focusOut}
+
             />
 
             <label className='contact-info-label' htmlFor='email'>
@@ -52,6 +66,8 @@ class Contact extends React.Component{
               id='email'
               name='email'
               placeholder='eg. email@example.com'
+              onFocus={this.focus}
+              onBlur={this.focusOut}
             />
 
             <label className='contact-message-header' htmlFor='msg'>
@@ -59,7 +75,10 @@ class Contact extends React.Component{
             </label>
             <textarea
               id='msg'
-              name='User Message'>
+              name='User Message'
+              onFocus={this.focus}
+              onBlur={this.focusOut}
+            >
             </textarea>
 
             <input
@@ -82,7 +101,7 @@ class Contact extends React.Component{
 export const mapStateToProps = (state) => ({})
 
 export const mapDispatchToProps = (dispatch) => ({
-  contact: (message) => dispatch(contactAction(message)),
+  focus: (bool) => dispatch(viewActions.focus(bool)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contact)

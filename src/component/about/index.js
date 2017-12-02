@@ -98,13 +98,13 @@ class About extends React.Component{
             {this.state.choice === 0 ?
               <Typist startDelay={1500} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
                 {this.props.background === 'https://i.imgur.com/589GAGa.gif'
-                  ? `Ahoy, ${name}! A pleasure to meet you. Welcome aboard my ship! You don't get seasick, do you? Well, browsing my site will help! Feel free to look around, and ask me any questions ye might have.`
+                  ? `Ahoy there, ${name}! A pleasure to meet you. Welcome aboard my ship! You don't get seasick, do you? Well, browsing my site will help! Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/XTCAUql.gif'
                   ? `Hi ${name}, it's a pleasure to meet you! What are the odds we'd bump into each other in the midst of his pristine, uncharted forest? No better time to check out my site! Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/4KJPU8C.gif'
-                  ? `Hi ${name}, it's a pleasure to meet you! A great golden sunset, a vast oceanic horizon, and a gentle train trip along the coast. What a perfect time to check out my site! Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${name}, it's a pleasure to meet you! A golden sunset, an oceanic horizon, and a gentle train trip along the coast. What a perfect time to check out my site! Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/vvTO3np.gif'
-                  ? `Hi ${name}, it's a pleasure to meet you! Look at these waterfalls! What a beautiful sight. And speaking of sites, have you seen mine? Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${name}, it's a pleasure to meet you! I hope you can hear me over these waterfalls! What an amazing sight. And speaking of sites, have you seen mine? Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/HjStYze.gif'
                   ? `Hi ${name}, it's a pleasure to meet you! All I ask is a tall ship and a star to steer her by. And that you have a good time visiting my site. Feel free to look around, and ask me any questions you might have.`
                   : `Hi ${name}, it's a pleasure to meet you! Welcome to my site. Feel free to look around, and ask me any questions you might have.`

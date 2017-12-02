@@ -1,11 +1,10 @@
 import route from './route.js'
-import {combineReducers} from 'redux'
-import hamburger from './hamburger.js'
-import coverToggle from './cover-toggle.js'
-import lightTheme from './light-theme.js'
-import enterSite from './enter-site.js'
-import setBackground from './set-background.js'
+import focus from './focus.js'
 import userName from './user-name.js'
-import userPortrait from './user-portrait'
+import {combineReducers} from 'redux'
+import enterSite from './enter-site.js'
+import coverToggle from './cover-toggle.js'
+import userPortrait from './user-portrait.js'
+import setBackground from './set-background.js'
 
-export default combineReducers({route, hamburger, lightTheme, coverToggle, enterSite, setBackground, userName, userPortrait})
+export default combineReducers({route, coverToggle, enterSite, focus, setBackground, userName, userPortrait})

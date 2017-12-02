@@ -97,8 +97,8 @@
       .nav:hover {
         color: $color-primary;
       }
-      .selected {
-        color: $color-primary;
+      .active {
+        color: hsla(275, 100, 60%, 1);
       }
       .to-about {
         grid-area: 1 / 1 / span 1 / span 1;
@@ -126,6 +126,7 @@
       align-self: center;
       font-size: 1.5em;
       font-family: 'Munro', normal;
+      color: hsla(275, 100, 60%, 1);
     }
 
     .skill-icon {

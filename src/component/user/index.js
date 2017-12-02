@@ -10,14 +10,14 @@ class User extends React.Component {
     super(props)
     this.state={
       name: '',
+      portraitURL: '',
       start: true,
       delete: false,
+      reminder: false,
       selected: {
         man1: false,
         woman1: false,
       },
-      portraitURL: '',
-      reminder: false,
     }
     this.saveName = this.saveName.bind(this)
     this.enterSite = this.enterSite.bind(this)
@@ -107,11 +107,11 @@ class User extends React.Component {
     this.setState({
       start: true,
       delete: false,
+      portraitURL: '',
       selected: {
         man1: false,
         woman1: false,
       },
-      portraitURL: '',
     })
   }
 
@@ -127,7 +127,6 @@ class User extends React.Component {
   }
 
   render(){
-    console.log('user state: ', this.state)
     let userName = localStorage.getItem('userName')
     return(
       <div className='user-main'>
