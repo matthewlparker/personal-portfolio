@@ -85,7 +85,21 @@ class ViewCover extends React.Component{
           </div>
 
           <div className={`view-cover-toggle-icon ${arrowIconClass}`} onClick={this.props.handleCover}>
-            <div className='hint-text'>explore new views</div>
+            <div className='hint-text'>
+              {this.props.background === 'https://i.imgur.com/589GAGa.gif'
+                ? `Below deck at port`
+                : this.props.background === 'https://i.imgur.com/HjStYze.gif'
+                ? `Tall ship under the stars`
+                : this.props.background === 'https://i.imgur.com/4KJPU8C.gif'
+                ? `Traveling the coast by train`
+                : this.props.background === 'https://i.imgur.com/vvTO3np.gif'
+                ? `Foot of the waterfalls`
+                : this.props.background === 'https://i.imgur.com/XTCAUql.gif'
+                ? `Heart of the forest`
+                : ``
+              }
+            </div>
+
             <FontAwesome name='arrow-right' />
             <div className='i-text'>{`[ i ] to ${this.props.coverOpen ? 'close' : 'open'} dashboard`}</div>
           </div>
