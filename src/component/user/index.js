@@ -84,7 +84,7 @@ class User extends React.Component {
 
     this.saveName()
     this.savePortrait()
-    this.props.enterSite()
+    this.props.enterSite(true)
     this.props.handleCover('COVER_TOGGLE')
   }
 
@@ -170,7 +170,7 @@ let mapStateToProps = (state) => ({
 })
 
 let mapDispatchToProps = (dispatch) => ({
-  enterSite: () => dispatch(enterSite.entered()),
+  enterSite: (bool) => dispatch(enterSite.entered(bool)),
   handleCover: (toggle) => dispatch(coverToggle.cover(toggle)),
   setUserName: (name) => dispatch(user.name(name)),
   setUserPortrait: (portrait) => dispatch(user.portrait(portrait)),

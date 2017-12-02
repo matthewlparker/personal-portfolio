@@ -28,25 +28,9 @@ class ViewCover extends React.Component{
     this.randomBackground()
     document.addEventListener('keypress', this.handleKeyPress)
 
-    // this.props.entered ? this.handleCover() : undefined
-
-    // let video = this.detectBrowser()
-    // video === 'chrome' || video === 'firefox' ? this.setState({playVideo: true}) : undefined
   }
 
-  // detectBrowser(){
-  //   let browser
-  //   let browserMatch = navigator.userAgent.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i)
-  //   navigator.userAgent.match(/Edge/i) || navigator.userAgent.match(/Trident.*rv[ :]*11\./i) ? browser = 'msie'
-  //   : browser = browserMatch[1].toLowerCase()
-  //
-  //   return browser
-  // }
-
-
-
   handleKeyPress(e){
-    console.log('handleKeyPress event: ', e)
     this.props.entered && e.key === 'i' ? this.props.handleCover() : undefined
   }
 
@@ -54,12 +38,9 @@ class ViewCover extends React.Component{
     let backgrounds = [
       'https://i.imgur.com/HjStYze.gif',
       'https://i.imgur.com/4KJPU8C.gif',
-      // 'https://i.imgur.com/L2Hc5MB.gif',
       'https://i.imgur.com/XTCAUql.gif',
-      // 'https://i.imgur.com/LmSj8fW.gif',
       'https://i.imgur.com/vvTO3np.gif',
       'https://i.imgur.com/589GAGa.gif',
-      // '../../assets/backgrounds/pixel-ship.gif',
     ]
 
     let bg = backgrounds[Math.floor(Math.random() * (backgrounds.length))]
@@ -79,7 +60,7 @@ class ViewCover extends React.Component{
     : ''
 
     let mainBackground = {
-      backgroundImage: 'url(' + `${this.state.background}` + ')',
+      backgroundImage: 'url(' + `${this.props.background}` + ')',
     }
 
     return (
@@ -132,6 +113,7 @@ let mapStateToProps = (state) => ({
   route: state.route,
   entered: state.enterSite,
   coverOpen: state.coverToggle,
+  background: state.setBackground,
 })
 
 let mapDispatchToProps = (dispatch) => ({
