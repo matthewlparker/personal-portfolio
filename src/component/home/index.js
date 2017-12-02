@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import {NavLink} from 'react-router-dom'
 import FontAwesome from 'react-fontawesome'
 import * as coverToggle from '../../action/viewActions.js'
+import * as viewActions from '../../action/viewActions.js'
 import ThemeIcon from '../theme-icon/index.js'
 import * as route from '../../action/route.js'
 
@@ -17,6 +18,7 @@ class Home extends React.Component{
       hover: '',
       route: '',
     }
+    this.reload = this.reload.bind(this)
     this.onEnter = this.onEnter.bind(this)
     this.onLeave = this.onLeave.bind(this)
     this.handleCover = this.handleCover.bind(this)
@@ -25,12 +27,12 @@ class Home extends React.Component{
   }
 
   componentWillMount() {
-    let pathname = document.location.href.split('8080')[1]
-
-    pathname === '/about' ? this.props.routeToAbout()
-    : pathname === '/contact' ? this.props.routeToContact()
-    : pathname === '/portfolio' ? this.props.routeToPortfolio()
-    : undefined
+    // let pathname = document.location.href.split('8080')[1]
+    //
+    // pathname === '/about' ? this.props.routeToAbout()
+    // : pathname === '/contact' ? this.props.routeToContact()
+    // : pathname === '/portfolio' ? this.props.routeToPortfolio()
+    // : undefined
   }
 
   handleCover(toggle){
@@ -59,6 +61,33 @@ class Home extends React.Component{
     if(route === '/contact'){this.setState({route: '/contact'})}
   }
 
+  reload(){
+    let backgrounds = [
+      'https://i.imgur.com/HjStYze.gif',
+      'https://i.imgur.com/4KJPU8C.gif',
+      'https://i.imgur.com/XTCAUql.gif',
+      'https://i.imgur.com/vvTO3np.gif',
+      'https://i.imgur.com/589GAGa.gif',
+    ]
+
+    let bg = backgrounds[Math.floor(Math.random() * (backgrounds.length))]
+
+    // let current = backgrounds.pop()
+    // backgrounds = backgrounds.unshift(current)
+
+    this.props.setBackground(bg)
+
+  }
+
+  changeBackground(images){
+
+    // let current = images.pop()
+    // let backgrounds = images.unshift(current)
+    //
+    //
+    // this.props.setBackground(current)
+  }
+
   render(){
 
 
@@ -81,6 +110,10 @@ class Home extends React.Component{
 
           <NavLink exact to={'/'} className={'to-landing nav'}>
             Clear
+          </NavLink>
+
+          <NavLink exact to={'/'} className={'explore nav'} onClick={this.reload}>
+            Explore
           </NavLink>
 
         </div>
@@ -136,10 +169,12 @@ let mapStateToProps = (state) => ({
 
 let mapDispatchToProps = (dispatch) => ({
   handleCover: (toggle) => dispatch(coverToggle.cover(toggle)),
-  routeToAbout: () => dispatch(route.switchRoute('/about')),
-  routeToPortfolio: () => dispatch(route.switchRoute('/portfolio')),
-  routeToContact: () => dispatch(route.switchRoute('/contact')),
-  routeToLanding: () => dispatch(route.switchRoute('/')),
+  changeBackground: (image) => dispatch(viewActions.background(image)),
+  setBackground: (background) => dispatch(viewActions.background(background)),
+  // routeToAbout: () => dispatch(route.switchRoute('/about')),
+  // routeToPortfolio: () => dispatch(route.switchRoute('/portfolio')),
+  // routeToContact: () => dispatch(route.switchRoute('/contact')),
+  // routeToLanding: () => dispatch(route.switchRoute('/')),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)
