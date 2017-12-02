@@ -98,7 +98,7 @@ class About extends React.Component{
             {this.state.choice === 0 ?
               <Typist startDelay={1500} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
                 {this.props.background === 'https://i.imgur.com/589GAGa.gif'
-                  ? `Ho there, ${name}, a pleasue t'meet ya. Welcome aboard me ship, where the lanterns swing, rats stow away, and me site's available for viewin'! Feel free to look around, and ask me any questions ye might have.`
+                  ? `Ahoy, ${name}! A pleasure to meet you. Welcome aboard my ship! You don't get seasick, do you? Well, browsing my site will help! Feel free to look around, and ask me any questions ye might have.`
                   : this.props.background === 'https://i.imgur.com/XTCAUql.gif'
                   ? `Hi ${name}, it's a pleasure to meet you! What are the odds we'd bump into each other in the midst of his pristine, uncharted forest? No better time to check out my site! Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/4KJPU8C.gif'
