@@ -26,7 +26,7 @@ class About extends React.Component{
         userPortrait: JSON.parse(localStorage.getItem('userPortrait')),
       })
     }
-    
+
     this.props.shareRoute('/about')
   }
 
@@ -112,7 +112,7 @@ class About extends React.Component{
                 {this.props.background === 'https://i.imgur.com/589GAGa.gif'
                   ? `Ahoy there, ${name}! A pleasure to meet you. Welcome aboard my ship! You don't get seasick, do you? Well, browsing my site will help! Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/XTCAUql.gif'
-                  ? `Hi ${name}, it's a pleasure to meet you! What are the odds we'd bump into each other in the midst of his pristine, uncharted forest? No better time to check out my site! Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${name}, it's a pleasure to meet you! So, you like exploring the forest too? What a perfect opportunity to check out my site! Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/4KJPU8C.gif'
                   ? `Hi ${name}, it's a pleasure to meet you! A golden sunset, an oceanic horizon, and a gentle train trip along the coast. What a perfect time to check out my site! Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/vvTO3np.gif'

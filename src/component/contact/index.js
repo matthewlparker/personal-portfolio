@@ -13,9 +13,6 @@ class Contact extends React.Component{
       email: '',
       message: '',
     }
-
-    this.focus = this.focus.bind(this)
-    this.focusOut = this.focusOut.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
 
@@ -24,7 +21,6 @@ class Contact extends React.Component{
   }
 
   componentDidMount(){
-
     this.props.pageActive(true)
   }
 
@@ -37,15 +33,6 @@ class Contact extends React.Component{
     this.setState({[name]: value})
   }
 
-  focus(){
-    this.props.focus(true)
-  }
-
-  focusOut(){
-    this.props.focus(false)
-  }
-
-
   render(){
     return(
       <div className='contact-main'>
@@ -54,9 +41,9 @@ class Contact extends React.Component{
 
           <form method='post' action='https://formspree.io/cadburylion@gmail.com'>
 
-            <p className='contact-about-you'>
+            <div className='contact-about-you'>
               About You
-            </p>
+            </div>
             <label className='contact-info-label' htmlFor='name'>
               Your name
             </label>
@@ -65,8 +52,8 @@ class Contact extends React.Component{
               id='name'
               name='name'
               placeholder='eg. matthew parker'
-              onFocus={this.focus}
-              onBlur={this.focusOut}
+              onFocus={()=>this.props.focus(true)}
+              onBlur={()=>this.props.focus(false)}
 
             />
 
@@ -78,8 +65,8 @@ class Contact extends React.Component{
               id='email'
               name='email'
               placeholder='eg. email@example.com'
-              onFocus={this.focus}
-              onBlur={this.focusOut}
+              onFocus={()=>this.props.focus(true)}
+              onBlur={()=>this.props.focus(false)}
             />
 
             <label className='contact-message-header' htmlFor='msg'>
@@ -88,8 +75,8 @@ class Contact extends React.Component{
             <textarea
               id='msg'
               name='User Message'
-              onFocus={this.focus}
-              onBlur={this.focusOut}
+              onFocus={()=>this.props.focus(true)}
+              onBlur={()=>this.props.focus(false)}
             >
             </textarea>
 
