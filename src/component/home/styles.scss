@@ -45,11 +45,6 @@
   color: $color-white;
   background-color: $color-black;
 
-  // border-top: 5px ridge $color-white;
-  // border-right: 5px groove $color-white;
-  // border-bottom: 5px groove $color-white;
-  // border-left: 5px ridge $color-white;
-
   .theme-toggle-icon {
     display: none;
     grid-area: 2 / 3 / 3 / 4;
@@ -73,10 +68,7 @@
 
   .home-main {
     grid-template-rows: 30px repeat(2, 1fr) 30px;
-    // grid-template-columns: 30px calc(50% - 60px) 1fr repeat(4, minmax(50px, 90px)) 1fr 30px;
     grid-template-columns: 30px calc(50% - 60px) 1fr calc(50% - 60px) 30px;
-    // grid-column-gap: 30px;
-    // width: 100%;
 
     .dashboard-nav {
       grid-area: 2 / 2 / span 2 / span 1;
@@ -126,7 +118,7 @@
       align-self: center;
       font-size: 1.5em;
       font-family: 'Munro', normal;
-      color: hsla(275, 100, 60%, 1);
+      // color: hsla(275, 100, 60%, 1);
     }
 
     .skill-icon {

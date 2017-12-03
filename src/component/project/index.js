@@ -11,19 +11,13 @@ const Project = (props) => {
       <a href={props.url} target='_#' className={'project-card'}>
 
         <div className='front'>
-
-
-            <div className={'title'}>{props.title}</div>
-
-
+          <div className={'title'}>{props.title}</div>
         </div>
 
         <div className='back'>
-
           <div className={'description'}>
             {props.description}
           </div>
-
         </div>
 
       </a>

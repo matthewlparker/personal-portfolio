@@ -35,6 +35,7 @@
   transition-delay: 0s, 0s, 1s, 0s, 0s;
   transition-timing-function: ease-in-out;
 
+
 }
 
 .view-cover-main-open {
@@ -115,15 +116,28 @@
     grid-template-rows: 30px 1fr minmax(150px, auto) 1fr 30px;
     grid-template-columns: 30px 1fr minmax(auto, 1280px) 1fr 30px;
 
+    .left {
+      grid-area: 3 / 2 / span 1 / span 1;
+      font-size: 2em;
+      align-self: center;
+      justify-self: flex-end;
+      padding-right: 10px;
+    }
+
+    .right {
+      grid-area: 3 / 4 / span 1 / span 1;
+      font-size: 2em;
+      align-self: center;
+      padding-left: 10px;
+    }
+
 
     .name, .developer, .status {
       width: auto;
       font-family: 'Munro', normal;
       font-size: 1.5em;
-      line-height: 1.5em;
       color: $color-white;
       padding-left: 5px; padding-right: 5px;
-      // background-color: hsla(0, 0, 0, .2);
     }
 
     .basic-info {
