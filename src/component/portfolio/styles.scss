@@ -3,24 +3,25 @@
 
 .portfolio-container {
   display: grid;
-  grid-template-rows: 0px 200px 200px 200px 30px;
+  grid-template-rows: 30px repeat(3, 240px) 30px;
   grid-template-columns: 30px 1fr 30px;
-  grid-row-gap: 30px;
   width: 100%; height: 100%;
   overflow-y: auto;
   background-color: hsla(0, 0, 0, .6);
-
   border-top: 15px ridge #ccc;
   border-right: 15px groove #ccc;
   border-bottom: 15px groove #ccc;
   border-left: 15px ridge #ccc;
-  .project-sr {
+
+  .sr {
     grid-area: 2 / 2 / span 1 / span 1;
   }
-  .project-gs {
+
+  .gs {
     grid-area: 3 / 2 / span 1 / span 1;
   }
-  .project-gog {
+
+  .gog {
     grid-area: 4 / 2 / span 1 / span 1;
   }
 }

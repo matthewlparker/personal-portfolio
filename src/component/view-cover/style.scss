@@ -5,39 +5,8 @@
   src: local('Munro'), url(../../style/font/Munro.ttf) format('truetype');
 }
 
-@-webkit-keyframes fade-in {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
-
-@keyframes fade-in {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
-
-@keyframes fade-in-out {
-  0% {opacity: 0;}
-  50% {opacity: 1;}
-  100% {opacity: 0;}
-}
-
-@-webkit-keyframes teeter-gentle {
-  0% {transform: rotate(5deg);}
-  50% {transform: rotate(-2.5deg);}
-  100% {transform: rotate(5deg);}
-}
-
-@keyframes teeter-gentle {
-  0% {transform: rotate(5deg);}
-  50% {transform: rotate(-2.5deg);}
-  100% {transform: rotate(5deg);}
-}
 
 @-webkit-keyframes blink {
-    //   0% { opacity: 1; }
-    //  49% { opacity: 1; }
-    //  50% { opacity: 0; }
-    // 100% { opacity: 0; }
     0% { background-color: hsla(0, 0, 100, 1); }
    49% { background-color: hsla(0, 0, 100, 1); }
    50% { background-color: hsla(0, 0, 100, 0); }
