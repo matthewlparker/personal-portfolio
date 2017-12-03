@@ -2,83 +2,59 @@
 
 .project-main {
   position: relative;
-  display: inline-flex;
-  width: 100%; height: 200px;
-  padding: 20px;
+  width: 100%; height: 100%;
+  perspective: 1000px;
 
-
-  .project-content {
-    display: grid;
-    grid-template-rows: 30px 1fr 30px;
-    grid-template-columns: 30px 1fr 30px;
-    min-width: 100%;
+  .project-card {
+    position: absolute;
+    width: 100%; height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 1s;
     text-shadow: 1px 1px 1px black;
+    backface-visibility: hidden;
+    div {
+      position: absolute;
+      width: 100%; height: 100%;
+      backface-visibility: hidden;
+    }
+  }
+  .front {
+    display: flex;
+    background: $color-primary-t;
     border-top: 5px ridge $color-white;
     border-right: 5px groove $color-white;
     border-bottom: 5px groove $color-white;
     border-left: 5px ridge $color-white;
-    background-color: $color-primary-t;
-    transition: .65s;
+    text-shadow: 5px 5px 5px black;
 
-    .banner {
-      position: absolute;
-      transition: .65s ease-in-out;
-      background-color: $color-secondary-t;
-      border-top: 5px ridge $color-white;
-      border-right: 5px groove $color-white;
-      border-bottom: 5px groove $color-white;
-      border-left: 5px ridge $color-white;
-      justify-content: center;
-
-      padding-left: 5px; padding-right: 5px;
+    .title {
+      height: auto;
+      align-self: center;
+      text-align: center;
+      font-size: 3em;
     }
+  }
+  .back {
+    display: flex;
+    transform: rotateY(180deg);
+    background: $color-secondary-t;
+    border-top: 5px ridge $color-white;
+    border-right: 5px groove $color-white;
+    border-bottom: 5px groove $color-white;
+    border-left: 5px ridge $color-white;
 
-
-    .project-title {
-      display: flex;
-      align-items: center;
-      top: 0; left: calc(100% - 250px);
-      width: 250px; height: 40px;
-      .title {
-        font-size: 1.5em;
-        text-align: center;
-      }
-    }
-
-    .project-description {
-      grid-area: 2 / 2 / span 1 / span 1;
+    .description {
+      height: auto;
+      align-self: center;
+      text-align: center;
+      padding: 10px;
       font-size: 1.5em;
-      overflow-y: auto;
-    }
-
-    .project-skills {
-      display: flex;
-      align-items: center;
-      bottom: 0; right: calc(100% - 200px);
-      width: 200px; height: 40px;
-      .skills {
-        font-size: 1.25em;
-        white-space: nowrap;
-        overflow: hidden;
-      }
     }
   }
 }
+
 .project-main:hover {
-
-  .project-content {
-    background-color: hsla(275, 100, 40%, .6);
-  }
-
-  .banner {
-    background-color: $color-primary-t;
-  }
-  .project-title {
-    top: 0; left: 0;
-  }
-  .project-skills {
-
-    right: 0;
-    width: 400px;
+  .project-card {
+    transform:rotateY(180deg);
   }
 }

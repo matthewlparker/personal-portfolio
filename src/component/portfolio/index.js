@@ -41,7 +41,7 @@ class Portfolio extends React.Component{
             title={'Guardians of the Goats'}
             url={'https://cadburylion.github.io/'}
             projectColor={'rgba(54, 54, 54, .4)'}
-            description={'My first project at Code Fellows, Guardians of the Goats is a front-end mockup of goat-care resource site. Goats in need deserve a Guardian indeed.'}
+            description={'My first project at Code Fellows, Guardians of the Goats is a front-end mockup of a goat-care resource site. Goats in need deserve a Guardian indeed.'}
             skills={'javascript, html5, css3, git'}
           />
         </div>

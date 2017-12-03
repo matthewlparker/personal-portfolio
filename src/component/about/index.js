@@ -106,7 +106,7 @@ class About extends React.Component{
                   : this.props.background === 'https://i.imgur.com/vvTO3np.gif'
                   ? `Hi ${name}, it's a pleasure to meet you! I hope you can hear me over these waterfalls! What an amazing sight. Speaking of sites, have you seen mine? Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/HjStYze.gif'
-                  ? `Hi ${name}, it's a pleasure to meet you! All I ask is a tall ship and a star to steer her by. And that you have a good time visiting my site. Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${name}, it's a pleasure to meet you! All I ask is a tall ship and a star to steer her by. And that you have a good time visiting my site. Feel free to look around, and ask me any questions you might have!`
                   : `Hi ${name}, it's a pleasure to meet you! Welcome to my site. Feel free to look around, and ask me any questions you might have.`
                 }
               </Typist>

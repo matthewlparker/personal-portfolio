@@ -1,10 +1,11 @@
 @import "vars";
 
-
 .portfolio-container {
   display: grid;
-  grid-template-rows: 30px repeat(3, 240px) 30px;
-  grid-template-columns: 30px 1fr 30px;
+  grid-template-rows: 30px 1fr 30px;
+  grid-template-columns: 15px 1fr repeat(3, minmax(200px, 350px)) 1fr 15px;
+  grid-column-gap: 30px;
+  justify-items: center;
   width: 100%; height: 100%;
   overflow-y: auto;
   background-color: hsla(0, 0, 0, .6);
@@ -13,15 +14,18 @@
   border-bottom: 15px groove #ccc;
   border-left: 15px ridge #ccc;
 
+  .project {
+    width: 100%; height: 250px;
+  }
   .sr {
-    grid-area: 2 / 2 / span 1 / span 1;
+    grid-area: 2 / 3 / span 1 / span 1;
   }
 
   .gs {
-    grid-area: 3 / 2 / span 1 / span 1;
+    grid-area: 2 / 4 / span 1 / span 1;
   }
 
   .gog {
-    grid-area: 4 / 2 / span 1 / span 1;
+    grid-area: 2 / 5 / span 1 / span 1;
   }
 }
