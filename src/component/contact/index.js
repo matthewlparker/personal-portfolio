@@ -1,6 +1,5 @@
 import React from 'react'
-
-// import contactAction from '../../action/contact'
+import * as setRoute from '../../action/route.js'
 import * as viewActions from '../../action/viewActions.js'
 import {connect} from 'react-redux'
 
@@ -18,6 +17,19 @@ class Contact extends React.Component{
     this.focus = this.focus.bind(this)
     this.focusOut = this.focusOut.bind(this)
     this.handleChange = this.handleChange.bind(this)
+  }
+
+  componentWillMount(){
+    this.props.shareRoute('/contact')
+  }
+
+  componentDidMount(){
+
+    this.props.pageActive(true)
+  }
+
+  componentWillUnmount(){
+    this.props.pageActive(false)
   }
 
   handleChange(e){
@@ -98,10 +110,14 @@ class Contact extends React.Component{
   }
 }
 
-export const mapStateToProps = (state) => ({})
+export const mapStateToProps = (state) => ({
+
+})
 
 export const mapDispatchToProps = (dispatch) => ({
   focus: (bool) => dispatch(viewActions.focus(bool)),
+  shareRoute: (route) => dispatch(setRoute.route(route)),
+  pageActive: (bool) => dispatch(viewActions.pageActive(bool)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contact)

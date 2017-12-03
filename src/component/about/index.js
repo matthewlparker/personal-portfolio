@@ -1,6 +1,8 @@
 import React from 'react'
 import Typist from 'react-typist'
 import {connect} from 'react-redux'
+import * as setRoute from '../../action/route.js'
+import * as viewActions from '../../action/viewActions.js'
 import UserDialogue from '../user-dialogue/index.js'
 import './styles.scss'
 
@@ -24,6 +26,16 @@ class About extends React.Component{
         userPortrait: JSON.parse(localStorage.getItem('userPortrait')),
       })
     }
+    
+    this.props.shareRoute('/about')
+  }
+
+  componentDidMount(){
+    this.props.pageActive(true)
+  }
+
+  componentWillUnmount(){
+    this.props.pageActive(false)
   }
 
   handleChoice(choice){
@@ -155,6 +167,9 @@ let mapStateToProps = (state) => ({
   background: state.setBackground,
 })
 
-let mapDispatchToProps = (dispatch) => ({})
+let mapDispatchToProps = (dispatch) => ({
+  shareRoute: (route) => dispatch(setRoute.route(route)),
+  pageActive: (bool) => dispatch(viewActions.pageActive(bool)),
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(About)

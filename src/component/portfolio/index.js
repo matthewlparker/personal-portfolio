@@ -1,12 +1,28 @@
 import './styles.scss'
 import React from 'react'
 import {scroller} from 'react-scroll'
+import {connect} from 'react-redux'
 import Project from '../project/index.js'
 import ViewCover from '../view-cover/index.js'
+import * as setRoute from '../../action/route.js'
+import * as viewActions from '../../action/viewActions.js'
 
 class Portfolio extends React.Component{
   constructor(props){
     super(props)
+  }
+
+  componentWillMount(){
+    this.props.shareRoute('/portfolio')
+  }
+
+  componentDidMount(){
+
+    this.props.pageActive(true)
+  }
+
+  componentWillUnmount(){
+    this.props.pageActive(false)
   }
 
   render() {
@@ -50,4 +66,11 @@ class Portfolio extends React.Component{
   }
 }
 
-export default Portfolio
+let mapStateToProps = (state) => ({})
+
+let mapDispatchToProps = (dispatch) => ({
+  shareRoute: (route) => dispatch(setRoute.route(route)),
+  pageActive: (bool) => dispatch(viewActions.pageActive(bool)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Portfolio)

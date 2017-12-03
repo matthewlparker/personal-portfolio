@@ -1,8 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import * as user from '../../action/user.js'
-import * as enterSite from '../../action/viewActions.js'
-import * as coverToggle from '../../action/viewActions.js'
+import * as viewActions from '../../action/viewActions.js'
 import './style.scss'
 
 class User extends React.Component {
@@ -33,6 +32,11 @@ class User extends React.Component {
   componentWillMount(){
     document.addEventListener('keypress', this.handleKeyPress)
     if(localStorage.iconName) {this.selectAvatar(localStorage.iconName)}
+  }
+
+
+  componentWillUnmount() {
+    document.removeEventListener('keypress', this.handleKeyPress)
   }
 
   handleChange(e){
@@ -123,7 +127,7 @@ class User extends React.Component {
     e.key === 'ArrowDown' && (localStorage.userPortrait || localStorage.userName) ? this.selectDelete() : undefined
 
     e.key === 'ArrowRight' && this.state.portraitURL ? this.selectAvatar('man1') : undefined
-    e.key === 'ArrowLeft' && this.state.portraitURL ? this.selectAvatar('woman1') : undefined
+    e.key === 'ArrowLeft' && this.state.portraitURL  ? this.selectAvatar('woman1') : undefined
   }
 
   render(){
@@ -165,12 +169,12 @@ class User extends React.Component {
 }
 
 let mapStateToProps = (state) => ({
-
+  entered: state.enterSite,
 })
 
 let mapDispatchToProps = (dispatch) => ({
-  enterSite: (bool) => dispatch(enterSite.entered(bool)),
-  handleCover: (toggle) => dispatch(coverToggle.cover(toggle)),
+  enterSite: (bool) => dispatch(viewActions.entered(bool)),
+  handleCover: (toggle) => dispatch(viewActions.cover(toggle)),
   setUserName: (name) => dispatch(user.name(name)),
   setUserPortrait: (portrait) => dispatch(user.portrait(portrait)),
 })
