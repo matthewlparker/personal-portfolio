@@ -38,36 +38,27 @@ class Contact extends React.Component{
     return(
       <div className='contact-main'>
 
-
-
           <form className='contact-form' method='post' action='https://formspree.io/cadburylion@gmail.com'>
 
-            <div className='contact-about-you'>
-              About You
-            </div>
-
-      
             <div className='name-input'>
-
               <input
                 type='text'
                 id='name'
                 name='name'
                 value={this.state.name}
-                placeholder='eg. matthew parker'
+                placeholder='name'
                 onChange={(e)=>this.handleChange(e)}
                 onFocus={()=>this.props.focus(true)}
                 onBlur={()=>this.props.focus(false)}
               />
             </div>
 
-
             <div className='email-input'>
               <input
                 type='text'
                 id='email'
                 name='email'
-                placeholder='eg. email@example.com'
+                placeholder='email'
                 onFocus={()=>this.props.focus(true)}
                 onBlur={()=>this.props.focus(false)}
               />
@@ -75,14 +66,11 @@ class Contact extends React.Component{
 
             <div className='user-portrait' style={portrait}></div>
 
-
-
             <div className='message-input'>
-
               <textarea
                 id='msg'
                 name='User Message'
-                placeholder='Message'
+                placeholder='message'
                 onFocus={()=>this.props.focus(true)}
                 onBlur={()=>this.props.focus(false)}
               >
@@ -100,8 +88,6 @@ class Contact extends React.Component{
             </button>
 
           </form>
-
-
       </div>
     )
   }
