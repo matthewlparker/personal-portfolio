@@ -76,7 +76,9 @@ class ViewCover extends React.Component{
               : this.props.route === '/contact' ? '/portfolio'
               : '/'
             } className='left'>
-              {'<'}
+              <div className='arrow'>
+                {'<'}
+              </div>
             </NavLink>
             : undefined
           }
@@ -132,7 +134,9 @@ class ViewCover extends React.Component{
               : '/'
               }
               className='right'>
-                {'>'}
+                <div className='arrow'>
+                  {'>'}
+                </div>
               </NavLink>
             : undefined
           }
