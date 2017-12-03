@@ -1,89 +1,147 @@
 @import "vars";
 
+
 .contact-main {
-  width: 100%; height: 100%;
-  background: hsla(0,0,0,.6);
-  overflow-y: auto;
+  display: grid;
+  grid-template-rows: 30px 1fr 30px;
+  grid-template-columns: 30px 1fr 30px;
+  background: hsla(0, 0, 0, .6);
+  border-top: 15px ridge $color-white;
+  border-right: 15px groove $color-white;
+  border-bottom: 15px groove $color-white;
+  border-left: 15px ridge $color-white;
 
-  border-top: 15px ridge #ccc;
-  border-right: 15px groove #ccc;
-  border-bottom: 15px groove #ccc;
-  border-left: 15px ridge #ccc;
-}
+  .contact-form {
+    grid-area: 2 / 2 / span 1 / span 1;
+    display: grid;
+    grid-template-rows: 100px 100px 1fr 30px 70px;
+    grid-template-columns: 50% 1fr 200px 1fr;
+    background: hsla(0, 0, 0, 0);
+    font-size: 1.8em;
+  }
 
-.contact-content {
-  form {
-    background: none;
-    p {
-      color: $color-white;
-      text-shadow: 1px 1px 1px $color-black;
-    }
-    label {
-      text-shadow: 1px 1px 1px $color-black;
-    }
-    input[type='text'], textarea, {
-      background-color: hsla(215, 88, 36, .6);
-      border-top: 5px ridge $color-white;
-      border-right: 5px groove $color-white;
-      border-bottom: 5px groove $color-white;
-      border-left: 5px ridge $color-white;
-    }
-    ::placeholder {
-      color: hsla(0, 0, 100, .8);
+  .name-input {
+    grid-area: 1 / 1 / span 1 / span 1;
+    // align-self: flex-start;
+    // align-self: center;
+    // height: 45px;
+    input {
+      width: 100%; height: 70px;
     }
   }
-}
 
-.contact-intro {
-  position: relative;
-  color: white;
-  padding: 80px 80px 30px 80px;
-  text-align: center;
-}
+  .email-input {
+    grid-area: 2 / 1 / span 1 / span 1;
+    input {
+      width: 100%; height: 70px;
+    }
+  }
 
-.contact-content {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 2rem;
-  padding-right: 1.25em;
-  padding-bottom: 2rem;
-  padding-left: 1.25em;
-  max-width: 720px;
-}
+  .user-portrait {
+    grid-area: 1 / 3 / span 2 / span 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: hsla(0,0,0,0);
+  }
 
-.contact-content form {
-  margin-top: 2me;
-}
+  .message-input {
+    grid-area: 3 / 1 / span 1 / span 4;
 
-.contact-info-label {
-  margin-top: 1.4em;
-}
+    textarea {
+      width: 100%;
+    }
+  }
 
-.contact-content textarea {
-  height: 190px;
+  .submit-button {
+    grid-area: 5 / 1 / span 1 / span 4;
+    justify-self: center;
+  }
 }
-
-.contact-content input, .contact-content textarea {
-  width: 100%;
-  // box-shadow: 6px 6px 0 $color-black;
-}
-
-.contact-content button {
-  width: 20%;
-  border-radius: 1px;
-  box-shadow: 0 5px 0 hsla(0, 0, 60, 1);
-}
-
-.contact-message-header {
-  margin-top: 4em;
-  margin-bottom: 1.2em;
-  padding-bottom: .3em;
-  border-bottom: 2px solid $color-lightgrey;
-}
-
-.contact-about-you {
-  display: block;
-  margin-bottom: 1.2em;
-  padding-bottom: .3em;
-  border-bottom: 2px solid $color-lightgrey;
-}
+//
+// .contact-main {
+//   width: 100%; height: 100%;
+//   background: hsla(0,0,0,.6);
+//   overflow-y: auto;
+//
+//   border-top: 15px ridge #ccc;
+//   border-right: 15px groove #ccc;
+//   border-bottom: 15px groove #ccc;
+//   border-left: 15px ridge #ccc;
+// }
+//
+// .contact-content {
+//   form {
+//     background: none;
+//     p {
+//       color: $color-white;
+//       text-shadow: 1px 1px 1px $color-black;
+//     }
+//     label {
+//       text-shadow: 1px 1px 1px $color-black;
+//     }
+//     input[type='text'], textarea, {
+//       background-color: hsla(215, 88, 36, .6);
+//       border-top: 5px ridge $color-white;
+//       border-right: 5px groove $color-white;
+//       border-bottom: 5px groove $color-white;
+//       border-left: 5px ridge $color-white;
+//     }
+//     ::placeholder {
+//       color: hsla(0, 0, 100, .8);
+//     }
+//   }
+// }
+//
+// .contact-intro {
+//   position: relative;
+//   color: white;
+//   padding: 80px 80px 30px 80px;
+//   text-align: center;
+// }
+//
+// .contact-content {
+//   margin-left: auto;
+//   margin-right: auto;
+//   padding-top: 2rem;
+//   padding-right: 1.25em;
+//   padding-bottom: 2rem;
+//   padding-left: 1.25em;
+//   max-width: 720px;
+// }
+//
+// .contact-content form {
+//   margin-top: 2me;
+// }
+//
+// .contact-info-label {
+//   margin-top: 1.4em;
+// }
+//
+// .contact-content textarea {
+//   height: 190px;
+// }
+//
+// .contact-content input, .contact-content textarea {
+//   width: 100%;
+//   // box-shadow: 6px 6px 0 $color-black;
+// }
+//
+// .contact-content button {
+//   width: 20%;
+//   border-radius: 1px;
+//   box-shadow: 0 5px 0 hsla(0, 0, 60, 1);
+// }
+//
+// .contact-message-header {
+//   margin-top: 4em;
+//   margin-bottom: 1.2em;
+//   padding-bottom: .3em;
+//   border-bottom: 2px solid $color-lightgrey;
+// }
+//
+// .contact-about-you {
+//   display: block;
+//   margin-bottom: 1.2em;
+//   padding-bottom: .3em;
+//   border-bottom: 2px solid $color-lightgrey;
+// }

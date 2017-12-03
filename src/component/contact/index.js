@@ -9,7 +9,7 @@ class Contact extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      name: '',
+      name: this.props.userName,
       email: '',
       message: '',
     }
@@ -34,51 +34,60 @@ class Contact extends React.Component{
   }
 
   render(){
+    let portrait = {backgroundImage: 'url(' + `${this.props.userPortrait}` + ')'}
     return(
       <div className='contact-main'>
 
-        <div className='contact-content'>
 
-          <form method='post' action='https://formspree.io/cadburylion@gmail.com'>
+
+          <form className='contact-form' method='post' action='https://formspree.io/cadburylion@gmail.com'>
 
             <div className='contact-about-you'>
               About You
             </div>
-            <label className='contact-info-label' htmlFor='name'>
-              Your name
-            </label>
-            <input
-              type='text'
-              id='name'
-              name='name'
-              placeholder='eg. matthew parker'
-              onFocus={()=>this.props.focus(true)}
-              onBlur={()=>this.props.focus(false)}
 
-            />
+      
+            <div className='name-input'>
 
-            <label className='contact-info-label' htmlFor='email'>
-              Email address
-            </label>
-            <input
-              type='text'
-              id='email'
-              name='email'
-              placeholder='eg. email@example.com'
-              onFocus={()=>this.props.focus(true)}
-              onBlur={()=>this.props.focus(false)}
-            />
+              <input
+                type='text'
+                id='name'
+                name='name'
+                value={this.state.name}
+                placeholder='eg. matthew parker'
+                onChange={(e)=>this.handleChange(e)}
+                onFocus={()=>this.props.focus(true)}
+                onBlur={()=>this.props.focus(false)}
+              />
+            </div>
 
-            <label className='contact-message-header' htmlFor='msg'>
-              Message
-            </label>
-            <textarea
-              id='msg'
-              name='User Message'
-              onFocus={()=>this.props.focus(true)}
-              onBlur={()=>this.props.focus(false)}
-            >
-            </textarea>
+
+            <div className='email-input'>
+              <input
+                type='text'
+                id='email'
+                name='email'
+                placeholder='eg. email@example.com'
+                onFocus={()=>this.props.focus(true)}
+                onBlur={()=>this.props.focus(false)}
+              />
+            </div>
+
+            <div className='user-portrait' style={portrait}></div>
+
+
+
+            <div className='message-input'>
+
+              <textarea
+                id='msg'
+                name='User Message'
+                placeholder='Message'
+                onFocus={()=>this.props.focus(true)}
+                onBlur={()=>this.props.focus(false)}
+              >
+              </textarea>
+            </div>
 
             <input
               type="hidden"
@@ -86,19 +95,21 @@ class Contact extends React.Component{
               value="www.matthewparker.io"
             />
 
-            <button type='submit'>
+            <button type='submit' className='submit-button'>
               Send
             </button>
+
           </form>
 
-        </div>
+
       </div>
     )
   }
 }
 
 export const mapStateToProps = (state) => ({
-
+  userName: state.userName,
+  userPortrait: state.userPortrait,
 })
 
 export const mapDispatchToProps = (dispatch) => ({
