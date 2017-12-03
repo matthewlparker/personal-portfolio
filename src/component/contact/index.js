@@ -23,6 +23,15 @@ class Contact extends React.Component{
     this.props.shareRoute('/contact')
   }
 
+  componentDidMount(){
+
+    this.props.pageActive(true)
+  }
+
+  componentWillUnmount(){
+    this.props.pageActive(false)
+  }
+
   handleChange(e){
     let{name, value} = e.target
     this.setState({[name]: value})
@@ -106,8 +115,9 @@ export const mapStateToProps = (state) => ({
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  shareRoute: (route) => dispatch(setRoute.route(route)),
   focus: (bool) => dispatch(viewActions.focus(bool)),
+  shareRoute: (route) => dispatch(setRoute.route(route)),
+  pageActive: (bool) => dispatch(viewActions.pageActive(bool)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contact)

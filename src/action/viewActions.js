@@ -22,3 +22,8 @@ export const background = (bg) => ({
   type: 'SET_BACKGROUND',
   payload: bg,
 })
+
+export const pageActive = (bool) => ({
+  type: 'PAGE_ACTIVE',
+  payload: bool,
+})

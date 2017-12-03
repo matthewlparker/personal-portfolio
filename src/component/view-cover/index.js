@@ -70,11 +70,16 @@ class ViewCover extends React.Component{
 
         : <div className='view-cover-content'>
 
-          <NavLink to={this.props.route === '/about' ? '/contact'
-            : this.props.route === '/portfolio' ? '/about'
-            : this.props.route === '/contact' ? '/portfolio'
-            : '/'
-          } className='left'>{'<'}</NavLink>
+          {this.props.pageActive ?
+            <NavLink to={this.props.route === '/about' ? '/contact'
+              : this.props.route === '/portfolio' ? '/about'
+              : this.props.route === '/contact' ? '/portfolio'
+              : '/'
+            } className='left'>
+              {'<'}
+            </NavLink>
+            : undefined
+          }
 
           <div className='basic-info'>
             <a className={'name'} href='https://docs.google.com/document/d/1bLo8ln0GXKTPMceAKzwvaifaj8mm2Y2_cXog9_Ssu60/export?format=pdf'>
@@ -120,12 +125,17 @@ class ViewCover extends React.Component{
 
           </div>
 
-          <NavLink to={this.props.route === '/about' ? '/portfolio'
-            : this.props.route === '/portfolio' ? '/contact'
-            : this.props.route === '/contact' ? '/about'
-            : '/'
+          {this.props.pageActive ?
+            <NavLink to={this.props.route === '/about' ? '/portfolio'
+              : this.props.route === '/portfolio' ? '/contact'
+              : this.props.route === '/contact' ? '/about'
+              : '/'
+              }
+              className='right'>
+                {'>'}
+              </NavLink>
+            : undefined
           }
-          className='right'>{'>'}</NavLink>
         </div>
       }
 
@@ -135,6 +145,7 @@ class ViewCover extends React.Component{
 }
 
 let mapStateToProps = (state) => ({
+  pageActive: state.pageActive,
   route: state.route,
   focus: state.focus,
   entered: state.enterSite,
