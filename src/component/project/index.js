@@ -8,20 +8,23 @@ const Project = (props) => {
   return (
     <div className={'project-main'}>
 
-      <a href={props.url} target='_#' className={'project-content'}>
+      <a href={props.url} target='_#' className={'project-card'}>
 
-        <div className={'project-title banner'}>
-          <div className={'title'}>{props.title}</div>
+        <div className='front'>
+
+
+            <div className={'title'}>{props.title}</div>
+
+
         </div>
 
-        <div className={'project-description'}>
-          {props.description}
-        </div>
+        <div className='back'>
 
-        <div className='project-skills banner'>
-          <div className='skills'>{props.skills}</div>
-        </div>
+          <div className={'description'}>
+            {props.description}
+          </div>
 
+        </div>
 
       </a>
 
