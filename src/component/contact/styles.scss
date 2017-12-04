@@ -77,9 +77,6 @@
     }
 
     .front {
-
-
-
     }
 
     .back {
@@ -97,7 +94,6 @@
 
       .input-name {
         grid-area: 2 / 2 / span 1 / span 1;
-        // justify-self: center;
         width: 190px; height: 40px;
         input {
           width: 100%; height: 100%;
@@ -107,8 +103,6 @@
       .email-input {
         grid-area: 3 / 2 / span 1 / span 1;
         width: 190px; height: 40px;
-        // justify-self: center;
-        // align-self: center;
         input {
           width: 100%; height: 100%;
           border-bottom: 1px solid $color-white;
@@ -116,13 +110,11 @@
       }
 
       button {
-        // display: none;
         grid-area: 2 / 3 / span 2 / span 1;
         justify-self: flex-start;
         height: 100%;
         color: $color-white;
         background: none;
-        // background-color: $color-primary-t;
         border-top: 1px ridge $color-white;
         border-right: 1px groove $color-white;
         border-bottom: 1px groove $color-white;
@@ -145,7 +137,6 @@
     }
 
     .user-message {
-      // grid-area: 1 / 2 / span 1 / span 2;
       position: absolute;
       width: 100%; height: 100%;
       display: grid;
@@ -172,9 +163,6 @@
     }
   }
 
-  // .contact-form.flipped {
-  //   transform: rotateX(180deg);
-  // }
   .user-portrait {
     grid-area: 4 / 4 / span 2 / span 1;
     background-repeat: no-repeat;

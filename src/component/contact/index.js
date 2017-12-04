@@ -1,12 +1,12 @@
-import React from 'react'
-import Typist from 'react-typist'
-import {connect} from 'react-redux'
-import * as setRoute from '../../action/route.js'
-import * as viewActions from '../../action/viewActions.js'
+  import React from 'react'
+  import Typist from 'react-typist'
+  import {connect} from 'react-redux'
+  import * as setRoute from '../../action/route.js'
+  import * as viewActions from '../../action/viewActions.js'
 
-import './styles.scss'
+  import './styles.scss'
 
-class Contact extends React.Component{
+  class Contact extends React.Component{
   constructor(props){
     super(props)
     this.state = {
@@ -98,37 +98,31 @@ class Contact extends React.Component{
 
             <div className='input-name'>
               <input
-              type='text'
-              id='name'
-              name='name'
-              value={this.state.name}
-              placeholder='name'
-              onChange={(e) => this.handleChange(e)}
-              onFocus={()=>this.props.focus(true)}
-              onBlur={()=>this.props.focus(false)}
-            /></div>
+                type='text'
+                id='name'
+                name='name'
+                value={this.state.name}
+                placeholder='name'
+                onChange={(e) => this.handleChange(e)}
+                onFocus={()=>this.props.focus(true)}
+                onBlur={()=>this.props.focus(false)}
+              /></div>
 
-            <button type='submit' className='submit-button'>
-              Send
-            </button>
+              <button type='submit' className='submit-button'>
+                Send
+              </button>
 
-            <div className='to-message-view' onClick={()=>this.toInfoView(false)}>
-              See front
+              <div className='to-message-view' onClick={()=>this.toInfoView(false)}>
+                See front
+              </div>
+
             </div>
-
-          </div>
-
-
-
-
 
             <input
               type="hidden"
               name="_next"
-              value="localhost:8080"
+              value="www.matthewparker.io"
             />
-
-
 
           </div>
 
@@ -140,15 +134,15 @@ class Contact extends React.Component{
   }
 }
 
-export const mapStateToProps = (state) => ({
+  export const mapStateToProps = (state) => ({
   userName: state.userName,
   userPortrait: state.userPortrait,
-})
+  })
 
-export const mapDispatchToProps = (dispatch) => ({
+  export const mapDispatchToProps = (dispatch) => ({
   focus: (bool) => dispatch(viewActions.focus(bool)),
   shareRoute: (route) => dispatch(setRoute.route(route)),
   pageActive: (bool) => dispatch(viewActions.pageActive(bool)),
-})
+  })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Contact)
+  export default connect(mapStateToProps, mapDispatchToProps)(Contact)
