@@ -13,7 +13,9 @@ class Contact extends React.Component{
       name: this.props.userName,
       email: '',
       message: '',
+      infoView: false,
     }
+    this.toInfoView = this.toInfoView.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
 
@@ -29,6 +31,12 @@ class Contact extends React.Component{
     this.props.pageActive(false)
   }
 
+  toInfoView(bool){
+    this.setState({
+      infoView: bool,
+    })
+  }
+
   handleChange(e){
     let{name, value} = e.target
     this.setState({[name]: value})
@@ -36,6 +44,7 @@ class Contact extends React.Component{
 
   render(){
     let portrait = {backgroundImage: 'url(' + `${this.props.userPortrait}` + ')'}
+    console.log('contact state: ', this.state)
     return(
       <div className='contact-main'>
 
@@ -53,51 +62,75 @@ class Contact extends React.Component{
 
         <form className='contact-form' method='post' action='https://formspree.io/cadburylion@gmail.com'>
 
-          <div className='email-input box'>
-            <input
-            type='text'
-            id='email'
-            name='email'
-            placeholder='email'
-            onFocus={()=>this.props.focus(true)}
-            onBlur={()=>this.props.focus(false)}
-            />
-          </div>
+          <div className={`contact-card ${this.state.infoView ? 'flipped' : ''}`}>
 
-          <div className='input-name box'>
-            <input
-            type='text'
-            id='name'
-            name='name'
-            value={this.state.name}
-            placeholder='name'
-            onChange={(e) => this.handleChange(e)}
-            onFocus={()=>this.props.focus(true)}
-            onBlur={()=>this.props.focus(false)}
-          /></div>
+            <div className='front'>
+              <div className='user-message box'>
 
-          <div className='user-message box'>
+                <textarea
+                  id='msg'
+                  name='User Message'
+                  placeholder='message'
+                  onFocus={()=>this.props.focus(true)}
+                  onBlur={()=>this.props.focus(false)}
+                >
+                </textarea>
 
-            <textarea
-              id='msg'
-              name='User Message'
-              placeholder='message'
+                <div className='portrait-block'></div>
+
+                <div className='user-contact-info' onClick={()=>this.toInfoView(true)}>{`See back`}</div>
+
+              </div>
+            </div>
+
+          <div className='back'>
+
+            <div className='email-input'>
+              <input
+              type='text'
+              id='email'
+              name='email'
+              placeholder='email'
               onFocus={()=>this.props.focus(true)}
               onBlur={()=>this.props.focus(false)}
-            >
-            </textarea>
-            <div className='portrait-block'></div>
+              />
+            </div>
+
+            <div className='input-name'>
+              <input
+              type='text'
+              id='name'
+              name='name'
+              value={this.state.name}
+              placeholder='name'
+              onChange={(e) => this.handleChange(e)}
+              onFocus={()=>this.props.focus(true)}
+              onBlur={()=>this.props.focus(false)}
+            /></div>
+
+            <button type='submit' className='submit-button'>
+              Send
+            </button>
+
+            <div className='to-message-view' onClick={()=>this.toInfoView(false)}>
+              See front
+            </div>
+
           </div>
 
-          <input
-            type="hidden"
-            name="_next"
-            value="localhost:8080"
-          />
 
-          <button type='submit' className='submit-button'>
-            Send
-          </button>
+
+
+
+            <input
+              type="hidden"
+              name="_next"
+              value="localhost:8080"
+            />
+
+
+
+          </div>
 
         </form>
         <div className='user-portrait' style={portrait}></div>
