@@ -14,7 +14,7 @@
   border-right: 15px groove #ccc;
   border-bottom: 15px groove #ccc;
   border-left: 15px ridge #ccc;
-  overflow-y: auto;
+  overflow: none;
 
   .matt-dialogue {
     grid-area: 2 / 2 / span 1 / span 2;
@@ -58,68 +58,123 @@
   }
 
   .contact-form {
-    grid-area: 5 / 2 / span 1 / span 3;
+    grid-area: 5 / 3 / span 1 / span 2;
+    position: relative;
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 200px 1fr 200px;
-    // transition: transform 1s;
-    // transform-style: preserve-3d;
-    // perspective: 1000px;
+    grid-template-columns: 1fr 200px;
+    perspective: 1000px;
+
+    .contact-card {
+      position: absolute;
+      width: 100%; height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+      backface-visibility: hidden;
+      div, button {
+        backface-visibility: hidden;
+      }
+    }
+
+    .front {
 
 
-    // &:hover {
-    //   transform: rotateX(180deg);
-    // }
+
+    }
+
+    .back {
+      position: absolute;
+      display: grid;
+      grid-template-rows: 5px 1fr 1fr 1fr 30px;
+      grid-template-columns: 5px 200px 1fr 200px;
+      width: 100%; height: 100%;
+      transform: rotateX(180deg);
+      background: $color-secondary-t;
+      border-top: 5px ridge $color-white;
+      border-right: 5px groove $color-white;
+      border-bottom: 5px groove $color-white;
+      border-left: 5px ridge $color-white;
+
+      .input-name {
+        grid-area: 2 / 2 / span 1 / span 1;
+        // justify-self: center;
+        width: 190px; height: 40px;
+        input {
+          width: 100%; height: 100%;
+          border-bottom: 1px solid $color-white;
+        }
+      }
+      .email-input {
+        grid-area: 3 / 2 / span 1 / span 1;
+        width: 190px; height: 40px;
+        // justify-self: center;
+        // align-self: center;
+        input {
+          width: 100%; height: 100%;
+          border-bottom: 1px solid $color-white;
+        }
+      }
+
+      button {
+        // display: none;
+        grid-area: 2 / 3 / span 2 / span 1;
+        justify-self: flex-start;
+        height: 100%;
+        color: $color-white;
+        background: none;
+        // background-color: $color-primary-t;
+        border-top: 1px ridge $color-white;
+        border-right: 1px groove $color-white;
+        border-bottom: 1px groove $color-white;
+        border-left: 1px ridge $color-white;
+        border-radius: 0;
+        &:hover {
+          background: $color-primary-t;
+        }
+      }
+      .to-message-view {
+        width: auto;
+        padding-left: 10px;
+        grid-area: 5 / 2 / span 1 / span 1;
+      }
+
+    }
+
+    .contact-card.flipped {
+      transform: rotateX(180deg);
+    }
 
     .user-message {
-      grid-area: 1 / 2 / span 1 / span 2;
+      // grid-area: 1 / 2 / span 1 / span 2;
+      position: absolute;
+      width: 100%; height: 100%;
       display: grid;
-      grid-template-rows: 1fr;
+      grid-template-rows: 1fr 30px;
       grid-template-columns: 1fr 200px;
       font-size: 1.5em;
       padding: 5px;
       overflow-y: auto;
+
       .portrait-block {
         grid-area: 1 / 2 / span 1 / span 1;
       }
       textarea {
         text-shadow: 2px 2px 2px $color-black;
+        backface-visibility: hidden;
       }
-    }
-    .input-name {
-      grid-area: 1 / 1 / span 1 / span 1;
-      justify-self: center;
-      width: 190px; height: 40px;
-      input {
-        width: 100%; height: 100%;
-      }
-    }
-
-    .email-input {
-      grid-area: 1 / 1 / span 1 / span 1;
-      width: 190px; height: 40px;
-      justify-self: center;
-      align-self: center;
-      input {
-        width: 100%; height: 100%;
-      }
-    }
-    button {
-      grid-area: 1 / 1 / span 1 / span 1;
-      width: 190px; height: 40px;
-      align-self: flex-end;
-      justify-self: center;
-      color: $color-white;
-      background-color: $color-primary-t;
-      border-top: 5px ridge $color-white;
-      border-right: 5px groove $color-white;
-      border-bottom: 5px groove $color-white;
-      border-left: 5px ridge $color-white;
-      &:hover {
-        background: $color-secondary-t;
+      .user-contact-info {
+        grid-area: 2 / 1 / span 1 / span 1;
+        font-size: 1rem;
+        padding-left: 10px;
+        text-shadow: 2px 2px 2px $color-black;
+        backface-visibility: hidden;
       }
     }
   }
+
+  // .contact-form.flipped {
+  //   transform: rotateX(180deg);
+  // }
   .user-portrait {
     grid-area: 4 / 4 / span 2 / span 1;
     background-repeat: no-repeat;
