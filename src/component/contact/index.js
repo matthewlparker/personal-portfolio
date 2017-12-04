@@ -1,7 +1,8 @@
 import React from 'react'
+import Typist from 'react-typist'
+import {connect} from 'react-redux'
 import * as setRoute from '../../action/route.js'
 import * as viewActions from '../../action/viewActions.js'
-import {connect} from 'react-redux'
 
 import './styles.scss'
 
@@ -38,56 +39,69 @@ class Contact extends React.Component{
     return(
       <div className='contact-main'>
 
-          <form className='contact-form' method='post' action='https://formspree.io/cadburylion@gmail.com'>
+        <div className='matt-dialogue box'>
+          <div className='parting-message'>
+            <Typist startDelay={1000} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
+            {`Thanks for stopping by, ${this.props.userName}. It was great meeting you! I hope you've enjoyed your visit. If you'd like to get in touch again, please feel welcome to leave me a message. Have a great day!`}
+            </Typist>
+          </div>
+          <div className='portrait-block'></div>
+        </div>
 
-            <div className='name-input'>
-              <input
-                type='text'
-                id='name'
-                name='name'
-                value={this.state.name}
-                placeholder='name'
-                onChange={(e)=>this.handleChange(e)}
-                onFocus={()=>this.props.focus(true)}
-                onBlur={()=>this.props.focus(false)}
-              />
-            </div>
+        <div className='matt-portrait'></div>
+        <div className='matt-name'>Matthew</div>
 
-            <div className='email-input'>
-              <input
-                type='text'
-                id='email'
-                name='email'
-                placeholder='email'
-                onFocus={()=>this.props.focus(true)}
-                onBlur={()=>this.props.focus(false)}
-              />
-            </div>
+        <form className='contact-form' method='post' action='https://formspree.io/cadburylion@gmail.com'>
 
-            <div className='user-portrait' style={portrait}></div>
-
-            <div className='message-input'>
-              <textarea
-                id='msg'
-                name='User Message'
-                placeholder='message'
-                onFocus={()=>this.props.focus(true)}
-                onBlur={()=>this.props.focus(false)}
-              >
-              </textarea>
-            </div>
-
+          <div className='email-input box'>
             <input
-              type="hidden"
-              name="_next"
-              value="www.matthewparker.io"
+            type='text'
+            id='email'
+            name='email'
+            placeholder='email'
+            onFocus={()=>this.props.focus(true)}
+            onBlur={()=>this.props.focus(false)}
             />
+          </div>
 
-            <button type='submit' className='submit-button'>
-              Send
-            </button>
+          <div className='input-name box'>
+            <input
+            type='text'
+            id='name'
+            name='name'
+            value={this.state.name}
+            placeholder='name'
+            onChange={(e) => this.handleChange(e)}
+            onFocus={()=>this.props.focus(true)}
+            onBlur={()=>this.props.focus(false)}
+          /></div>
 
-          </form>
+          <div className='user-message box'>
+
+            <textarea
+              id='msg'
+              name='User Message'
+              placeholder='message'
+              onFocus={()=>this.props.focus(true)}
+              onBlur={()=>this.props.focus(false)}
+            >
+            </textarea>
+            <div className='portrait-block'></div>
+          </div>
+
+          <input
+            type="hidden"
+            name="_next"
+            value="localhost:8080"
+          />
+
+          <button type='submit' className='submit-button'>
+            Send
+          </button>
+
+        </form>
+        <div className='user-portrait' style={portrait}></div>
+        <div className='user-name'>{this.props.userName}</div>
       </div>
     )
   }
@@ -105,3 +119,57 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contact)
+
+// <div className='contact-main'>
+//
+    // <form className='contact-form' method='post' action='https://formspree.io/cadburylion@gmail.com'>
+//
+//       <div className='name-input'>
+        // <input
+        //   type='text'
+        //   id='name'
+        //   name='name'
+        //   value={this.state.name}
+        //   placeholder='name'
+        //   onChange={(e)=>this.handleChange(e)}
+        //   onFocus={()=>this.props.focus(true)}
+        //   onBlur={()=>this.props.focus(false)}
+        // />
+//       </div>
+//
+      // <div className='email-input'>
+      //   <input
+      //     type='text'
+      //     id='email'
+      //     name='email'
+      //     placeholder='email'
+      //     onFocus={()=>this.props.focus(true)}
+      //     onBlur={()=>this.props.focus(false)}
+      //   />
+      // </div>
+//
+//       <div className='user-portrait' style={portrait}></div>
+//
+//       <div className='message-input'>
+//         <textarea
+//           id='msg'
+//           name='User Message'
+//           placeholder='message'
+//           onFocus={()=>this.props.focus(true)}
+//           onBlur={()=>this.props.focus(false)}
+//         >
+//         </textarea>
+//       </div>
+//
+      // <input
+      //   type="hidden"
+      //   name="_next"
+      //   value="www.matthewparker.io"
+      // />
+      //
+      // <button type='submit' className='submit-button'>
+      //   Send
+      // </button>
+//
+//     </form>
+// </div>

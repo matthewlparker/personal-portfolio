@@ -63,28 +63,28 @@ h4, h5, li, p {
 }
 
 form, {
-  background-color: $color-white;
+  // background-color: $color-white;
   // padding: 2% 10% 10% 2%;
 }
 
 
 textarea, input {
   padding: $pad;
-  border-top: 5px ridge $color-white;
-  border-right: 5px groove $color-white;
-  border-bottom: 5px groove $color-white;
-  border-left: 5px ridge $color-white;
-  background-color: $color-primary-t;
-  text-shadow: 1px 1px 1px $color-black;
+  // border-top: 5px ridge $color-white;
+  // border-right: 5px groove $color-white;
+  // border-bottom: 5px groove $color-white;
+  // border-left: 5px ridge $color-white;
+  // background-color: $color-primary-t;
+  // text-shadow: 1px 1px 1px $color-black;
   resize: none;
   overflow-y: auto;
 
   &:focus {
-    border: 5px solid $color-white;
+    // border: 5px solid $color-white;
   }
 
   &:hover {
-    background-color: $color-secondary-t;
+    // background-color: $color-secondary-t;
   }
 
   &::placeholder {
