@@ -64,26 +64,26 @@
 
           <div className={`contact-card ${this.state.infoView ? 'flipped' : ''}`}>
 
-            <div className='front'>
-              <div className='user-message box'>
 
-                <textarea
-                  id='msg'
-                  name='User Message'
-                  placeholder='message'
-                  onFocus={()=>this.props.focus(true)}
-                  onBlur={()=>this.props.focus(false)}
-                >
-                </textarea>
+            <div className='front box'>
 
-                <div className='portrait-block'></div>
+              <textarea
+                id='msg'
+                name='User Message'
+                placeholder='message'
+                onFocus={()=>this.props.focus(true)}
+                onBlur={()=>this.props.focus(false)}
+              >
+              </textarea>
 
-                <div className='user-contact-info' onClick={()=>this.toInfoView(true)}>{`See back to send`}</div>
+              <div className='portrait-block'></div>
 
-              </div>
+              <div className='user-contact-info' onClick={()=>this.toInfoView(true)}>See back to send</div>
+
             </div>
 
-          <div className='back'>
+
+          <div className='back box'>
 
             <div className='email-input'>
               <input
