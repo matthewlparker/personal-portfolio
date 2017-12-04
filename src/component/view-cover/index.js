@@ -106,9 +106,9 @@ class ViewCover extends React.Component{
                 : this.props.background === 'https://i.imgur.com/4KJPU8C.gif'
                 ? `Traveling the coast by train`
                 : this.props.background === 'https://i.imgur.com/vvTO3np.gif'
-                ? `Wading in the waterfalls' pools`
+                ? `Wading the waterfalls`
                 : this.props.background === 'https://i.imgur.com/XTCAUql.gif'
-                ? `Exploring the forest's depths`
+                ? `Exploring the forest`
                 : ``
               }
             </div>

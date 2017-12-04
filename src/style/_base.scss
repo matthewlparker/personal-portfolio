@@ -88,7 +88,7 @@ textarea, input {
   }
 
   &::placeholder {
-    color: $color-white;
+    color: $color-grey;
     font-size: .8em;
   }
 }
@@ -143,8 +143,6 @@ li { display: list-item; }
 ol li { list-style: decimal; }
 
 .hide { display: none; }
-
-// custom
 
 .box {
   border-top: 5px ridge $color-white;

@@ -78,7 +78,7 @@
 
               <div className='portrait-block'></div>
 
-              <div className='user-contact-info' onClick={()=>this.toInfoView(true)}>{`See back to send`}</div>
+              <div className='user-contact-info' onClick={()=>this.toInfoView(true)}>See back to send</div>
 
             </div>
 
