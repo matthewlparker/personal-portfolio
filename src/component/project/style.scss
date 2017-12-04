@@ -20,11 +20,11 @@
   }
   .front {
     display: flex;
-    background: $color-primary-t;
-    border-top: 5px ridge $color-white;
-    border-right: 5px groove $color-white;
-    border-bottom: 5px groove $color-white;
-    border-left: 5px ridge $color-white;
+    // background: $color-primary-t;
+    // border-top: 5px ridge $color-white;
+    // border-right: 5px groove $color-white;
+    // border-bottom: 5px groove $color-white;
+    // border-left: 5px ridge $color-white;
     text-shadow: 1px 1px 1px black;
 
     .title {
@@ -37,11 +37,11 @@
   .back {
     display: flex;
     transform: rotateY(180deg);
-    background: $color-secondary-t;
-    border-top: 5px ridge $color-white;
-    border-right: 5px groove $color-white;
-    border-bottom: 5px groove $color-white;
-    border-left: 5px ridge $color-white;
+    background: $color-secondary;
+    // border-top: 5px ridge $color-white;
+    // border-right: 5px groove $color-white;
+    // border-bottom: 5px groove $color-white;
+    // border-left: 5px ridge $color-white;
 
     .description {
       height: auto;
