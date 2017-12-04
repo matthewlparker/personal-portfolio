@@ -1,7 +1,8 @@
 import React from 'react'
+import Typist from 'react-typist'
+import {connect} from 'react-redux'
 import * as setRoute from '../../action/route.js'
 import * as viewActions from '../../action/viewActions.js'
-import {connect} from 'react-redux'
 
 import './styles.scss'
 
@@ -9,7 +10,7 @@ class Contact extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      name: '',
+      name: this.props.userName,
       email: '',
       message: '',
     }
@@ -34,71 +35,81 @@ class Contact extends React.Component{
   }
 
   render(){
+    let portrait = {backgroundImage: 'url(' + `${this.props.userPortrait}` + ')'}
     return(
       <div className='contact-main'>
 
-        <div className='contact-content'>
+        <div className='matt-dialogue box'>
+          <div className='parting-message'>
+            <Typist startDelay={1000} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
+            {`Thanks for stopping by, ${this.props.userName}. It was great meeting you! I hope you've enjoyed your visit. If you'd like to get in touch again, please feel welcome to leave me a message. Have a great day!`}
+            </Typist>
+          </div>
+          <div className='portrait-block'></div>
+        </div>
 
-          <form method='post' action='https://formspree.io/cadburylion@gmail.com'>
+        <div className='matt-portrait'></div>
+        <div className='matt-name'>Matthew</div>
 
-            <div className='contact-about-you'>
-              About You
-            </div>
-            <label className='contact-info-label' htmlFor='name'>
-              Your name
-            </label>
+        <form className='contact-form' method='post' action='https://formspree.io/cadburylion@gmail.com'>
+
+          <div className='email-input box'>
             <input
-              type='text'
-              id='name'
-              name='name'
-              placeholder='eg. matthew parker'
-              onFocus={()=>this.props.focus(true)}
-              onBlur={()=>this.props.focus(false)}
-
+            type='text'
+            id='email'
+            name='email'
+            placeholder='email'
+            onFocus={()=>this.props.focus(true)}
+            onBlur={()=>this.props.focus(false)}
             />
+          </div>
 
-            <label className='contact-info-label' htmlFor='email'>
-              Email address
-            </label>
+          <div className='input-name box'>
             <input
-              type='text'
-              id='email'
-              name='email'
-              placeholder='eg. email@example.com'
-              onFocus={()=>this.props.focus(true)}
-              onBlur={()=>this.props.focus(false)}
-            />
+            type='text'
+            id='name'
+            name='name'
+            value={this.state.name}
+            placeholder='name'
+            onChange={(e) => this.handleChange(e)}
+            onFocus={()=>this.props.focus(true)}
+            onBlur={()=>this.props.focus(false)}
+          /></div>
 
-            <label className='contact-message-header' htmlFor='msg'>
-              Message
-            </label>
+          <div className='user-message box'>
+
             <textarea
               id='msg'
               name='User Message'
+              placeholder='message'
               onFocus={()=>this.props.focus(true)}
               onBlur={()=>this.props.focus(false)}
             >
             </textarea>
+            <div className='portrait-block'></div>
+          </div>
 
-            <input
-              type="hidden"
-              name="_next"
-              value="www.matthewparker.io"
-            />
+          <input
+            type="hidden"
+            name="_next"
+            value="localhost:8080"
+          />
 
-            <button type='submit'>
-              Send
-            </button>
-          </form>
+          <button type='submit' className='submit-button'>
+            Send
+          </button>
 
-        </div>
+        </form>
+        <div className='user-portrait' style={portrait}></div>
+        <div className='user-name'>{this.props.userName}</div>
       </div>
     )
   }
 }
 
 export const mapStateToProps = (state) => ({
-
+  userName: state.userName,
+  userPortrait: state.userPortrait,
 })
 
 export const mapDispatchToProps = (dispatch) => ({

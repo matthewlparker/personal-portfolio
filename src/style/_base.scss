@@ -63,22 +63,32 @@ h4, h5, li, p {
 }
 
 form, {
-  background-color: $color-white;
-  padding: 2% 10% 10% 2%;
+  // background-color: $color-white;
+  // padding: 2% 10% 10% 2%;
 }
+
 
 textarea, input {
   padding: $pad;
-  border: 1px solid $color-grey;
-  margin-bottom: $pad;
-  overflow: hidden;
+  // border-top: 5px ridge $color-white;
+  // border-right: 5px groove $color-white;
+  // border-bottom: 5px groove $color-white;
+  // border-left: 5px ridge $color-white;
+  // background-color: $color-primary-t;
+  // text-shadow: 1px 1px 1px $color-black;
+  resize: none;
+  overflow-y: auto;
 
   &:focus {
-    border: 1px solid $color-darkgrey;
+    // border: 5px solid $color-white;
+  }
+
+  &:hover {
+    // background-color: $color-secondary-t;
   }
 
   &::placeholder {
-    color: $color-grey;
+    color: $color-white;
     font-size: .8em;
   }
 }
@@ -105,8 +115,8 @@ button,input[type="submit"] {
   border-radius: 3px;
 
   &:hover {
-    background: $color-primary;
     color: $color-white;
+    background: $color-primary;
   }
 }
 
