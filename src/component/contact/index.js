@@ -96,21 +96,21 @@
                 />
               </div>
 
-            <div className='input-name'>
-              <input
-                type='text'
-                id='name'
-                name='name'
-                value={this.state.name}
-                placeholder='name'
-                onChange={(e) => this.handleChange(e)}
-                onFocus={()=>this.props.focus(true)}
-                onBlur={()=>this.props.focus(false)}
-              /></div>
+              <div className='input-name'>
+                <input
+                  type='text'
+                  id='name'
+                  name='name'
+                  value={this.state.name}
+                  placeholder='name'
+                  onChange={(e) => this.handleChange(e)}
+                  onFocus={()=>this.props.focus(true)}
+                  onBlur={()=>this.props.focus(false)}
+                /></div>
 
-              <button type='submit' className='submit-button'>
-                Send
-              </button>
+                <button type='submit' className='submit-button'>
+                  Send
+                </button>
 
               <div className='see-front-hint' onClick={()=>this.toInfoView(false)}>
                 See front
