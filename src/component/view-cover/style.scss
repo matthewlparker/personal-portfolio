@@ -16,11 +16,12 @@
   position: fixed;
   display: grid;
   grid-template-rows:  1fr auto auto auto 1fr;
-  grid-template-columns: 30px 1fr minmax(auto, 1080px) 1fr 30px;
+  grid-template-columns: 0px 1fr minmax(auto, 1080px) 1fr 0px;
   justify-content: 0;
   top: 0; left: 0;
   width: 100%; height: 100%;
   z-index: 1;
+  overflow-y: auto;
   cursor: default;
 
   background-color: hsla(0,0,0,1);
@@ -56,10 +57,9 @@
 .view-cover-content {
   grid-area: 1 / 1 / span 5 / span 5;
   width: 100%; height: 100%;
-  // overflow: hidden;
   display: grid;
   grid-template-rows: 30px 1fr minmax(150px, auto) 1fr 30px;
-  grid-template-columns: 30px 1fr minmax(auto, 1280px) 1fr 30px;
+  grid-template-columns: 0px 1fr minmax(auto, 1280px) 1fr 0px;
   .left {
     grid-area: 3 / 2 / span 1 / span 1;
     display: flex;
@@ -107,6 +107,7 @@
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 5px auto auto auto 5px;
+    font-size: .7em;
     background-color: hsla(0, 0, 0, .6);
     .name {
       grid-area: 1 / 2 / span 1 / span 1;
@@ -128,6 +129,8 @@
 
   .page-container {
     grid-area: 3 / 3 / span 1 / span 1;
+    width: 100%; height: 100%;
+    // overfly-y: auto;
   }
 }
 
@@ -160,10 +163,13 @@
   }
   .hint-text {
     grid-area: 1 / 2 / span 1 / span 1;
+    font-size: .7em;
   }
   .i-text {
-      grid-area: 1 / 4 / span 1 / span 1;
-      justify-self: right;
+    grid-area: 1 / 4 / span 1 / span 1;
+    justify-self: right;
+    text-align: right;
+    font-size: .7em;
   }
 }
 
@@ -249,6 +255,7 @@
       display: grid;
       grid-template-rows: 1fr;
       grid-template-columns: 5px auto auto auto 5px;
+      font-size: 1em;
       background-color: hsla(0, 0, 0, .6);
       .name {
         grid-area: 1 / 2 / span 1 / span 1;

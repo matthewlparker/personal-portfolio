@@ -4,7 +4,6 @@
   position: relative;
   width: 100%; height: 100%;
   perspective: 1000px;
-
   .project-card {
     position: absolute;
     width: 100%; height: 100%;
@@ -20,41 +19,40 @@
   }
   .front {
     display: flex;
-    // background: $color-primary-t;
-    // border-top: 5px ridge $color-white;
-    // border-right: 5px groove $color-white;
-    // border-bottom: 5px groove $color-white;
-    // border-left: 5px ridge $color-white;
+    background: $color-primary;
     text-shadow: 1px 1px 1px black;
-
     .title {
       height: auto;
       align-self: center;
       text-align: center;
-      font-size: 3em;
+      font-size: 2em;
     }
   }
   .back {
     display: flex;
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
     background: $color-secondary;
-    // border-top: 5px ridge $color-white;
-    // border-right: 5px groove $color-white;
-    // border-bottom: 5px groove $color-white;
-    // border-left: 5px ridge $color-white;
-
     .description {
       height: auto;
       align-self: center;
       text-align: center;
       padding: 10px;
-      font-size: 1.5em;
+      font-size: 1.2em;
     }
   }
-}
+} /* end project main */
 
 .project-main:hover {
   .project-card {
-    transform:rotateY(180deg);
+    transform:rotateX(180deg);
   }
+}
+
+@media only screen and(min-width: 768px) {
+  .project-main {
+    .project-card {
+
+    }
+
+  } /* end project main */
 }

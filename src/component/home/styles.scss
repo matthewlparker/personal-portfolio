@@ -55,7 +55,7 @@
       grid-area: 1 / 1 / span 1 / span 1;
       align-self: center;
       font-size: 4em;
-      font-size: 5vw;
+      font-size: 4vw;
       justify-self: center;
       font-family: 'Munro', normal;
       cursor: crosshair;
@@ -94,7 +94,7 @@
   }
 
   .skill-icon {
-    width: 100px;
+    width: calc(10vw);
     justify-self: center;
     align-self: center;
   }

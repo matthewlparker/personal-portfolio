@@ -14,7 +14,8 @@
   border-right: 15px groove #ccc;
   border-bottom: 15px groove #ccc;
   border-left: 15px ridge #ccc;
-  // overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   .matt-dialogue {
     grid-area: 2 / 2 / span 1 / span 2;
