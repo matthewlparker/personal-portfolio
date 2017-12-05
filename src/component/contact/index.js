@@ -60,9 +60,9 @@
         <div className='matt-portrait'></div>
         <div className='matt-name'>Matthew</div>
 
-        <form className='contact-form' method='post' action='https://formspree.io/cadburylion@gmail.com'>
+        <div className='form-container'>
 
-          <div className={`contact-card ${this.state.infoView ? 'flipped' : ''}`}>
+          <form className={`form-card ${this.state.infoView ? 'flipped' : ''}`} method='post' action='https://formspree.io/cadburylion@gmail.com'>
 
 
             <div className='front box'>
@@ -78,23 +78,23 @@
 
               <div className='portrait-block'></div>
 
-              <div className='user-contact-info' onClick={()=>this.toInfoView(true)}>See back to send</div>
+              <div className='see-back-hint' onClick={()=>this.toInfoView(true)}>See back to send</div>
 
             </div>
 
 
-          <div className='back box'>
+            <div className='back box'>
 
-            <div className='email-input'>
-              <input
-              type='text'
-              id='email'
-              name='email'
-              placeholder='email'
-              onFocus={()=>this.props.focus(true)}
-              onBlur={()=>this.props.focus(false)}
-              />
-            </div>
+              <div className='email-input'>
+                <input
+                type='text'
+                id='email'
+                name='email'
+                placeholder='email'
+                onFocus={()=>this.props.focus(true)}
+                onBlur={()=>this.props.focus(false)}
+                />
+              </div>
 
             <div className='input-name'>
               <input
@@ -112,7 +112,7 @@
                 Send
               </button>
 
-              <div className='to-message-view' onClick={()=>this.toInfoView(false)}>
+              <div className='see-front-hint' onClick={()=>this.toInfoView(false)}>
                 See front
               </div>
 
@@ -124,9 +124,9 @@
               value="www.matthewparker.io"
             />
 
-          </div>
+          </form>
 
-        </form>
+        </div>
         <div className='user-portrait' style={portrait}></div>
         <div className='user-name'>{this.props.userName}</div>
       </div>

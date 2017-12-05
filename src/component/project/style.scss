@@ -19,7 +19,7 @@
   }
   .front {
     display: flex;
-    background: $color-primary;
+    background: $color-primary-t;
     text-shadow: 1px 1px 1px black;
     .title {
       height: auto;
@@ -31,7 +31,7 @@
   .back {
     display: flex;
     transform: rotateX(180deg);
-    background: $color-secondary;
+    background: $color-secondary-t;
     .description {
       height: auto;
       align-self: center;
@@ -50,9 +50,20 @@
 
 @media only screen and(min-width: 768px) {
   .project-main {
-    .project-card {
-
+    &:hover {
+      .project-card{
+        transform: rotateX(0deg);
+        transform: rotateY(180deg);
+      }
     }
+    .project-card {
+      .front {
 
+      }
+      .back {
+        transform: rotateX(0deg);
+        transform: rotateY(180deg);
+      }
+    }
   } /* end project main */
 }

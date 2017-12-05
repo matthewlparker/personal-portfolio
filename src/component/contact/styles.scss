@@ -1,7 +1,5 @@
 @import "vars";
 
-@import "vars";
-
 .contact-main {
   display: grid;
   grid-template-rows: 30px 170px 30px 30px 170px 30px;
@@ -59,22 +57,19 @@
     text-shadow: 1px 1px 1px $color-primary;
   }
 
-  .contact-form {
+  .form-container {
     position: relative;
     grid-area: 5 / 3 / span 1 / span 2;
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 200px;
     perspective: 1000px;
-    .contact-card {
+
+    .form-card {
       position: absolute;
       width: 100%; height: 100%;
       transform-style: preserve-3d;
       transition: transform 1s;
-      // backface-visibility: hidden;
-      div, button {
-        backface-visibility: hidden;
-      }
 
       .front {
         position: absolute;
@@ -85,24 +80,26 @@
         font-size: 1.5em;
         overflow-y: auto;
         background-color: $color-primary-t;
+
+        backface-visibility: hidden;
+        transition: .5s linear;
+
+        opacity: 1;
         .portrait-block {
           grid-area: 1 / 3 / span 1 / span 1;
         }
         textarea {
           grid-area: 1 / 2 / span 1 / span 1;
           text-shadow: 1px 1px 1px $color-black;
-          transition: .5s linear;
-          backface-visibility: hidden;
-          opacity: 1;
+
         }
-        .user-contact-info {
+        .see-back-hint {
           grid-area: 2 / 2 / span 1 / span 1;
           justify-self: flex-start;
           font-size: 1rem;
           padding-left: 10px;
           text-shadow: 1px 1px 1px $color-black;
-          transition: .5s linear;
-          backface-visibility: hidden;
+
         }
       }
       .back {
@@ -114,6 +111,10 @@
         text-shadow: 1px 1px 1px $color-black;
         transform: rotateX(180deg);
         background: $color-secondary-t;
+        backface-visibility: hidden;
+        transition: .5s linear;
+        opacity: 0;
+
         .input-name {
           grid-area: 2 / 2 / span 1 / span 1;
           width: 190px; height: 40px;
@@ -145,7 +146,7 @@
             border: 2px solid $color-white;
           }
         }
-        .to-message-view {
+        .see-front-hint {
           justify-self: flex-start;
           width: auto;
           padding-left: 10px;
@@ -154,15 +155,13 @@
       }
     }
 
-    .contact-card.flipped {
+    .form-card.flipped {
       transform: rotateX(180deg);
       .front {
-        textarea {
-          opacity: 0;
-        }
-        div {
-          opacity: 0;
-        }
+        opacity: 0;
+      }
+      .back {
+        opacity: 1;
       }
     }
   }
