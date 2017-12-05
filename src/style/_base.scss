@@ -149,5 +149,6 @@ ol li { list-style: decimal; }
   border-right: 5px groove $color-white;
   border-bottom: 5px groove $color-white;
   border-left: 5px ridge $color-white;
-  background-color: hsla(215, 88, 36, 1);
+  // background-color: hsla(215, 88, 36, .6);
+  background-color: $color-primary-t;
 }

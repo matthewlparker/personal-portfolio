@@ -148,11 +148,6 @@ class Home extends React.Component{
 
         </div>
 
-        <ThemeIcon
-          className={`theme-toggle-icon ${this.props.lightTheme ? 'theme-toggle-icon-light' : ''}`}
-          name={this.props.lightTheme ? 'sun-o' : 'moon-o'}
-        />
-
       </div>
     )
   }

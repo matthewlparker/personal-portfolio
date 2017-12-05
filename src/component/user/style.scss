@@ -8,6 +8,7 @@
   justify-items: center;
   grid-gap: 30px;
   background-color: hsla(0,0,0,.6);
+  overflow-y: auto;
 
   border-top: 15px ridge #ccc;
   border-right: 15px groove #ccc;
@@ -27,7 +28,7 @@
   .name-select {
     grid-area: 4 / 2 / span 1 / span 2;
     input {
-      width: 400px; height: auto;
+      width: 100%; height: auto;
       font-size: 2em;
       text-shadow: 1px 1px 1px $color-black;
     }
