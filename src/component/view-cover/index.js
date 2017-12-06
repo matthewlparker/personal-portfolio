@@ -53,11 +53,7 @@ class ViewCover extends React.Component{
 
 
   render(){
-    let arrowIconClass = (this.props.coverOpen && this.props.lightTheme) ? 'view-cover-toggle-icon-open-light'
-    : (this.props.coverOpen && !this.props.lightTheme) ? 'view-cover-toggle-icon-open-dark'
-    : (!this.props.coverOpen && this.props.lightTheme) ? 'view-cover-toggle-icon-closed-light'
-    : (!this.props.coverOpen && !this.props.lightTheme) ? 'view-cover-toggle-icon-closed-dark'
-    : ''
+    let dashboardOpen = this.props.coverOpen ? 'open' : ''
 
     let mainBackground = {
       backgroundImage: 'url(' + `${this.props.background}` + ')',
@@ -97,7 +93,7 @@ class ViewCover extends React.Component{
             </div>
           </div>
 
-          <div className={`view-cover-toggle-icon ${arrowIconClass}`} onClick={this.props.handleCover}>
+          <div className={`dashboard-bar ${dashboardOpen}`} onClick={this.props.handleCover}>
             <div className='hint-text'>
               {this.props.background === 'https://i.imgur.com/589GAGa.gif'
                 ? `Below deck at port`
