@@ -14,6 +14,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-color: hsla(0,0,0,0);
+    z-index: 10;
     .portrait-block {
       display: none;
     }
@@ -22,6 +23,7 @@
     grid-area: 2 / 3 / span 1 / span 1;
     align-self: flex-end;
     text-shadow: 1px 1px 1px $color-primary;
+    font-size: 1.5em;
   }
   .user-dialogue {
     display: grid;
@@ -53,6 +55,7 @@
     grid-area: 4 / 3 / span 1 / span 1;
     align-self: flex-end;
     justify-self: flex-end;
+    font-size: 1.5em;
   }
   .matt-portrait {
     grid-area: 4 / 4 / span 1 / span 1;
@@ -60,6 +63,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-color: hsla(0,0,0,0);
+    z-index: 10;
   }
   .matt-dialogue {
     grid-area: 5 / 2 / span 1 / span 3;
@@ -118,6 +122,9 @@
       grid-template-columns: 1fr 200px;
       font-size: 1.5em;
       padding: 5px;
+      .answer {
+        grid-area: 1 / 1 / span 1 / span 1;
+      }
       .portrait-block {
         grid-area: 1 / 2 / span 1 / span 1;
       }
