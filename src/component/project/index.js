@@ -6,9 +6,9 @@ const Project = (props) => {
     backgroundColor: props.projectColor
   }
   return (
-    <div className={'project-main'}>
+    <a href={props.url} target='_#' className={'project-main'}>
 
-      <a href={props.url} target='_#' className={'project-card'}>
+      <div className={'project-card'}>
 
         <div className='front box'>
           <div className={'title'}>{props.title}</div>
@@ -20,9 +20,9 @@ const Project = (props) => {
           </div>
         </div>
 
-      </a>
+      </div>
 
-    </div>
+    </a>
   )
 }
 
