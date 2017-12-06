@@ -120,6 +120,7 @@ class User extends React.Component {
   }
 
   handleKeyPress(e){
+    console.log('key: ', e)
     e.key === 'Enter' && this.state.start ? this.enterSite() : undefined
     e.key === 'Enter' && this.state.delete ? this.deleteUser() : undefined
 
@@ -135,12 +136,12 @@ class User extends React.Component {
     return(
       <div className='user-main'>
 
-      <div className='user-welcome'>
-        {localStorage.userPortrait && localStorage.userName ?
-            `Welcome back, ${userName}`
-          : !this.state.reminder ? `Pick an avatar and name`
-          : `Sorry, you need a face`
-        }
+        <div className='user-welcome'>
+          {localStorage.userPortrait && localStorage.userName ?
+              `Welcome back, ${userName}`
+            : !this.state.reminder ? `Pick an avatar and name`
+            : `Sorry, you need a face`
+          }
         </div>
 
         <div className='name-select'>
@@ -157,7 +158,7 @@ class User extends React.Component {
         <div className={`portrait man1 ${this.state.selected.man1  ? 'selected' : ''}`} onClick={()=>this.selectAvatar('man1')}></div>
         <div className={`portrait woman1 ${this.state.selected.woman1  ? 'selected' : ''}`} onClick={()=>this.selectAvatar('woman1')}></div>
 
-        <div className='enter' onClick={this.enterSite} onMouseEnter={this.selectStart}>START<span className={this.state.start ? 'menu-select' : ''}></span></div>
+        <div className='start' onClick={this.enterSite} onMouseEnter={this.selectStart}>START<span className={this.state.start ? 'menu-select' : ''}></span></div>
 
         {localStorage.userPortrait || localStorage.userName ?
           <div className='delete' onClick={this.deleteUser} onMouseEnter={this.selectDelete}>DELETE<span className={this.state.delete ? 'menu-select' : ''}></span></div>

@@ -2,42 +2,45 @@
 
 .user-main {
   display: grid;
-  grid-template-rows: 30px auto auto auto auto auto 30px;
+  grid-template-rows: 30px repeat(5, auto) 30px;
   grid-template-columns: 30px auto auto 30px;
   align-items: center;
   justify-items: center;
-  grid-gap: 30px;
+  grid-gap: 10px;
   background-color: hsla(0,0,0,.6);
   overflow-y: auto;
-
   border-top: 15px ridge #ccc;
   border-right: 15px groove #ccc;
   border-bottom: 15px groove #ccc;
   border-left: 15px ridge #ccc;
   .user-welcome {
-    grid-area: 2 / 2 / span 1 / span 2;
-    font-size: 5em;
+    grid-area: 2 / 1 / span 1 / span 4;
+    font-size: 2.5em;
+    text-align: center;
     text-shadow: 1px 1px 1px $color-black;
   }
   .portrait {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: hsla(0,0,0,0);
-    width: 150px; height: 150px;
+    width: 50px; height: 50px;
   }
   .name-select {
     grid-area: 4 / 2 / span 1 / span 2;
     input {
       width: 100%; height: auto;
-      font-size: 2em;
+      font-size: 1em;
       text-shadow: 1px 1px 1px $color-black;
+      border-top: 2px ridge $color-white;
+      border-right: 2px groove $color-white;
+      border-bottom: 2px groove $color-white;
+      border-left: 2px ridge $color-white;
+      // border: 2px solid $color-white;
     }
     input:focus {
-      border: 5px solid $color-white;
+      border: 2px solid $color-white;
     }
   }
-
-
   .man1 {
     grid-area: 3 / 3 / span 1 / span 1;
     background-image: url('../../assets/images/man-01.png');
@@ -47,16 +50,16 @@
     background-image: url('../../assets/images/woman-01.png');
   }
 
-  .enter {
+  .start {
     grid-area: 5 / 2 / span 1 / span 2;
-    font-size: 3.5em;
+    font-size: 2em;
     padding: 10px;
     text-shadow: 1px 1px 1px black;
   }
 
   .delete {
     grid-area: 6 / 2 / span 1 / span 2;
-    font-size: 3.5em;
+    font-size: 2em;
     padding: 10px;
     text-shadow: 1px 1px 1px black;
   }
@@ -64,12 +67,38 @@
   .menu-select {
     display: inline-block;
     animation: blink 1s linear infinite;
-    width: 20px;
-    height: 40px;
+    width: 15px;
+    height: 25px;
     background-color: $color-white;
   }
 
   .selected {
-    border: 5px solid $color-white;
+    border: 2px solid $color-white;
+  }
+}
+
+@media only screen and(min-width: 768px) {
+  .user-main {
+    .user-welcome {
+      font-size: 5.5em;
+    }
+    .portrait {
+      width: 150px; height: 150px;
+    }
+    .name-select {
+      input {
+        font-size: 1.5em;
+      }
+    }
+    .start {
+      font-size: 3.5em;
+    }
+    .delete {
+      font-size: 3.5em;
+    }
+    .menu-select {
+      width: 20px;
+      height: 40px;
+    }
   }
 }
