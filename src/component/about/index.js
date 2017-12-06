@@ -11,12 +11,9 @@ class About extends React.Component{
     super(props)
     this.state={
       choice: 0,
-      considering: null,
       answerText: '',
-      stringIndex: 0,
       userPortrait: '',
     }
-    this.handleHover = this.handleHover.bind(this)
     this.handleChoice = this.handleChoice.bind(this)
   }
 
@@ -38,17 +35,12 @@ class About extends React.Component{
     this.props.pageActive(false)
   }
 
-  handleChoice(choice){
+  handleChoice(option){
     this.setState({
-      choice: choice,
+      choice: option,
     })
   }
 
-  handleHover(choice){
-    this.setState({
-      considering: choice
-    })
-  }
 
   render() {
     let name = this.props.name
@@ -62,38 +54,26 @@ class About extends React.Component{
           <div className='portrait-block'></div>
 
           <UserDialogue
-            componentClass={'choice-1'}
-            choice={this.handleChoice}
-            hover={this.handleHover}
-            considering={this.state.considering}
-            optionNumber={1}
+            componentClass={`choice-1 ${this.state.choice === 1 ? 'selected' : ''}`}
+            choice={()=>this.handleChoice(1)}
             text={'Tell me a bit about yourself.'}
           />
 
           <UserDialogue
-            componentClass={'choice-2'}
-            choice={this.handleChoice}
-            hover={this.handleHover}
-            considering={this.state.considering}
-            optionNumber={2}
+            componentClass={`choice-2 ${this.state.choice === 2 ? 'selected' : ''}`}
+            choice={()=>this.handleChoice(2)}
             text={'What do you like about programming?'}
           />
 
           <UserDialogue
-            componentClass={'choice-3'}
-            choice={this.handleChoice}
-            hover={this.handleHover}
-            considering={this.state.considering}
-            optionNumber={3}
+            componentClass={`choice-3 ${this.state.choice === 3 ? 'selected' : ''}`}
+            choice={()=>this.handleChoice(3)}
             text={'What languages do you program in?'}
           />
 
           <UserDialogue
-            componentClass={'choice-4'}
-            choice={this.handleChoice}
-            hover={this.handleHover}
-            considering={this.state.considering}
-            optionNumber={4}
+            componentClass={`choice-4 ${this.state.choice === 4 ? 'selected' : ''}`}
+            choice={()=>this.handleChoice(4)}
             text={'Where do you see yourself in five years?'}
           />
 
@@ -108,11 +88,11 @@ class About extends React.Component{
           <div className='answer'>
 
             {this.state.choice === 0 ?
-              <Typist startDelay={1500} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
+              <Typist startDelay={1000} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
                 {this.props.background === 'https://i.imgur.com/589GAGa.gif'
                   ? `Ahoy there, ${name}! A pleasure to meet you. Welcome aboard my ship! You don't get seasick, do you? Well, browsing my site will help! Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/XTCAUql.gif'
-                  ? `Hi ${name}, it's a pleasure to meet you! So, you like exploring the forest too? What a perfect opportunity to check out my site! Feel free to look around, and ask me any questions you might have.`
+                  ? `Hi ${name}, it's a pleasure to meet you! So you like exploring the forest too? What a perfect opportunity to check out my site! Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/4KJPU8C.gif'
                   ? `Hi ${name}, it's a pleasure to meet you! A golden sunset, an oceanic horizon, and a gentle train trip along the coast. What a perfect time to check out my site! Feel free to look around, and ask me any questions you might have.`
                   : this.props.background === 'https://i.imgur.com/vvTO3np.gif'

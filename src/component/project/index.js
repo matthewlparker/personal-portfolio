@@ -15,9 +15,7 @@ const Project = (props) => {
         </div>
 
         <div className='back box'>
-          <div className={'description'}>
-            {props.description}
-          </div>
+          <div className={'description'}>{props.description}</div>
         </div>
 
       </div>
@@ -27,13 +25,3 @@ const Project = (props) => {
 }
 
 export default Project
-
-  // <a className={'project-link'} href={props.url} target='_#' style={projectColor}>
-
-// <div className={'project-portrait'}>
-//   <a className={'project-picture'} href={props.url} target='_#' style={projectColor}>
-//     <div className={'project-logo-name'}>
-//       {props.logoName}
-//     </div>
-//   </a>
-// </div>

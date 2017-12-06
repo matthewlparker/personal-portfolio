@@ -3,16 +3,16 @@ import React from 'react'
 const UserDialogue = (props) => {
   return(
     <div className={props.componentClass}
-      onClick={()=>props.choice(props.optionNumber)}
-      onMouseEnter={()=>props.hover(props.optionNumber)}
-      onMouseLeave={()=>props.hover(0)}
+      onClick={props.choice}
     >
-      {props.text}
-      {props.considering === props.optionNumber ? <span> {'<'} </span>
-        : undefined
-      }
+      {props.text}<span>{' <'}</span>
+
     </div>
   )
 }
 
 export default UserDialogue
+
+// {props.considering === props.optionNumber ? <span> {'<'} </span>
+//   : undefined
+// }
