@@ -2,89 +2,135 @@
 
 .about-main {
   display: grid;
-  grid-template-rows: 30px 170px 30px 30px 170px 30px;
-  grid-template-columns: 30px 200px 1fr 200px 30px;
-  width: 100%;
-  height: 100%;
-
+  grid-template-rows: 5px 45px 150px 45px 150px 15px;
+  grid-template-columns: 5px 45px 1fr 45px 5px;
+  grid-column-gap: 10px;
+  width: 100%;  height: 100%;
   background-color: hsla(0, 0, 0, .6);
-  border-top: 15px ridge #ccc;
-  border-right: 15px groove #ccc;
-  border-bottom: 15px groove #ccc;
-  border-left: 15px ridge #ccc;
+  overflow-x: hidden;
   overflow-y: auto;
-
-  .user-dialogue {
-    grid-area: 2 / 2 / span 1 / span 2;
-    display: grid;
-    grid-template-rows: 1fr auto auto auto auto 1fr;
-    grid-template-columns: 200px 5px 1fr 5px;
-    grid-row-gap: 5px;
-    font-size: 1.5em;
-    text-shadow: 1px 1px 1px $color-black;
-    overflow-y : auto;
-
-    .portrait-block {
-      grid-area: 1 / 1 / span 6 / span 1;
-    }
-
-    .choice-1 {
-      grid-area: 2 / 3 / span 1 / span 1;
-    }
-
-    .choice-2 {
-      grid-area: 3 / 3 / span 1 / span 1;
-    }
-
-    .choice-3 {
-      grid-area: 4 / 3 / span 1 / span 1;
-    }
-
-    .choice-4 {
-      grid-area: 5 / 3 / span 1 / span 1;
-    }
-  }
-
   .user-portrait {
-    grid-area: 1 / 2 / span 2 / span 1;
+    grid-area: 2 / 2 / span 1 / span 1;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: hsla(0,0,0,0);
+    .portrait-block {
+      display: none;
+    }
   }
-
   .user-name {
-    grid-area: 1 / 3 / span 1 / span 1;
-    justify-self: left;
-    font-size: 1.5em;
+    grid-area: 2 / 3 / span 1 / span 1;
+    align-self: flex-end;
     text-shadow: 1px 1px 1px $color-primary;
   }
-
-  .matt-dialogue {
-    grid-area: 5 / 3 / span 1 / span 2;
+  .user-dialogue {
     display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 200px;
-    font-size: 1.5em;
+    grid-area: 3 / 2 / span 1 / span 3;
+    grid-template-rows: 1fr auto auto auto auto 1fr;
+    grid-template-columns: 5px 1fr 5px;
+    font-size: 1em;
+    grid-row-gap: 5px;
     text-shadow: 1px 1px 1px $color-black;
-    overflow-y: auto;
-    padding: 5px;
+    overflow-y : auto;
     .portrait-block {
-      grid-area: 1 / 2 / span 1 / span 1;
+      display: none;
+    }
+    .choice-1 {
+      grid-area: 2 / 2 / span 1 / span 1;
+    }
+    .choice-2 {
+      grid-area: 3 / 2 / span 1 / span 1;
+    }
+    .choice-3 {
+      grid-area: 4 / 2 / span 1 / span 1;
+    }
+    .choice-4 {
+      grid-area: 5 / 2 / span 1 / span 1;
     }
   }
 
+  .matt-name {
+    grid-area: 4 / 3 / span 1 / span 1;
+    align-self: flex-end;
+    justify-self: flex-end;
+  }
   .matt-portrait {
-    grid-area: 4 / 4 / span 2 / span 1;
+    grid-area: 4 / 4 / span 1 / span 1;
     background-image: url('../../assets/images/matthew-portrait.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-color: hsla(0,0,0,0);
   }
+  .matt-dialogue {
+    grid-area: 5 / 2 / span 1 / span 3;
+    display: grid;
+    grid-template-rows: 5px 1fr 5px;
+    grid-template-columns: 5px 1fr 5px;
+    font-size: 1em;
+    text-shadow: 1px 1px 1px $color-black;
+    overflow-y: auto;
+    .answer {
+      grid-area: 2 / 2 / span 1 / span 1;
+    }
+    .portrait-block {
+      display: none;
+    }
+  }
+}
 
-  .matt-name {
-    grid-area: 4 / 3 / span 1 / span 1;
-    justify-self: right;
-    font-size: 1.5em;
-    text-shadow: 1px 1px 1px $color-primary;
+@media only screen and(min-width: 768px) {
+  .about-main {
+    grid-template-rows: 30px 170px 30px 30px 170px 30px;
+    grid-template-columns: 30px 200px 1fr 200px 30px;
+    .user-dialogue {
+      grid-area: 2 / 2 / span 1 / span 2;
+      grid-template-rows: 1fr auto auto auto auto 1fr;
+      grid-template-columns: 200px 5px 1fr 5px;
+      font-size: 1.5em;
+      .portrait-block {
+        grid-area: 1 / 1 / span 6 / span 1;
+      }
+      .choice-1 {
+        grid-area: 2 / 3 / span 1 / span 1;
+      }
+      .choice-2 {
+        grid-area: 3 / 3 / span 1 / span 1;
+      }
+      .choice-3 {
+        grid-area: 4 / 3 / span 1 / span 1;
+      }
+      .choice-4 {
+        grid-area: 5 / 3 / span 1 / span 1;
+      }
+    }
+    .user-portrait {
+      grid-area: 1 / 2 / span 2 / span 1;
+    }
+    .user-name {
+      grid-area: 1 / 3 / span 1 / span 1;
+      justify-self: left;
+      font-size: 1.5em;
+
+    }
+    .matt-dialogue {
+      grid-area: 5 / 3 / span 1 / span 2;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 200px;
+      font-size: 1.5em;
+      padding: 5px;
+      .portrait-block {
+        grid-area: 1 / 2 / span 1 / span 1;
+      }
+    }
+    .matt-portrait {
+      grid-area: 4 / 4 / span 2 / span 1;
+
+    }
+    .matt-name {
+      grid-area: 4 / 3 / span 1 / span 1;
+      justify-self: right;
+      font-size: 1.5em;
+      text-shadow: 1px 1px 1px $color-primary;
+    }
   }
 }
