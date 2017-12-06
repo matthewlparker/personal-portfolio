@@ -28,12 +28,29 @@
   .user-dialogue {
     display: grid;
     grid-area: 3 / 2 / span 1 / span 3;
-    grid-template-rows: 1fr auto auto auto auto 1fr;
+    grid-template-rows: 0px repeat(4, 1fr) 0px;
     grid-template-columns: 5px 1fr 5px;
     font-size: 1em;
     grid-row-gap: 5px;
     text-shadow: 1px 1px 1px $color-black;
     overflow-y : auto;
+
+    div {
+      color: $color-grey;
+      height: auto;
+      &:hover {
+        color: $color-white;
+        span {
+          display: inline;
+        }
+      }
+      span {
+        display: none;
+      }
+    }
+    .selected {
+      color: $color-white;
+    }
     .portrait-block {
       display: none;
     }
@@ -88,7 +105,7 @@
     grid-template-columns: 30px 200px 1fr 200px 30px;
     .user-dialogue {
       grid-area: 2 / 2 / span 1 / span 2;
-      grid-template-rows: 1fr auto auto auto auto 1fr;
+      grid-template-rows: 5px repeat(4, 1fr) 5px;
       grid-template-columns: 200px 5px 1fr 5px;
       font-size: 1.5em;
       .portrait-block {
