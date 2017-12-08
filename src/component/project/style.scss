@@ -21,6 +21,8 @@
     display: flex;
     background: $color-primary-t;
     text-shadow: 1px 1px 1px black;
+    transition: .5s linear;
+    opacity: 1;
     .title {
       height: auto;
       align-self: center;
@@ -32,6 +34,8 @@
     display: flex;
     transform: rotateX(180deg);
     background: $color-secondary-t;
+    transition: .5s linear;
+    opacity: 0;
     .description {
       height: auto;
       align-self: center;
@@ -45,6 +49,12 @@
 .project-main:hover {
   .project-card {
     transform:rotateX(180deg);
+    .front {
+      opacity: 0;
+    }
+    .back {
+      opacity: 1;
+    }
   }
 }
 
