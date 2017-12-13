@@ -69,7 +69,8 @@ class User extends React.Component {
         selected: {
           man1: true
         },
-        portraitURL: 'https://i.lensdump.com/i/9faKz.png'
+        // portraitURL: 'https://i.lensdump.com/i/9faKz.png'
+        portraitURL: 'https://i.lensdump.com/i/sg7Ee.png'
       })}
 
     if(avatar === 'woman1'){
