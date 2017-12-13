@@ -69,8 +69,7 @@ class User extends React.Component {
         selected: {
           man1: true
         },
-        // portraitURL: 'https://i.lensdump.com/i/9faKz.png'
-        portraitURL: 'https://i.lensdump.com/i/sg7Ee.png'
+        portraitURL: 'https://i.lensdump.com/i/stt2z.png'
       })}
 
     if(avatar === 'woman1'){
@@ -78,8 +77,7 @@ class User extends React.Component {
         selected: {
           woman1: true
         },
-        // portraitURL: 'https://i.lensdump.com/i/9fGt5.png'
-        portraitURL: 'https://i.lensdump.com/i/stI0v.png'
+        portraitURL: 'https://i.lensdump.com/i/stZBC.png'
       })}
     localStorage.setItem('iconName', avatar)
   }
