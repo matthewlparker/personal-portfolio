@@ -77,7 +77,7 @@ class User extends React.Component {
         selected: {
           woman1: true
         },
-        portraitURL: 'https://i.lensdump.com/i/stZBC.png'
+        portraitURL: 'https://i.imgur.com/GSAVVEa.png'
       })}
     localStorage.setItem('iconName', avatar)
   }
