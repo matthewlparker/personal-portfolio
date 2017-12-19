@@ -17,46 +17,26 @@ class ViewCover extends React.Component{
   constructor(props){
     super(props)
     this.state={
-      background: '',
+      background: this.props.backgrounds.background,
+      // backgrounds: this.props.backgrounds.backgrounds,
     }
     this.handleKeyPress = this.handleKeyPress.bind(this)
-    this.randomBackground = this.randomBackground.bind(this)
+    // this.randomBackground = this.randomBackground.bind(this)
   }
 
   componentWillMount(){
-    this.randomBackground()
     document.addEventListener('keypress', this.handleKeyPress)
   }
-
 
   handleKeyPress(e){
     this.props.entered && !this.props.focus && e.key === 'i' ? this.props.handleCover() : undefined
   }
 
-  randomBackground(){
-    let backgrounds = [
-      'https://i.imgur.com/HjStYze.gif',
-      'https://i.imgur.com/4KJPU8C.gif',
-      'https://i.imgur.com/XTCAUql.gif',
-      'https://i.imgur.com/vvTO3np.gif',
-      'https://i.imgur.com/589GAGa.gif',
-    ]
-
-    let bg = backgrounds[Math.floor(Math.random() * (backgrounds.length))]
-
-    this.setState({
-      background: bg
-    })
-    this.props.setBackground(bg)
-  }
-
-
-
   render(){
     let dashboardOpen = this.props.coverOpen ? 'open' : ''
 
     let mainBackground = {
-      backgroundImage: 'url(' + `${this.props.background}` + ')',
+      backgroundImage: 'url(' + `${this.props.backgrounds.background}` + ')',
     }
 
     return (
@@ -150,7 +130,7 @@ let mapStateToProps = (state) => ({
   focus: state.focus,
   entered: state.enterSite,
   coverOpen: state.coverToggle,
-  background: state.setBackground,
+  backgrounds: state.setBackground,
 })
 
 let mapDispatchToProps = (dispatch) => ({

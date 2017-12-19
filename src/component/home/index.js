@@ -17,19 +17,16 @@ class Home extends React.Component{
     this.state={
       hover: '',
       route: '',
-
     }
+
     this.exit = this.exit.bind(this)
     this.reload = this.reload.bind(this)
     this.onEnter = this.onEnter.bind(this)
     this.onLeave = this.onLeave.bind(this)
     this.handleCover = this.handleCover.bind(this)
-    this.handleRoute = this.handleRoute.bind(this)
     this.selectRoute = this.selectRoute.bind(this)
     this.changeBackground = this.changeBackground.bind(this)
   }
-
-
 
   handleCover(toggle){
     this.props.handleCover('COVER_TOGGLE')
@@ -47,10 +44,6 @@ class Home extends React.Component{
     })
   }
 
-  handleRoute(route){
-
-  }
-
   selectRoute(route){
     if(route === '/about'){this.setState({route: '/about'})}
     if(route === '/portfolio'){this.setState({route: '/portfolio'})}
@@ -65,23 +58,57 @@ class Home extends React.Component{
     location.reload()
   }
 
-  changeBackground(){
-    let backgrounds = [
-      'https://i.imgur.com/HjStYze.gif',
-      'https://i.imgur.com/4KJPU8C.gif',
-      'https://i.imgur.com/XTCAUql.gif',
-      'https://i.imgur.com/vvTO3np.gif',
-      'https://i.imgur.com/589GAGa.gif',
-    ]
+  changeBackground(e){
+    // e.preventDefault()
+    let {backgrounds, background} = this.props.backgrounds
+    console.log('backgrounds: ', backgrounds)
+    console.log('background: ', background)
 
-    let bg = backgrounds[Math.floor(Math.random() * (backgrounds.length))]
+    let nextBackgrounds = [background, ...backgrounds]
+    let nextBackground = nextBackgrounds.pop()
 
-    this.props.changeBackground(bg)
+    console.log('nextBackgrounds: ', nextBackgrounds)
+    console.log('nextBackground: ', nextBackground)
+
+    let backgroundObject = {
+      backgrounds: nextBackgrounds,
+      background: nextBackground
+    }
+
+    this.props.changeBackground(backgroundObject)
+
+    // let background = this.props.backgrounds.background
+    // let backgrounds = this.props.backgrounds.backgrounds
+
+    // let newBackgrounds = backgrounds.unshift(background)
+    // let newBackground = backgrounds.pop()
+
+    // console.log('background: ', [...this.props.backgrounds.background, this.props.backgrounds.backgrounds])
+    //
+    // let obj = {
+    //   backgrounds: [...this.props.backgrounds.background, this.props.backgrounds.backgrounds],
+    //   background: newBackground
+    // }
+
+    // console.log('NEW BG:', newBackgrounds)
+
+    // this.props.changeBackground(obj)
+    // console.log(this.props.background)
+    // let backgrounds = [
+    //   'https://i.imgur.com/HjStYze.gif',
+    //   'https://i.imgur.com/4KJPU8C.gif',
+    //   'https://i.imgur.com/XTCAUql.gif',
+    //   'https://i.imgur.com/vvTO3np.gif',
+    //   'https://i.imgur.com/589GAGa.gif',
+    // ]
+    //
+    // let bg = backgrounds[Math.floor(Math.random() * (backgrounds.length))]
+    //
+    // this.props.changeBackground(bg)
   }
 
   render(){
-    // let pathname = document.location.href.split('8080')[1]
-
+    // console.log('home background: ', this.props.backgrounds.backgrounds)
     return(
       <div className={`home-main ${this.props.lightTheme ? 'home-main-light' : ''}`}>
 
@@ -103,7 +130,7 @@ class Home extends React.Component{
             Clear
           </NavLink>
 
-          <NavLink exact to={'/'} activeClassName='' className={'explore nav'} onClick={this.changeBackground}>
+          <NavLink exact to={'/'} activeClassName='' className={'explore nav'} onClick={(e) => this.changeBackground(e)}>
             Explore
           </NavLink>
 
@@ -156,11 +183,12 @@ class Home extends React.Component{
 let mapStateToProps = (state) => ({
   lightTheme: state.lightTheme,
   route: state.route,
+  backgrounds: state.setBackground
 })
 
 let mapDispatchToProps = (dispatch) => ({
   handleCover: (toggle) => dispatch(viewActions.cover(toggle)),
-  changeBackground: (image) => dispatch(viewActions.background(image)),
+  changeBackground: (obj) => dispatch(viewActions.background(obj)),
   enterSite: (bool) => dispatch(viewActions.entered(bool)),
 
 })
