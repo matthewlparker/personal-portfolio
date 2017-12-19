@@ -58,8 +58,7 @@ class Home extends React.Component{
     location.reload()
   }
 
-  changeBackground(e){
-    // e.preventDefault()
+  changeBackground(){
     let {backgrounds, background} = this.props.backgrounds
     console.log('backgrounds: ', backgrounds)
     console.log('background: ', background)
@@ -74,41 +73,10 @@ class Home extends React.Component{
       backgrounds: nextBackgrounds,
       background: nextBackground
     }
-
     this.props.changeBackground(backgroundObject)
-
-    // let background = this.props.backgrounds.background
-    // let backgrounds = this.props.backgrounds.backgrounds
-
-    // let newBackgrounds = backgrounds.unshift(background)
-    // let newBackground = backgrounds.pop()
-
-    // console.log('background: ', [...this.props.backgrounds.background, this.props.backgrounds.backgrounds])
-    //
-    // let obj = {
-    //   backgrounds: [...this.props.backgrounds.background, this.props.backgrounds.backgrounds],
-    //   background: newBackground
-    // }
-
-    // console.log('NEW BG:', newBackgrounds)
-
-    // this.props.changeBackground(obj)
-    // console.log(this.props.background)
-    // let backgrounds = [
-    //   'https://i.imgur.com/HjStYze.gif',
-    //   'https://i.imgur.com/4KJPU8C.gif',
-    //   'https://i.imgur.com/XTCAUql.gif',
-    //   'https://i.imgur.com/vvTO3np.gif',
-    //   'https://i.imgur.com/589GAGa.gif',
-    // ]
-    //
-    // let bg = backgrounds[Math.floor(Math.random() * (backgrounds.length))]
-    //
-    // this.props.changeBackground(bg)
   }
 
   render(){
-    // console.log('home background: ', this.props.backgrounds.backgrounds)
     return(
       <div className={`home-main ${this.props.lightTheme ? 'home-main-light' : ''}`}>
 
@@ -130,7 +98,7 @@ class Home extends React.Component{
             Clear
           </NavLink>
 
-          <NavLink exact to={'/'} activeClassName='' className={'explore nav'} onClick={(e) => this.changeBackground(e)}>
+          <NavLink exact to={'/'} activeClassName='' className={'explore nav'} onClick={this.changeBackground}>
             Explore
           </NavLink>
 

@@ -1,19 +1,32 @@
 const initialState = () => {
+  let backgrounds = ['https://i.imgur.com/HjStYze.gif',
+  'https://i.imgur.com/4KJPU8C.gif',
+  'https://i.imgur.com/XTCAUql.gif',
+  'https://i.imgur.com/vvTO3np.gif',
+  'https://i.imgur.com/589GAGa.gif',]
+  let shuffledBackgrounds = shuffle(backgrounds)
+  let background = shuffledBackgrounds.pop()
 
-  let backgrounds = [
-      'https://i.imgur.com/HjStYze.gif',
-      'https://i.imgur.com/4KJPU8C.gif',
-      'https://i.imgur.com/XTCAUql.gif',
-      'https://i.imgur.com/vvTO3np.gif',
-      'https://i.imgur.com/589GAGa.gif',
-  ]
+  return { backgrounds: shuffledBackgrounds, background: background }
+}
 
-  let background = backgrounds.splice(Math.floor(Math.random() * (backgrounds.length)), 1).toString()
+const shuffle = (array) => {
+  let currentIndex = array.length, temporaryValue, randomIndex;
 
-  return {
-    backgrounds: backgrounds,
-    background: background
+  // While there remain elements to shuffle...
+  while (currentIndex !== 0) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
   }
+
+  return array;
 }
 
 export default (state=initialState(), {type, payload}) => {

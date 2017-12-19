@@ -18,10 +18,8 @@ class ViewCover extends React.Component{
     super(props)
     this.state={
       background: this.props.backgrounds.background,
-      // backgrounds: this.props.backgrounds.backgrounds,
     }
     this.handleKeyPress = this.handleKeyPress.bind(this)
-    // this.randomBackground = this.randomBackground.bind(this)
   }
 
   componentWillMount(){
@@ -75,15 +73,15 @@ class ViewCover extends React.Component{
 
           <div className={`dashboard-bar ${dashboardOpen}`} onClick={this.props.handleCover}>
             <div className='hint-text'>
-              {this.props.background === 'https://i.imgur.com/589GAGa.gif'
+              {this.props.backgrounds.background === 'https://i.imgur.com/589GAGa.gif'
                 ? `Below deck at port`
-                : this.props.background === 'https://i.imgur.com/HjStYze.gif'
+                : this.props.backgrounds.background === 'https://i.imgur.com/HjStYze.gif'
                 ? `Stargazing above deck`
-                : this.props.background === 'https://i.imgur.com/4KJPU8C.gif'
+                : this.props.backgrounds.background === 'https://i.imgur.com/4KJPU8C.gif'
                 ? `Traveling the coast by train`
-                : this.props.background === 'https://i.imgur.com/vvTO3np.gif'
+                : this.props.backgrounds.background === 'https://i.imgur.com/vvTO3np.gif'
                 ? `Wading the waterfalls`
-                : this.props.background === 'https://i.imgur.com/XTCAUql.gif'
+                : this.props.backgrounds.background === 'https://i.imgur.com/XTCAUql.gif'
                 ? `Exploring the forest`
                 : ``
               }
