@@ -121,6 +121,10 @@ class Home extends React.Component{
             <img src={require('../../assets/react-original.svg')} alt='react logo' />
           </div>
 
+          <div className='skill-icon redux' onMouseEnter={()=>this.onEnter('Redux')} onMouseLeave={this.onLeave}>
+            <img src={require('../../assets/redux.svg')} alt='redux logo' />
+          </div>
+
           <div className='skill-icon html' onMouseEnter={()=>this.onEnter('HTML5')} onMouseLeave={this.onLeave}>
             <img src={require('../../assets/html5-original.svg')} alt='html 5 logo'/>
           </div>
