@@ -8,8 +8,6 @@ import {BrowserRouter, Route, Link} from 'react-router-dom'
 
 import Home from '../home'
 import About from '../about'
-import Header from '../header'
-import Footer from '../footer'
 import Contact from '../contact'
 import Portfolio from '../portfolio'
 import ViewCover from '../view-cover'
