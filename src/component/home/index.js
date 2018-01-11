@@ -1,12 +1,10 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import Header from '../header/index.js'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router'
 import {NavLink} from 'react-router-dom'
 import FontAwesome from 'react-fontawesome'
 import * as viewActions from '../../action/viewActions.js'
-import ThemeIcon from '../theme-icon/index.js'
 import * as route from '../../action/route.js'
 
 import './styles.scss'
