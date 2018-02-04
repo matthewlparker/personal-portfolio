@@ -67,7 +67,7 @@ class ViewCover extends React.Component{
             </div>
 
             <div className={`status`}>
-              Status: Available 02/01/2018
+              Status: Available 02/12/2018
             </div>
           </div>
 
