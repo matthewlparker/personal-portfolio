@@ -32,13 +32,13 @@ class Home extends React.Component{
 
   onEnter(skill) {
     this.setState({
-      hover: skill
+      hover: skill,
     })
   }
 
   onLeave(){
     this.setState({
-      hover: ''
+      hover: '',
     })
   }
 
@@ -58,18 +58,18 @@ class Home extends React.Component{
 
   changeBackground(){
     let {backgrounds, background} = this.props.backgrounds
-    console.log('backgrounds: ', backgrounds)
-    console.log('background: ', background)
+    // console.log('backgrounds: ', backgrounds)
+    // console.log('background: ', background)
 
     let nextBackgrounds = [background, ...backgrounds]
     let nextBackground = nextBackgrounds.pop()
 
-    console.log('nextBackgrounds: ', nextBackgrounds)
-    console.log('nextBackground: ', nextBackground)
+    // console.log('nextBackgrounds: ', nextBackgrounds)
+    // console.log('nextBackground: ', nextBackground)
 
     let backgroundObject = {
       backgrounds: nextBackgrounds,
-      background: nextBackground
+      background: nextBackground,
     }
     this.props.changeBackground(backgroundObject)
   }
@@ -153,7 +153,7 @@ class Home extends React.Component{
 let mapStateToProps = (state) => ({
   lightTheme: state.lightTheme,
   route: state.route,
-  backgrounds: state.setBackground
+  backgrounds: state.setBackground,
 })
 
 let mapDispatchToProps = (dispatch) => ({
