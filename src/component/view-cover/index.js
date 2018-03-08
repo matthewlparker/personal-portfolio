@@ -40,82 +40,82 @@ class ViewCover extends React.Component{
     return (
       <div className={`view-cover-main ${this.props.coverOpen ? 'view-cover-main-open' : ''}`} style={mainBackground}>
 
-      {!this.props.entered ? <div className='user-container'> <User /> </div>
+        {!this.props.entered ? <div className='user-container'> <User /> </div>
 
-        : <div className='view-cover-content'>
+          : <div className='view-cover-content'>
 
-          {this.props.pageActive ?
-            <NavLink to={this.props.route === '/about' ? '/contact'
-              : this.props.route === '/portfolio' ? '/about'
-              : this.props.route === '/contact' ? '/portfolio'
-              : '/'
-            } className='left'>
-              <div className='arrow'>
-                {'<'}
+            {this.props.pageActive ?
+              <NavLink to={this.props.route === '/about' ? '/contact'
+                : this.props.route === '/portfolio' ? '/about'
+                  : this.props.route === '/contact' ? '/portfolio'
+                    : '/'
+              } className='left'>
+                <div className='arrow'>
+                  {'<'}
+                </div>
+              </NavLink>
+              : undefined
+            }
+
+            <div className='basic-info'>
+              <a className={'name'} href='https://docs.google.com/document/d/1bLo8ln0GXKTPMceAKzwvaifaj8mm2Y2_cXog9_Ssu60/export?format=pdf'>
+                Name: <span>Matthew Parker</span>
+              </a>
+
+              <div className={`developer`}>
+                Developer: React & Full-Stack JavaScript
               </div>
-            </NavLink>
-            : undefined
-          }
 
-          <div className='basic-info'>
-            <a className={'name'} href='https://docs.google.com/document/d/1bLo8ln0GXKTPMceAKzwvaifaj8mm2Y2_cXog9_Ssu60/export?format=pdf'>
-              Name: <span>Matthew Parker</span>
-            </a>
-
-            <div className={`developer`}>
-              Developer: React & Full-Stack JavaScript
+              <div className={`status`}>
+                Status: Available 02/12/2018
+              </div>
             </div>
 
-            <div className={`status`}>
-              Status: Available 02/12/2018
+            <div className={`dashboard-bar ${dashboardOpen}`} onClick={this.props.handleCover}>
+              <div className='hint-text'>
+                {this.props.backgrounds.background === 'https://i.imgur.com/589GAGa.gif'
+                  ? `Below deck at port`
+                  : this.props.backgrounds.background === 'https://i.imgur.com/HjStYze.gif'
+                    ? `Stargazing above deck`
+                    : this.props.backgrounds.background === 'https://i.imgur.com/4KJPU8C.gif'
+                      ? `Traveling the coast by train`
+                      : this.props.backgrounds.background === 'https://i.imgur.com/vvTO3np.gif'
+                        ? `Wading the waterfalls`
+                        : this.props.backgrounds.background === 'https://i.imgur.com/XTCAUql.gif'
+                          ? `Exploring the forest`
+                          : ``
+                }
+              </div>
+
+              <FontAwesome name='arrow-right' />
+              <div className='i-text'>{`[ i ] to ${this.props.coverOpen ? 'close' : 'open'} dashboard`}</div>
             </div>
-          </div>
 
-          <div className={`dashboard-bar ${dashboardOpen}`} onClick={this.props.handleCover}>
-            <div className='hint-text'>
-              {this.props.backgrounds.background === 'https://i.imgur.com/589GAGa.gif'
-                ? `Below deck at port`
-                : this.props.backgrounds.background === 'https://i.imgur.com/HjStYze.gif'
-                ? `Stargazing above deck`
-                : this.props.backgrounds.background === 'https://i.imgur.com/4KJPU8C.gif'
-                ? `Traveling the coast by train`
-                : this.props.backgrounds.background === 'https://i.imgur.com/vvTO3np.gif'
-                ? `Wading the waterfalls`
-                : this.props.backgrounds.background === 'https://i.imgur.com/XTCAUql.gif'
-                ? `Exploring the forest`
-                : ``
-              }
+            <div className='pixelart-to-css'></div>
+
+            <div className='page-container'>
+
+              <Route exact path='/about' component={About} />
+              <Route exact path='/portfolio' component={Portfolio} />
+              <Route exact path='/contact' component={Contact} />
+
             </div>
 
-            <FontAwesome name='arrow-right' />
-            <div className='i-text'>{`[ i ] to ${this.props.coverOpen ? 'close' : 'open'} dashboard`}</div>
-          </div>
-
-          <div className='pixelart-to-css'></div>
-
-          <div className='page-container'>
-
-            <Route exact path='/about' component={About} />
-            <Route exact path='/portfolio' component={Portfolio} />
-            <Route exact path='/contact' component={Contact} />
-
-          </div>
-
-          {this.props.pageActive ?
-            <NavLink to={this.props.route === '/about' ? '/portfolio'
-              : this.props.route === '/portfolio' ? '/contact'
-              : this.props.route === '/contact' ? '/about'
-              : '/'
+            {this.props.pageActive ?
+              <NavLink to={this.props.route === '/about' ? '/portfolio'
+                : this.props.route === '/portfolio' ? '/contact'
+                  : this.props.route === '/contact' ? '/about'
+                    : '/'
               }
               className='right'>
                 <div className='arrow'>
                   {'>'}
                 </div>
               </NavLink>
-            : undefined
-          }
-        </div>
-      }
+              : undefined
+            }
+          </div>
+        }
 
       </div>
     )

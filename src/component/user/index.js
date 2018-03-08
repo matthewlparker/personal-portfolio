@@ -41,7 +41,7 @@ class User extends React.Component {
 
   handleChange(e){
     this.setState({
-      name: e.target.value
+      name: e.target.value,
     })
   }
 
@@ -67,17 +67,17 @@ class User extends React.Component {
     if(avatar === 'man1') {
       this.setState({
         selected: {
-          man1: true
+          man1: true,
         },
-        portraitURL: 'https://i.lensdump.com/i/stt2z.png'
+        portraitURL: 'https://i.lensdump.com/i/stt2z.png',
       })}
 
     if(avatar === 'woman1'){
       this.setState({
         selected: {
-          woman1: true
+          woman1: true,
         },
-        portraitURL: 'https://i.imgur.com/GSAVVEa.png'
+        portraitURL: 'https://i.imgur.com/GSAVVEa.png',
       })}
     localStorage.setItem('iconName', avatar)
   }
@@ -138,9 +138,9 @@ class User extends React.Component {
 
         <div className='user-welcome'>
           {localStorage.userPortrait && localStorage.userName ?
-              `Welcome back, ${userName}`
+            `Welcome back, ${userName}`
             : !this.state.reminder ? `Pick an avatar and name`
-            : `Sorry, you need a face`
+              : `Sorry, you need a face`
           }
         </div>
 

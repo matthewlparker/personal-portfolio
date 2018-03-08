@@ -12,7 +12,3 @@ const UserDialogue = (props) => {
 }
 
 export default UserDialogue
-
-// {props.considering === props.optionNumber ? <span> {'<'} </span>
-//   : undefined
-// }
