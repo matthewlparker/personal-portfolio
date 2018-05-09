@@ -3,7 +3,7 @@ import './style.scss'
 
 const Project = (props) => {
   let projectColor = {
-    backgroundColor: props.projectColor
+    backgroundColor: props.projectColor,
   }
   return (
     <a href={props.url} target='_#' className={'project-main'}>

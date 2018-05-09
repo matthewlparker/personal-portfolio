@@ -120,7 +120,6 @@ class User extends React.Component {
   }
 
   handleKeyPress(e){
-    console.log('key: ', e)
     e.key === 'Enter' && this.state.start ? this.enterSite() : undefined
     e.key === 'Enter' && this.state.delete ? this.deleteUser() : undefined
 
