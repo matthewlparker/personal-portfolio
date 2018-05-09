@@ -8,10 +8,6 @@ import ViewCover from '../view-cover/index.js'
 import './style.scss'
 
 export default class Content extends React.Component {
-  constructor(props){
-    super(props)
-  }
-
   render(){
     return(
       <div className='content-main'>
@@ -20,13 +16,3 @@ export default class Content extends React.Component {
     )
   }
 }
-
-// mapStateToProps = (state) => {
-//
-// }
-//
-// mapDispatchToProps = (dispatch) => {
-//
-// }
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(Content)

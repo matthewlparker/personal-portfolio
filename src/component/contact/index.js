@@ -1,12 +1,12 @@
-  import React from 'react'
-  import Typist from 'react-typist'
-  import {connect} from 'react-redux'
-  import * as setRoute from '../../action/route.js'
-  import * as viewActions from '../../action/viewActions.js'
+import React from 'react'
+import Typist from 'react-typist'
+import {connect} from 'react-redux'
+import * as setRoute from '../../action/route.js'
+import * as viewActions from '../../action/viewActions.js'
 
-  import './styles.scss'
+import './styles.scss'
 
-  class Contact extends React.Component{
+class Contact extends React.Component{
   constructor(props){
     super(props)
     this.state = {
@@ -44,14 +44,13 @@
 
   render(){
     let portrait = {backgroundImage: 'url(' + `${this.props.userPortrait}` + ')'}
-    console.log('contact state: ', this.state)
     return(
       <div className='contact-main'>
 
         <div className='matt-dialogue box'>
           <div className='parting-message'>
             <Typist startDelay={1000} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
-            {`Thanks for stopping by, ${this.props.userName}. It was great meeting you! I hope you've enjoyed your visit. If you'd like to get in touch again, please feel welcome to leave me a message. Have a great day!`}
+              {`Thanks for stopping by, ${this.props.userName}. It was great meeting you! I hope you've enjoyed your visit. If you'd like to get in touch again, please feel welcome to leave me a message. Have a great day!`}
             </Typist>
           </div>
           <div className='portrait-block'></div>
@@ -87,12 +86,12 @@
 
               <div className='email-input'>
                 <input
-                type='text'
-                id='email'
-                name='email'
-                placeholder='email'
-                onFocus={()=>this.props.focus(true)}
-                onBlur={()=>this.props.focus(false)}
+                  type='text'
+                  id='email'
+                  name='email'
+                  placeholder='email'
+                  onFocus={()=>this.props.focus(true)}
+                  onBlur={()=>this.props.focus(false)}
                 />
               </div>
 
@@ -106,11 +105,12 @@
                   onChange={(e) => this.handleChange(e)}
                   onFocus={()=>this.props.focus(true)}
                   onBlur={()=>this.props.focus(false)}
-                /></div>
+                />
+              </div>
 
-                <button type='submit' className='submit-button'>
-                  Send
-                </button>
+              <button type='submit' className='submit-button'>
+                Send
+              </button>
 
               <div className='see-front-hint' onClick={()=>this.toInfoView(false)}>
                 See front
@@ -134,15 +134,15 @@
   }
 }
 
-  export const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   userName: state.userName,
   userPortrait: state.userPortrait,
-  })
+})
 
-  export const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   focus: (bool) => dispatch(viewActions.focus(bool)),
   shareRoute: (route) => dispatch(setRoute.route(route)),
   pageActive: (bool) => dispatch(viewActions.pageActive(bool)),
-  })
+})
 
-  export default connect(mapStateToProps, mapDispatchToProps)(Contact)
+export default connect(mapStateToProps, mapDispatchToProps)(Contact)

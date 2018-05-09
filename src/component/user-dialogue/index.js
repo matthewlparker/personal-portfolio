@@ -6,7 +6,6 @@ const UserDialogue = (props) => {
       onClick={props.choice}
     >
       {props.text}<span>{' <'}</span>
-
     </div>
   )
 }

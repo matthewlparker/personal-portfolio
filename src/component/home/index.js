@@ -25,7 +25,6 @@ class Home extends React.Component{
     this.selectRoute = this.selectRoute.bind(this)
     this.changeBackground = this.changeBackground.bind(this)
   }
-
   handleCover(toggle){
     this.props.handleCover('COVER_TOGGLE')
   }
@@ -58,14 +57,9 @@ class Home extends React.Component{
 
   changeBackground(){
     let {backgrounds, background} = this.props.backgrounds
-    // console.log('backgrounds: ', backgrounds)
-    // console.log('background: ', background)
 
     let nextBackgrounds = [background, ...backgrounds]
     let nextBackground = nextBackgrounds.pop()
-
-    // console.log('nextBackgrounds: ', nextBackgrounds)
-    // console.log('nextBackground: ', nextBackground)
 
     let backgroundObject = {
       backgrounds: nextBackgrounds,
