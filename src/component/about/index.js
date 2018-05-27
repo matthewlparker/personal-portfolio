@@ -88,13 +88,13 @@ class About extends React.Component{
           <div className='answer'>
 
             {this.state.choice === 0 ?
-              <Typist startDelay={1000} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
+              <Typist startDelay={900} avgTypingDelay={15} stdTypingDelay={0} cursor={{show: false}}>
                 {this.props.background.background === 'https://i.imgur.com/589GAGa.gif'
-                  ? `Ahoy there, ${name}! A pleasure to meet you. Welcome aboard my ship! You don't get seasick, do you? Well, browsing my site will help! Feel free to look around, and ask me any questions you might have.`
+                  ? `Ahoy there, ${name}! A pleasure to meet you. Welcome aboard my ship! You don't get C sick, do you? Well don't worry, I coded this site in JavaScript! Feel free to look around, and ask me any questions you might have.`
                   : this.props.background.background === 'https://i.imgur.com/XTCAUql.gif'
-                    ? `Hi ${name}, it's a pleasure to meet you! So you like exploring the forest too? What a perfect opportunity to check out my site! Feel free to look around, and ask me any questions you might have.`
+                    ? `Hi ${name}, it's a pleasure to meet you! So you like exploring the forest too? Well why not explore my site! Feel free to look around, and ask me any questions you might have.`
                     : this.props.background.background === 'https://i.imgur.com/4KJPU8C.gif'
-                      ? `Hi ${name}, it's a pleasure to meet you! A golden sunset, an oceanic horizon, and a gentle train trip along the coast. What a perfect time to check out my site! Feel free to look around, and ask me any questions you might have.`
+                      ? `Hi ${name}, it's a pleasure to meet you! A golden sunset, an oceanic horizon, and a gentle train trip along the coast. No better time to check out my site! Feel free to look around, and ask me any questions you might have.`
                       : this.props.background.background === 'https://i.imgur.com/vvTO3np.gif'
                         ? `Hi ${name}, it's a pleasure to meet you! I hope you can hear me over these waterfalls! What an amazing sight. Speaking of sites, have you seen mine? Feel free to look around, and ask me any questions you might have.`
                         : this.props.background.background === 'https://i.imgur.com/HjStYze.gif'
@@ -106,25 +106,25 @@ class About extends React.Component{
             }
 
             {this.state.choice === 1 ?
-              <Typist startDelay={200} avgTypingDelay={25} stdTypingDelay={0} cursor={{show:false}}>
+              <Typist startDelay={300} avgTypingDelay={15} stdTypingDelay={0} cursor={{show:false}}>
                 {`My name's Matthew Parker. I'm a graduate of Code Fellows in Seattle, a full-stack JavaScript developer, and a Christian. Reading, adventures, and animals are a few of my favorite things. I aspire to be both a master programmer and best-selling author.`}
               </Typist>
               : undefined
             }
             {this.state.choice === 2 ?
-              <Typist startDelay={200} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
-                {`I love to create, through both writing and programming. There's nothing to me quite like imagining a thing, and then creating it with words. And with programming I can make things that genuinely impact the way people see and interact with their world. It's amazing! And so, I'm driven to pursue excellence in everything I make.`}
+              <Typist startDelay={300} avgTypingDelay={15} stdTypingDelay={0} cursor={{show: false}}>
+                {`I love to create. As a writer, stories and worlds. As a programmer, services, products, and even experiences; I get to serve people by creating and improving the means by which they increasingly interact with their world, and this inspires me always to learn more and do my best.`}
               </Typist>
               : undefined
             }
             {this.state.choice === 3 ?
-              <Typist startDelay={200} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
+              <Typist startDelay={300} avgTypingDelay={15} stdTypingDelay={0} cursor={{show: false}}>
                 {`I specialize in JavaScript with a focus on the front-end with React, and have an array of skills such as HTML5, CSS3, Sass, Redux, Node, MongoDB, and others. I love learning these technologies more deeply, and new ones entirely!`}
               </Typist>
               : undefined
             }
             {this.state.choice === 4 ?
-              <Typist startDelay={200} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
+              <Typist startDelay={300} avgTypingDelay={15} stdTypingDelay={0} cursor={{show: false}}>
                 {`I hope by then to be wiser, more charitable, a senior-level programmer with a great company, and a published author.`}
               </Typist>
               : undefined
