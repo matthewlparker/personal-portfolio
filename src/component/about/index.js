@@ -113,7 +113,7 @@ class About extends React.Component{
             }
             {this.state.choice === 2 ?
               <Typist startDelay={300} avgTypingDelay={15} stdTypingDelay={0} cursor={{show: false}}>
-                {`I love to create. As a writer, stories and worlds. As a programmer, services, products, and even experiences; I get to serve people by creating and improving the means by which they increasingly interact with their world, and this inspires me always to learn more and do my best.`}
+                {`I love to create. As a writer, stories and worlds. As a programmer, services, products, and even experiences; I get to serve people by making and improving things they use every day. That inspires me to keep on learning, and to always do my best.`}
               </Typist>
               : undefined
             }
