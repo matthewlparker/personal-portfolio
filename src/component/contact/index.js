@@ -49,7 +49,7 @@ class Contact extends React.Component{
 
         <div className='matt-dialogue box'>
           <div className='parting-message'>
-            <Typist startDelay={1000} avgTypingDelay={25} stdTypingDelay={0} cursor={{show: false}}>
+            <Typist startDelay={900} avgTypingDelay={15} stdTypingDelay={0} cursor={{show: false}}>
               {`Thanks for stopping by, ${this.props.userName}. It was great meeting you! I hope you've enjoyed your visit. If you'd like to get in touch again, please feel welcome to leave me a message. Have a great day!`}
             </Typist>
           </div>
