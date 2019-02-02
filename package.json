@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "build": "webpack",
     "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "yarn run build"
   },
   "dependencies": {
     "@babel/cli": "^7.2.3",
