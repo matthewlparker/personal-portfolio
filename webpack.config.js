@@ -1,64 +1,49 @@
-'use strict'
+const webpack = require('webpack')
+const devMode = process.env.NODE_ENV !== 'production'
 
-require('dotenv').config()
-const production = process.env.NODE_ENV === 'production'
-
-const {DefinePlugin, EnvironmentPlugin} = require('webpack')
-const HTMLPlugin = require('html-webpack-plugin')
-const CleanPlugin = require('clean-webpack-plugin')
-const UglifyPlugin = require('uglifyjs-webpack-plugin')
-const ExtractPlugin = require('extract-text-webpack-plugin')
-
-let plugins = [
-  new EnvironmentPlugin(['NODE_ENV']),
-  new ExtractPlugin('bundle-[hash].css'),
-  new HTMLPlugin({template: `${__dirname}/src/index.html`}),
-  new DefinePlugin({
-    __DEBUG__: JSON.stringify(!production),
-    __API_URL__: JSON.stringify(process.env.API_URL),
-    __GOOGLE_CLIENT_ID__: JSON.stringify(process.env.GOOGLE_CLIENT_ID),
-    __EMAIL__: JSON.stringify(process.env.EMAIL),
-    __PORT__: JSON.stringify(process.env.PORT),
-  }),
-]
-
-if (production)
-  plugins = plugins.concat([ new CleanPlugin(), new UglifyPlugin() ])
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSassetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
-  plugins,
-  entry: `${__dirname}/src/main.js`,
-  devServer: {
-    historyApiFallback: true,
+  entry: './src/main.js',
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true,
+      }),
+      new OptimizeCSSassetsPlugin({}),
+    ],
   },
-  devtool: production ? undefined : 'cheap-module-eval-source-map',
-  output: {
-    path: `${__dirname}/build`,
-    filename: 'bundle-[hash].js',
-    publicPath: process.env.CDN_URL,
-  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new MiniCssExtractPlugin({
+      filename: devMode ? '[name].css' : '[name].[hash].css',
+      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+    }),
+  ],
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_module/,
-        loader: 'babel-loader',
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
       },
       {
-        test: /\.scss$/,
-        loader: ExtractPlugin.extract({
-          use: [
-            'css-loader',
-            'resolve-url-loader',
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: true,
-                includePaths: [`${__dirname}/src/style`],
-              },
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              includePaths: [`${__dirname}/src/style`],
             },
-          ],
-        }),
+          },
+        ],
       },
       {
         test: /\.icon.svg$/,
@@ -101,5 +86,18 @@ module.exports = {
         ],
       },
     ],
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx'],
+  },
+  output: {
+    path: `${__dirname}/build`,
+    filename: 'bundle-[hash].js',
+    publicPath: process.env.CDN_URL,
+  },
+
+  devServer: {
+    contentBase: './build',
+    hot: true,
   },
 }
