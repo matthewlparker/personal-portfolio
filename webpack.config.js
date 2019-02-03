@@ -1,9 +1,11 @@
 const webpack = require('webpack')
-const devMode = process.env.NODE_ENV !== 'production'
+const { DefinePlugin } = require('webpack')
 const HTMLPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSassetsPlugin = require('optimize-css-assets-webpack-plugin')
+
+const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
   entry: './src/main.js',
@@ -20,6 +22,9 @@ module.exports = {
   plugins: [
     new HTMLPlugin({ template: `${__dirname}/src/index.html` }),
     new webpack.HotModuleReplacementPlugin(),
+    new DefinePlugin({
+      __DEBUG__: JSON.stringify(devMode),
+    }),
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].css' : '[name].[hash].css',
       chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
